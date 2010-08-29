@@ -40,12 +40,6 @@
 	      android:excludeFromRecents="true"
     />
 
-    <activity android:name=".LogViewActivity"
-              android:label="@string/log_view_activity_name"
-              android:stateNotNeeded="true"
-	      android:excludeFromRecents="true"
-    />
-
     <service android:name=".BatteryIndicatorService" />
 
     <receiver android:name=".BootCompletedReceiver"
