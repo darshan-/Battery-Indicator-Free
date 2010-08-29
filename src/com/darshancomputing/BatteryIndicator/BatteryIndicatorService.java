@@ -12,7 +12,7 @@
     GNU General Public License for more details.
 */
 
-package com.darshancomputing.BatteryIndicatorPro;
+package com.darshancomputing.BatteryIndicator;
 
 import android.app.KeyguardManager;
 import android.app.KeyguardManager.KeyguardLock;
