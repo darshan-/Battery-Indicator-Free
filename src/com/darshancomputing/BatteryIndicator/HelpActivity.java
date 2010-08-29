@@ -44,7 +44,7 @@ public class HelpActivity extends Activity {
 
         tv = (TextView) findViewById(R.id.version);
         try {
-            tv.setText(getResources().getString(R.string.app_full_name) + " " +
+            tv.setText(getResources().getString(R.string.app_full_name_free) + " " +
                        getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
         } catch (Exception e) {
             tv.setText("...");

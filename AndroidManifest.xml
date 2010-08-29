@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.darshancomputing.BatteryIndicator"
-          android:versionCode="20"
-          android:versionName="3.0.0"
+          android:versionCode="19"
+          android:versionName="3.0.0-dev"
 >
-  <application android:label="@string/app_full_name"
+  <application android:label="@string/app_full_name_free"
                android:icon="@drawable/battery"
   >
     <activity android:name=".BatteryIndicator"
@@ -22,19 +22,19 @@
     </activity>
 
     <activity android:name=".SettingsActivity"
-              android:label="@string/settings_activity_name"
+              android:label="@string/settings_activity_name_free"
 	      android:excludeFromRecents="true"
     />
 
     <activity android:name=".SettingsHelpActivity"
-              android:label="@string/settings_help_activity_name"
+              android:label="@string/settings_help_activity_name_free"
               android:theme="@android:style/Theme.Light"
               android:stateNotNeeded="true"
 	      android:excludeFromRecents="true"
     />
 
     <activity android:name=".HelpActivity"
-              android:label="@string/help_activity_name"
+              android:label="@string/help_activity_name_free"
               android:theme="@android:style/Theme.Light"
               android:stateNotNeeded="true"
 	      android:excludeFromRecents="true"

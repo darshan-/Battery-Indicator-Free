@@ -20,14 +20,15 @@
                   android:gravity="center_horizontal"
                   android:textColor="#fff"
                   android:textSize="16sp"
-                  android:text="@string/main_window_title"
+                  android:text="@string/main_window_title_free"
         />
 
         <TextView android:id="@+id/status_since_t"
                   android:layout_width="fill_parent"
                   android:layout_height="wrap_content"
                   android:gravity="center_horizontal"
-                  android:paddingBottom="2dp"
+                  android:paddingTop="4dp"
+                  android:paddingBottom="4dp"
                   android:textColor="#A4C639"
                   android:textSize="12sp"
         />

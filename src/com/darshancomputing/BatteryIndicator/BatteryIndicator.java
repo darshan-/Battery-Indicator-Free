@@ -234,7 +234,7 @@ public class BatteryIndicator extends Activity {
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW,
                     Uri.parse("market://details?id=com.darshancomputing.BatteryIndicatorPro")));
-                finish();
+                //finish();
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Sorry, can't launch Market!", Toast.LENGTH_SHORT).show();
             }
