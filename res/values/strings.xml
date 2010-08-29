@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name">Battery Indicator Pro</string>
+  <!-- These ones are different between Pro and Free-->
+  <string name="app_full_name">Battery Indicator</string>
   <string name="app_launcher_name">Battery Indicator</string>
-  <string name="settings_activity_name">Battery Indicator Pro - Settings</string>
-  <string name="settings_help_activity_name">Battery Indicator Pro - Settings</string>
-  <string name="help_activity_name">Battery Indicator Pro - Help</string>
-  <string name="log_view_activity_name">Battery Indicator Pro - Logs</string>
+  <string name="settings_activity_name">Battery Indicator - Settings</string>
+  <string name="settings_help_activity_name">Battery Indicator - Settings</string>
+  <string name="help_activity_name">Battery Indicator - Help</string>
+  <string name="log_view_activity_name">Battery Indicator - Logs</string>
+  <!-- These ones are different between Pro and Free-->
 
-  <string name="main_window_title">Battery Indicator Pro</string>
+  <string name="main_window_title">@string/app_full_name</string>
   <string name="battery_use_b">View Battery Use</string>
   <string name="upgrade_donate_b">Upgrade/Donate...</string>
   <string name="reenable_lock_screen">Reenable Lock Screen</string>

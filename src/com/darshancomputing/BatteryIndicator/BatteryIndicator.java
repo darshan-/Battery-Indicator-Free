@@ -28,6 +28,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -63,7 +64,7 @@ public class BatteryIndicator extends Activity {
     private int percent = -1;
     private DisplayMetrics metrics;
     private Button battery_use_b;
-    private Button toggle_lock_screen_b;
+    private Button upgrade_donate_b;
 
     private static final int DIALOG_CONFIRM_DISABLE_KEYGUARD = 0;
     private static final int DIALOG_CONFIRM_CLOSE = 1;
@@ -72,7 +73,6 @@ public class BatteryIndicator extends Activity {
     private final Runnable mUpdateStatus = new Runnable() {
         public void run() {
             updateStatus();
-            updateLockscreenButton();
         }
     };
 
@@ -168,24 +168,6 @@ public class BatteryIndicator extends Activity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         switch (id) {
-        case DIALOG_CONFIRM_DISABLE_KEYGUARD:
-            builder.setTitle(str.confirm_disable)
-                .setMessage(str.confirm_disable_hint)
-                .setCancelable(false)
-                .setPositiveButton(str.yes, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface di, int id) {
-                            setDisableLocking(true);
-                            di.cancel();
-                        }
-                    })
-                .setNegativeButton(str.cancel, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface di, int id) {
-                            di.cancel();
-                        }
-                    });
-
-            dialog = builder.create();
-            break;
         case DIALOG_CONFIRM_CLOSE:
             builder.setTitle(str.confirm_close)
                 .setMessage(str.confirm_close_hint)
@@ -234,25 +216,6 @@ public class BatteryIndicator extends Activity {
         status_since.setText(s);
     }
 
-    private void updateLockscreenButton() {
-        if (settings.getBoolean(SettingsActivity.KEY_DISABLE_LOCKING, false))
-            toggle_lock_screen_b.setText(str.reenable_lock_screen);
-        else
-            toggle_lock_screen_b.setText(str.disable_lock_screen);
-    }
-
-    private void setDisableLocking(boolean b) {
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean(SettingsActivity.KEY_DISABLE_LOCKING, b);
-        editor.commit();
-
-        biServiceConnection.biService.reloadSettings();
-
-        updateLockscreenButton();
-
-        if (settings.getBoolean(SettingsActivity.KEY_FINISH_AFTER_TOGGLE_LOCK, false)) finish();
-    }
-
     /* Battery Use */
     private final OnClickListener buButtonListener = new OnClickListener() {
         public void onClick(View v) {
@@ -265,17 +228,15 @@ public class BatteryIndicator extends Activity {
         }
     };
 
-    /* Toggle Lock Screen */
-    private final OnClickListener tlsButtonListener = new OnClickListener() {
+    // Upgrade/Donate
+    private OnClickListener udButtonListener = new OnClickListener() {
         public void onClick(View v) {
-            if (settings.getBoolean(SettingsActivity.KEY_DISABLE_LOCKING, false)) {
-                setDisableLocking(false);
-            } else {
-                if (settings.getBoolean(SettingsActivity.KEY_CONFIRM_DISABLE_LOCKING, true)) {
-                    showDialog(DIALOG_CONFIRM_DISABLE_KEYGUARD);
-                } else {
-                    setDisableLocking(true);
-                }
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("market://details?id=com.darshancomputing.BatteryIndicatorPro")));
+                finish();
+            } catch (Exception e) {
+                Toast.makeText(getApplicationContext(), "Sorry, can't launch Market!", Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -294,7 +255,7 @@ public class BatteryIndicator extends Activity {
             battery_use_b.setOnClickListener(buButtonListener);
         }
 
-        toggle_lock_screen_b.setOnClickListener(tlsButtonListener);
+        upgrade_donate_b.setOnClickListener(udButtonListener);
     }
 
     private void setTheme() {
@@ -307,8 +268,8 @@ public class BatteryIndicator extends Activity {
         main_layout.setPadding(theme.mainLayoutPaddingLeft, theme.mainLayoutPaddingTop,
                                theme.mainLayoutPaddingRight, theme.mainLayoutPaddingBottom);
 
-        battery_use_b = (Button) main_frame.findViewById(R.id.battery_use_b);
-        toggle_lock_screen_b = (Button) main_frame.findViewById(R.id.toggle_lock_screen_b);
+           battery_use_b = (Button) main_frame.findViewById(R.id.battery_use_b);
+        upgrade_donate_b = (Button) main_frame.findViewById(R.id.upgrade_donate_b);
 
         bindButtons();
     }
