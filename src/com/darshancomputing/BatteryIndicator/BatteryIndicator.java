@@ -73,7 +73,6 @@ public class BatteryIndicator extends Activity {
         public void run() {
             updateStatus();
             updateLockscreenButton();
-            updateTimes();
         }
     };
 
@@ -109,7 +108,7 @@ public class BatteryIndicator extends Activity {
 
         settings = PreferenceManager.getDefaultSharedPreferences(context);
 
-        themeName = settings.getString(SettingsActivity.KEY_MW_THEME, "default");
+        themeName = "default";
         setTheme();
 
         biServiceIntent = new Intent(this, BatteryIndicatorService.class);
@@ -149,9 +148,6 @@ public class BatteryIndicator extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-        case R.id.menu_logs:
-            mStartActivity(LogViewActivity.class);
-            return true;
         case R.id.menu_settings:
             mStartActivity(SettingsActivity.class);
             return true;
@@ -163,16 +159,6 @@ public class BatteryIndicator extends Activity {
             return true;
         default:
             return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String oldThemeName = themeName;
-        themeName = settings.getString(SettingsActivity.KEY_MW_THEME, "default");
-
-        if (! oldThemeName.equals(themeName)) {
-            setTheme();
         }
     }
 
@@ -321,34 +307,10 @@ public class BatteryIndicator extends Activity {
         main_layout.setPadding(theme.mainLayoutPaddingLeft, theme.mainLayoutPaddingTop,
                                theme.mainLayoutPaddingRight, theme.mainLayoutPaddingBottom);
 
-        updateTimes();
-
         battery_use_b = (Button) main_frame.findViewById(R.id.battery_use_b);
         toggle_lock_screen_b = (Button) main_frame.findViewById(R.id.toggle_lock_screen_b);
 
         bindButtons();
-    }
-
-    private void updateTimes() {
-        for (int i = 0; i < theme.timeRemainingIds.length; i++) {
-            LinearLayout ll = (LinearLayout) findViewById(theme.timeRemainingIds[i]);
-            if (ll != null) {
-                TextView label = (TextView) ll.findViewById(R.id.label);
-                TextView time = (TextView) ll.findViewById(R.id.time);
-
-                if (theme.timeRemainingVisible(i, settings)) {
-                    label.setText(res.getString(theme.timeRemainingStrings[i]));
-                    label.setTextColor(res.getColor(theme.timeRemainingColors[i]));
-                    time.setText(theme.timeRemaining(i, settings, percent));
-                    time.setTextColor(res.getColor(theme.timeRemainingColors[i]));
-                    label.setVisibility(View.VISIBLE);
-                    time.setVisibility(View.VISIBLE);
-                } else {
-                    label.setVisibility(View.GONE);
-                    time.setVisibility(View.GONE);
-                }
-            }
-        }
     }
 
     private class Str {

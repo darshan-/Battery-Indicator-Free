@@ -108,23 +108,7 @@ public class BatteryIndicatorService extends Service {
 
             /* I Take advantage of (count on) R.java having resources alphabetical and incrementing by one */
 
-            int icon;
-            if (settings.getBoolean(SettingsActivity.KEY_RED, res.getBoolean(R.bool.default_use_red)) &&
-                percent < Integer.valueOf(settings.getString(SettingsActivity.KEY_RED_THRESH, str.default_red_thresh)) &&
-                percent <= SettingsActivity.RED_ICON_MAX) {
-                icon = R.drawable.r000 + percent - 0;
-            } else if (settings.getBoolean(SettingsActivity.KEY_AMBER, res.getBoolean(R.bool.default_use_amber)) &&
-                       percent < Integer.valueOf(settings.getString(SettingsActivity.KEY_AMBER_THRESH, str.default_amber_thresh)) &&
-                       percent <= SettingsActivity.AMBER_ICON_MAX &&
-                       percent >= SettingsActivity.AMBER_ICON_MIN){
-                icon = R.drawable.a000 + percent - 0;
-            } else if (settings.getBoolean(SettingsActivity.KEY_GREEN, res.getBoolean(R.bool.default_use_green)) &&
-                       percent >= Integer.valueOf(settings.getString(SettingsActivity.KEY_GREEN_THRESH, str.default_green_thresh)) &&
-                       percent >= SettingsActivity.GREEN_ICON_MIN) {
-                icon = R.drawable.g020 + percent - 20;
-            } else {
-                icon = R.drawable.b000 + percent;
-            }
+            int icon = R.drawable.b000 + percent;
 
             /* Just treating any unplugged status as simply "Unplugged" now.
                Note that the main activity now assumes that the status is always 0, 2, or 5 */
@@ -153,7 +137,6 @@ public class BatteryIndicatorService extends Service {
             long currentTM = System.currentTimeMillis();
             long statusDuration;
             String last_status_since = settings.getString("last_status_since", null);
-            LogDatabase logs = new LogDatabase(context);
 
             SharedPreferences.Editor editor = settings.edit();
             if (last_status != status || last_status_cTM == -1 || last_percent == -1 ||
@@ -162,12 +145,6 @@ public class BatteryIndicatorService extends Service {
             {
                 last_status_since = formatTime(new Date());
                 statusDuration = 0;
-
-                if (settings.getBoolean(SettingsActivity.KEY_ENABLE_LOGGING, false)) {
-                    logs.logStatus(status, plugged, percent, currentTM, LogDatabase.STATUS_NEW);
-                    if (status != last_status && last_status == 0)
-                        logs.prune(Integer.valueOf(settings.getString(SettingsActivity.KEY_MAX_LOG_AGE, str.default_max_log_age)));
-                }
 
                 editor.putString("last_status_since", last_status_since);
                 editor.putLong("last_status_cTM", currentTM);
@@ -201,10 +178,6 @@ public class BatteryIndicatorService extends Service {
                 }
             } else {
                 statusDuration = currentTM - last_status_cTM;
-
-                if (settings.getBoolean(SettingsActivity.KEY_ENABLE_LOGGING, false) &&
-                    settings.getBoolean(SettingsActivity.KEY_LOG_EVERYTHING, false))
-                    logs.logStatus(status, plugged, percent, currentTM, LogDatabase.STATUS_OLD);
 
                 if (percent % 10 == 0)
                     editor.putInt("previous_charge", percent);
