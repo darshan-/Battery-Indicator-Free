@@ -36,10 +36,6 @@
                   android:textSize="12sp"
         />
 
-        <include layout="@layout/time_remaining_estimate_small"
-                 android:id="@+id/time_til_charged"
-        />
-
         <View android:layout_width="fill_parent"
               android:layout_height="2dp"
         />
@@ -59,22 +55,6 @@
                 android:layout_height="43dp"
 	        android:layout_width="fill_parent"
                 android:layout_gravity="center_horizontal"
-        />
-
-        <include layout="@layout/time_remaining_estimate_small"
-                 android:id="@+id/light_usage"
-        />
-
-        <include layout="@layout/time_remaining_estimate_small"
-                 android:id="@+id/normal_usage"
-        />
-
-        <include layout="@layout/time_remaining_estimate_small"
-                 android:id="@+id/heavy_usage"
-        />
-
-        <include layout="@layout/time_remaining_estimate_small"
-                 android:id="@+id/constant_usage"
         />
 
         <TextView android:layout_width="fill_parent"

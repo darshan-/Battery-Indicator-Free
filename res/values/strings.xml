@@ -9,6 +9,7 @@
 
   <string name="main_window_title">Battery Indicator Pro</string>
   <string name="battery_use_b">View Battery Use</string>
+  <string name="upgrade_donate_b">Upgrade/Donate...</string>
   <string name="reenable_lock_screen">Reenable Lock Screen</string>
   <string name="disable_lock_screen">Disable Lock Screen</string>
 
@@ -128,6 +129,18 @@
     which means you can download the source for free
     from <a href="http://code.google.com/p/battery-indicator/">the
     project website</a>.
+  </string>
+  <string name="help_introduction_free">This
+    is <i>Battery Indicator</i>, the free version of the
+    <i>Battery Indicator</i> family of apps.  It\'s available from
+    the Android Market, and it\'s an open source project,
+    which means you can download the source for free
+    from <a href="http://code.google.com/p/battery-indicator/">the
+    project website</a>.\n
+
+    \nPlease consider donating by upgrading to the
+    <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro
+      Version</a>.
   </string>
 
   <string name="help_cat_summary">Summary</string>
