@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Left, Top, Right, Bottom, just like setPadding() -->
+  <array name="theme_default_main_layout_padding">
+    <item>0</item>
+    <item>5</item>
+    <item>0</item>
+    <item>0</item>
+  </array>
+</resources>
