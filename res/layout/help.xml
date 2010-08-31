@@ -15,10 +15,10 @@
     <TextView android:id="@+id/version" style="@style/help_text" />
 
     <TextView style="@style/help_cat"  android:text="@string/help_cat_introduction" />
-    <TextView android:id="@+id/introduction" style="@style/help_text" android:text="@string/help_introduction" />
+    <TextView android:id="@+id/introduction" style="@style/help_text" android:text="@string/help_introduction_free" />
 
     <TextView style="@style/help_cat"  android:text="@string/help_cat_summary" />
-    <TextView style="@style/help_text" android:text="@string/help_summary" />
+    <TextView style="@style/help_text" android:text="@string/help_summary_free" />
 
     <TextView style="@style/help_cat"  android:text="@string/help_cat_limitations" />
     <TextView android:id="@+id/limitations" style="@style/help_text" android:text="@string/help_limitations" />

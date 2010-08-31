@@ -168,6 +168,24 @@
     to automatically disable it when plugged in and reenable it when unplugged.
     \n• Many more useful things that you\'ll discover throughout.
   </string>
+  <string name="help_summary_free"><i>Battery
+    Indicator</i> is a lightweight battery indicator for the
+    Android™ mobile operating system.  Its core feature is that it
+    provides an icon that lives in the status bar and shows you the
+    percentage of battery charge left.\n
+
+    \nThe Pro version offers a great deal more utility than that,
+    however.  Besides offering red, amber, and green icons, it also
+    has the following key features as of version 3.0:\n
+
+    \n• Fully configurable estimated charge/discharge time left.
+    \n• Logging of battery state.
+    \n• Themes for the main window (including a full-size window with
+    large, easy-to-read text).
+    \n• Manually disable/reenable the device lock screen, with the option
+    to automatically disable it when plugged in and reenable it when unplugged.
+    \n• Many more useful things that you\'ll discover throughout.
+  </string>
 
   <string name="help_cat_limitations">Limitations</string>
   <string name="help_limitations">(<i>These
