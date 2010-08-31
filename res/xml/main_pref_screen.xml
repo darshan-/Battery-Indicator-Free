@@ -5,21 +5,42 @@
      android:enabled="false"
   />
 
-  <Preference
-     android:key="color_settings"
-     android:title="@string/color_settings"
-     android:summary="@string/color_settings_summary"
-  />
+  <PreferenceCategory android:title="@string/pref_cat_temperature_unit">
+    <CheckBoxPreference
+       android:key="convert_to_fahrenheit"
+       android:title="@string/pref_convert_to_fahrenheit"
+       android:defaultValue="false"
+    />
+  </PreferenceCategory>
 
-  <Preference
-     android:key="time_settings"
-     android:title="@string/time_settings"
-     android:summary="@string/time_settings_summary"
-  />
+  <PreferenceCategory android:title="@string/pref_cat_autostart">
+    <ListPreference
+       android:key="autostart"
+       android:title="@string/pref_autostart_at_boot"
+       android:entries="@array/boot_pref_entries" 
+       android:entryValues="@array/boot_pref_values"
+       android:dialogTitle="@string/pref_autostart_at_boot_summary"
+       android:defaultValue="auto"
+    />
+  </PreferenceCategory>
 
-  <Preference
-     android:key="other_settings"
-     android:title="@string/other_settings"
-     android:summary="@string/other_settings_summary"
-  />
+  <PreferenceCategory android:title="@string/pref_cat_status_duration">
+    <ListPreference
+       android:key="status_dur_est"
+       android:title="@string/pref_status_dur_est"
+       android:entries="@array/status_dur_est_entries" 
+       android:entryValues="@array/status_dur_est_values"
+       android:dialogTitle="@string/pref_status_dur_est_summary"
+       android:defaultValue="@string/default_status_dur_est"
+    />
+  </PreferenceCategory>
+
+  <PreferenceCategory android:title="@string/pref_cat_more_settings_in_pro">
+    <Preference
+       android:summary="@string/pref_please_upgrade"
+       android:layout="@layout/pro_pref"
+       android:enabled="false"
+    />
+  </PreferenceCategory>
+
 </PreferenceScreen>

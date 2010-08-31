@@ -19,7 +19,7 @@
                   android:layout_height="wrap_content"
                   android:gravity="center_horizontal"
                   android:textColor="#fff"
-                  android:textSize="16sp"
+                  android:textSize="18sp"
                   android:text="@string/main_window_title_free"
         />
 
@@ -30,11 +30,11 @@
                   android:paddingTop="4dp"
                   android:paddingBottom="4dp"
                   android:textColor="#A4C639"
-                  android:textSize="12sp"
+                  android:textSize="13sp"
         />
 
         <View android:layout_width="fill_parent"
-              android:layout_height="2dp"
+              android:layout_height="4dp"
         />
 
         <Button android:id="@+id/battery_use_b"

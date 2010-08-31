@@ -282,6 +282,14 @@
     screen, temperature unit, autostart, and more.
   </string>
 
+  <string name="pref_cat_more_settings_in_pro">More Settings in Pro</string>
+  <string name="pref_please_upgrade">
+    The Pro version has many more settings and features, including
+    green, amber, and red icons, window themes, battery state logging,
+    auto/manual lock screen disable, charge/discharge remaining
+    estimates, and more.
+  </string>
+
   <string name="pref_cat_themes">Themes</string>
   <string name="pref_main_window_theme">Main Window Theme</string>
   <string name="pref_main_window_theme_help">

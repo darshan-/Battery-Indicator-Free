@@ -11,16 +11,20 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
   >
-    <TextView style="@style/help_cat"  android:text="@string/settings_overview" />
-    <TextView style="@style/help_text" android:text="@string/settings_overview_help" />
+    <TextView style="@style/help_cat"  android:text="@string/pref_cat_temperature_unit" />
+    <View style="@style/help_cat_post_margin" />
+    <TextView style="@style/help_pref" android:text="@string/pref_convert_to_fahrenheit" />
+    <TextView style="@style/help_text" android:text="@string/pref_convert_to_fahrenheit_help" />
 
-    <TextView style="@style/help_pref" android:text="@string/color_settings" />
-    <TextView style="@style/help_text" android:text="@string/color_settings_help" />
+    <View style="@style/help_cat_pre_margin" />
+    <TextView style="@style/help_cat"  android:text="@string/pref_cat_autostart" />
+    <View style="@style/help_cat_post_margin" />
+    <TextView style="@style/help_pref" android:text="@string/pref_autostart_at_boot" />
+    <TextView style="@style/help_text" android:text="@string/pref_autostart_at_boot_help" />
 
-    <TextView style="@style/help_pref" android:text="@string/time_settings" />
-    <TextView style="@style/help_text" android:text="@string/time_settings_help" />
-
-    <TextView style="@style/help_pref" android:text="@string/other_settings" />
-    <TextView style="@style/help_text" android:text="@string/other_settings_help" />
+    <TextView style="@style/help_cat"  android:text="@string/pref_cat_status_duration" />
+    <View style="@style/help_cat_post_margin" />
+    <TextView style="@style/help_pref" android:text="@string/pref_status_dur_est" />
+    <TextView style="@style/help_text" android:text="@string/pref_status_dur_est_help" />
   </LinearLayout>
 </ScrollView>
