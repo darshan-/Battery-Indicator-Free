@@ -18,10 +18,10 @@
     <TextView android:id="@+id/changelog" style="@style/help_text" android:text="@string/help_changelog" />
 
     <TextView style="@style/help_cat"  android:text="@string/help_cat_introduction" />
-    <TextView android:id="@+id/introduction" style="@style/help_text" android:text="@string/help_introduction_free" />
+    <TextView android:id="@+id/introduction" style="@style/help_text" android:text="@string/help_introduction" />
 
     <TextView style="@style/help_cat"  android:text="@string/help_cat_summary" />
-    <TextView style="@style/help_text" android:text="@string/help_summary_free" />
+    <TextView style="@style/help_text" android:text="@string/help_summary" />
 
     <TextView style="@style/help_cat"  android:text="@string/help_cat_limitations" />
     <TextView android:id="@+id/limitations" style="@style/help_text" android:text="@string/help_limitations" />
@@ -37,6 +37,8 @@
 
     <TextView style="@style/help_cat"  android:text="@string/help_cat_translations" />
     <TextView android:id="@+id/translations" style="@style/help_text" android:text="@string/help_translations" />
+    <TextView style="@style/help_pref" android:text="@string/help_subcat_translators" />
+    <TextView style="@style/help_text" android:text="@string/help_translators_list" />
 
     <TextView style="@style/help_cat"  android:text="@string/help_cat_contact" />
     <TextView android:id="@+id/contact" style="@style/help_text" android:text="@string/help_contact" />
