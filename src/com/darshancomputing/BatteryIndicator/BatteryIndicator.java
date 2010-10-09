@@ -52,8 +52,6 @@ public class BatteryIndicator extends Activity {
     private SharedPreferences settings;
     private final BIServiceConnection biServiceConnection = new BIServiceConnection();
 
-    /* For whatever reason, starting Battery Use in a new task like this allows it to start much more
-       quickly than if we left the flags off, starting it in our task. */
     private static final Intent batteryUseIntent = new Intent(Intent.ACTION_POWER_USAGE_SUMMARY)
         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     private static final IntentFilter batteryChangedFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
