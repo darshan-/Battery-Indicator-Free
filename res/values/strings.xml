@@ -38,6 +38,18 @@
 
   <string name="confirm_clear_logs">Really clear all logs?</string>
 
+  <string name="confirm_ten_percent_enable">Really enable 10% Mode?</string>
+  <string name="confirm_ten_percent_disable">Really disable 10% Mode?</string>
+  <string name="confirm_ten_percent_hint">
+    Warning: Changing this setting (both enabling and disabling it)
+    will reset your color settings.\n
+
+    \nIf you have a Motorola Droid, Motorola Droid X,
+    Motorola Droid 2, or Samsung Moment, you should turn
+    this on when you first get the app, and then leave it alone.  All
+    other phones, as far as I know, should always leave this off.
+  </string>
+
   <string name="first_run_title">Thank you!</string>
   <string name="first_run_message">Thanks
     for your donation/purchase!  <b><i>These two points are very important</i> :</b>\n
@@ -66,6 +78,7 @@
   <string name="menu_clear">Clear</string>
   <string name="menu_reverse">Reverse Order</string>
   <string name="menu_export">Export CSV</string>
+  <string name="menu_delete_alarm">Delete Alarm</string>
 
   <string name="percent_symbol">%</string>
   <string name="degree_symbol">°</string>
@@ -89,6 +102,7 @@
   <string name="read_only_storage">SD Card is read only.</string>
   <string name="file_written">File successfully written to root of SD card.</string>
 
+  <!-- These are used for the CSV export. -->
   <string name="date">date</string>
   <string name="time">time</string>
   <string name="status">status</string>
@@ -135,6 +149,35 @@
     <item>(USB)</item>
   </string-array>
 
+  <string-array name="alarm_types_display">
+    <item>Fully charged</item>
+    <item>Charge drops below</item>
+    <item>Charge rises above</item>
+    <item>Temperature rises above</item>
+    <item>Health failure</item>
+  </string-array>
+  <string-array name="alarm_type_entries">
+    <item>Becomes fully charged</item>
+    <item>Charge drops below...</item>
+    <item>Charge rises above...</item>
+    <item>Temperature rises above...</item>
+    <item>Health fails</item>
+  </string-array>
+  <string-array name="alarm_type_values">
+    <item>fully_charged</item>
+    <item>charge_drops</item>
+    <item>charge_rises</item>
+    <item>temp_rises</item>
+    <item>health_failure</item>
+  </string-array>
+
+  <string name="alarm_fully_charged">Battery is now fully charged</string>
+  <string name="alarm_charge_drops">"Battery charge is below "</string>
+  <string name="alarm_charge_rises">"Battery charge is above "</string>
+  <string name="alarm_temp_rises">"Battery temp. is above "</string>
+  <string name="alarm_health_failure">"Battery health is: "</string>
+  <string name="alarm_text">Select to edit alarms.</string>
+
   <string name="logs_empty">Logs Are Empty</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Log Item</item>
@@ -154,7 +197,7 @@
   <string name="one_six_needed">Sorry, Android 1.6+ needed!</string>
 
   <string name="currently_using">Currently using</string>
-  <string name="currently_set_to">Currently set to:</string>
+  <string name="currently_set_to">"Currently set to: "</string>
   <string name="currently_disabled">Currently Disabled</string>
 
   <string name="help_cat_version">Version</string>
@@ -302,6 +345,7 @@
     \nGonzalo Rodríguez Píriz
     \nskwt
     \nGabriele Ravanetti
+    \nPaul Fiorentino
   </string>
 
   <string name="help_cat_contact">Contact</string>
@@ -315,7 +359,7 @@
     at <a href="mailto:android@darshancomputing.com">android@darshancomputing.com</a>.
   </string>
 
-  <string name="pref_hint"><b>Hint:</b> Press MENU for help.</string>
+  <string name="pref_hint">Hint: Press MENU for help.</string>
 
   <string name="settings_overview">Overview</string>
   <string name="settings_overview_help">
@@ -342,6 +386,14 @@
     time remaining for USB/AC charging and light/normal/heavy/constant
     usage, and adjust the basis for these estimates.
   </string>
+  <string name="alarm_settings_subtitle">Alarm Settings</string>
+  <string name="alarm_settings">Alarms</string>
+  <string name="alarm_settings_summary">Control notifications for low/full battery</string>
+  <string name="alarm_settings_help">
+    You can have Battery Indicator notify you when your battery level
+    reaches a certain point (e.g., the battery becomes fully charged,
+    the battery level drops below 20%).
+  </string>
   <string name="other_settings">Other Settings</string>
   <string name="other_settings_summary"></string>
   <string name="other_settings_help">
@@ -352,10 +404,12 @@
   <string name="pref_cat_more_settings_in_pro">More Settings in Pro</string>
   <string name="pref_please_upgrade">
     The Pro version has many more settings and features, including
-    green, amber, and red icons, window themes, battery state logging,
-    auto/manual lock screen disable, charge/discharge remaining
+    green, amber, and red icons, alarms, window themes, battery state
+    logging, auto/manual lock screen disable, charge/discharge remaining
     estimates, and more.
   </string>
+
+  <string name="add_alarm">Add alarm</string>
 
   <string name="pref_cat_themes">Themes</string>
   <string name="pref_main_window_theme">Main Window Theme</string>
@@ -391,7 +445,7 @@
     charge as a worst case.
   </string>
   <string name="pref_max_log_age">Maximum Log Age</string>
-  <string name="pref_max_log_age_summary">Delete Logs Older Than:</string>
+  <string name="pref_max_log_age_summary">Delete logs older than:</string>
   <string name="pref_max_log_age_help">
     If logging is enabled, then whenever you plug in your phone, logs
     older than this will be deleted.
@@ -467,7 +521,7 @@
 
   <string name="pref_cat_autostart">Autostart</string>
   <string name="pref_autostart_at_boot">Autostart at Boot</string>
-  <string name="pref_autostart_at_boot_summary">Start Battery Indicator When Device Boots?</string>
+  <string name="pref_autostart_at_boot_summary">Start Battery Indicator when device boots:</string>
   <string name="pref_autostart_at_boot_help">
     Controls whether Battery Indicator should start itself
     automatically when the device boots up.\n
@@ -502,7 +556,7 @@
 
   <string name="pref_cat_status_duration">Status Duration (For/Since...)</string>
   <string name="pref_status_dur_est">When to Approximate</string>
-  <string name="pref_status_dur_est_summary">Start Approximating Hours Since Status Change</string>
+  <string name="pref_status_dur_est_summary">Start approximating hours since status change:</string>
   <string name="pref_status_dur_est_help">
     Determines when the notification switches from saying, e.g.,
     \"Unplugged Since 1:10 PM\" to saying something like \"Unplugged
@@ -534,13 +588,13 @@
     until the phone is fully charged.
   </string>
   <string name="pref_usb_charge_time">USB Charge</string>
-  <string name="pref_usb_charge_time_summary">USB Charge Time From 0% to 100% in Hours</string>
+  <string name="pref_usb_charge_time_summary">USB charge time from 0% to 100% in hours:</string>
   <string name="pref_usb_charge_time_help">
     Enter how long you think your battery would take to completely
     charge from 0% to 100% on USB power.
   </string>
   <string name="pref_ac_charge_time">AC Charge</string>
-  <string name="pref_ac_charge_time_summary">AC Charge Time From 0% to 100% in Hours</string>
+  <string name="pref_ac_charge_time_summary">AC charge time from 0% to 100% in hours:</string>
   <string name="pref_ac_charge_time_help">
     Enter how long you think your battery would take to completely
     charge from 0% to 100% on AC power.
@@ -553,7 +607,7 @@
     \"Light Usage\".
   </string>
   <string name="pref_light_usage_time">Light Usage</string>
-  <string name="pref_light_usage_time_summary">Light Usage Time From 100% to 0% in Hours</string>
+  <string name="pref_light_usage_time_summary">Light usage time from 100% to 0% in hours:</string>
   <string name="pref_light_usage_time_help">
     Enter how long you think your battery would take to completely
     discharge from 100% to 0% at whatever you consider \"Light Usage\".
@@ -566,7 +620,7 @@
     \"Normal Usage\".
   </string>
   <string name="pref_normal_usage_time">Normal Usage</string>
-  <string name="pref_normal_usage_time_summary">Normal Usage Time From 100% to 0% in Hours</string>
+  <string name="pref_normal_usage_time_summary">Normal usage time from 100% to 0% in hours:</string>
   <string name="pref_normal_usage_time_help">
     Enter how long you think your battery would take to completely
     discharge from 100% to 0% at whatever you consider \"Normal Usage\".
@@ -579,7 +633,7 @@
     \"Heavy Usage\".
   </string>
   <string name="pref_heavy_usage_time">Heavy Usage</string>
-  <string name="pref_heavy_usage_time_summary">Heavy Usage Time From 100% to 0% in Hours</string>
+  <string name="pref_heavy_usage_time_summary">Heavy usage time from 100% to 0% in hours:</string>
   <string name="pref_heavy_usage_time_help">
     Enter how long you think your battery would take to completely
     discharge from 100% to 0% at whatever you consider \"Heavy Usage\".
@@ -592,7 +646,7 @@
     \"Constant Usage\".
   </string>
   <string name="pref_constant_usage_time">Constant Usage</string>
-  <string name="pref_constant_usage_time_summary">Constant Usage Time From 100% to 0% in Hours</string>
+  <string name="pref_constant_usage_time_summary">Constant usage time from 100% to 0% in hours:</string>
   <string name="pref_constant_usage_time_help">
     Enter how long you think your battery would take to completely
     discharge from 100% to 0% at whatever you consider \"Constant Usage\".
@@ -628,8 +682,8 @@
     Whether or not to use a red icon below the specified threshold.
   </string>
   <string name="pref_red_thresh">Red Threshold</string>
-  <string name="pref_red_thresh_summary">Red Icon Below What Charge Percentage?</string>
-  <string name="pref_red_thresh_summary10">Red Icon At or Below What Charge Percentage?</string>
+  <string name="pref_red_thresh_summary">Red icon below what charge percentage:</string>
+  <string name="pref_red_thresh_summary10">Red icon at or below what charge percentage:</string>
   <string name="pref_red_thresh_help">Specifies the charge level which
     the icon should turn red below (or <i>at</i>, in 10% Mode).\n
 
@@ -645,8 +699,8 @@
     Whether or not to use an amber icon below the specified threshold.
   </string>
   <string name="pref_amber_thresh">Amber Threshold</string>
-  <string name="pref_amber_thresh_summary">Amber Icon Below What Charge Percentage?</string>
-  <string name="pref_amber_thresh_summary10">Amber Icon At or Below What Charge Percentage?</string>
+  <string name="pref_amber_thresh_summary">Amber icon below what charge percentage:</string>
+  <string name="pref_amber_thresh_summary10">Amber icon at or below what charge percentage:</string>
   <string name="pref_amber_thresh_help">Specifies the charge level
     which the icon should turn amber below (or <i>at</i>, in 10%
     Mode).\n
@@ -666,7 +720,7 @@
     Whether or not to use a green icon at or above the specified threshold.
   </string>
   <string name="pref_green_thresh">Green Threshold</string>
-  <string name="pref_green_thresh_summary">Green Icon At or Above What Charge Percentage?</string>
+  <string name="pref_green_thresh_summary">Green icon at or above what charge percentage:</string>
   <string name="pref_green_thresh_help">Specifies the charge level
     which the icon should be green at or above.\n
 
@@ -699,6 +753,110 @@
     \nAs far as I\'m aware, all other devices report every 1%, and so
     should <i>not</i> turn this on.
   </string>
+  <string name="pref_summaries_use_formatter">Summaries Use Formatter</string>
+  <string name="pref_summaries_use_formatter_summary">A workaround for a FC on CyanogenMod</string>
+  <string name="pref_summaries_use_formatter_help">Due to a bug in
+    CyanogenMod (CM), if you use CM, you will probably need to check
+    this to avoid the Force Close that happens when editing certain
+    settings in this app.  Since this bug is probably present in only
+    certain versions of CM, and since the bug will hopefully be fixed,
+    this workaround is optional.\n
+
+    \nIn short, you should check this box if you use CyanogenMod and
+    get a Force Close when editing certain Battery Indicator settings.
+  </string>
+
+  <string name="alarms_overview">Alarms Overview</string>
+  <string name="alarms_overview_help">
+    This page allows you to add new alarms, quickly enable or disable
+    existing alarms, or delete alarms.\n
+
+    \nTo add a new alarm, press \"Add alarm\" — this will create a new
+    alarm and take you to the alarm settings page, where you can
+    control the settings for the new alarm.  See the help on that page
+    for more details.\n
+
+    \nBelow the \"Add alarm\" button is a list of any alarms you have
+    created.\n
+
+    \n• To edit an existing alarm, just press it.
+    \n• To delete an alarm, long-press it, then select \"Delete
+    Alarm\".  (You can also delete an alarm from the individual alarm
+    settings page by pressing MENU then \"Delete Alarm\".)
+    \n• To quickly toggle whether an alarm is enabled, press the alarm
+    clock icon to the left of the alarm text.  (You can also enable or
+    disable an alarm from the individual alarm settings page.)
+  </string>
+
+  <string name="pref_alarm_enabled">Enable Alarm</string>
+  <string name="pref_alarm_enabled_summary"></string>
+  <string name="pref_alarm_enabled_help">If you want to temporarily
+  disable an alarm without having to recreate it when you want it
+  again, you can turn it off and on either here or on the main alarms
+  page.
+  </string>
+
+  <string name="pref_cat_alarm_conditions">Alarm Conditions</string>
+  <string name="pref_cat_alarm_conditions_help">This is where you can
+  control what conditions trigger the alarm.
+  </string>
+  <string name="pref_alarm_type">Alarm Type</string>
+  <string name="pref_alarm_type_summary">Trigger alarm when battery:</string>
+  <string name="pref_alarm_type_help">There are currently five types
+    of alarm that you can choose from.\n
+
+    \nThe \"Becomes fully charged\" alarm will notify you when the
+    status of your battery changes from \"Charging\" to \"Fully
+    Charged\".  Note that on many devices, this isn\'t necessarily the
+    same thing as being at 100% charge.\n
+
+    \nThe charge and temperature alarms require you to set a threshold
+    below, after choosing that alarm type.\n
+
+    \nThe \"Health Fails\" alarm will notify you if your battery health
+    becomes something other than \"Unknown\" or \"Good Health\", as
+    reported by Android.
+  </string>
+  <string name="pref_alarm_threshold">Threshold</string>
+  <string name="alarm_pref_not_used">Not used for this alarm type</string>
+  <string name="pref_alarm_threshold_summary">Alarm threshold:</string>
+  <string name="pref_alarm_threshold_help">
+    For charge and temperature alarms, you need to set the temperature
+    or charge level that will trigger the alarm.
+  </string>
+
+  <string name="pref_cat_notification_settings">Notification Settings</string>
+  <string name="pref_cat_notification_settings_help">This is where you
+  can control various aspects of the alarm notification that is
+  created to notify you when an alarm has been triggered.
+  </string>
+  <string name="pref_alarm_ringtone">Ringtone</string>
+  <string name="pref_alarm_ringtone_summary"></string>
+  <string name="pref_alarm_ringtone_help">
+    Here you can control which sound to play when the alarm is
+    triggered.  Select \'Silent\' if you don\'t want a sound to be
+    played.
+  </string>
+  <string name="silent">Silent</string>
+  <string name="pref_alarm_vibrate">Vibrate</string>
+  <string name="pref_alarm_vibrate_summary"></string>
+  <string name="pref_alarm_vibrate_help">
+    If all goes well, setting this option will make the device vibrate
+    when the alarm is triggered, unless the device is in Silent Mode,
+    unless you have the device set up to vibrate even in Silent Mode.
+    In other words, it should do what you expect.  Please email me if
+    something goes astray.
+  </string>
+  <string name="pref_alarm_lights">Flash Lights</string>
+  <string name="pref_alarm_lights_summary"></string>
+  <string name="pref_alarm_lights_help">
+    Sets whether the notification should enable the device\'s default
+    lights.  This generally flashes an LED or trackball.  Note that
+    every Android device I\'ve used has been slightly buggy in this
+    department.  If you have this checked, then the notification will
+    request Android to flash lights, but it might not always actually
+    happen.
+  </string>
 
   <string-array name="mw_theme_pref_entries">
     <item>Default Small</item>
@@ -714,7 +872,7 @@
   <string-array name="boot_pref_entries">
     <item>Always</item>
     <item>Never</item>
-    <item>If Running on Shutdown</item>
+    <item>If running on shutdown</item>
   </string-array>
   <string-array name="boot_pref_values">
     <item>always</item>
@@ -724,11 +882,11 @@
 
   <string-array name="status_dur_est_entries">
     <item>Always</item>
-    <item>After 1 Hour</item>
-    <item>After 2 Hours</item>
-    <item>After 3 Hours</item>
-    <item>After 6 Hours</item>
-    <item>After 12 Hours</item>
+    <item>After 1 hour</item>
+    <item>After 2 hours</item>
+    <item>After 3 hours</item>
+    <item>After 6 hours</item>
+    <item>After 12 hours</item>
   </string-array>
   <string-array name="status_dur_est_values">
     <item>0</item>
@@ -740,10 +898,10 @@
   </string-array>
 
   <string-array name="max_log_age_entries">
-    <item>1 Day</item>
-    <item>2 Days</item>
-    <item>4 Days</item>
-    <item>1 Week</item>
+    <item>1 day</item>
+    <item>2 days</item>
+    <item>4 days</item>
+    <item>1 week</item>
   </string-array>
   <string-array name="max_log_age_values">
     <item>24</item>
