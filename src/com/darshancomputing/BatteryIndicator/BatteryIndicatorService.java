@@ -106,6 +106,10 @@ public class BatteryIndicatorService extends Service {
 
             int percent = level * 100 / scale;
 
+            if (status  > 5){ status  = 1; /* Unknown */ }
+            if (health  > 6){ health  = 1; /* Unknown */ }
+            if (plugged > 2){ plugged = 0; /* Unknown */ }
+
             /* I Take advantage of (count on) R.java having resources alphabetical and incrementing by one */
 
             int icon = R.drawable.b000 + percent;
@@ -114,8 +118,6 @@ public class BatteryIndicatorService extends Service {
                Note that the main activity now assumes that the status is always 0, 2, or 5 */
             if (plugged == 0) status = 0; /* TODO: use static class CONSTANTS instead of numbers */
 
-            /* TODO: I guess I should make sure status, plugged, and health are all within array limits...
-                     If one is out of bounds, set it to 1 or 0, whichever is "Unknown"... */
             String statusStr = str.statuses[status];
             if (status == 2) statusStr += " " + str.pluggeds[plugged]; /* Add '(AC)' or '(USB)' if charging */
 
