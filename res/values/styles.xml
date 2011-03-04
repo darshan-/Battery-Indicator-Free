@@ -50,6 +50,9 @@
     <!--item name="android:windowAnimationStyle">@null</item-->
   </style>
 
+  <style name="bi_help_theme" parent="@android:style/Theme.Light">
+  </style>
+
   <color name="android_green">#A4C639</color>
   <color name="my_yellow">#E8D018</color>
   <color name="my_darker_yellow">#D0BF27</color>
@@ -66,6 +69,8 @@
   <color name="old_status">#ccc</color>
 
   <!--color name="heavy_usage">#DD901C</color-->
+
+  <dimen name="main_frame_width">180dp</dimen>
 
   <!-- Left, Top, Right, Bottom, just like setPadding() -->
   <array name="theme_default_main_layout_padding">

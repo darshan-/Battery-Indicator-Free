@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.darshancomputing.BatteryIndicator"
-          android:versionCode="33"
-          android:versionName="4.0.0-dev"
+          android:versionCode="34"
+          android:versionName="4.0.0"
 >
   <application android:label="@string/app_full_name_free"
                android:icon="@drawable/battery"
+               android:hardwareAccelerated="true"
   >
     <activity android:name=".BatteryIndicator"
               android:label="@string/app_launcher_name"
@@ -28,14 +29,14 @@
 
     <activity android:name=".SettingsHelpActivity"
               android:label="@string/settings_help_activity_name_free"
-              android:theme="@android:style/Theme.Light"
+              android:theme="@style/bi_help_theme"
               android:stateNotNeeded="true"
 	      android:excludeFromRecents="true"
     />
 
     <activity android:name=".HelpActivity"
               android:label="@string/help_activity_name_free"
-              android:theme="@android:style/Theme.Light"
+              android:theme="@style/bi_help_theme"
               android:stateNotNeeded="true"
 	      android:excludeFromRecents="true"
     />

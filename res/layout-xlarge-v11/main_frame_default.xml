@@ -10,7 +10,7 @@
                     android:layout_width="@dimen/main_frame_width"
                     android:layout_height="wrap_content"
                     android:paddingLeft="7dp"
-                    android:paddingTop="4dp"
+                    android:paddingTop="7dp"
                     android:paddingRight="7dp"
                     android:paddingBottom="7dp"
       >
@@ -19,7 +19,7 @@
                   android:layout_height="wrap_content"
                   android:gravity="center_horizontal"
                   android:textColor="#fff"
-                  android:textSize="18sp"
+                  android:textSize="24sp"
                   android:text="@string/main_window_title_free"
         />
 
@@ -30,7 +30,7 @@
                   android:paddingTop="4dp"
                   android:paddingBottom="4dp"
                   android:textColor="#A4C639"
-                  android:textSize="13sp"
+                  android:textSize="16sp"
         />
 
         <View android:layout_width="fill_parent"
@@ -58,23 +58,11 @@
         <TextView android:layout_width="fill_parent"
                   android:layout_height="wrap_content"
                   android:paddingLeft="4dp"
-                  android:paddingTop="2dp"
+                  android:paddingTop="5dp"
                   android:paddingBottom="5dp"
                   android:textColor="#FFF"
-                  android:textSize="12sp"
+                  android:textSize="16sp"
                   android:text="@string/press_back_to_leave"
-        />
-
-        <TextView android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:paddingLeft="4dp"
-                  android:textColor="#FFF"
-                  android:textSize="12sp"
-                  android:text="@string/press_menu_for_more"
-        />
-
-        <View android:layout_width="fill_parent"
-              android:layout_height="2dp"
         />
       </LinearLayout>
 </LinearLayout>
