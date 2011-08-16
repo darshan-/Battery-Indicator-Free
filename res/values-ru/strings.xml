@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="yes" formatted="false">Да</string>
+  <string name="first_run_title" formatted="false">Спасибо!</string>
+  <string name="menu_settings" formatted="false">Настройки</string>
+  <string name="menu_close" formatted="false">Закрыть</string>
+  <string name="menu_help" formatted="false">Помощь</string>
+  <string name="percent_symbol" formatted="false">%</string>
+  <string name="degree_symbol" formatted="false">°</string>
+  <string name="fahrenheit" formatted="false">Фаренгейт</string>
+  <string name="fahrenheit_symbol" formatted="false">F</string>
+  <string name="celsius" formatted="false">Цельсий</string>
+  <string name="celsius_symbol" formatted="false">C</string>
+  <string name="volt_symbol" formatted="false">v</string>
+</resources>

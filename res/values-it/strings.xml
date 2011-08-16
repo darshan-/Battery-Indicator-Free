@@ -70,6 +70,10 @@
   <string name="pref_autostart_at_boot" formatted="false">Autostart al Boot</string>
   <string name="pref_autostart_at_boot_summary" formatted="false">Avvia Battery Indicator Quando Il Dispositivo Si Accende?</string>
   <string name="pref_autostart_at_boot_help" formatted="false">Controlla se Battery Indicator dovrebbe avviarsi automaticamente quando si accende il dispositivo.\n\nL\' opzione \"Se è in Esecuzione Allo Spegnimento\" lavora con particolare riguardo se hai recentemente avviato o fermato Battery Indicator manualmente. Quindi significa che se si uccide Battery Indicator attraverso qualcosa di altro , come un task killer, poi Battery Indicator non saprà quando fermarsi, e sarà ancora avviato al boot se lo avete impostato così.</string>
+  <string name="pref_cat_charge_as_text" formatted="false">Livello Carica Testuale</string>
+  <string name="pref_charge_as_text" formatted="false">Livello Carica Testuale</string>
+  <string name="pref_charge_as_text_summary" formatted="false">Mostra il livello di carica come testo in grande a fianco dell\' icona?</string>
+  <string name="pref_charge_as_text_help" formatted="false">Ho avuto alcuni utenti con problemi di vista che mi hanno chiesto di aggiungere questa opzione, per cui il livello di carica viene mostrato come testo (che è più grande e facile da leggere) proprio accanto all\' icona quando si trascina verso il basso l\' area notifiche. L\' icona attuale non sarà diversa, quindi questo aiuterà solo quando si trascinerà verso il basso la barra delle notifiche, ma è meglio di niente, ed è abbastanza facile da aggiungere per chi la vuole.\n\nPer salvare spazio prezioso, ho fatto questo in modo poco elegante, simply plopping the number in there and carrying on. Questo risulta più facile da leggere rispetto a quando ho inserito il simbolo di percentuale, e significa che il testo dovrebbe adattarsi a tutti. E\' possibile che se hai un dispositivo particolarmente piccolo, l\' attivazione potrebbe rendere la scritta AM/PM all\' estrema destra deformata.</string>
   <string name="pref_cat_status_duration" formatted="false">Durata Stato (Per/Dal...)</string>
   <string name="pref_status_dur_est" formatted="false">Approssimazione tempo</string>
   <string name="pref_status_dur_est_summary" formatted="false">Inizio Approssimazione Tempo Dallo Stato Di Carica</string>
@@ -108,9 +112,10 @@
     <item>Fallito</item>
   </string-array>
   <string-array name="pluggeds">
-    <item>Sconosciuto</item>
+    <item>Unplugged</item>
     <item>(AC)</item>
     <item>(USB)</item>
+    <item>(?)</item>
   </string-array>
   <string-array name="mw_theme_pref_entries">
     <item>Piccola Di Default</item>

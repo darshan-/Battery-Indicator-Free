@@ -11,12 +11,13 @@
   <string name="reenable_lock_screen" formatted="false">Blokkeer scherm</string>
   <string name="disable_lock_screen" formatted="false">Deblokkeer scherm</string>
   <string name="confirm_disable" formatted="false">Deblokkeren scherm bevestigen?</string>
+  <string name="confirm_disable_hint" formatted="false">Hint: Zet deze bevestiging uit in het menu Instellingen</string>
   <string name="yes" formatted="false">Ja</string>
-  <string name="cancel" formatted="false">Annuleer</string>
+  <string name="cancel" formatted="false">Nee</string>
   <string name="confirm_close" formatted="false">Echt afsluiten?</string>
-  <string name="confirm_close_hint" formatted="false">Batterij Indicator zal volledig worden afgesloten, ook in de statusbalk.\n\nWil je terug naar het hoofdscherm en Batterij Indicator actief houden, ddruk dan op Annuleer en druk de Home/Back knop om naar het hoofdscherm te gaan.\n</string>
+  <string name="confirm_close_hint" formatted="false">Batterij Indicator zal volledig worden afgesloten, ook in de statusbalk.\n\nWil je terug naar het hoofdscherm en Batterij Indicator actief houden, druk dan op Annuleer en druk de Home/Back knop om naar het hoofdscherm te gaan.\n</string>
   <string name="first_run_title" formatted="false">Bedankt!</string>
-  <string name="first_run_message" formatted="false">Bedankt voor je donatie/aanschaf! <b> <i>Let op deze twee punten:</i>:</b>\n• Bij gebruik van een \"<b>task killer</b>\" / process manager, zet Batterij Indicator Pro op de Ignore/Negeer lijst. <i>(Ook al staat de gratis versie al op de Ignore/Negeer lijst!)</i>\n\n• Bij gebruik van een <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, of <b>Samsung Moment</b>, zet dan de \"10% mode\" aan in het menu \"Extra Instellingen\".</string>
+  <string name="first_run_message" formatted="false">Bedankt voor je donatie/aanschaf! <b> <i>Let op deze twee punten:</i>:</b>\n• Bij gebruik van een \"<b>task killer</b>\" / \"<b>process manager</b>\", zet Batterij Indicator Pro op de Ignore/Negeer lijst. <i>(Ook al staat de gratis versie al op de Ignore/Negeer lijst!)</i>\n\n• Bij gebruik van een <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, of <b>Samsung Moment</b>, zet dan de \"10% mode\" aan in het menu \"Extra Instellingen\".</string>
   <string name="first_run_message_free" formatted="false">Bedankt voor het downloaden van Batterij Indicator! <b><i>Let op het volgende:</i>:</b>\nBij gebruik van een \"<b>task killer</b>\" / process manager, zet Batterij Indicator op de Ignore/Negeer lijst.</string>
   <string name="okay" formatted="false">Oké</string>
   <string name="menu_settings" formatted="false">Instellingen</string>
@@ -30,19 +31,42 @@
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Druk op TERUG om af te sluiten.</string>
-  <string name="press_menu_for_more" formatted="false">Druk op Menu voor meer opties.</string>
+  <string name="press_menu_for_more" formatted="false">Druk op MENU voor meer opties.</string>
   <string name="discharging_from" formatted="false">Ontladen van</string>
   <string name="charging_from" formatted="false">Opladen van</string>
   <string name="fully_charged" formatted="false">Volledig opgeladen</string>
   <string name="since" formatted="false">Sinds</string>
-  <string name="one_six_needed" formatted="false">Sorry, Android 1.6 of hoger!</string>
+  <string name="one_six_needed" formatted="false">Sorry, alleen voor Android 1.6 of hoger!</string>
   <string name="currently_using" formatted="false">Huidig verbruik</string>
   <string name="currently_set_to" formatted="false">"Ingesteld op:"</string>
   <string name="currently_disabled" formatted="false">Momenteel uitgeschakeld</string>
   <string name="help_cat_version" formatted="false">Versie</string>
   <string name="help_cat_changelog" formatted="false">Changelogboek</string>
+  <string name="help_cat_introduction" formatted="false">Introductie</string>
+  <string name="help_introduction_free" formatted="false">Dit is <i>Batterij Indicator</i>, de gratis applicatie van de <i>Battery Indicator</i> familie. Je kunt deze applicatie gratie downloaden via Android Market, maar het is een open-source project. Dit betekent dat je de sourse code gratis kunt downloaden via <a href="http://code.google.com/p/battery-indicator/">de project website</a>.\n\nOverweeg de aanschaf van <i>Batterij Indicator Pro</i> via Android Market <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a>.</string>
+  <string name="help_cat_summary" formatted="false">Samenvatting</string>
+  <string name="help_cat_limitations" formatted="false">Beperkingen</string>
+  <string name="help_cat_features" formatted="false">Kenmerken</string>
+  <string name="help_cat_no_warranty" formatted="false">Geen garantie</string>
+  <string name="help_cat_acknowledgments" formatted="false">Dankbetuigingen</string>
+  <string name="help_acknowledgments" formatted="false">Zonder bijdrage van vrijwillige vertalers, zou deze applicatie alleen beschikbaar zijn in het Engels. Bedankt!\n\nOnze dank gaat uit naar Google en alle andere open-source programmeurs die dit Android platform en deze applicatie mogelijk maken/\n\nHet installatie icoontje (de batterij rechtsboven in Market) is gebaseerd op een icoon van <a href="http://www.oxygen-icons.org">het Oxygen icoon thema</a> en is gebruikt onder de <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Common Attribution-ShareAlike 3.0 Licentie</a>.</string>
+  <string name="help_cat_translations" formatted="false">Vertalingen</string>
+  <string name="help_subcat_translators" formatted="false">Vertalers</string>
+  <string name="help_cat_contact" formatted="false">Contact</string>
+  <string name="help_contact" formatted="false">Als je vragen of problemen hebt, kijk dan eerst op <a href="http://code.google.com/p/battery-indicator/wiki/FAQ">the project FAQ</a>.\n\nAls je opmerkingen hebt, of problemen ondervind die NIET in de FAQ staan, kun je me mailen op: <a href="mailto:android@darshancomputing.com">android@darshancomputing.com</a>.</string>
   <string name="pref_hint" formatted="false">Hint: Druk MENU voor help.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Meer Instellingen in Pro</string>
+  <string name="pref_cat_temperature_unit" formatted="false">Temperatuur weergave</string>
+  <string name="pref_convert_to_fahrenheit" formatted="false">Gebruik Fahrenheit</string>
+  <string name="pref_cat_autostart" formatted="false">Automatisch starten Batterij Indicator</string>
+  <string name="pref_autostart_at_boot" formatted="false">Automatisch starten</string>
+  <string name="pref_autostart_at_boot_summary" formatted="false">Start Batterij Indicator als telefoon opstart:</string>
+  <string name="pref_cat_charge_as_text" formatted="false">Waarde batterijlading</string>
+  <string name="pref_charge_as_text" formatted="false">Waarde batterijlading</string>
+  <string name="pref_charge_as_text_summary" formatted="false">Waarde batterijlading als grotere tekst naast icoon plaatsen?</string>
+  <string name="pref_cat_status_duration" formatted="false">Status Duur (Voor/Sinds...)</string>
+  <string name="pref_status_dur_est" formatted="false">Wanneer schatten</string>
+  <string name="pref_status_dur_est_summary" formatted="false">Start schatten van uren sinds statusverandering:</string>
   <string-array name="statuses">
     <item>Losgekoppeld</item>
     <item>Onbekend</item>
@@ -77,9 +101,10 @@
     <item>Fout</item>
   </string-array>
   <string-array name="pluggeds">
-    <item>Onbekend</item>
+    <item>Unplugged</item>
     <item>(AC)</item>
     <item>(USB)</item>
+    <item>(?)</item>
   </string-array>
   <string-array name="alarm_types_display">
     <item>Volledig opgeladen</item>
@@ -97,7 +122,7 @@
   </string-array>
   <string-array name="mw_theme_pref_entries">
     <item>Klein (standaard)</item>
-    <item/>
+    <item>Kleurrijk klein</item>
     <item>Volledig scherm</item>
   </string-array>
   <string-array name="boot_pref_entries">

@@ -70,6 +70,10 @@
   <string name="pref_autostart_at_boot" formatted="false">Démarrage automatique au lancement</string>
   <string name="pref_autostart_at_boot_summary" formatted="false">Démarrer Battery Indicator lorsque le téléphone s\'allume ?</string>
   <string name="pref_autostart_at_boot_help" formatted="false">Choisissez si l\'application doit démarrer automatiquement lorsque le téléphone démarre.\n\nL\'option \"Si lancé à l\'extinction\" est active l\'application démarrera automatiquement au démarrage de l\'appareil si elle était lancée lors de l\'extinction. Si vous quittez l\'application par un autre moyen que par elle-même (comme par exemple grâce à un task killer) elle se relancera automatiquement lors du prochain démarrage du téléphone.</string>
+  <string name="pref_cat_charge_as_text" formatted="false">Niveau de charge textuel</string>
+  <string name="pref_charge_as_text" formatted="false">Niveau de charge textuel</string>
+  <string name="pref_charge_as_text_summary" formatted="false">Voir le niveau de charge sous forme d\'un texte près de l\'icône ?</string>
+  <string name="pref_charge_as_text_help" formatted="false">Quelques utilisateurs malvoyants m\'ont demandé d\'ajouter cette option, qui affiche le niveau de charge sous forme de texte (ce qui est plus facile à lire) à droite de l\'icône située dans la zone de notification. L\'icône actuelle n\'est pas différente, l\'option n\'affecte que celle de la zone de notification, mais c\'est mieux que rien, et assez facile à ajouter pour ceux qui le souhaitent.\n\nAfin de gagner une précieuse place, j\'ai réalisé celà de manière peu esthétique en mettant juste le nombre à droite. Ceci est plus lisible que si j\'avais ajouté le symbole pourcent et permet à tout le texte d\'être affiché à l\'écran. Cependant il est possible que sur les appreils particulièrement petits, qu\'activer cette option éloigne trop les symboles AM/PM et les fasse sortir du bord de l\'écran.</string>
   <string name="pref_cat_status_duration" formatted="false">Statut durée</string>
   <string name="pref_status_dur_est" formatted="false">Quand utiliser l\'approximation</string>
   <string name="pref_status_dur_est_summary" formatted="false">Utilisation de l\'approximation de l\'heure de changement de statut</string>
@@ -108,9 +112,10 @@
     <item>Défaut</item>
   </string-array>
   <string-array name="pluggeds">
-    <item>Inconnu</item>
+    <item>Unplugged</item>
     <item>(AC)</item>
     <item>(USB)</item>
+    <item>(?)</item>
   </string-array>
   <string-array name="alarm_types_display">
     <item>Complètement chargé</item>

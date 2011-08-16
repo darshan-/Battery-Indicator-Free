@@ -60,6 +60,9 @@
   <string name="pref_cat_autostart" formatted="false">Automatické spustenie</string>
   <string name="pref_autostart_at_boot" formatted="false">Spustiť automaticky po spustení</string>
   <string name="pref_autostart_at_boot_summary" formatted="false">Spustiť Battery Indicator keď zariadenie štartuje:</string>
+  <string name="pref_cat_charge_as_text" formatted="false">Stav nabitia v textovej podobe</string>
+  <string name="pref_charge_as_text" formatted="false">Stav nabitia v testovej podobe</string>
+  <string name="pref_charge_as_text_summary" formatted="false">Zobraziť stav nabitia ako väčší text vedľa ikonky?</string>
   <string name="pref_cat_status_duration" formatted="false">Doba stavu (do/od...)</string>
   <string name="pref_status_dur_est" formatted="false">Kedy prispôsobiť</string>
   <string name="pref_status_dur_est_summary" formatted="false">Spustiť prispôsobovanie hodín od zmeny nabitia:</string>
@@ -97,9 +100,10 @@
     <item>Zlyhanie</item>
   </string-array>
   <string-array name="pluggeds">
-    <item>Neznámy</item>
+    <item>Unplugged</item>
     <item>(Sieť)</item>
     <item>(USB)</item>
+    <item>(?)</item>
   </string-array>
   <string-array name="alarm_types_display">
     <item>Plne nabitá</item>

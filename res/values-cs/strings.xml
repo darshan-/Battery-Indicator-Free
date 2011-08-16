@@ -64,6 +64,9 @@
   <string name="pref_cat_autostart" formatted="false">Automatické spuštění</string>
   <string name="pref_autostart_at_boot" formatted="false">Automatické spuštění při startu telefonu</string>
   <string name="pref_autostart_at_boot_summary" formatted="false">Spustit Battery Indicator jakmile je zařízení spuštěno:</string>
+  <string name="pref_cat_charge_as_text" formatted="false">Textové zobrazení úrovně nabití</string>
+  <string name="pref_charge_as_text" formatted="false">Textové zobrazení úrovně nabití</string>
+  <string name="pref_charge_as_text_summary" formatted="false">Zobrazit úroveň nabití jako text vedle ikony ?</string>
   <string name="pref_cat_status_duration" formatted="false">Stav trvání</string>
   <string name="pref_status_dur_est" formatted="false">Kdy odhadovat</string>
   <string name="pref_status_dur_est_summary" formatted="false">Začít odhadovat hodiny jakmile se stav změní:</string>
@@ -101,9 +104,10 @@
     <item>Vadný</item>
   </string-array>
   <string-array name="pluggeds">
-    <item>Neznámý</item>
+    <item>Unplugged</item>
     <item>(Napáječ)</item>
     <item>(USB)</item>
+    <item>(?)</item>
   </string-array>
   <string-array name="alarm_types_display">
     <item>Plně nabito</item>
