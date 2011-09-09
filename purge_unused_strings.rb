@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# TODO: also purge plurals and string-arrays
+
 require 'nokogiri'
 
 string_names = {}
