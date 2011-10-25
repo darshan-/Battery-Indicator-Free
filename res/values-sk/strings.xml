@@ -48,7 +48,9 @@
   <string name="help_cat_summary" formatted="false">Zhrnutie</string>
   <string name="help_summary_free" formatted="false"><i>Battery Indicator</i> je nenáročný indikátor batérie pre mobilný operačný systém Android™. Jeho základnou funkciou je, že poskytuje ikonu, ktorá leží v notifikačnej lište a ukazuje zostávajúce nabitie v percentách.\n\nVerzia Pro ponúka veľa utilít. Okrem toho ponúka červenú, oranžovú a zelenú ikonku ale aj nasledujúce kľúčové vlastnosti od verzie 3.0:\n\n• Plne konfigurovateľný odhad času nabítia / vybitia.\n• Zaznamenávanie stavu batérie.\n• Témy pre hlavné okno (zahŕňa okno v plnej veľkosti s veľkým, ľahko čitateľným textom).\n• Manuálne vypnúť / zapnúť zámok obrazovky s možnosťou automaticky ho vypnúť keď je v nabíjačke a zapnúť keď je z nej odpojený.\n• Mnoho ďalších užitočných vecí, ktoré všade objavíte.</string>
   <string name="help_cat_limitations" formatted="false">Obmedzenia</string>
+  <string name="help_limitations" formatted="false">(<i>Tieto sú mimo mojej kontroly.</i>)\n\n• Aplikácia môže zobrazovať len to, čo jej povie zariadenie. Väčšina zariadení oznamuje každé 1%, ale niektoré (najmä modely Motorola Droid) oznamujú iba každých 10%\n• Nieje žiadna šanca na odstránenie vstavanej ikonky batérie.\n• Notifikačná ikonka v lište oznámení a správa, ktorú vidieť lište oznámení sú zviazané dohromady - nemôžete mať jedno bez druhého.\n• Niektoré aplikácie môžu umožňovať inštaláciu na SD kartu, niektoré nie. Battery Indicator je v druhej skupine. Pozrite: <a href="http://code.google.com/p/battery-indicator/wiki/FAQ">FAQ projektu</a> ak budete chceiť ďalšie vysvetlenie.</string>
   <string name="help_cat_features" formatted="false">Funkcie</string>
+  <string name="help_cat_no_warranty" formatted="false">Bez záruky</string>
   <string name="help_cat_acknowledgments" formatted="false">Poďakovania</string>
   <string name="help_cat_translations" formatted="false">Preklady</string>
   <string name="help_subcat_translators" formatted="false">Prekladatelia</string>
@@ -142,5 +144,24 @@
     <item>2 dni</item>
     <item>4 dni</item>
     <item>1 týždeň</item>
+    <item>2 týždne</item>
+    <item>3 týždne</item>
+    <item>4 týždne</item>
   </string-array>
+  <plurals name="n_log_items">
+    <item quantity="zero">%d záznamov</item>
+    <item quantity="one">%d záznam</item>
+    <item quantity="two">%d záznamy</item>
+    <item quantity="few">%d záznamov</item>
+    <item quantity="many">%d záznamov</item>
+    <item quantity="other">%d záznamov</item>
+  </plurals>
+  <plurals name="for_n_hours">
+    <item quantity="zero">Za %d hodín</item>
+    <item quantity="one">Za %d Hodinu</item>
+    <item quantity="two">Za %d hodiny</item>
+    <item quantity="few">Za %d hodín</item>
+    <item quantity="many">Za %d hodín</item>
+    <item quantity="other">Za %d Hodín</item>
+  </plurals>
 </resources>

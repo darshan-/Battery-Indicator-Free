@@ -6,19 +6,19 @@
   <string name="app_full_name_free" formatted="false">Battery Indicator</string>
   <string name="settings_activity_name_free" formatted="false">Battery Indicator - Impostazioni</string>
   <string name="help_activity_name_free" formatted="false">Battery Indicator - Aiuto</string>
-  <string name="battery_use_b" formatted="false">Mostra Utilizzo Batteria</string>
+  <string name="battery_use_b" formatted="false">Mostra utilizzo batteria</string>
   <string name="upgrade_donate_b" formatted="false">Aggiorna/Dona...</string>
-  <string name="reenable_lock_screen" formatted="false">Riattiva Blocco Schermo</string>
-  <string name="disable_lock_screen" formatted="false">Disabilita Blocco Schermo</string>
-  <string name="confirm_disable" formatted="false">Vuoi davvero disabilitare il blocco schermo?</string>
-  <string name="confirm_disable_hint" formatted="false">Suggerimento: Disattivare questa finestra di conferma delle impostazioni...</string>
+  <string name="reenable_lock_screen" formatted="false">Riattiva blocca schermo</string>
+  <string name="disable_lock_screen" formatted="false">Disabilita blocca schermo</string>
+  <string name="confirm_disable" formatted="false">Vuoi davvero disabilitare il blocca schermo?</string>
+  <string name="confirm_disable_hint" formatted="false">Suggerimento: Disattiva questa finestra di conferma nelle impostazioni...</string>
   <string name="yes" formatted="false">Si</string>
   <string name="cancel" formatted="false">Annulla</string>
   <string name="confirm_close" formatted="false">Vuoi davvero uscire?</string>
-  <string name="confirm_close_hint" formatted="false">Battery Indicator sarà completamente chiusto, e non sarà più visualizzato nella barra di stato.\n\nSe si desidera solo abbandonare la finestra principale e mantenere l\'indicatore in esecuzione, premere Annulla e quindi premere il pulsante INDIETRO del tuo cellulare per uscire dalla finestra principale.</string>
+  <string name="confirm_close_hint" formatted="false">Battery Indicator sarà completamente chiuso, e non sarà più visualizzato nella barra di stato.\n\nSe si desidera solo abbandonare la finestra principale e mantenere l\'indicatore in esecuzione, premere Annulla e quindi premere il pulsante INDIETRO del tuo cellulare per uscire dalla finestra principale.</string>
   <string name="first_run_title" formatted="false">Grazie!</string>
-  <string name="first_run_message" formatted="false">Grazie per la tua donazione/acquisto! <b><i>Questi 2 punti sono molto importanti</i> :</b>\n\n• Se avete un \"<b>task killer</b>\" / gestore processi o qualcosa di simile, sarebbe opportuno disinstallarlo o provare a far ignorare Battery Indicator Pro. Anche se lo si è impostato per ignorare la versione gratuita, <i>è necessario ripetere l\'operazione anche per questa versione Pro</i> !\n\n• Se avete un <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, o <b>Samsung Moment</b>, è necessario attivare \"Modalità 10%\" in \"Altre Impostazioni\".</string>
-  <string name="first_run_message_free" formatted="false">Grazie per aver scaricato Battery Indicator! <b><i>Questo è importante</i> :</b>\n\nSe avete un \"<b>task killer</b>\" / gestore processi o qualcosa di simile, sarebbe opportuno disinstallarlo o provar a far ignorare Battery Indicator.</string>
+  <string name="first_run_message" formatted="false">Grazie per la tua donazione/acquisto! <b><i>Questi 2 punti sono molto importanti</i> :</b>\n\n• Se hai un \"<b>task killer</b>\" / gestore processi o qualcosa di simile, sarebbe opportuno disinstallarlo o provare a ignorare Battery Indicator Pro. Anche se lo si è impostato per ignorare la versione gratuita, <i>è necessario ripetere l\'operazione anche per la versione Pro</i> !\n\n• Se hai un <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, o <b>Samsung Moment</b>, è necessario attivare la \"Modalità 10%\" in \"Altre Impostazioni\".</string>
+  <string name="first_run_message_free" formatted="false">Grazie per aver scaricato Battery Indicator! <b><i>Impostante</i> :</b>\n\nSe hai un \"<b>task killer</b>\" / gestore processi o qualcosa di simile, sarebbe opportuno disinstallarlo o provar a ignorare Battery Indicator.</string>
   <string name="okay" formatted="false">Ok</string>
   <string name="menu_settings" formatted="false">Impostazioni</string>
   <string name="menu_close" formatted="false">Chiudi</string>
@@ -32,59 +32,65 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Premi INDIETRO per uscire.</string>
   <string name="press_menu_for_more" formatted="false">Premi MENU per più opzioni.</string>
-  <string name="discharging_from" formatted="false">In Scarica dalle</string>
-  <string name="charging_from" formatted="false">In Carica dalle</string>
-  <string name="fully_charged" formatted="false">Completamente Carico</string>
+  <string name="discharging_from" formatted="false">In scarica dalle</string>
+  <string name="charging_from" formatted="false">In carica dalle</string>
+  <string name="fully_charged" formatted="false">Completamente carico</string>
   <string name="since" formatted="false">Dalle</string>
   <string name="one_six_needed" formatted="false">Ci spiace, è necessario Android 1.6 o superiore!</string>
   <string name="currently_using" formatted="false">Attualmente in uso</string>
-  <string name="currently_set_to" formatted="false">"Attualmente impostato a:"</string>
-  <string name="currently_disabled" formatted="false">Attualmente Disabilitato</string>
+  <string name="currently_set_to" formatted="false">"Attualmente impostato su:"</string>
+  <string name="currently_disabled" formatted="false">Attualmente disattivato</string>
   <string name="help_cat_version" formatted="false">Versione</string>
   <string name="help_cat_changelog" formatted="false">Changelog</string>
   <string name="help_changelog" formatted="false">Visita <a href="http://code.google.com/p/battery-indicator/wiki/FAQ#What's_new_in_the_update?">lo storico delle versioni del progetto</a>.</string>
   <string name="help_cat_introduction" formatted="false">Introduzione</string>
   <string name="help_introduction_free" formatted="false">Questo è <i>Battery Indicator</i>, la versione gratuita della famiglia delle applicazioni <i>Battery Indicator</i> . E\' disponibile nell\' Android Market, ed è un progetto open source, cioè è possibile scaricare gratuitamente i sorgenti dell\' applicazione da <a href="http://code.google.com/p/battery-indicator/">il sito web del progetto</a>.\n\nFai una donazione per aggiornare alla <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Versione Pro</a>.</string>
   <string name="help_cat_summary" formatted="false">Sommario</string>
-  <string name="help_summary_free" formatted="false"><i>Battery Indicator</i> è un leggero indicatore di batteria per il sistema operativo mobile Android™. La sua caratteristica principale è fornire una icona che vive nella barra di stato e mostrare la percentuale di carica rimanente della batteria.\n\nLa versione Pro tuttavia offre molti più servizi rispetto a questa. Oltre ad offrire le icone rosse, ambra, e verdi, dalla versione 3.0 sono presenti anche le seguanti caratteristiche:\n\n• Stima tempo rimanente carica/scarica completamente configurabile.\n• Logging stato batteria.\n• Temi per la finestra principale (tra cui una finestra grande a tutto schermo, più facile da leggere).\n• Disabilitazione/abilitazione manuale blocco schermo dispositivo, con l\' opzione per disattivarlo automaticamente quando si collega e riattivarlo quando si scollega.\n• Molte cose utili che scoprirai.</string>
+  <string name="help_summary_free" formatted="false"><i>Battery Indicator</i> è un\' indicatore di batteria per il sistema operativo mobile Android™. La sua caratteristica principale è fornire un\' icona che rimane nella barra di stato e mostra la percentuale di carica rimanente della batteria.\n\nLa versione Pro tuttavia offre molte più funzioni rispetto a questa. Oltre ad offrire le icone rosse, ambra, e verdi, dalla versione 3.0 sono presenti anche le seguanti caratteristiche:\n\n• Stima tempo rimanente carica/scarica completamente configurabile.\n• Logging stato batteria.\n• Temi per la finestra principale (tra cui una finestra grande a tutto schermo, più facile da leggere).\n• Disabilitazione/abilitazione manuale blocco schermo dispositivo, con l\' opzione per disattivarlo automaticamente quando si collega e riattivarlo quando si scollega.\n• Molte cose utili che scoprirai.</string>
   <string name="help_cat_limitations" formatted="false">Limitazioni</string>
-  <string name="help_limitations" formatted="false">(<i>Queste sono fuori dal mio controllo.</i>)\n\n• L\' applicazione può visualizzare solo ciò che il telefono racconta. Molti telefoni segnalano ogni 1%, ma alcuni (in particolare i modelli Motorola Droid) segnalano solo ogni 10%.\n• Non c\'è un modo per rimuovere l\' icona della batteria predefinita del telefono.\n• L\' icona di notifica nella barra di stato e il messaggio che vedi nella barra delle notifiche sono legati insieme — non puoi avere uno senza l\' altro.\n• Molte applicazioni dovrebbero consentire l\' installazione su memoria rimovibile (scheda SD); alcune non dovrebbero. Battery Indicator fa parte di quest\' ultimo gruppo. Visita <a href="http://code.google.com/p/battery-indicator/wiki/FAQ">le FAQ del progetto</a> se vuoi ulteriori spiegazioni.</string>
+  <string name="help_limitations" formatted="false">(<i>Queste sono fuori dal mio controllo.</i>)\n\n• L\' applicazione può visualizzare solo ciò che il telefono fornisce. Molti telefoni segnalano la carica ogni 1%, ma alcuni (in particolare i modelli Motorola Droid) segnalano solo ogni 10%.\n• Non c\'è un modo per rimuovere l\' icona della batteria predefinita del telefono.\n• L\' icona di notifica nella barra di stato e il messaggio che vedi nella barra delle notifiche sono legati — non puoi avere uno senza l\' altro.\n• Molte applicazioni dovrebbero consentire l\' installazione su memoria rimovibile (scheda SD); alcune non dovrebbero. Battery Indicator fa parte di quest\' ultimo gruppo. Visita <a href="http://code.google.com/p/battery-indicator/wiki/FAQ">le FAQ del progetto</a> se vuoi ulteriori spiegazioni.</string>
   <string name="help_cat_features" formatted="false">Caratteristiche</string>
   <string name="help_features" formatted="false">• Breve, semplice, e facile da leggere.\n• Non fa alcun polling. Riceve un messaggio broadcast dal sistema operativo quando lo stato della batteria cambia, poi aggiorna semplicemente l\' icona e torna a dormire. Ciò significa che impiegherà un piccolo quantitativo di RAM, ma eesenzialmente 0 cicli di CPU , affinchè la vostra batteria non venga esaurita. Ho stimato che vi verrà a costare circa 1 minuto di utilizzo su una scarica completa nel peggiore dei casi. Se si verifica qualcosa di peggio, probabilmente hai un\'altra applicazione (come un \"task killer\" o applicazioni simili) che interferisce con le normali operazioni di Battery Indicator.\n• Accesso facilitato alla finestra Uso Batteria (richiede Android 1.6+).\n• Configura per avviarsi sempre al boot, non avviarsi mai al boot, avvia al boot solo se è in esecuzione allo spegnimento.\n• Tante altre cose che ho dimenticato o che sembrano non meritevoli di menzione ma che contribuiscomo a rendere l\'applicazione utile.\n• La soddisfazione di supportare lo sviluppatore. (Molto apprezzata!)</string>
-  <string name="help_cat_no_warranty" formatted="false">Nessuna Garanzia</string>
-  <string name="help_no_warranty" formatted="false">Questo software è distribuito con la speranza che risulti utile, ma SENZA NESSUNA GARANZIA; anche senza la garanzia implicita di COMMERCIABILITA\' o IDONEITA\' PER UN PARTICOLARE SCOPO.\n\nMentre faccio del mio meglio per assicurarmi che tutto funzioni bene e non crei problemi, non sono responsabile di eventuali danni o inconvenienti causati dal programma in particolari cisrcostanze.</string>
+  <string name="help_cat_no_warranty" formatted="false">Nessuna garanzia</string>
+  <string name="help_no_warranty" formatted="false">Questo software è distribuito con la speranza che risulti utile, ma SENZA NESSUNA GARANZIA; anche senza la garanzia implicita di COMMERCIABILITA\' o IDONEITA\' PER UN PARTICOLARE SCOPO.\n\nMentre faccio del mio meglio per assicurarmi che tutto funzioni bene e non crei problemi, non sono responsabile di eventuali danni o inconvenienti causati dal programma in particolari circostanze.</string>
   <string name="help_cat_acknowledgments" formatted="false">Ringraziamenti</string>
   <string name="help_acknowledgments" formatted="false">Questa applicazione sarebbe disponibile solo in inglese senza il prezioso contributo di traduttori volontari. Grazie!\n\nGrazie mille a Google e a tutti i programmatori open-source che hanno realizzato la piattaforma Android e reso questa applicazione possibile.\n\nL\' icona di avvio (la batteria verticale che si vede nel Market) è basata su un\' icona proveniente dal <a href="http://www.oxygen-icons.org">tema icone Oxygen</a> ed è usata sotto <a href="http://creativecommons.org/licenses/by-sa/3.0/"> Licenza Creative Common Attribution-ShareAlike 3.0</a>.</string>
   <string name="help_cat_translations" formatted="false">Traduzioni</string>
-  <string name="help_translations" formatted="false">Abbiamo bisogno di aiuto per tradurre questa applicazione in altre lingue. Se ci vuoi aiutare, si prega di inviare una <a href="mailto:android@darshancomputing.com">email</a>. A meno che non si voglia, il tuo nome verrà aggiunto in questa sezione come riconoscimento per il tuo aiuto.</string>
+  <string name="help_translations" formatted="false">Abbiamo bisogno di aiuto per tradurre questa applicazione in altre lingue. Se ci vuoi aiutare, inviaci una <a href="mailto:android@darshancomputing.com">email</a>. A meno che non si voglia, il tuo nome verrà aggiunto in questa sezione come riconoscimento per il tuo aiuto.</string>
   <string name="help_subcat_translators" formatted="false">Traduttori</string>
   <string name="help_cat_contact" formatted="false">Contatti</string>
-  <string name="help_contact" formatted="false">Se hai domande o probemi, si prega di leggere <a href="http://code.google.com/p/battery-indicator/wiki/FAQ">le FAQ del progetto</a> come prima cosa.\n\nSe hai commenti o suggerimenti, o altre domande o problemi che non sono stati risolti nelle FAQ, si prega di contattarci a <a href="mailto:android@darshancomputing.com">android@darshancomputing.com</a>.</string>
-  <string name="pref_hint" formatted="false">Premi MENU per aiuto.</string>
-  <string name="pref_cat_more_settings_in_pro" formatted="false">Altre Impostazioni nella Pro</string>
+  <string name="help_contact" formatted="false">Se hai domande o probemi, leggi <a href="http://code.google.com/p/battery-indicator/wiki/FAQ">le FAQ del progetto</a> come prima cosa.\n\nSe hai commenti o suggerimenti, o altre domande o problemi che non sono stati risolti nelle FAQ, contattaci a <a href="mailto:android@darshancomputing.com">android@darshancomputing.com</a>.</string>
+  <string name="pref_hint" formatted="false">Premi MENU\' per aiuto.</string>
+  <string name="pref_cat_more_settings_in_pro" formatted="false">Altre impostazioni nella Pro</string>
   <string name="pref_please_upgrade" formatted="false">La versione Pro ha molte impostazioni e caratteristiche, tra cui icone verdi, ambra, e rosse, temi finestre, log stato batteria, disabilitazione automatica/manuale blocco schermo, stime tempo rimanente di carica/scarica, e altro.</string>
-  <string name="pref_cat_temperature_unit" formatted="false">Unità Temperatura</string>
+  <string name="pref_cat_temperature_unit" formatted="false">Unità temperatura</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Converti in Fahrenheit</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android riporta la temperatura della batteria in gradi Celsius. Se preferisci vedere la temperatura della batteria in gradi Fahrenheit, spunta questa opzione.</string>
   <string name="pref_cat_autostart" formatted="false">Autostart</string>
-  <string name="pref_autostart_at_boot" formatted="false">Autostart al Boot</string>
-  <string name="pref_autostart_at_boot_summary" formatted="false">Avvia Battery Indicator Quando Il Dispositivo Si Accende?</string>
+  <string name="pref_autostart_at_boot" formatted="false">Autostart al boot</string>
+  <string name="pref_autostart_at_boot_summary" formatted="false">Avviare Battery Indicator quando si accende il dispositivo?</string>
   <string name="pref_autostart_at_boot_help" formatted="false">Controlla se Battery Indicator dovrebbe avviarsi automaticamente quando si accende il dispositivo.\n\nL\' opzione \"Se è in Esecuzione Allo Spegnimento\" lavora con particolare riguardo se hai recentemente avviato o fermato Battery Indicator manualmente. Quindi significa che se si uccide Battery Indicator attraverso qualcosa di altro , come un task killer, poi Battery Indicator non saprà quando fermarsi, e sarà ancora avviato al boot se lo avete impostato così.</string>
-  <string name="pref_cat_charge_as_text" formatted="false">Livello Carica Testuale</string>
-  <string name="pref_charge_as_text" formatted="false">Livello Carica Testuale</string>
-  <string name="pref_charge_as_text_summary" formatted="false">Mostra il livello di carica come testo in grande a fianco dell\' icona?</string>
+  <string name="pref_cat_charge_as_text" formatted="false">Livello carica testuale</string>
+  <string name="pref_charge_as_text" formatted="false">Livello carica testuale</string>
+  <string name="pref_charge_as_text_summary" formatted="false">Mostrare il livello di carica come testo in grande a fianco dell\' icona?</string>
   <string name="pref_charge_as_text_help" formatted="false">Ho avuto alcuni utenti con problemi di vista che mi hanno chiesto di aggiungere questa opzione, per cui il livello di carica viene mostrato come testo (che è più grande e facile da leggere) proprio accanto all\' icona quando si trascina verso il basso l\' area notifiche. L\' icona attuale non sarà diversa, quindi questo aiuterà solo quando si trascinerà verso il basso la barra delle notifiche, ma è meglio di niente, ed è abbastanza facile da aggiungere per chi la vuole.\n\nPer salvare spazio prezioso, ho fatto questo in modo poco elegante, simply plopping the number in there and carrying on. Questo risulta più facile da leggere rispetto a quando ho inserito il simbolo di percentuale, e significa che il testo dovrebbe adattarsi a tutti. E\' possibile che se hai un dispositivo particolarmente piccolo, l\' attivazione potrebbe rendere la scritta AM/PM all\' estrema destra deformata.</string>
-  <string name="pref_cat_status_duration" formatted="false">Durata Stato (Per/Dal...)</string>
+  <string name="pref_cat_status_duration" formatted="false">Durata stato (Per/Dal...)</string>
   <string name="pref_status_dur_est" formatted="false">Approssimazione tempo</string>
-  <string name="pref_status_dur_est_summary" formatted="false">Inizio Approssimazione Tempo Dallo Stato Di Carica</string>
+  <string name="pref_status_dur_est_summary" formatted="false">Inizio approssimazione tempo dallo stato di carica</string>
   <string name="pref_status_dur_est_help" formatted="false">Determina quando la notifica passa dal dire per esempio, \"Scollegato Dalle 1:10 PM\" a dire qualcosa come \"Scollegato da 1 Ora\". Il primo metodo è molto preciso, perchè ti dice esattamente (al minuto) quando lo stato cambia, ma molte persone preferiscono il metodo più semplice da comprendere approssimando il numero delle ore passate, so they make that happen sooner than the default of 12 hours.</string>
+  <string-array name="pluggeds">
+    <item>(?)</item>
+    <item>Scollegato</item>
+    <item>(AC)</item>
+    <item>(USB)</item>
+  </string-array>
   <string-array name="statuses">
     <item>Scollegato</item>
     <item>Sconosciuto</item>
-    <item>In Carica</item>
+    <item>In carica</item>
     <item>Scarico</item>
-    <item>Non In Carica</item>
-    <item>Completamente Carico</item>
+    <item>Non in carica</item>
+    <item>Completamente carico</item>
   </string-array>
   <string-array name="log_statuses">
     <item>Scollegato</item>
@@ -92,15 +98,15 @@
     <item>Collegato</item>
     <item>Sconosciuto</item>
     <item>Sconosciuto</item>
-    <item>Completamente Carico</item>
+    <item>Completamente carico</item>
   </string-array>
   <string-array name="log_statuses_old">
     <item>Scarico</item>
     <item>Sconosciuto</item>
-    <item>In Carica</item>
+    <item>In carica</item>
     <item>Sconosciuto</item>
     <item>Sconosciuto</item>
-    <item>Completamente Carico</item>
+    <item>Completamente carico</item>
   </string-array>
   <string-array name="healths">
     <item>Sconosciuto</item>
@@ -109,44 +115,55 @@
     <item>Surriscaldamento</item>
     <item>Defunta</item>
     <item>Sovratensione</item>
-    <item>Fallito</item>
+    <item>Non riuscito</item>
   </string-array>
-  <string-array name="pluggeds">
-    <item>Unplugged</item>
-    <item>(AC)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
+  <string-array name="alarm_types_display">
+    <item>Completamente carico</item>
+    <item>La carica è scesa al di sotto</item>
+    <item>La carica è salita al di sopra</item>
+    <item>Temperatura salita al di sopra</item>
+    <item>Recupero stato non riuscito</item>
+  </string-array>
+  <string-array name="alarm_type_entries">
+    <item>Diventa completamente carico</item>
+    <item>La carica scende al di sotto...</item>
+    <item>La carica sale al di sopra...</item>
+    <item>La temperatura sale al di sopra...</item>
+    <item>Recupero stato non riuscito</item>
   </string-array>
   <string-array name="mw_theme_pref_entries">
-    <item>Piccola Di Default</item>
-    <item>Piccola Colorata</item>
-    <item>Finestra Intera</item>
+    <item>Piccola predefinita</item>
+    <item>Piccola colorata</item>
+    <item>Finestra intera</item>
   </string-array>
   <string-array name="boot_pref_entries">
     <item>Sempre</item>
     <item>Mai</item>
-    <item>Se è in Esecuzione allo Spegnimento</item>
+    <item>Se è in esecuzione allo spegnimento</item>
   </string-array>
   <string-array name="status_dur_est_entries">
     <item>Sempre</item>
-    <item>Dopo 1 Ora</item>
-    <item>Dopo 2 Ore</item>
-    <item>Dopo 3 Ore</item>
-    <item>Dopo 6 Ore</item>
-    <item>Dopo 12 Ore</item>
+    <item>Dopo 1 ora</item>
+    <item>Dopo 2 ore</item>
+    <item>Dopo 3 ore</item>
+    <item>Dopo 6 ore</item>
+    <item>Dopo 12 ore</item>
   </string-array>
   <string-array name="max_log_age_entries">
-    <item>1 Giorno</item>
-    <item>2 Giorni</item>
-    <item>4 Giorni</item>
-    <item>1 Settimana</item>
+    <item>1 giorno</item>
+    <item>2 giorni</item>
+    <item>4 giorni</item>
+    <item>1 settimana</item>
+    <item>2 settimane</item>
+    <item>3 settimane</item>
+    <item>4 settimane</item>
   </string-array>
   <plurals name="n_log_items">
-    <item quantity="one">%d Elemento Log</item>
-    <item quantity="other">%d Elementi Log</item>
+    <item quantity="one">%d elemento log</item>
+    <item quantity="other">%d elementi log</item>
   </plurals>
   <plurals name="for_n_hours">
-    <item quantity="one">Per %d Ora</item>
-    <item quantity="other">Per %d Ore</item>
+    <item quantity="one">Per %d ora</item>
+    <item quantity="other">Per %d ore</item>
   </plurals>
 </resources>
