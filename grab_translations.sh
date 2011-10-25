@@ -1,11 +1,11 @@
 #!/bin/bash
 
-cd ../../trunk/res
+cd ../default/res
 
 for d in values*
 do
     source=$d/strings.xml
-    dest_dir=../../branches/free/res/$d
+    dest_dir=../../free/res/$d
 
     if [ -e $source ]
     then
