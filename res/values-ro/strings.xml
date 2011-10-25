@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
+  <string name="app_launcher_name" formatted="false">Battery Indicator</string>
+  <string name="settings_activity_name" formatted="false">Battery Indicator Pro - Setari</string>
+  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
+  <string name="settings_activity_name_free" formatted="false">Battery Indicator - Setari</string>
+  <string name="help_activity_name_free" formatted="false">Battery Indicator - Ajutor</string>
+  <string name="battery_use_b" formatted="false">Vizualizeaza Utilizarea Bateriei</string>
+  <string name="upgrade_donate_b" formatted="false">Upgrade/Doneaza</string>
+  <string name="reenable_lock_screen" formatted="false">Reactiveaza Blocare Ecran</string>
+  <string name="disable_lock_screen" formatted="false">Dezactiveaza Blocare Ecran</string>
+  <string name="confirm_disable" formatted="false">Dezactivati blocarea ecranului?</string>
+  <string name="confirm_disable_hint" formatted="false">Sugestie: Dezactiveaza acest mesaj de confirmare din meniul setari...</string>
+  <string name="yes" formatted="false">Da</string>
+  <string name="cancel" formatted="false">Anuleaza</string>
+  <string name="confirm_close" formatted="false">Inchideti?</string>
+  <string name="confirm_close_hint" formatted="false">Battery Indicator se va inchide complet. Informatiile despre baterie nu vor mai fi afisate in bara de stare a telefonului./n /n Daca doriti sa inchideti fereastra principala, pastrand afisarea informatiilor despre baterie, apasati Anuleaza si apoi butonul BACK al telefonului.</string>
+  <string name="first_run_title" formatted="false">Multumesc!</string>
+</resources>
