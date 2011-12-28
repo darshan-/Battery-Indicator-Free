@@ -30,8 +30,8 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">Pressiona BACK para sair.</string>
-  <string name="press_menu_for_more" formatted="false">Pressiona MENU para mais opções.</string>
+  <string name="press_back_to_leave" formatted="false">Pressione BACK para sair.</string>
+  <string name="press_menu_for_more" formatted="false">Pressione MENU para mais opções.</string>
   <string name="discharging_from" formatted="false">Descarregando de</string>
   <string name="charging_from" formatted="false">Carregando de</string>
   <string name="fully_charged" formatted="false">Completamente Carregado</string>
