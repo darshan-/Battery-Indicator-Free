@@ -120,6 +120,9 @@ public class BatteryIndicator extends Activity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean("serviceDesired", true);
         editor.commit();
+
+        if (! res.getBoolean(R.bool.show_main_title))
+            setTitle("");
     }
 
     @Override

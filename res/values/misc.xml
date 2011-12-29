@@ -304,6 +304,8 @@
     <item>168</item>
   </string-array>
 
+  <bool name="show_main_title">false</bool>
+
   <string name="help_translators_list">
     Matthew McBaul(包明)
     \nGonzalo Rodríguez Píriz
