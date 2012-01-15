@@ -31,6 +31,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import java.util.Date;
 
 public class BatteryIndicatorService extends Service {
@@ -45,6 +46,8 @@ public class BatteryIndicatorService extends Service {
 
     private Resources res;
     private Str str;
+
+    private static final String LOG_TAG = "BatteryIndicatorService";
 
     @Override
     public void onCreate() {
@@ -105,6 +108,28 @@ public class BatteryIndicatorService extends Service {
             //String technology = intent.getStringExtra("technology");
 
             int percent = level * 100 / scale;
+
+            if (settings.getBoolean(SettingsActivity.KEY_ONE_PERCENT_HACK, false)) {
+                try {
+                    java.io.FileReader fReader = new java.io.FileReader("/sys/class/power_supply/battery/charge_counter");
+                    java.io.BufferedReader bReader = new java.io.BufferedReader(fReader);
+                    int charge_counter = Integer.valueOf(bReader.readLine());
+
+                    if (charge_counter > SettingsActivity.CHARGE_COUNTER_LEGIT_MAX) {
+                        disableOnePercentHack("charge_counter is too big to be actual charge");
+                    } else {
+                        if (charge_counter > 100)
+                            charge_counter = 100;
+
+                        percent = charge_counter;
+                    }
+                } catch (java.io.FileNotFoundException e) {
+                    /* These error messages are only really useful to me and might as well be left hardwired here in English. */
+                    disableOnePercentHack("charge_counter file doesn't exist");
+                } catch (java.io.IOException e) {
+                    disableOnePercentHack("Error reading charge_counter file");
+                }
+            }
 
             if (status  > 5){ status  = 1; /* Unknown */ }
             if (health  > 6){ health  = 1; /* Unknown */ }
@@ -215,6 +240,14 @@ public class BatteryIndicatorService extends Service {
             mNotificationManager.notify(1, notification);
         }
     };
+
+    private void disableOnePercentHack(String reason) {
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean(SettingsActivity.KEY_ONE_PERCENT_HACK, false);
+        editor.commit();
+
+        Log.e(LOG_TAG, "Disabled one percent hack due to: " + reason);
+    }
 
     private String formatTime(Date d) {
         String format = android.provider.Settings.System.getString(getContentResolver(),

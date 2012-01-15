@@ -19,19 +19,30 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.text.method.MovementMethod;
+import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 public class SettingsHelpActivity extends Activity {
     private Resources res;
+    private static final int[] HAS_LINKS = {R.id.one_percent_hack};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         res = getResources();
-
         setContentView(R.layout.main_settings_help);
+
+        TextView tv;
+        MovementMethod linkMovement = LinkMovementMethod.getInstance();
+
+        for (int i=0; i < HAS_LINKS.length; i++) {
+            tv = (TextView) findViewById(HAS_LINKS[i]);
+            tv.setMovementMethod(linkMovement);
+            tv.setAutoLinkMask(Linkify.WEB_URLS | Linkify.EMAIL_ADDRESSES);
+        }
     }
 
     @Override
