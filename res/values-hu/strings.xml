@@ -64,9 +64,6 @@
   <string name="pref_please_upgrade" formatted="false">A Pro verzió számos további beállítással és képességgel rendelkezik. Pl. zöld, sárga és piros ikon, riasztások, ablak témák, akku állapot naplózása, képernyőzár kézi és automatikus tiltása, becslés a hátralévő töltési vagy használati időre, stb.</string>
   <string name="pref_charge_as_text" formatted="false">Töltésszint szöveges jelzése</string>
   <string name="pref_charge_as_text_summary" formatted="false">Megjelenítse az akku töltöttségét szövegesen is az ikon mellett?</string>
-  <string name="pref_cat_status_duration" formatted="false">Eltelt idő kijelzése</string>
-  <string name="pref_status_dur_est" formatted="false">Kerekített időtartam</string>
-  <string name="pref_status_dur_est_summary" formatted="false">Állapot váltás után ennyivel kezd kerekített időtartamokat alkalmazni</string>
   <string-array name="statuses">
     <item>Szétkapcsolva</item>
     <item>Ismeretlen</item>

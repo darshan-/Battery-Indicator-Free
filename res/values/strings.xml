@@ -31,22 +31,29 @@
   </string>
   <string formatted="false" name="first_run_title">Thank you!</string>
   <string formatted="false" name="first_run_message">Thanks
-    for your donation/purchase!  <b><i>These two points are very important</i> :</b>\n
+    for your donation/purchase!  <b><i>These three points are very important</i> :</b>\n
 
     \n• If you have a \"<b>task killer</b>\" / process manager of some kind, you should either
       uninstall it or try to get it to ignore Battery Indicator Pro.  Even if you
       have it set to ignore the free version, <i>you still need to tell it to
       ignore this Pro version</i> !\n
 
-    \n• If you have a <b>Motorola Droid</b>, <b>Droid X</b>,
-      <b>Droid 2</b>, <b>Defy</b>, or <b>Samsung Moment</b>, you should turn on
-      \"10% Mode\" in the \"Other Settings\".
+    \n• If your device only shows the battery level in 10% increments by default (<b>most
+      Motorola phones work this way</b>), then you should turn on the \"One-percent Hack\" in
+      \"Other Settings\" to enable one-percent increments.\n
+
+    \n• If your status bar is black, and especially if you are running Android 3 or greater,
+      you should download and use the plugin called \"Black Square\".
   </string>
   <string formatted="false" name="first_run_message_free">Thanks
-    for downloading Battery Indicator!  <b><i>This is important</i> :</b>\n
+    for downloading Battery Indicator!  <b><i>These two points are very important</i> :</b>\n
 
-    \nIf you have a \"<b>task killer</b>\" / process manager of some kind, you should either
+    \n• If you have a \"<b>task killer</b>\" / process manager of some kind, you should either
       uninstall it or try to get it to ignore Battery Indicator.
+
+    \n• If your device only shows the battery level in 10% increments by default (<b>most
+      Motorola phones work this way</b>), then you should turn on the \"One-percent Hack\" in
+      the settings to enable one-percent increments.
   </string>
   <string formatted="false" name="okay">Okay</string>
   <string formatted="false" name="menu_settings">Settings</string>
@@ -183,9 +190,6 @@
   <string formatted="false" name="help_limitations">(<i>These
     are out of my control.</i>)\n
 
-    \n• The app can only display what the device tells it. Most devices report
-    every 1%, but a few (notably the Motorola Droid models) only report every
-    10%.
     \n• There\'s no way to remove the built-in battery icon.
     \n• The notification icon in the status bar and the message you see in the
     notification tray are tied together — you can\'t have one without the other.
@@ -276,25 +280,9 @@
     you prefer to see the battery temperature in degrees Fahrenheit,
     check this option, and the app will convert for you.
   </string>
-
-  <string formatted="false" name="pref_cat_autostart">Autostart</string>
-  <string formatted="false" name="pref_autostart_at_boot">Autostart at Boot</string>
-  <string formatted="false" name="pref_autostart_at_boot_summary">Start Battery Indicator when device boots:</string>
-  <string formatted="false" name="pref_autostart_at_boot_help">
-    Controls whether Battery Indicator should start itself
-    automatically when the device boots up.\n
-
-    \nThe \"If Running on Shutdown\" option works with regard to
-    whether you\'ve most recently manually started or stopped Battery
-    Indicator.  So if you kill Battery Indicator through some other
-    means, like a task killer, then Battery Indicator doesn\'t know
-    you stopped it, and it will still start at boot up if you have it
-    set to this.
-  </string>
-
   <string formatted="false" name="pref_cat_charge_as_text">Textual Charge Level</string>
   <string formatted="false" name="pref_charge_as_text">Textual Charge Level</string>
-  <string formatted="false" name="pref_charge_as_text_summary">Show the charge level as larger text next to icon?</string>
+  <string formatted="false" name="pref_charge_as_text_summary">Show as text next to icon?</string>
   <string formatted="false" name="pref_charge_as_text_help">
     I\'ve had a few users with poorer eyesight ask me to add this
     option, whereby the charge level is displayed as text (which is a
@@ -302,38 +290,24 @@
     pull down the notification area.  The actual icon won\'t be any
     different, so this will only help when you pull down the
     notification tray, but it\'s better than nothing, and easy enough
-    to add for those that want it.\n
+    to add for those that want it.  It is particularly useful for those
+    using a screen reader.\n
 
-    \nTo save precious space, I\'ve done this in a very unglamorous
-    fashion, simply plopping the number in there and carrying on. This
-    turns out to be easier to read than if I included the percent
-    symbol, and means that the text should all fit.  It is possible
-    that if you have a particularly small device, enabling this might
-    make the AM/PM at the far right not quite fit.
+    \nOn some devices, enabling this cuts off the rightmost portion of
+    the notification text.
   </string>
 
   <string formatted="false" name="pref_cat_one_percent_hack">One-percent hack</string>
   <string formatted="false" name="pref_one_percent_hack">One-percent hack</string>
-  <string formatted="false" name="pref_one_percent_hack_summary">Attempt one-percent hack? Try this (only) if your device shows only multiples of 10%.</string>
-  <string formatted="false" name="pref_one_percent_hack_help">If
-    your device only shows multiples of 10%, please try this hack and report back via
-    <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">the wiki page about this hack</a>.\n
+  <string formatted="false" name="pref_one_percent_hack_summary">Use workaround for devices that show only multiples of 10%?</string>
+  <string formatted="false" name="pref_one_percent_hack_help">This
+    hack appears to work for all Motorola devices that default to 10% increments, other than the original Droid.\n
 
     \nMost devices do not need this.  If your device already shows one-percent increments, do not enable this hack.\n
 
-    \nIf the option is grayed-out and not able to be turned on, then your device is not capable of using this hack.
-  </string>
-  <string formatted="false" name="pref_cat_status_duration">Status Duration (For/Since...)</string>
-  <string formatted="false" name="pref_status_dur_est">When to Approximate</string>
-  <string formatted="false" name="pref_status_dur_est_summary">Start approximating hours since status change:</string>
-  <string formatted="false" name="pref_status_dur_est_help">
-    Determines when the notification switches from saying, e.g.,
-    \"Unplugged Since 1:10 PM\" to saying something like \"Unplugged
-    for 1 Hour\".  The first way is more accurate, because it tells
-    you exactly (to the minute) when the status changed, but many
-    people prefer the simpler to comprehend approximation of the
-    number of elapsed hours, so they make that happen sooner than the
-    default of 12 hours.
+    \nIf the option is grayed-out and not able to be turned on, then your device is not capable of using this hack.\n
+
+    \nSee the <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">OnePercentHack</a> wiki page for more info.
   </string>
   <!--string name="pref_cat_device_specific_help"></string-->
   <!--string name="pref_alarm_enabled_summary"></string-->

@@ -103,6 +103,27 @@
     <item>94:00</item>
     <item>96:00</item>
     <item>98:00</item>
+    <item>100:00</item>
+    <item>110:00</item>
+    <item>120:00</item>
+    <item>130:00</item>
+    <item>140:00</item>
+    <item>150:00</item>
+    <item>160:00</item>
+    <item>170:00</item>
+    <item>180:00</item>
+    <item>190:00</item>
+    <item>200:00</item>
+    <item>210:00</item>
+    <item>220:00</item>
+    <item>230:00</item>
+    <item>240:00</item>
+    <item>250:00</item>
+    <item>260:00</item>
+    <item>270:00</item>
+    <item>280:00</item>
+    <item>290:00</item>
+    <item>300:00</item>
   </string-array>
 
   <string-array name="time_values">
@@ -207,6 +228,27 @@
     <item>5640</item>
     <item>5760</item>
     <item>5880</item>
+    <item>6000</item>
+    <item>6600</item>
+    <item>7200</item>
+    <item>7800</item>
+    <item>8400</item>
+    <item>9000</item>
+    <item>9600</item>
+    <item>10200</item>
+    <item>10800</item>
+    <item>11400</item>
+    <item>12000</item>
+    <item>12600</item>
+    <item>13200</item>
+    <item>13800</item>
+    <item>14400</item>
+    <item>15000</item>
+    <item>15600</item>
+    <item>16200</item>
+    <item>16800</item>
+    <item>17400</item>
+    <item>18000</item>
   </string-array>
 
   <string-array name="temp_alarm_entries">
@@ -260,7 +302,7 @@
   <bool   name="default_show_heavy_usage"   >true</bool>
   <bool   name="default_show_constant_usage">true</bool>
 
-  <string name="default_max_log_age">48</string>
+  <string name="default_max_log_age">672</string>
 
 
   <string name="settings_help_activity_name">@string/settings_activity_name</string>
@@ -278,7 +320,7 @@
 
   <string-array name="mw_theme_pref_values">
     <item>default</item>
-    <item>colorful</item>
+    <item>DISABLED</item>
     <item>full-dark</item>
   </string-array>
 
@@ -302,9 +344,15 @@
     <item>48</item>
     <item>96</item>
     <item>168</item>
+    <item>336</item>
+    <item>504</item>
+    <item>672</item>
   </string-array>
 
+  <bool name="long_activity_names">true</bool>
   <bool name="show_main_title">false</bool>
+  <bool name="api_level_14_plus">false</bool>
+  <bool name="override_list_activity_layout">true</bool>
 
   <string name="help_translators_list">
     Matthew McBaul(包明)
@@ -316,5 +364,6 @@
     \nKorenisko
     \nGabor Kovacs
     \nRudy Baardman
+    \nBoudewijn
   </string>
 </resources>

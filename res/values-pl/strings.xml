@@ -53,16 +53,9 @@
   <string name="pref_cat_temperature_unit" formatted="false">Jednostka temperatury</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Konwertuj na Fahrenheita</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android raportuje temperaturę baterii w stopniach Celcjusza. Jeżeli wolisz stopnie Fahrenheita, to zaznacz tą opcję i aplikacja wykona konwersję.</string>
-  <string name="pref_cat_autostart" formatted="false">Autostart</string>
-  <string name="pref_autostart_at_boot" formatted="false">Startuj razem z telefonem</string>
-  <string name="pref_autostart_at_boot_summary" formatted="false">Startuj aplikację gdy telefon zostanie uruchomiony:</string>
   <string name="pref_cat_charge_as_text" formatted="false">Poziom naładowania tekstowo</string>
   <string name="pref_charge_as_text" formatted="false">Poziom naładowania tekstowo</string>
   <string name="pref_charge_as_text_summary" formatted="false">Pokazywać poziom naładowania jako tekst przy ikonie?</string>
-  <string name="pref_cat_status_duration" formatted="false">Powiadomienia o stanie</string>
-  <string name="pref_status_dur_est" formatted="false">Kiedy zmienić</string>
-  <string name="pref_status_dur_est_summary" formatted="false">Zacznij pokazywać godziny po czasie:</string>
-  <string name="pref_status_dur_est_help" formatted="false">Określa, kiedy powiadomienie zmienia się z postaci \"Odłączony od 13:10\" na postać \"Odłączony od 3 godzin\".</string>
   <string-array name="statuses">
     <item>Odłączony</item>
     <item>Nieznany</item>

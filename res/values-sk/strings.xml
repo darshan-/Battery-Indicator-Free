@@ -58,15 +58,9 @@
   <string name="pref_cat_more_settings_in_pro" formatted="false">Viac nastavení vo verzii Pro</string>
   <string name="pref_cat_temperature_unit" formatted="false">Jednotky teploty</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Premeniť na Fahrenheity</string>
-  <string name="pref_cat_autostart" formatted="false">Automatické spustenie</string>
-  <string name="pref_autostart_at_boot" formatted="false">Spustiť automaticky po zapnutí</string>
-  <string name="pref_autostart_at_boot_summary" formatted="false">Spustiť Battery Indicator keď zariadenie štartuje:</string>
   <string name="pref_cat_charge_as_text" formatted="false">Stav nabitia v textovej podobe</string>
   <string name="pref_charge_as_text" formatted="false">Stav nabitia v textovej podobe</string>
   <string name="pref_charge_as_text_summary" formatted="false">Zobraziť stav nabitia ako väčší text vedľa ikonky?</string>
-  <string name="pref_cat_status_duration" formatted="false">Doba stavu (do/od...)</string>
-  <string name="pref_status_dur_est" formatted="false">Kedy prispôsobiť</string>
-  <string name="pref_status_dur_est_summary" formatted="false">Spustiť prispôsobovanie hodín od zmeny nabitia:</string>
   <string name="help_features" formatted="false">• Malá, jednoduchá a ľahko čitateľná aplikácia.\n• Nezbiera údaje. Prijíma správy z OS keď sa zmení stav batérie, potom jednoducho aktualizuje ikonu a ide do režimu sleep. Znamená to, že používa malé množstvo RAM a takmer nevyužíva procesor, takže nemôže vybíjať Vašu batériu. Odhadujem, že spotreba je maximálne 1 minúta z celkovej výdrže plne nabitej batérie. Ak sa stretávate s vačším poklesom kapacity, pravdepodobne máte nainštalovanú inú aplikáciu (ako \"task killer\" správcu procesov nejakého druhu) ovplvňujúcu normálne správanie sa Battery Indicator.\n• Jednoduchý prístup k používaniu batérie (vyžaduje Android 1.6+).\n• Je možné nastaviť spustenie pri štarte, žiadne spustenie alebo spustenie ak aplikácia bežala pri vypnutí zariadenia.\n• A oveľa viac ako som tu spomenul, čo robí z tejto aplikácie jednu z najlepších.\n• Spokojnosť z podpory pre vývojárov. (Naozaj si to vážim!)</string>
   <string name="help_no_warranty" formatted="false">Tento softvér je ponúkaný v dúfaní, že bude užitočný ale BEZ AKEJKOĽVEK ZÁRUKY; neposkytujú sa ani odvodené záruky PREDAJNOSTI alebo VHODNOSTI PRE URČITÝ ÚČEL.\n\nAj keď som urobil všetko preto, aby som sa ubezpečil, že to funguje dobre a nespôsobuje problémy, nie som zodpovedný za prípadné škody alebo ťažkosti, ktoré to môže spôsobiť za žiadnych okolností.</string>
   <string name="help_acknowledgments" formatted="false">Táto aplikácia by bola dostupná iba v angličtine nebyť štedrej podpory zo strany dobrovoľných prekladateľov. Ďakujem!\n\nVeľká vďaka patrí aj Google a všetkým open-source programátorom platformy Android, ktorý toto umožnili.\n\nIkona v launcheri (zvislá batéria čo vidíte v Markete) je navrhnutá podľa ikony z <a href="http://www.oxygen-icons.org">Oxygen icon theme</a> a je použitá pod <a href="http://creativecommons.org/licenses/by-sa/3.0/">licenciou Creative Common Attribution-ShareAlike 3.0 </a>.</string>

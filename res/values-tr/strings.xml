@@ -3,15 +3,56 @@
   <string name="app_full_name" formatted="false">Pil Göstergesi Pro</string>
   <string name="settings_activity_name" formatted="false">Pil Göstergesi Pro - Ayarlar</string>
   <string name="app_full_name_free" formatted="false">Pil Göstergesi</string>
-  <string name="settings_activity_name_free" formatted="false">Pil Göstergesi Pro - Ayarlar</string>
-  <string name="help_activity_name_free" formatted="false">Pil Göstergesi Pro - Yardım</string>
-  <string name="battery_use_b" formatted="false">Pil Kullanımı</string>
-  <string name="upgrade_donate_b" formatted="false">Güncelle/Bağış...</string>
-  <string name="reenable_lock_screen" formatted="false">Ekran Kilidini Etkinleşdir</string>
+  <string name="settings_activity_name_free" formatted="false">Pil Göstergesi - Ayarlar</string>
+  <string name="help_activity_name_free" formatted="false">Pil Göstergesi - Yardım</string>
+  <string name="battery_use_b" formatted="false">Pil Kullanımını Görüntüle</string>
+  <string name="upgrade_donate_b" formatted="false">Yükselt/Bağış Yap...</string>
+  <string name="reenable_lock_screen" formatted="false">Ekran Kilidini Tekrar Etkinleştir</string>
   <string name="disable_lock_screen" formatted="false">Ekran Kilidini Kaldır</string>
-  <string name="confirm_disable" formatted="false">Ekran Kilidini Kaldırmakda Eminmisin?</string>
-  <string name="confirm_disable_hint" formatted="false">Ipucu: Bu uyarlama hatırlatmasını ayarlar\'dan kaldıra bilirsin...</string>
+  <string name="confirm_disable" formatted="false">Ekran kilidini kaldırmak istediğine emin misin?</string>
+  <string name="confirm_disable_hint" formatted="false">İpucu: Bu hatırlatma mesajını ayarlar\'dan kaldırabilirsin...</string>
   <string name="yes" formatted="false">Evet</string>
-  <string name="cancel" formatted="false">Iptal</string>
-  <string name="confirm_close" formatted="false">Gerçekten Kapat?</string>
+  <string name="cancel" formatted="false">İptal</string>
+  <string name="confirm_close" formatted="false">Kapatmak İstediğine Emin Misin?</string>
+  <string name="first_run_title" formatted="false">Teşekkürler!</string>
+  <string name="okay" formatted="false">Tamam</string>
+  <string name="menu_settings" formatted="false">Ayarlar</string>
+  <string name="menu_close" formatted="false">Kapat</string>
+  <string name="menu_help" formatted="false">Yardım</string>
+  <string name="percent_symbol" formatted="false">%</string>
+  <string name="degree_symbol" formatted="false">°</string>
+  <string name="fahrenheit" formatted="false">Fahrenhayt</string>
+  <string name="fahrenheit_symbol" formatted="false">F</string>
+  <string name="celsius" formatted="false">Santigrad</string>
+  <string name="celsius_symbol" formatted="false">C</string>
+  <string name="volt_symbol" formatted="false">V</string>
+  <string name="press_back_to_leave" formatted="false">Çıkmak için GERİ tuşuna bas.</string>
+  <string name="press_menu_for_more" formatted="false">Daha fazla seçenek için MENU tuşuna bas.</string>
+  <string name="discharging_from" formatted="false">Şu zamandan beri şarj edilmiyor</string>
+  <string name="charging_from" formatted="false">Şu zamandan beri şarj ediliyor</string>
+  <string name="fully_charged" formatted="false">Şarj Tam Dolu</string>
+  <string name="since" formatted="false">Şu zamandan beri</string>
+  <string name="one_six_needed" formatted="false">Üzgünüm, Android 1.6+ gerekiyor!</string>
+  <string name="currently_using" formatted="false">Şu an kullanılıyor</string>
+  <string name="currently_set_to" formatted="false">"Şu an buna ayarlı: "</string>
+  <string name="currently_disabled" formatted="false">Şu An Etkin Değil</string>
+  <string name="help_cat_version" formatted="false">Sürüm</string>
+  <string name="help_cat_changelog" formatted="false">Değişiklik listesi</string>
+  <string name="help_cat_limitations" formatted="false">Sınırlamalar</string>
+  <string name="help_cat_features" formatted="false">Özellikler</string>
+  <string name="help_cat_no_warranty" formatted="false">Garanti Yok</string>
+  <string name="help_cat_acknowledgments" formatted="false">Onaylar</string>
+  <string name="help_cat_translations" formatted="false">Çeviriler</string>
+  <string name="help_subcat_translators" formatted="false">Çevirmenler</string>
+  <string name="help_cat_contact" formatted="false">Kişi</string>
+  <string name="pref_hint" formatted="false">İpucu: Yardım için MENU tuşuna bas.</string>
+  <string name="confirm_close_hint" formatted="false">Pil Göstergesi tamamen kapatıldı, ve artık durum çubuğunda görmeyeceksin.\n\nEğer sadece ana pencereden çıkmayı ama göstergenin çalışmaya devam etmesini istiyorsan, İPTAL tuşuna bas ve daha sonra cihazın BACK tuşuna basarak ana pencereden çık.</string>
+  <string name="first_run_message_free" formatted="false">Pil Göstergesi\'ni indirdiğin için teşekkürler! <b><i>Bu önemli</i> :</b>\n\nEğer bir tür \"<b>task killer</b>\" / uygulamasına sahipsen, o uygulamayı kaldırmalısın ya da onu Pil Göstergesi uygulamasının çalışmasını engellemeyecek şekilde ayarlamalısın.</string>
+  <string name="first_run_message" formatted="false">Bağışın/satın alımın için teşekkürler! <b><i>Şu iki nokta çok önemli:</i> :</b>\n\n• Eğer bir tür \"<b>task killer</b>\" / uygulamasına sahipsen, o uygulamayı kaldırmalısın ya da onu Pil Göstergesi uygulamasının çalışmasını engellemeyecek şekilde ayarlamalısın. Uygulamanın bedava sürümünü için daha önce bu ayarı yapmış olsan bile, <i>Pro sürüm için de aynı ayarı yapman gerekiyor</i> !\n\n• Eğer <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, ya da <b>Samsung Moment</b>\' sahipsen, \"Diğer Ayarlar\" bölümünden \"%10 Modu\"\'nu açmalısın.</string>
+  <string name="help_changelog" formatted="false">Şu adrese bakın: <a href="http://code.google.com/p/battery-indicator/wiki/Changelog?tm=6">online Changelog</a></string>
+  <string name="help_cat_introduction" formatted="false">Giriş</string>
+  <string name="help_introduction_free" formatted="false">Bu, <i>Pil Göstergesi</i>, <i>Pil Göstergesi</i> uygulama ailesinin bedava sürümüdür. u uygulamayı Android Market\'ten satın alabilirsin, ancak aynı zamanda bir açık kaynak projesi olduğundan, <a href="http://code.google.com/p/battery-indicator/">projenin web sayfası</a> olan şu adresten kaynak kodunu bedavaya indirebilirsin.\n\nEğer bağış yapmak istiyorsan şu adresten uygulamayı yükseltebilirsin: <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a>.</string>
+  <string name="help_cat_summary" formatted="false">Özet</string>
+  <string name="pref_cat_temperature_unit" formatted="false">Sıcaklık Birimi</string>
+  <string name="pref_convert_to_fahrenheit" formatted="false">Fahrenhayt\'a çevir</string>
 </resources>

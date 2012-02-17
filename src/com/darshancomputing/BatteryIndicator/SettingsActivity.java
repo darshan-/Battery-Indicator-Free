@@ -39,7 +39,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_FINISH_AFTER_TOGGLE_LOCK = "finish_after_toggle_lock";
     public static final String KEY_AUTO_DISABLE_LOCKING = "auto_disable_lock_screen";
     public static final String KEY_CONVERT_F = "convert_to_fahrenheit";
-    public static final String KEY_AUTOSTART = "autostart";
     public static final String KEY_ONE_PERCENT_HACK = "one_percent_hack";
     public static final String KEY_CHARGE_AS_TEXT = "charge_as_text";
     public static final String KEY_STATUS_DUR_EST = "status_dur_est";
@@ -47,7 +46,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     private static final String[]    PARENTS = {};
     private static final String[] DEPENDENTS = {};
 
-    private static final String[] LIST_PREFS = {KEY_AUTOSTART, KEY_STATUS_DUR_EST};
+    private static final String[] LIST_PREFS = {KEY_STATUS_DUR_EST};
 
     private static final String[] RESET_SERVICE = {KEY_CONVERT_F, KEY_CHARGE_AS_TEXT, KEY_STATUS_DUR_EST,
                                                    KEY_AUTO_DISABLE_LOCKING, KEY_ONE_PERCENT_HACK};

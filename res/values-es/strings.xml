@@ -65,18 +65,10 @@
   <string name="pref_cat_temperature_unit" formatted="false">Unidad de temperatura</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Convertir a Fahrenheit</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android informa de la temperatura en grados Celsius. Si prefiere ver la temperatura de la batería en grados Fahrenheit, marque esta opción.</string>
-  <string name="pref_cat_autostart" formatted="false">Autoarranque</string>
-  <string name="pref_autostart_at_boot" formatted="false">Autoarrancar al inicio</string>
-  <string name="pref_autostart_at_boot_summary" formatted="false">¿Arrancar Battery Indicator al encender el dispositivo?</string>
-  <string name="pref_autostart_at_boot_help" formatted="false">Controla si Battery Indicator arranca automáticamente cuando se enciende el dispositivo.\n\nLa opción \"Si estaba ejecutándose al apagar\" recuerda la última vez que ha iniciado o cerrado manualmente Battery Indicator. Si ha matado el proceso de Battery Indicator por otro medio, como un gestor de tareas, Battery Indicator no sabrá que lo ha parado y arrancará automáticamente al inicio aunque tenga marcada esta opción.</string>
   <string name="pref_cat_charge_as_text" formatted="false">Nivel de carga textual</string>
   <string name="pref_charge_as_text" formatted="false">Nivel de carga textual</string>
   <string name="pref_charge_as_text_summary" formatted="false">¿Mostrar el nivel de carga como un texto maś grande junto al icono?</string>
   <string name="pref_charge_as_text_help" formatted="false">Algunos usuarios con problemas de visión me pidieron que añadiera esta opción, en la que el nivel de carga se muestra como un texto (más grande y fácil de leer) justo al lado del icono que aparece al bajar la barra de notificaciones. El icono en sí mismo no será diferente, por lo que el efecto sólo será apreciable al bajar la barra, pero es mejor que nada, y suficientemente fácil de añadir al programa para aquellos que lo pidieron.\n\nPara ahorrar espacio, simplemente he puesto el número junto al icono. Esto además resulta ser más fácil de leer que si se incluyera también el tanto por ciento, y evita problemas de espacio en pantalla. Aun así, si tiene una pantalla especialmente pequeña esto podría hacer que el AM/PM que se muestra a la derecha no se viera completamente bien.</string>
-  <string name="pref_cat_status_duration" formatted="false">Duración de estado (Desde/Durante...)</string>
-  <string name="pref_status_dur_est" formatted="false">Cuándo aproximar</string>
-  <string name="pref_status_dur_est_summary" formatted="false">Horas a las que se empieza a aproximar tras el cambio de estado</string>
-  <string name="pref_status_dur_est_help" formatted="false">Determina cuando la notificación pasa de decir, por ejemplo, \"Desenchufado desde la 1:10 PM\" a decir algo como \"Desenchufado desde hace una hora\". La primera forma es más exacta, pero muchos usuarios prefieren la sgeunda por ser más fácil de comprender, y pueden querer que se produzca este cambio antes de 12 horas, que es el valor por defecto.</string>
   <string-array name="statuses">
     <item>Desenchufado</item>
     <item>Desconocido</item>

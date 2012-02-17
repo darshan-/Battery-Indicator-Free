@@ -49,6 +49,8 @@ public class BatteryIndicatorService extends Service {
 
     private static final String LOG_TAG = "BatteryIndicatorService";
 
+    public static final String KEY_SERVICE_DESIRED = "serviceDesired";
+
     @Override
     public void onCreate() {
         //android.os.Debug.startMethodTracing();
@@ -217,10 +219,10 @@ public class BatteryIndicatorService extends Service {
             String contentTitle = "";
 
             if (settings.getBoolean(SettingsActivity.KEY_CHARGE_AS_TEXT, false))
-                contentTitle += percent + " ";
+                contentTitle += percent + str.percent_symbol + " ";
 
-            int status_dur_est = Integer.valueOf(settings.getString(SettingsActivity.KEY_STATUS_DUR_EST,
-                                        str.default_status_dur_est));
+            int status_dur_est = 12; // TODO: Better to get integer value of default from misc.xml
+
             if (statusDurationHours < status_dur_est) {
                 contentTitle += statusStr + " " + str.since + " " + last_status_since;
             } else {

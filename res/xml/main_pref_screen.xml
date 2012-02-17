@@ -14,28 +14,6 @@
     />
   </PreferenceCategory>
 
-  <PreferenceCategory android:title="@string/pref_cat_autostart">
-    <ListPreference
-       android:key="autostart"
-       android:title="@string/pref_autostart_at_boot"
-       android:entries="@array/boot_pref_entries" 
-       android:entryValues="@array/boot_pref_values"
-       android:dialogTitle="@string/pref_autostart_at_boot_summary"
-       android:defaultValue="auto"
-    />
-  </PreferenceCategory>
-
-  <PreferenceCategory android:title="@string/pref_cat_status_duration">
-    <ListPreference
-       android:key="status_dur_est"
-       android:title="@string/pref_status_dur_est"
-       android:entries="@array/status_dur_est_entries" 
-       android:entryValues="@array/status_dur_est_values"
-       android:dialogTitle="@string/pref_status_dur_est_summary"
-       android:defaultValue="@string/default_status_dur_est"
-    />
-  </PreferenceCategory>
-
   <PreferenceCategory android:title="@string/pref_cat_charge_as_text">
     <CheckBoxPreference
        android:key="charge_as_text"

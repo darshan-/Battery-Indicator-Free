@@ -65,18 +65,10 @@
   <string name="pref_cat_temperature_unit" formatted="false">溫度顯示單位</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">確認切換到華氏單位？</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android系統以攝氏單位報告電池溫度信息。若您想使溫度信息以華氏單位顯示，請勾選此項。</string>
-  <string name="pref_cat_autostart" formatted="false">自動啟動</string>
-  <string name="pref_autostart_at_boot" formatted="false">開機自動啟動方式</string>
-  <string name="pref_autostart_at_boot_summary" formatted="false">確認允許電量指示器開機時自動啟動？</string>
-  <string name="pref_autostart_at_boot_help" formatted="false">設定是否允許電量指示器在開機時自動啟動。\n\n」關機前運行中」選項僅在手動關閉電量指示器時有效。若您使用其他方式，如使用任務殺手進行關閉，則本程序無法確認是否由您關閉，選擇該方式後仍會在開機時自動啟動。</string>
   <string name="pref_cat_charge_as_text" formatted="false">文本顯示電量</string>
   <string name="pref_charge_as_text" formatted="false">文本顯示電量</string>
   <string name="pref_charge_as_text_summary" formatted="false">確認以大字體文本在圖標旁顯示剩餘電量？</string>
   <string name="pref_charge_as_text_help" formatted="false">鑒於部分視力不佳用戶的要求，此功能可在狀態列下拉托盤中電量指示器圖標右側以易閱讀的大字體顯示剩餘電量信息，原電量圖標無任何改變。勾選/取消此項只能在狀態列下拉托盤中看到變化，但此功能有勝於無，且對有需求的用戶而言易於實現。\n\n為節約寶貴的顯示空間，經過多次單調乏味的調試實現此功能，在不使用百分符號的前提下，文本已能完美的顯示並易於閱讀。對於部分非常小型的設備而言，開啟此功能可能導致AM/PM字符偏離原位導致不協調。</string>
-  <string name="pref_cat_status_duration" formatted="false">狀態時長</string>
-  <string name="pref_status_dur_est" formatted="false">估算前持續時間</string>
-  <string name="pref_status_dur_est_summary" formatted="false">開始估算剩餘時間前持續時間</string>
-  <string name="pref_status_dur_est_help" formatted="false">設定通知信息從諸如「拔下電源開始於1:10 PM」到「拔下電源已1小時」的轉換前持續時間。第一種顯示精確到分鐘的狀態變化信息顯示更為準確，但多數用戶喜歡更簡便的方式以估計狀態持續時間，因此更樂於使用比預設12小時計時法更簡便的提示信息。</string>
   <string-array name="statuses">
     <item>拔下電源</item>
     <item>未知</item>
