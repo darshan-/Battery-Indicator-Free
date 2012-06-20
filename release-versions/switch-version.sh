@@ -7,11 +7,28 @@
 # cd current
 # for each file in each dir in current, copy to actual res/
 
+wd=`dirname \`realpath $0\``
+current=`basename \`realpath current\``
+normal_dir='normal-icons-pre-v11'
+blacksq_dir='black-square-icons-v11'
+
 function swap_current {
-    if [ -e `realpath` ]
+    pushd $wd >/dev/null
+
+    if [ $current = $normal_dir ]
     then
+        ln -sfn $blacksq_dir current
+    else
+        ln -sfn $normal_dir current
     fi
+
+    current=`basename \`realpath current\``
+
+    popd >/dev/null
 }
+
+
+swap_current
 
 cd current
 
