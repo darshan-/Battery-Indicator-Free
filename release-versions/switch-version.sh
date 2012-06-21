@@ -27,18 +27,35 @@ function swap_current {
     popd >/dev/null
 }
 
+cd current
+
+for f in */*
+do
+    rm ../../res/$f
+done
+
+for d in *
+do
+    rmdir --ignore-fail-on-non-empty $d
+done
+
+cd ..
 
 swap_current
 
 cd current
 
+for d in *
+do
+    mkdir $d 2> /dev/null
+done
+
 for f in */*
 do
-    echo rm ../../res/$f
+    cp $f ../../res/$f
 done
 
 cd ..
-
 
 
 # cd ../default/res
