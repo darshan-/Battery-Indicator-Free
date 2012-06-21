@@ -12,3 +12,5 @@ res/drawable*
 !res/drawable*/battery.png
 !res/drawable*/panel_background.9.png
 !res/drawable*/drop_shadow_bg.9.png
+
+release-versions/current

@@ -1,78 +1,110 @@
 #!/bin/bash
 
-# cd current
-# for each file in each dir in current, remove it from actual res/
-# go back up
-# swap current
-# cd current
-# for each file in each dir in current, copy to actual res/
-
-wd=`dirname \`realpath $0\``
-current=`basename \`realpath current\``
-normal_dir='normal-icons-pre-v11'
-blacksq_dir='black-square-icons-v11'
+NORMAL_DIR='normal-icons-pre-v11'
+V11_DIR='black-square-icons-v11'
+NORMAL_ARG='normal'
+V11_ARG='v11'
+SWAP_ARG='swap'
 
 function swap_current {
     pushd $wd >/dev/null
 
-    if [ $current = $normal_dir ]
+    if [ $current = $NORMAL_DIR ]
     then
-        ln -sfn $blacksq_dir current
+        ln -sfn $V11_DIR current
     else
-        ln -sfn $normal_dir current
+        ln -sfn $NORMAL_DIR current
     fi
 
     current=`basename \`realpath current\``
-
     popd >/dev/null
 }
 
-cd current
+function set_cur_to_req {
+    pushd $wd >/dev/null
 
-for f in */*
-do
-    rm ../../res/$f
-done
+    ln -sfn $req_dir current
 
-for d in *
-do
-    rmdir --ignore-fail-on-non-empty $d
-done
+    current=`basename \`realpath current\``
+    popd >/dev/null
+}
 
-cd ..
+wd=`dirname \`realpath $0\``
+cd $wd
 
-swap_current
+current=`basename \`realpath current 2> /dev/null\` 2> /dev/null`
 
-cd current
+if [ $? -ne 0 ]
+then
+    current='none'
+fi
 
-for d in *
-do
-    mkdir $d 2> /dev/null
-done
+if [ $# -gt 0 ]
+then
+    if [ $1 = $NORMAL_ARG ]
+    then
+        req_dir=$NORMAL_DIR
+    elif [ $1 = $V11_ARG ]
+    then
+        req_dir=$V11_DIR
+    else
+        echo "Error: '$1' not valid; please choose '$NORMAL_ARG' or '$V11_ARG', or leave off to swap."
+        exit
+    fi
+else
+    if [ $current = 'none' ]
+    then
+        echo "Please choose '$NORMAL_ARG' or '$V11_ARG' to set initial version."
+        exit
+    fi
 
-for f in */*
-do
-    cp $f ../../res/$f
-done
+    req_dir=$SWAP_ARG
+fi
 
-cd ..
+if [ $req_dir = $current ]
+then
+    echo "Already set to $current"
+    exit
+fi
 
+function rm_cur {
+    cd current
 
-# cd ../default/res
+    for f in */*
+    do
+        rm ../../res/$f
+    done
 
-# for d in values*
-# do
-#     source=$d/strings.xml
-#     dest_dir=../../free/res/$d
+    for d in *
+    do
+        rmdir --ignore-fail-on-non-empty $d
+    done
 
-#     if [ -e $source ]
-#     then
-#         if [ ! -d $dest_dir ]
-#         then
-#             echo "Creating res/$d"
-#             mkdir $dest_dir
-#         fi
+    cd ..
+}
 
-#         cp $source $dest_dir
-#     fi
-# done
+function cp_cur {
+    cd current
+
+    for d in *
+    do
+        mkdir $d 2> /dev/null
+    done
+
+    for f in */*
+    do
+        cp $f ../../res/$f
+    done
+
+    cd ..
+}
+
+if [ $current = 'none' ]
+then
+    set_cur_to_req
+else
+    rm_cur
+    swap_current
+fi
+
+cp_cur
