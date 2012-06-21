@@ -51,12 +51,22 @@ public class BatteryIndicatorService extends Service {
 
     public static final String KEY_SERVICE_DESIRED = "serviceDesired";
 
+    private static final int defaultIcon0 = R.drawable.b000;
+    private int chargingIcon0;
+
     @Override
     public void onCreate() {
         //android.os.Debug.startMethodTracing();
 
         res = getResources();
         str = new Str();
+
+        try {
+            java.lang.reflect.Field f = R.drawable.class.getField("charging000");
+            chargingIcon0 = f.getInt(R.drawable.class);
+        } catch (Exception e) {
+            chargingIcon0 = defaultIcon0;
+        }
 
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -139,7 +149,7 @@ public class BatteryIndicatorService extends Service {
 
             /* I Take advantage of (count on) R.java having resources alphabetical and incrementing by one */
 
-            int icon = R.drawable.b000 + percent;
+            int icon = ((status == 2) ? chargingIcon0 : defaultIcon0) + percent;
 
             /* Just treating any unplugged status as simply "Unplugged" now.
                Note that the main activity now assumes that the status is always 0, 2, or 5 */
