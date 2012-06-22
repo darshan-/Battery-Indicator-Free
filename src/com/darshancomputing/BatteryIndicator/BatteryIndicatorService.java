@@ -242,7 +242,7 @@ public class BatteryIndicatorService extends Service {
             CharSequence contentText = str.healths[health] + " / " + temp_s + " / " +
                                        String.valueOf(voltage / 1000.0) + str.volt_symbol;
 
-            Notification notification = new Notification(icon, null, System.currentTimeMillis());
+            Notification notification = new Notification(icon, null, 0);
 
             notification.flags |= Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
             PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
