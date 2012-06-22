@@ -66,6 +66,10 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
         res = getResources();
 
+        // Stranglely disabled by default for API level 14+
+        ///*v11*/ if (res.getBoolean(R.bool.api_level_14_plus))
+        ///*v11*/     getActionBar().setHomeButtonEnabled(true);
+
         mSharedPreferences = getPreferenceManager().getSharedPreferences();
 
         setPrefScreen(R.xml.main_pref_screen);

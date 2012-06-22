@@ -10,9 +10,13 @@ V11_DIR='black-square-icons-v11'
 NORMAL_ARG='normal'
 V11_ARG='v11'
 SWAP_ARG='swap'
+SHOW_ARG='show'
 
 NORMAL_MIN_API='3'
 V11_MIN_API='11'
+
+NORMAL_V11_COMMENT="\/\/\/\*v11\*\/"
+V11_V11_COMMENT="\/\*v11\*\/"
 
 #
 # Functions
@@ -101,6 +105,13 @@ then
     elif [ $1 = $V11_ARG ]
     then
         req_dir=$V11_DIR
+    elif [ $1 = $SWAP_ARG ]
+    then
+        req_dir=$SWAP_ARG
+    elif [ $1 = $SHOW_ARG ]
+    then
+        echo "Currently using $current"
+        exit
     else
         echo "Error: '$1' not valid; please choose '$NORMAL_ARG' or '$V11_ARG', or leave off to swap."
         exit
@@ -142,13 +153,19 @@ cp_cur
 cd $wd/..
 manifest="AndroidManifest.xml"
 
-if [ $current = $NORMAL_DIR ]
+if [ $current = $NORMAL_DIR ] # `current' has already been switched, this is what we're switching TO
 then
     old_api=$V11_MIN_API
     new_api=$NORMAL_MIN_API
+
+    old_comment=$V11_V11_COMMENT
+    new_comment=$NORMAL_V11_COMMENT
 else
     old_api=$NORMAL_MIN_API
     new_api=$V11_MIN_API
+
+    old_comment=$NORMAL_V11_COMMENT
+    new_comment=$V11_V11_COMMENT
 fi
 
 old_api_long=`printf "%03d" $old_api`
@@ -162,3 +179,10 @@ new_mv="minSdkVersion=\\\"$new_api\\\""
 
 sed -i -e"s/$old_vc/$new_vc/" $manifest
 sed -i -e"s/$old_mv/$new_mv/" $manifest
+
+for src in src/com/darshancomputing/BatteryIndicator/*.java
+do
+    sed -i -e"s/$old_comment/$new_comment/" $src
+done
+
+echo "Switched to $current"
