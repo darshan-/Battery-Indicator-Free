@@ -46,8 +46,8 @@ function set_cur_to_req {
     popd >/dev/null
 }
 
-function rm_cur {
-    cd current
+function rm_cur_files {
+    pushd $wd/current >/dev/null
 
     for f in */*
     do
@@ -59,11 +59,11 @@ function rm_cur {
         rmdir --ignore-fail-on-non-empty $d
     done
 
-    cd ..
+    popd >/dev/null
 }
 
 function cp_cur {
-    cd current
+    pushd $wd/current >/dev/null
 
     for d in *
     do
@@ -75,7 +75,38 @@ function cp_cur {
         cp $f ../../res/$f
     done
 
-    cd ..
+    popd >/dev/null
+}
+
+function update_manifest {
+    pushd $wd/.. >/dev/null
+
+    manifest="AndroidManifest.xml"
+
+    old_api_long=`printf "%03d" $old_api`
+    new_api_long=`printf "%03d" $new_api`
+
+    old_vc="versionCode=\\\"$old_api_long"
+    new_vc="versionCode=\\\"$new_api_long"
+
+    old_mv="minSdkVersion=\\\"$old_api\\\""
+    new_mv="minSdkVersion=\\\"$new_api\\\""
+
+    sed -i -e"s/$old_vc/$new_vc/" $manifest
+    sed -i -e"s/$old_mv/$new_mv/" $manifest
+
+    popd >/dev/null
+}
+
+function update_src {
+    pushd $wd/.. >/dev/null
+
+    for src in src/com/darshancomputing/BatteryIndicator/*.java
+    do
+        sed -i -e"s/$old_comment/$new_comment/" $src
+    done
+
+    popd >/dev/null
 }
 
 #
@@ -95,6 +126,8 @@ if [ $? -ne 0 ]
 then
     current='none'
 fi
+
+old_cur=$current
 
 # Get goal from arg 1 or assume goal is to swap
 
@@ -138,63 +171,58 @@ then
     exit
 fi
 
-if [ $req_dir = $NONE_ARG ]
+if [ $req_dir = 'none' ]
 then
-    rm_cur
+    rm_cur_files
+
+    cd $wd
     rm current
-    echo "Removed $current; set to none"
-    exit
-fi
 
-# Set current; removing old files if necessary
-
-if [ $current = 'none' ]
-then
-    set_cur_to_req
+    current='none'
 else
-    rm_cur
-    swap_current
+    # Set current; removing old files if necessary
+
+    if [ $current = 'none' ]
+    then
+        set_cur_to_req
+    else
+        rm_cur_files
+        swap_current
+    fi
+
+    # Copy files
+
+    cp_cur
 fi
 
-# Copy files
+# Set vars
 
-cp_cur
-
-# Set up manifest
-
-cd $wd/..
-manifest="AndroidManifest.xml"
-
-if [ $current = $NORMAL_DIR ] # `current' has already been switched, this is what we're switching TO
+if [[ $old_cur = $NORMAL_DIR || $old_cur = 'none' ]]
 then
+    old_api=$NORMAL_MIN_API
+    old_comment=$NORMAL_V11_COMMENT
+else
     old_api=$V11_MIN_API
-    new_api=$NORMAL_MIN_API
-
     old_comment=$V11_V11_COMMENT
+fi
+
+if [[ $req_dir = $NORMAL_DIR || $req_dir = 'none' ]]
+then
+    new_api=$NORMAL_MIN_API
     new_comment=$NORMAL_V11_COMMENT
 else
-    old_api=$NORMAL_MIN_API
     new_api=$V11_MIN_API
-
-    old_comment=$NORMAL_V11_COMMENT
     new_comment=$V11_V11_COMMENT
 fi
 
-old_api_long=`printf "%03d" $old_api`
-new_api_long=`printf "%03d" $new_api`
+# Update manifest and src if necessary
 
-old_vc="versionCode=\\\"$old_api_long"
-new_vc="versionCode=\\\"$new_api_long"
+if [ $old_api != $new_api ]
+then
+    update_manifest
+    update_src
+fi
 
-old_mv="minSdkVersion=\\\"$old_api\\\""
-new_mv="minSdkVersion=\\\"$new_api\\\""
-
-sed -i -e"s/$old_vc/$new_vc/" $manifest
-sed -i -e"s/$old_mv/$new_mv/" $manifest
-
-for src in src/com/darshancomputing/BatteryIndicator/*.java
-do
-    sed -i -e"s/$old_comment/$new_comment/" $src
-done
+# Report and finish
 
 echo "Switched to $current"
