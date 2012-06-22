@@ -11,6 +11,7 @@ NORMAL_ARG='normal'
 V11_ARG='v11'
 SWAP_ARG='swap'
 SHOW_ARG='show'
+NONE_ARG='none'
 
 NORMAL_MIN_API='3'
 V11_MIN_API='11'
@@ -108,6 +109,9 @@ then
     elif [ $1 = $SWAP_ARG ]
     then
         req_dir=$SWAP_ARG
+    elif [ $1 = $NONE_ARG ]
+    then
+        req_dir=$NONE_ARG
     elif [ $1 = $SHOW_ARG ]
     then
         echo "Currently using $current"
@@ -131,6 +135,14 @@ fi
 if [ $req_dir = $current ]
 then
     echo "Already set to $current"
+    exit
+fi
+
+if [ $req_dir = $NONE_ARG ]
+then
+    rm_cur
+    rm current
+    echo "Removed $current; set to none"
     exit
 fi
 
