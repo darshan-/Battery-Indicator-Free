@@ -101,7 +101,7 @@ function update_manifest {
 function update_src {
     pushd $wd/.. >/dev/null
 
-    for src in src/com/darshancomputing/BatteryIndicator/*.java
+    for src in src/com/darshancomputing/BatteryIndicator*/*.java
     do
         sed -i -e"s/$old_comment/$new_comment/" $src
     done
