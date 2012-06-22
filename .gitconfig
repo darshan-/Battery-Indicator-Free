@@ -1,1 +1,17 @@
-.git/config
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "googlecode"]
+	url = https://code.google.com/p/battery-indicator.free
+	fetch = +refs/heads/*:refs/remotes/googlecode/*
+[remote "github"]
+	url = git@github.com:darshan-/Battery-Indicator--Free-.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+[branch "master"]
+        remote = googlecode
+        merge = refs/heads/master
+[branch "dev"]
+        remote = googlecode
+        merge = refs/heads/dev
