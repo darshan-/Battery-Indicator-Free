@@ -239,10 +239,16 @@ public class BatteryIndicatorService extends Service {
                 contentTitle += statusStr + " " + str.for_n_hours(statusDurationHours);
             }
 
-            CharSequence contentText = str.healths[health] + " / " + temp_s + " / " +
-                                       String.valueOf(voltage / 1000.0) + str.volt_symbol;
+            String contentText = str.healths[health] + " / " + temp_s;
+
+            if (voltage > 500)
+                contentText += " / " + String.valueOf(voltage / 1000.0) + str.volt_symbol;
 
             Notification notification = new Notification(icon, null, 0);
+
+            ///*v11*/ if (android.os.Build.VERSION.SDK_INT >= 16) {
+                ///*v11*/     notification.priority = -1;
+            ///*v11*/ }
 
             notification.flags |= Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
             PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
