@@ -14,6 +14,15 @@
     />
   </PreferenceCategory>
 
+  <PreferenceCategory android:title="@string/pref_cat_themes">
+    <ListPreference
+       android:key="icon_set"
+       android:title="@string/pref_icon_set"
+       android:entries="@array/icon_set_entries"
+       android:entryValues="@array/icon_set_values"
+    />
+  </PreferenceCategory>
+
   <PreferenceCategory android:title="@string/pref_cat_charge_as_text">
     <CheckBoxPreference
        android:key="charge_as_text"

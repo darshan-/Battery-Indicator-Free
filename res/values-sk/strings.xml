@@ -56,6 +56,7 @@
   <string name="help_cat_contact" formatted="false">Kontakt</string>
   <string name="pref_hint" formatted="false">Nápoveda: pre pomoc stlačte MENU.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Viac nastavení vo verzii Pro</string>
+  <string name="pref_cat_themes" formatted="false">Témy</string>
   <string name="pref_cat_temperature_unit" formatted="false">Jednotky teploty</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Premeniť na Fahrenheity</string>
   <string name="pref_cat_charge_as_text" formatted="false">Stav nabitia v textovej podobe</string>

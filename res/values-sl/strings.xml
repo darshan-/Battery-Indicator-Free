@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
+  <string name="settings_activity_name" formatted="false">Battery Indicator Pro - Nastavitve</string>
+  <string name="battery_use_b" formatted="false">Poglej porabo baterije</string>
+  <string name="upgrade_donate_b" formatted="false">Nadgradi/doniraj...</string>
+  <string name="reenable_lock_screen" formatted="false">Ponovno omogoči zaklepanje zaslona</string>
+  <string name="disable_lock_screen" formatted="false">Onemogoči zaklepanje zaslona</string>
+  <string name="confirm_disable" formatted="false">Ste prepričani da želite onemogočiti zaklepanje zaslona?</string>
+  <string name="confirm_disable_hint" formatted="false">Namig: Onemogočite to vprašanje v nastavitvah...</string>
+  <string name="yes" formatted="false">Da</string>
+  <string name="cancel" formatted="false">Prekliči</string>
+  <string name="confirm_close" formatted="false">Ste prepričani da želite zapreti?</string>
+  <string name="confirm_close_hint" formatted="false">Battery Indicator bo popolnoma zaprt in ga ne boste več videli v statusni vrstici.\n\nČe bi radi zaprli le glavno okno in pustili indikator zagnan, pritisnite Prekliči in nato samo pritisnite tipko NAZAJ na napravi da zapustite glavno okno.</string>
+  <string name="first_run_title" formatted="false">Hvala!</string>
+  <string name="first_run_message" formatted="false">Hvala za vašo donacijo/nakup! <b><i>Sledeče tri točke so zelo pomembne</i> :</b>\n\n• Če uporabljate kakršnokoli \"<b>task killer</b>\" / aplikacijo, jo morate ali odstraniti ali dodati Battery Indicator Pro na seznam izjem. Tudi če ste že dodali brezplačno verzijo na seznam izjem, <i>morate še vedno dodati plačljivo verzijo</i> !\n\n• Če vaša naprava privzeto prikazuje stopnjo baterije le v 10% inkrementih (<b>večina Motorola naprav</b>), potem morate vklopiti \"One-percent Hack\" v \"Druge nastavitve\" da omogočite 1% inkremente.\n\n• Če je vaša statusna vrstica črna, posebaj če uporabljate Android 3 ali novejši, je priporočeno da naložite vtičnik \"Black Square\".</string>
+  <string name="first_run_message_free" formatted="false">Hvala za namestitev aplikacije Battery Indicator! <b><i>Sledeči dve točki sta zelo pomembni</i> :</b>\n\n• Če uporabljate kakršnokoli \"<b>task killer</b>\" / aplikacijo, jo morate ali odstraniti ali dodati Battery Indicator na seznam izjem.\n• Če vaša naprava privzeto prikazuje stopnjo baterije le v 10% inkrementih (<b>večina Motorola naprav</b>), potem morate vklopiti \"One-percent Hack\" v \"Druge nastavitve\" da omogočite 1% inkremente.</string>
+  <string name="okay" formatted="false">Vredu</string>
+  <string name="menu_settings" formatted="false">Nastavitve</string>
+  <string name="menu_close" formatted="false">Zapri</string>
+  <string name="menu_help" formatted="false">Pomoč</string>
+  <string name="percent_symbol" formatted="false">%</string>
+  <string name="degree_symbol" formatted="false">°</string>
+  <string name="fahrenheit" formatted="false">Fahrenheit</string>
+  <string name="fahrenheit_symbol" formatted="false">F</string>
+  <string name="celsius" formatted="false">Celsius</string>
+  <string name="celsius_symbol" formatted="false">C</string>
+  <string name="volt_symbol" formatted="false">V</string>
+  <string name="press_back_to_leave" formatted="false">Pritisnite NAZAJ za izhod.</string>
+  <string name="press_menu_for_more" formatted="false">Pritisnite MENU za več stvari.</string>
+  <string name="discharging_from" formatted="false">Praznanje od</string>
+  <string name="charging_from" formatted="false">Polnjenje od</string>
+  <string name="fully_charged" formatted="false">Napolnjeno</string>
+  <string name="since" formatted="false">od</string>
+  <string name="one_six_needed" formatted="false">Oprostite, potreben je Android 1.6+!</string>
+  <string name="currently_using" formatted="false">Trenutno uporabljeno</string>
+  <string name="currently_set_to" formatted="false">"Trenutno nastavljeno na: "</string>
+  <string name="currently_disabled" formatted="false">Trenutno onemogočeno</string>
+  <string name="help_cat_version" formatted="false">Različica</string>
+  <string name="help_cat_translations" formatted="false">Prevodi</string>
+  <string name="help_translations" formatted="false">Potrebujem pomoč pri prevajanju aplikacije v druge jezike. Če bi radi pomagali, mi prosim pošljite <a href="mailto:android%2Btranslations@darshancomputing.com">e-pošto</a>. (Ta e-pošta je samo za prevajanje; poglej Kontakt sekcijo spodaj za vsa ostala povpraševanja.) Razen če želite drugače, bom dodal vaše ime v to sekcijo kot dokaz da ste sodelovali.</string>
+  <string name="help_subcat_translators" formatted="false">Prevajalci</string>
+  <string name="help_cat_contact" formatted="false">Kontakt</string>
+  <string name="help_contact" formatted="false">Če imate vprašanje ali problem, prosim poglejte <a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">the project FAQ</a> za koncakt.\n</string>
+  <string name="pref_hint" formatted="false">Namig: Pritisnite MENU za pomoč.</string>
+  <string name="pref_cat_more_settings_in_pro" formatted="false">Več nastavitev v Pro različici</string>
+  <string name="pref_cat_themes" formatted="false">Preobleke</string>
+  <string name="pref_cat_temperature_unit" formatted="false">Enota za temperaturo</string>
+  <string name="pref_convert_to_fahrenheit" formatted="false">Pretvori v Fahrenheit</string>
+  <string name="pref_charge_as_text_summary" formatted="false">Prikaži kot besedilo zraven okone?</string>
+  <string-array name="statuses">
+    <item>Odklopljeno</item>
+    <item>Neznano</item>
+    <item>Polnjenje</item>
+    <item>Praznenje</item>
+    <item>Se ne polni</item>
+    <item>Napolnjeno</item>
+  </string-array>
+  <string-array name="log_statuses">
+    <item>Odklopljeno</item>
+    <item>Neznano</item>
+    <item>Priklopljeno</item>
+    <item>Neznano</item>
+    <item>Neznano</item>
+    <item>Napolnjeno</item>
+  </string-array>
+  <string-array name="log_statuses_old">
+    <item>Praznenje</item>
+    <item>Neznano</item>
+    <item>Polnjenje</item>
+    <item>Neznano</item>
+    <item>Neznano</item>
+    <item>Napolnjeno</item>
+  </string-array>
+  <string-array name="healths">
+    <item>Neznano</item>
+    <item>Neznano</item>
+    <item>Dobro zdravje</item>
+    <item>Pregreto</item>
+    <item>Mrtvo</item>
+    <item>Prevelika voltaža</item>
+    <item>Napaka</item>
+  </string-array>
+  <string-array name="pluggeds">
+    <item>Odklopljeno</item>
+    <item>(AC)</item>
+    <item>(USB)</item>
+    <item>(?)</item>
+  </string-array>
+  <string-array name="alarm_types_display">
+    <item>Napolnjeno</item>
+    <item>Baterija pade pod</item>
+    <item>Baterija pride nad</item>
+    <item>Temperatura pride nad</item>
+  </string-array>
+  <string-array name="alarm_type_entries">
+    <item>Se napolni</item>
+    <item>Baterije pade pod...</item>
+    <item>Baterija pride nad...</item>
+    <item>Temperatura pride nad...</item>
+  </string-array>
+  <string-array name="boot_pref_entries">
+    <item>Vedno</item>
+    <item>Nikoli</item>
+    <item>Če je zagnano ob izklopu</item>
+  </string-array>
+  <string-array name="status_dur_est_entries">
+    <item>Vedno</item>
+    <item>Po 1 uri</item>
+    <item>Po 2 urah</item>
+    <item>Po 3 urah</item>
+    <item>Po 6 urah</item>
+    <item>Po 12 urah</item>
+  </string-array>
+  <string-array name="max_log_age_entries">
+    <item>1 dan</item>
+    <item>2 dnei</item>
+    <item>4 dni</item>
+    <item>1 teden</item>
+    <item>2 tedna</item>
+    <item>3 tedne</item>
+    <item>4 tedne</item>
+  </string-array>
+</resources>

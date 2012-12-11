@@ -48,6 +48,7 @@
   <string name="help_cat_contact" formatted="false">Επικοινωνία</string>
   <string name="pref_hint" formatted="false">Συμβουλή: Πατήστε MENU για βοήθεια</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Επιπλέον Ρυθμίσεις στο Pro</string>
+  <string name="pref_cat_themes" formatted="false">Θέματα</string>
   <string name="pref_cat_temperature_unit" formatted="false">Μονάδες Θερμοκρασίας</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Μετατροπή σε Φάρεναϊτ</string>
   <string name="pref_cat_charge_as_text" formatted="false">Κειμενικό Επίπεδο Φόρτισης</string>

@@ -54,6 +54,7 @@
   <string name="pref_hint" formatted="false">Sugestão: Pressiona a tecla MENU para ajuda.</string>
   <string name="help_introduction_free" formatted="false">Esse é o <i>Battery Indicator</i>, a versão gratuita da família de aplicativos <i>Battery Indicator</i>. Ele está disponível no Android Market e é um projeto de código livre, o que significa que você pode fazer o download do código fonte na <a href="http://code.google.com/p/battery-indicator/">página do projeto</a>.\n\nPor favor, ajude o projeto, através de doações e comprando a <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">versão Pro</a>.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Mais Configurações na versão Pro</string>
+  <string name="pref_cat_themes" formatted="false">Temas</string>
   <string-array name="max_log_age_entries">
     <item>1 dia</item>
     <item>2 dias</item>

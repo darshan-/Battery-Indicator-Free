@@ -295,6 +295,8 @@
   <string name="default_green_thresh">@string/default_amber_thresh</string>
   <string name="default_green_thresh10">50</string>
 
+  <bool   name="default_show_notification_time">false</bool>
+
   <string name="default_status_dur_est"     >12</string>
   <bool   name="default_show_charge_time"   >true</bool>
   <bool   name="default_show_light_usage"   >true</bool>
@@ -304,6 +306,15 @@
 
   <string name="default_max_log_age">672</string>
 
+  <string-array name="notification_priority_values">
+    <item>2</item>
+    <item>1</item>
+    <item>0</item>
+    <item>-1</item>
+    <item>-2</item>
+  </string-array>
+
+  <string name ="default_main_notification_priority">-1</string>
 
   <string name="settings_help_activity_name">@string/settings_activity_name</string>
   <string name="settings_help_activity_name_free">@string/settings_activity_name_free</string>
@@ -349,9 +360,16 @@
     <item>672</item>
   </string-array>
 
+  <string-array name="icon_set_values">
+    <item>builtin.classic</item>
+    <item>builtin.plain_number</item>
+    <item>builtin.smaller_number</item>
+  </string-array>
+
   <bool name="long_activity_names">true</bool>
   <bool name="show_main_title">false</bool>
   <bool name="api_level_14_plus">false</bool>
+  <bool name="api_level_16_plus">false</bool>
   <bool name="override_list_activity_layout">true</bool>
 
   <string name="help_translators_list">
@@ -366,5 +384,6 @@
     \nRudy Baardman
     \nBoudewijn
     \nMiltos (Κύπρος)
+    \nDenis Bence
   </string>
 </resources>

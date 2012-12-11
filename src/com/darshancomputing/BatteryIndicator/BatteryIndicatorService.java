@@ -49,10 +49,36 @@ public class BatteryIndicatorService extends Service {
 
     private static final String LOG_TAG = "BatteryIndicatorService";
 
+
+    private static final int STATUS_UNPLUGGED     = 0;
+    private static final int STATUS_UNKNOWN       = 1;
+    private static final int STATUS_CHARGING      = 2;
+    private static final int STATUS_DISCHARGING   = 3;
+    private static final int STATUS_NOT_CHARGING  = 4;
+    private static final int STATUS_FULLY_CHARGED = 5;
+    private static final int STATUS_MAX = STATUS_FULLY_CHARGED;
+
+    private static final int PLUGGED_UNPLUGGED = 0;
+    private static final int PLUGGED_AC        = 1;
+    private static final int PLUGGED_USB       = 2;
+    private static final int PLUGGED_UNKNOWN   = 3;
+    private static final int PLUGGED_MAX = PLUGGED_UNKNOWN;
+
+    private static final int HEALTH_UNKNOWN     = 1;
+    private static final int HEALTH_GOOD        = 2;
+    private static final int HEALTH_OVERHEAT    = 3;
+    private static final int HEALTH_DEAD        = 4;
+    private static final int HEALTH_OVERVOLTAGE = 5;
+    private static final int HEALTH_FAILURE     = 6;
+    private static final int HEALTH_MAX = HEALTH_FAILURE;
+
+
     public static final String KEY_SERVICE_DESIRED = "serviceDesired";
 
-    private static final int defaultIcon0 = R.drawable.b000;
-    private int chargingIcon0;
+    private static final int plainIcon0 = R.drawable.plain000;
+    private static final int small_plainIcon0 = R.drawable.small_plain000;
+    private static final int chargingIcon0 = R.drawable.charging000;
+    private static final int small_chargingIcon0 = R.drawable.small_charging000;
 
     @Override
     public void onCreate() {
@@ -60,13 +86,6 @@ public class BatteryIndicatorService extends Service {
 
         res = getResources();
         str = new Str();
-
-        try {
-            java.lang.reflect.Field f = R.drawable.class.getField("charging000");
-            chargingIcon0 = f.getInt(R.drawable.class);
-        } catch (Exception e) {
-            chargingIcon0 = defaultIcon0;
-        }
 
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -149,7 +168,28 @@ public class BatteryIndicatorService extends Service {
 
             /* I Take advantage of (count on) R.java having resources alphabetical and incrementing by one */
 
-            int icon = ((status == 2) ? chargingIcon0 : defaultIcon0) + percent;
+            int icon;
+
+            String default_set = "builtin.classic";
+            if (android.os.Build.VERSION.SDK_INT >= 11)
+                default_set = "builtin.plain_number";
+
+            String icon_set = settings.getString(SettingsActivity.KEY_ICON_SET, "null");
+            if (icon_set.equals("null")) {
+                icon_set = default_set;
+
+                SharedPreferences.Editor settings_editor = settings.edit();
+                settings_editor.putString(SettingsActivity.KEY_ICON_SET, default_set);
+                settings_editor.commit();
+            }
+
+            if (icon_set.equals("builtin.plain_number")) {
+                icon = (status == STATUS_CHARGING ? chargingIcon0 : plainIcon0) + percent;
+            } else if (icon_set.equals("builtin.smaller_number")) {
+                icon = (status == STATUS_CHARGING ? small_chargingIcon0 : small_plainIcon0) + percent;
+            } else {
+                icon = R.drawable.b000 + percent;
+            }
 
             /* Just treating any unplugged status as simply "Unplugged" now.
                Note that the main activity now assumes that the status is always 0, 2, or 5 */
@@ -246,9 +286,9 @@ public class BatteryIndicatorService extends Service {
 
             Notification notification = new Notification(icon, null, 0);
 
-            ///*v11*/ if (android.os.Build.VERSION.SDK_INT >= 16) {
-                ///*v11*/     notification.priority = -1;
-            ///*v11*/ }
+            if (android.os.Build.VERSION.SDK_INT >= 16) {
+                notification.priority = -1;
+            }
 
             notification.flags |= Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
             PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);

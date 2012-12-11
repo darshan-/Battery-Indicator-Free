@@ -59,6 +59,7 @@
   <string name="help_changelog" formatted="false">Bekijk de <a href="http://code.google.com/p/battery-indicator/wiki/Changelog?tm=6">lijst van wijzigingen</a>.</string>
   <string name="help_cat_no_warranty" formatted="false">Geen garantie</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Meer instellingen in Battery Indicator Pro!</string>
+  <string name="pref_cat_themes" formatted="false">Thema\'s</string>
   <string name="help_cat_features" formatted="false">Mogelijkheden</string>
   <string name="pref_cat_temperature_unit" formatted="false">Temperatuureenheid</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Gebruik Fahrenheit in plaats van Celsius</string>
