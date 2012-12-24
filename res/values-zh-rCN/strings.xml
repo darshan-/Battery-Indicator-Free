@@ -36,10 +36,10 @@
   <string name="fully_charged" formatted="false">完全充满</string>
   <string name="since" formatted="false">开始于</string>
   <string name="one_six_needed" formatted="false">对不起，此功能仅支持Android 1.6+版本系统！</string>
-  <string name="help_cat_version" formatted="false">版本</string>
   <string name="currently_using" formatted="false">当前使用</string>
   <string name="currently_set_to" formatted="false">"当前设置为"</string>
   <string name="currently_disabled" formatted="false">当前不可用</string>
+  <string name="help_cat_version" formatted="false">版本</string>
   <string name="help_cat_changelog" formatted="false">更新日志</string>
   <string name="help_changelog" formatted="false">，。请访问<a href="http://code.google.com/p/battery-indicator/wiki/FAQ#What's_new_in_the_update?">项目FAQ</a>以获取版本历史。</string>
   <string name="help_cat_introduction" formatted="false">软件介绍</string>
@@ -102,12 +102,14 @@
     <item>损坏</item>
     <item>超压</item>
     <item>错误</item>
+    <item>Cold</item>
   </string-array>
   <string-array name="pluggeds">
     <item>Unplugged</item>
     <item>(AC)</item>
     <item>(USB)</item>
     <item>(?)</item>
+    <item>(WL)</item>
   </string-array>
   <string-array name="mw_theme_pref_entries">
     <item>默认小窗口</item>

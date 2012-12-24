@@ -102,12 +102,14 @@
     <item>Batería muerta</item>
     <item>Sobretensión</item>
     <item>Fallo</item>
+    <item>Frío</item>
   </string-array>
   <string-array name="pluggeds">
     <item>Unplugged</item>
     <item>(Red)</item>
     <item>(USB)</item>
     <item>(?)</item>
+    <item>(WL)</item>
   </string-array>
   <string-array name="mw_theme_pref_entries">
     <item>Por defecto (Pequeña)</item>
@@ -135,6 +137,11 @@
     <item>2 semanas</item>
     <item>3 semanas</item>
     <item>4 semanas</item>
+  </string-array>
+  <string-array name="icon_set_entries">
+    <item>Clásico</item>
+    <item>Número Sencillo</item>
+    <item>Número más Pequeño</item>
   </string-array>
   <plurals name="n_log_items">
     <item quantity="one">%d entrada en el registro</item>

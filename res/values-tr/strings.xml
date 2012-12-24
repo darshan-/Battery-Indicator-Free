@@ -14,7 +14,10 @@
   <string name="yes" formatted="false">Evet</string>
   <string name="cancel" formatted="false">İptal</string>
   <string name="confirm_close" formatted="false">Kapatmak İstediğine Emin Misin?</string>
+  <string name="confirm_close_hint" formatted="false">Pil Göstergesi tamamen kapatıldı, ve artık durum çubuğunda görmeyeceksin.\n\nEğer sadece ana pencereden çıkmayı ama göstergenin çalışmaya devam etmesini istiyorsan, İPTAL tuşuna bas ve daha sonra cihazın BACK tuşuna basarak ana pencereden çık.</string>
   <string name="first_run_title" formatted="false">Teşekkürler!</string>
+  <string name="first_run_message" formatted="false">Bağışın/satın alımın için teşekkürler! <b><i>Şu iki nokta çok önemli:</i> :</b>\n\n• Eğer bir tür \"<b>task killer</b>\" / uygulamasına sahipsen, o uygulamayı kaldırmalısın ya da onu Pil Göstergesi uygulamasının çalışmasını engellemeyecek şekilde ayarlamalısın. Uygulamanın bedava sürümünü için daha önce bu ayarı yapmış olsan bile, <i>Pro sürüm için de aynı ayarı yapman gerekiyor</i> !\n\n• Eğer <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, ya da <b>Samsung Moment</b>\' sahipsen, \"Diğer Ayarlar\" bölümünden \"%10 Modu\"\'nu açmalısın.</string>
+  <string name="first_run_message_free" formatted="false">Pil Göstergesi\'ni indirdiğin için teşekkürler! <b><i>Bu önemli</i> :</b>\n\nEğer bir tür \"<b>task killer</b>\" / uygulamasına sahipsen, o uygulamayı kaldırmalısın ya da onu Pil Göstergesi uygulamasının çalışmasını engellemeyecek şekilde ayarlamalısın.</string>
   <string name="okay" formatted="false">Tamam</string>
   <string name="menu_settings" formatted="false">Ayarlar</string>
   <string name="menu_close" formatted="false">Kapat</string>
@@ -38,6 +41,10 @@
   <string name="currently_disabled" formatted="false">Şu An Etkin Değil</string>
   <string name="help_cat_version" formatted="false">Sürüm</string>
   <string name="help_cat_changelog" formatted="false">Değişiklik listesi</string>
+  <string name="help_changelog" formatted="false">Şu adrese bakın: <a href="http://code.google.com/p/battery-indicator/wiki/Changelog?tm=6">online Changelog</a></string>
+  <string name="help_cat_introduction" formatted="false">Giriş</string>
+  <string name="help_introduction_free" formatted="false">Bu, <i>Pil Göstergesi</i>, <i>Pil Göstergesi</i> uygulama ailesinin bedava sürümüdür. u uygulamayı Android Market\'ten satın alabilirsin, ancak aynı zamanda bir açık kaynak projesi olduğundan, <a href="http://code.google.com/p/battery-indicator/">projenin web sayfası</a> olan şu adresten kaynak kodunu bedavaya indirebilirsin.\n\nEğer bağış yapmak istiyorsan şu adresten uygulamayı yükseltebilirsin: <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a>.</string>
+  <string name="help_cat_summary" formatted="false">Özet</string>
   <string name="help_cat_limitations" formatted="false">Sınırlamalar</string>
   <string name="help_cat_features" formatted="false">Özellikler</string>
   <string name="help_cat_no_warranty" formatted="false">Garanti Yok</string>
@@ -46,14 +53,7 @@
   <string name="help_subcat_translators" formatted="false">Çevirmenler</string>
   <string name="help_cat_contact" formatted="false">Kişi</string>
   <string name="pref_hint" formatted="false">İpucu: Yardım için MENU tuşuna bas.</string>
-  <string name="confirm_close_hint" formatted="false">Pil Göstergesi tamamen kapatıldı, ve artık durum çubuğunda görmeyeceksin.\n\nEğer sadece ana pencereden çıkmayı ama göstergenin çalışmaya devam etmesini istiyorsan, İPTAL tuşuna bas ve daha sonra cihazın BACK tuşuna basarak ana pencereden çık.</string>
-  <string name="first_run_message_free" formatted="false">Pil Göstergesi\'ni indirdiğin için teşekkürler! <b><i>Bu önemli</i> :</b>\n\nEğer bir tür \"<b>task killer</b>\" / uygulamasına sahipsen, o uygulamayı kaldırmalısın ya da onu Pil Göstergesi uygulamasının çalışmasını engellemeyecek şekilde ayarlamalısın.</string>
-  <string name="first_run_message" formatted="false">Bağışın/satın alımın için teşekkürler! <b><i>Şu iki nokta çok önemli:</i> :</b>\n\n• Eğer bir tür \"<b>task killer</b>\" / uygulamasına sahipsen, o uygulamayı kaldırmalısın ya da onu Pil Göstergesi uygulamasının çalışmasını engellemeyecek şekilde ayarlamalısın. Uygulamanın bedava sürümünü için daha önce bu ayarı yapmış olsan bile, <i>Pro sürüm için de aynı ayarı yapman gerekiyor</i> !\n\n• Eğer <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, ya da <b>Samsung Moment</b>\' sahipsen, \"Diğer Ayarlar\" bölümünden \"%10 Modu\"\'nu açmalısın.</string>
-  <string name="help_changelog" formatted="false">Şu adrese bakın: <a href="http://code.google.com/p/battery-indicator/wiki/Changelog?tm=6">online Changelog</a></string>
-  <string name="help_cat_introduction" formatted="false">Giriş</string>
-  <string name="help_introduction_free" formatted="false">Bu, <i>Pil Göstergesi</i>, <i>Pil Göstergesi</i> uygulama ailesinin bedava sürümüdür. u uygulamayı Android Market\'ten satın alabilirsin, ancak aynı zamanda bir açık kaynak projesi olduğundan, <a href="http://code.google.com/p/battery-indicator/">projenin web sayfası</a> olan şu adresten kaynak kodunu bedavaya indirebilirsin.\n\nEğer bağış yapmak istiyorsan şu adresten uygulamayı yükseltebilirsin: <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a>.</string>
-  <string name="help_cat_summary" formatted="false">Özet</string>
+  <string name="pref_cat_themes" formatted="false">Temalar</string>
   <string name="pref_cat_temperature_unit" formatted="false">Sıcaklık Birimi</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Fahrenhayt\'a çevir</string>
-  <string name="pref_cat_themes" formatted="false">Temalar</string>
 </resources>

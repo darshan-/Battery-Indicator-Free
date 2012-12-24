@@ -63,12 +63,12 @@
   <string name="pref_cat_more_settings_in_pro" formatted="false">További beállítások a Pro verzióban</string>
   <string name="pref_please_upgrade" formatted="false">A Pro verzió számos további beállítással és képességgel rendelkezik. Pl. zöld, sárga és vörös ikon, riasztások, ablak témák, akku állapot naplózása, képernyőzár kézi és automatikus tiltása, becslés a hátralévő töltési vagy használati időre, stb.</string>
   <string name="pref_cat_themes" formatted="false">Témák</string>
-  <string name="pref_charge_as_text" formatted="false">Töltésszint szöveges jelzése</string>
-  <string name="pref_charge_as_text_summary" formatted="false">Megjelenjen az akku töltöttsége szövegesen is az ikon mellett?</string>
   <string name="pref_cat_temperature_unit" formatted="false">Hőmérséklet mértékegysége</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Fahrenheit használata</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Az Android Celsius°-ban közli a hőmérsékletet. Ha jobban szeretné az akkumlátor hőmérsékletét Fahrenheit-ben látni, kapcsolja be ezt az opciót, és az alkalmásás konvértálni fogja önnek.</string>
   <string name="pref_cat_charge_as_text" formatted="false">Töltésszint szöveges jelzése</string>
+  <string name="pref_charge_as_text" formatted="false">Töltésszint szöveges jelzése</string>
+  <string name="pref_charge_as_text_summary" formatted="false">Megjelenjen az akku töltöttsége szövegesen is az ikon mellett?</string>
   <string name="pref_charge_as_text_help" formatted="false">Több rossz látású felhasználó is kérte, hogy legyen olyan lehetőség, ahol a töltés szintje megjelenik szövegesen (nagyobb és olvashatóbb formában) is az ikon mellett az értesítési felület lehúzásakor. A tényleges ikon nem változik, tehát ez csak akkor segít, ha lehúzza az értesítési felületet, de ez is jobb mint a semmi, és könnyen elérhető azoknak, akiknek erre van szükségük. Ez különösen azoknak hasznos, akik képernyő felolvasót használnak.</string>
   <string name="pref_cat_one_percent_hack" formatted="false">Egy százalékos kijelzés</string>
   <string name="pref_one_percent_hack" formatted="false">Egy százalékos kijelzés</string>
@@ -106,12 +106,14 @@
     <item>Halott</item>
     <item>Túlfeszültség</item>
     <item>Hiba</item>
+    <item>Cold</item>
   </string-array>
   <string-array name="pluggeds">
     <item>Szétkapcsolva</item>
     <item>(hálózati feszültség)</item>
     <item>(USB-n keresztül)</item>
     <item>(?)</item>
+    <item>(WL)</item>
   </string-array>
   <string-array name="alarm_types_display">
     <item>Teljesen feltöltve</item>
@@ -154,10 +156,6 @@
     <item>3 hét</item>
     <item>4 hét</item>
   </string-array>
-  <plurals name="for_n_hours">
-    <item quantity="one">%d órája</item>
-    <item quantity="other">%d órája</item>
-  </plurals>
   <plurals name="n_log_items">
     <item quantity="zero">%d naplóelem</item>
     <item quantity="one">%d naplóelem</item>
@@ -165,5 +163,9 @@
     <item quantity="few">%d naplóelem</item>
     <item quantity="many">%d naplóelem</item>
     <item quantity="other">%d naplóelem</item>
+  </plurals>
+  <plurals name="for_n_hours">
+    <item quantity="one">%d órája</item>
+    <item quantity="other">%d órája</item>
   </plurals>
 </resources>

@@ -98,12 +98,14 @@
     <item>Dead</item>
     <item>Overvoltage</item>
     <item>Failure</item>
+    <item>Cold</item>
   </string-array>
   <string-array name="pluggeds">
     <item>Unplugged</item>
     <item>(AC)</item>
     <item>(USB)</item>
     <item>(?)</item>
+    <item>(WL)</item>
   </string-array>
 
   <string-array name="alarm_types_display">
@@ -298,7 +300,6 @@
     the Get Plugins button on the Action Bar on newer devices), you
     can choose among them here.
   </string>
-  <string formatted="false" name="pref_main_notification_priority">Main Notification Priority</string>
   <string formatted="false" name="pref_cat_temperature_unit">Temperature Unit</string>
   <string formatted="false" name="pref_convert_to_fahrenheit">Convert to Fahrenheit</string>
   <string formatted="false" name="pref_convert_to_fahrenheit_help">

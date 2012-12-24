@@ -51,6 +51,47 @@
   <string name="help_contact" formatted="false">Если у Вас возникнут вопросы или проблемы, пожалуйста перейдите по ссылке<a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">FAQ проекта</a>, чтобы узнать как можно связаться со мной.\n</string>
   <string name="pref_hint" formatted="false">Подсказка: Нажмите MENU для вызова помощи.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Больше настроек в версии Pro</string>
+  <string-array name="statuses">
+    <item>Отключен</item>
+    <item>Неизвестно</item>
+    <item>Заряжается</item>
+    <item>Разряжается</item>
+    <item>Не заряжается</item>
+    <item>Полностью заряжен</item>
+  </string-array>
+  <string-array name="log_statuses">
+    <item>Отключен</item>
+    <item>Неизвестно</item>
+    <item>Подключен</item>
+    <item>Неизвестно</item>
+    <item>Неизвестно</item>
+    <item>Полностью заряжен</item>
+  </string-array>
+  <string-array name="log_statuses_old">
+    <item>Разряжается</item>
+    <item>Неизвестно</item>
+    <item>Заряжается</item>
+    <item>Неизвестно</item>
+    <item>Неизвестно</item>
+    <item>Полностью заряжен</item>
+  </string-array>
+  <string-array name="healths">
+    <item>Неизвестно</item>
+    <item>Неизвестно</item>
+    <item>Хорошее состояние</item>
+    <item>Перегрев</item>
+    <item>Смерть</item>
+    <item>Превышено напряжение</item>
+    <item>Сбой</item>
+    <item>Cold</item>
+  </string-array>
+  <string-array name="pluggeds">
+    <item>Отключено</item>
+    <item>(AC)</item>
+    <item>(USB)</item>
+    <item>(?)</item>
+    <item>(WL)</item>
+  </string-array>
   <string-array name="alarm_types_display">
     <item>Полностью заряжено</item>
     <item>Заряд падает ниже</item>
@@ -67,8 +108,8 @@
   </string-array>
   <string-array name="mw_theme_pref_entries">
     <item>По умолчанию - маленькая</item>
-    <item>На полный экран</item>
     <item>Colorful Small</item>
+    <item>На полный экран</item>
   </string-array>
   <string-array name="boot_pref_entries">
     <item>Всегда</item>
@@ -91,44 +132,5 @@
     <item>2-х недель</item>
     <item>3 недели</item>
     <item>4 недель</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Сбой</item>
-    <item>Превышено напряжение</item>
-    <item>Неизвестно</item>
-    <item>Неизвестно</item>
-    <item>Хорошее состояние</item>
-    <item>Перегрев</item>
-    <item>Смерть</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Отключено</item>
-    <item>(AC)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Полностью заряжен</item>
-    <item>Неизвестно</item>
-    <item>Разряжается</item>
-    <item>Неизвестно</item>
-    <item>Заряжается</item>
-    <item>Неизвестно</item>
-  </string-array>
-  <string-array name="statuses">
-    <item>Не заряжается</item>
-    <item>Полностью заряжен</item>
-    <item>Заряжается</item>
-    <item>Разряжается</item>
-    <item>Отключен</item>
-    <item>Неизвестно</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Отключен</item>
-    <item>Неизвестно</item>
-    <item>Подключен</item>
-    <item>Неизвестно</item>
-    <item>Неизвестно</item>
-    <item>Полностью заряжен</item>
   </string-array>
 </resources>

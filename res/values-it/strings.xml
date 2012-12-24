@@ -74,12 +74,6 @@
   <string name="pref_one_percent_hack" formatted="false">Trucco 1%</string>
   <string name="pref_one_percent_hack_summary" formatted="false">Utilizzare una soluzione per dispositivi che mostrano solo multipli di 10%?</string>
   <string name="pref_one_percent_hack_help" formatted="false">Questo trucco sembra funzionare per tutti i dispositivi Motorola con incrementi di default al 10%, diverse da quella originale Droid\n\nMolti dispositivi non necessitano di questo trucco. Se il tuo dispositivo segna già incrementi da 1%, non abilitare questo trucco.\n\nSe l\'opzione è in grigio e non riuscito ad abilitarla, alloro il dispositivo non è compatibile con questo trucco.\n\nVedi <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">OnePercentHack</a> per maggiori info.</string>
-  <string-array name="pluggeds">
-    <item>(?)</item>
-    <item>Scollegato</item>
-    <item>(CA)</item>
-    <item>(USB)</item>
-  </string-array>
   <string-array name="statuses">
     <item>Scollegato</item>
     <item>Sconosciuto</item>
@@ -112,6 +106,14 @@
     <item>Defunta</item>
     <item>Sovratensione</item>
     <item>Non riuscito</item>
+    <item>Cold</item>
+  </string-array>
+  <string-array name="pluggeds">
+    <item>Scollegato</item>
+    <item>(CA)</item>
+    <item>(USB)</item>
+    <item>(?)</item>
+    <item>(WL)</item>
   </string-array>
   <string-array name="alarm_types_display">
     <item>Completamente carico</item>

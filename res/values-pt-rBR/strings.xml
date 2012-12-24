@@ -43,6 +43,7 @@
   <string name="help_cat_changelog" formatted="false">Relatório das mudanças</string>
   <string name="help_changelog" formatted="false">Veja o <a href="http://code.google.com/p/battery-indicator/wiki/FAQ#What's_new_in_the_update?">histórico de mudanças na página do projeto</a>.</string>
   <string name="help_cat_introduction" formatted="false">Introdução</string>
+  <string name="help_introduction_free" formatted="false">Esse é o <i>Battery Indicator</i>, a versão gratuita da família de aplicativos <i>Battery Indicator</i>. Ele está disponível no Android Market e é um projeto de código livre, o que significa que você pode fazer o download do código fonte na <a href="http://code.google.com/p/battery-indicator/">página do projeto</a>.\n\nPor favor, ajude o projeto, através de doações e comprando a <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">versão Pro</a>.</string>
   <string name="help_cat_summary" formatted="false">Resumo</string>
   <string name="help_cat_limitations" formatted="false">Limitações</string>
   <string name="help_cat_features" formatted="false">Funções</string>
@@ -52,7 +53,6 @@
   <string name="help_subcat_translators" formatted="false">Tradutores</string>
   <string name="help_cat_contact" formatted="false">Contato</string>
   <string name="pref_hint" formatted="false">Sugestão: Pressiona a tecla MENU para ajuda.</string>
-  <string name="help_introduction_free" formatted="false">Esse é o <i>Battery Indicator</i>, a versão gratuita da família de aplicativos <i>Battery Indicator</i>. Ele está disponível no Android Market e é um projeto de código livre, o que significa que você pode fazer o download do código fonte na <a href="http://code.google.com/p/battery-indicator/">página do projeto</a>.\n\nPor favor, ajude o projeto, através de doações e comprando a <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">versão Pro</a>.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Mais Configurações na versão Pro</string>
   <string name="pref_cat_themes" formatted="false">Temas</string>
   <string-array name="max_log_age_entries">

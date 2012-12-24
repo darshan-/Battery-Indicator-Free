@@ -80,24 +80,28 @@
     <item>Mrtvo</item>
     <item>Prevelika voltaža</item>
     <item>Napaka</item>
+    <item>Cold</item>
   </string-array>
   <string-array name="pluggeds">
     <item>Odklopljeno</item>
     <item>(AC)</item>
     <item>(USB)</item>
     <item>(?)</item>
+    <item>(WL)</item>
   </string-array>
   <string-array name="alarm_types_display">
     <item>Napolnjeno</item>
     <item>Baterija pade pod</item>
     <item>Baterija pride nad</item>
     <item>Temperatura pride nad</item>
+    <item>Health failure</item>
   </string-array>
   <string-array name="alarm_type_entries">
     <item>Se napolni</item>
     <item>Baterije pade pod...</item>
     <item>Baterija pride nad...</item>
     <item>Temperatura pride nad...</item>
+    <item>Health fails</item>
   </string-array>
   <string-array name="boot_pref_entries">
     <item>Vedno</item>
