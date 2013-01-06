@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">ZURÜCK drücken zum beenden.</string>
   <string name="press_menu_for_more" formatted="false">MENÜ drücken für mehr Möglichkeiten.</string>
+  <string name="status_unplugged" formatted="false">Ausgesteckt</string>
+  <string name="status_unknown" formatted="false">Unbekannt</string>
+  <string name="status_charging" formatted="false">Ladend</string>
+  <string name="status_discharging" formatted="false">Entladend</string>
+  <string name="status_not_charging" formatted="false">Nicht ladend</string>
+  <string name="status_fully_charged" formatted="false">Voll geladen</string>
+  <string name="health_unknown" formatted="false">Unbekannt</string>
+  <string name="health_good" formatted="false">Guter Zustand</string>
+  <string name="health_overheat" formatted="false">Überhitzung</string>
+  <string name="health_dead" formatted="false">Tot</string>
+  <string name="health_overvoltage" formatted="false">Überladung</string>
+  <string name="health_failure" formatted="false">Fehler</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Nicht angeschlossen</string>
+  <string name="plugged_ac" formatted="false">(Netz)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Entlädt von</string>
   <string name="charging_from" formatted="false">Lädt von</string>
   <string name="fully_charged" formatted="false">Voll geladen</string>
@@ -67,88 +85,9 @@
   <string name="pref_cat_charge_as_text" formatted="false">Ladezustand als Text</string>
   <string name="pref_charge_as_text" formatted="false">Ladezustand als Text</string>
   <string name="pref_charge_as_text_summary" formatted="false">Den Ladezustand als größeren Text neben dem Icon anzeigen?</string>
-  <string-array name="statuses">
-    <item>Ausgesteckt</item>
-    <item>Unbekannt</item>
-    <item>Ladend</item>
-    <item>Entladend</item>
-    <item>Nicht ladend</item>
-    <item>Voll geladen</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Ausgesteckt</item>
-    <item>Unbekannt</item>
-    <item>Angesteckt</item>
-    <item>Unbekannt</item>
-    <item>Unbekannt</item>
-    <item>Voll geladen</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Entladend</item>
-    <item>Unbekannt</item>
-    <item>Ladend</item>
-    <item>Unbekannt</item>
-    <item>Unbekannt</item>
-    <item>Voll geladen</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Unbekannt</item>
-    <item>Unbekannt</item>
-    <item>Guter Zustand</item>
-    <item>Überhitzung</item>
-    <item>Tot</item>
-    <item>Überladung</item>
-    <item>Fehler</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Nicht angeschlossen</item>
-    <item>(Netz)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>Voll geladen</item>
-    <item>Ladung unterschreite</item>
-    <item>Ladung überschreitet...</item>
-    <item>Temperatur überschreitet</item>
-    <item>Zustand Störung</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Wird voll geladen</item>
-    <item>Ladung unterschreitet...</item>
-    <item>Ladung überschreitet...</item>
-    <item>Temperatur überschreitet...</item>
-    <item>Status gestört</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Standard klein</item>
-    <item>Bunt klein</item>
-    <item>Ganzes Bildschirm</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Immer</item>
-    <item>Nie</item>
-    <item>Wenn es beim Herunterfahren läuft</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Immer</item>
-    <item>Nach 1 Stunde</item>
-    <item>Nach 2 Stunden</item>
-    <item>Nach 3 Stunden</item>
-    <item>Nach 6 Stunden</item>
-    <item>Nach 12 Stunden</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 Tag</item>
-    <item>2 Tage</item>
-    <item>4 Tage</item>
-    <item>1 Woche</item>
-    <item>2 Wochen</item>
-    <item>3 Wochen</item>
-    <item>4 Wochen</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Immer</string>
+  <string name="boot_pref_never" formatted="false">Nie</string>
+  <string name="boot_pref_if_running" formatted="false">Wenn es beim Herunterfahren läuft</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Protokoll Eintrag</item>
     <item quantity="other">%d Protokoll Einträge</item>

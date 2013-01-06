@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Πατήστε BACK για να φύγετε.</string>
   <string name="press_menu_for_more" formatted="false">Πατήστε MENU για περισσότερες επιλογές.</string>
+  <string name="status_unplugged" formatted="false">Αποσυνδεδεμένο</string>
+  <string name="status_unknown" formatted="false">Άγνωστο</string>
+  <string name="status_charging" formatted="false">Φόρτιση</string>
+  <string name="status_discharging" formatted="false">Αποφόρτιση</string>
+  <string name="status_not_charging" formatted="false">Δε Φορτίζει</string>
+  <string name="status_fully_charged" formatted="false">Πλήρως Φορτισμένη</string>
+  <string name="health_unknown" formatted="false">Άγνωστο</string>
+  <string name="health_good" formatted="false">Καλή Υγεία</string>
+  <string name="health_overheat" formatted="false">Υπερθέρμανση</string>
+  <string name="health_dead" formatted="false">Νεκρή</string>
+  <string name="health_overvoltage" formatted="false">Υπέρβαση Βολτάζ</string>
+  <string name="health_failure" formatted="false">Αποτυχία</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Αποσυνδεδεμένο</string>
+  <string name="plugged_ac" formatted="false">(AC)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(;)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Αποφόρτιση από</string>
   <string name="charging_from" formatted="false">Φόρτιση από</string>
   <string name="fully_charged" formatted="false">Πλήρως Φορτισμένη</string>
@@ -73,88 +91,9 @@
   <string name="pref_one_percent_hack" formatted="false">Διαβαθμίσεις 1%</string>
   <string name="pref_one_percent_hack_summary" formatted="false">Χρήση στρογγυλοποίησης για συσκευές που δείχνουν μόνο πολλαπλάσια του 10%;</string>
   <string name="pref_one_percent_hack_help" formatted="false">Αυτός ο τρόπος διαβάθμισης φαίνεται να δουλεύει για όλες τις συσκευές Motorola οι οποίες δείχνουν αυξήσεις πολλαπλασίων του 10%, εκτός από τη σειρά Droid.\n\nΟι πλείστες συσκευές δεν το χρειάζονται αυτή τη επιλογή. Αν η συσκευή σας δείχνει αυξήσεις της τάξης του 1%, μην ενεργοποιήσετε τη δυνατότητα αυτή.\n\nΑν η επιλογή είναι μη διαθέσιμη και δεν είναι δυνατόν να την ενεργοποιήσετε, τότε η συσκευή σας δεν μπορεί να χρησιμοποιήσει τη δυνατότητα αυτή.\n\nΔέστε τη <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">OnePercentHack</a> σελίδα wiki για περισσότερες πληροφορίες.</string>
-  <string-array name="statuses">
-    <item>Αποσυνδεδεμένο</item>
-    <item>Άγνωστο</item>
-    <item>Φόρτιση</item>
-    <item>Αποφόρτιση</item>
-    <item>Δε Φορτίζει</item>
-    <item>Πλήρως Φορτισμένη</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Αποσυνδεδεμένο</item>
-    <item>Άγνωστο</item>
-    <item>Συνδεδεμένο</item>
-    <item>Άγνωστο</item>
-    <item>Άγνωστο</item>
-    <item>Πλήρως Φορτισμένη</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Αποφόρτιση</item>
-    <item>Άγνωστο</item>
-    <item>Φόρτιση</item>
-    <item>Άγνωστο</item>
-    <item>Άγνωστο</item>
-    <item>Πλήρως Φορτισμένη</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Άγνωστο</item>
-    <item>Άγνωστο</item>
-    <item>Καλή Υγεία</item>
-    <item>Υπερθέρμανση</item>
-    <item>Νεκρή</item>
-    <item>Υπέρβαση Βολτάζ</item>
-    <item>Αποτυχία</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Αποσυνδεδεμένο</item>
-    <item>(AC)</item>
-    <item>(USB)</item>
-    <item>(;)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>Πλήρως Φορτισμένη</item>
-    <item>Το επίπεδο φόρτισης πέφτει κάτω από</item>
-    <item>Το επίπεδο φόρτισης ανεβαίνει πάνω από</item>
-    <item>Η θερμοκρασία ανεβαίνει πάνω από</item>
-    <item>Καλή υγεία απέτυχε</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Καθίσταται πλήρως φορτισμένη</item>
-    <item>Το επίπεδο φόρτισης πέφτει κάτω από...</item>
-    <item>Το επίπεδο φόρτισης ανεβαίνει πάνω από...</item>
-    <item>Η θερμοκρασία ανεβαίνει πάνω από...</item>
-    <item>Καλή υγεία αποτυγχάνει</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Προεπιλεγμένο Μικρό</item>
-    <item>Έγχρωμο Μικρό</item>
-    <item>Παράθυρο Ολόκληρης Οθόνης</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Πάντα</item>
-    <item>Ποτέ</item>
-    <item>Αν ήταν ενεργό στην απενεργοποίηση</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Πάντα</item>
-    <item>Μετά από 1 ώρα</item>
-    <item>Μετά από 2 ώρες</item>
-    <item>Μετά από 3 ώρες</item>
-    <item>Μετά από 6 ώρες</item>
-    <item>Μετά από 12 ώρες</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 μέρα</item>
-    <item>2 μέρες</item>
-    <item>4 μέρες</item>
-    <item>1 εβδομάδα</item>
-    <item>2 εβδομάδες</item>
-    <item>3 εβδομάδες</item>
-    <item>4 εβδομάδες</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Πάντα</string>
+  <string name="boot_pref_never" formatted="false">Ποτέ</string>
+  <string name="boot_pref_if_running" formatted="false">Αν ήταν ενεργό στην απενεργοποίηση</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Καταγραφή αντικειμένου στη Λίστα</item>
     <item quantity="other">%d Καταγραφή αντικειμένων στη Λίστα</item>

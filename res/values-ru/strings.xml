@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">v</string>
   <string name="press_back_to_leave" formatted="false">Нажмите BACK для выхода.</string>
   <string name="press_menu_for_more" formatted="false">Нажмите MENU для настройки.</string>
+  <string name="status_unplugged" formatted="false">Отключен</string>
+  <string name="status_unknown" formatted="false">Неизвестно</string>
+  <string name="status_charging" formatted="false">Заряжается</string>
+  <string name="status_discharging" formatted="false">Разряжается</string>
+  <string name="status_not_charging" formatted="false">Не заряжается</string>
+  <string name="status_fully_charged" formatted="false">Полностью заряжен</string>
+  <string name="health_unknown" formatted="false">Неизвестно</string>
+  <string name="health_good" formatted="false">Хорошее состояние</string>
+  <string name="health_overheat" formatted="false">Перегрев</string>
+  <string name="health_dead" formatted="false">Смерть</string>
+  <string name="health_overvoltage" formatted="false">Превышено напряжение</string>
+  <string name="health_failure" formatted="false">Сбой</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Отключено</string>
+  <string name="plugged_ac" formatted="false">(AC)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Разряжается с</string>
   <string name="charging_from" formatted="false">Заряжается с</string>
   <string name="fully_charged" formatted="false">Полностью заряжено</string>
@@ -51,86 +69,7 @@
   <string name="help_contact" formatted="false">Если у Вас возникнут вопросы или проблемы, пожалуйста перейдите по ссылке<a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">FAQ проекта</a>, чтобы узнать как можно связаться со мной.\n</string>
   <string name="pref_hint" formatted="false">Подсказка: Нажмите MENU для вызова помощи.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Больше настроек в версии Pro</string>
-  <string-array name="statuses">
-    <item>Отключен</item>
-    <item>Неизвестно</item>
-    <item>Заряжается</item>
-    <item>Разряжается</item>
-    <item>Не заряжается</item>
-    <item>Полностью заряжен</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Отключен</item>
-    <item>Неизвестно</item>
-    <item>Подключен</item>
-    <item>Неизвестно</item>
-    <item>Неизвестно</item>
-    <item>Полностью заряжен</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Разряжается</item>
-    <item>Неизвестно</item>
-    <item>Заряжается</item>
-    <item>Неизвестно</item>
-    <item>Неизвестно</item>
-    <item>Полностью заряжен</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Неизвестно</item>
-    <item>Неизвестно</item>
-    <item>Хорошее состояние</item>
-    <item>Перегрев</item>
-    <item>Смерть</item>
-    <item>Превышено напряжение</item>
-    <item>Сбой</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Отключено</item>
-    <item>(AC)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>Полностью заряжено</item>
-    <item>Заряд падает ниже</item>
-    <item>Заряд поднимается выше</item>
-    <item>Температура поднимается выше</item>
-    <item>Неисправность</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Становится полностью заряжен</item>
-    <item>Заряд падает ниже...</item>
-    <item>Заряд поднимается выше...</item>
-    <item>Температура поднимается выше...</item>
-    <item>Неисправность</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>По умолчанию - маленькая</item>
-    <item>Colorful Small</item>
-    <item>На полный экран</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Всегда</item>
-    <item>Никогда</item>
-    <item>Если было запущено при выключении</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Всегда</item>
-    <item>Через 1 час</item>
-    <item>Через 2 часа</item>
-    <item>Через 3 часа</item>
-    <item>Через 6 часов</item>
-    <item>Через 12 часов</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 день</item>
-    <item>2 дня</item>
-    <item>4 дня</item>
-    <item>1 неделю</item>
-    <item>2-х недель</item>
-    <item>3 недели</item>
-    <item>4 недель</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Всегда</string>
+  <string name="boot_pref_never" formatted="false">Никогда</string>
+  <string name="boot_pref_if_running" formatted="false">Если было запущено при выключении</string>
 </resources>

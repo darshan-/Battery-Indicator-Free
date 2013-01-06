@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Kilépés: VISSZA gomb.</string>
   <string name="press_menu_for_more" formatted="false">További opciók: MENÜ gomb.</string>
+  <string name="status_unplugged" formatted="false">Szétkapcsolva</string>
+  <string name="status_unknown" formatted="false">Ismeretlen</string>
+  <string name="status_charging" formatted="false">Töltés</string>
+  <string name="status_discharging" formatted="false">Lemerítés</string>
+  <string name="status_not_charging" formatted="false">Nincs töltés</string>
+  <string name="status_fully_charged" formatted="false">Teljesen feltöltve</string>
+  <string name="health_unknown" formatted="false">Ismeretlen</string>
+  <string name="health_good" formatted="false">Jó állapot</string>
+  <string name="health_overheat" formatted="false">Túlmelegedés</string>
+  <string name="health_dead" formatted="false">Halott</string>
+  <string name="health_overvoltage" formatted="false">Túlfeszültség</string>
+  <string name="health_failure" formatted="false">Hiba</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Szétkapcsolva</string>
+  <string name="plugged_ac" formatted="false">(hálózati feszültség)</string>
+  <string name="plugged_usb" formatted="false">(USB-n keresztül)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Merítés innen:</string>
   <string name="charging_from" formatted="false">Töltés innen:</string>
   <string name="fully_charged" formatted="false">Teljesen feltöltve</string>
@@ -74,88 +92,9 @@
   <string name="pref_one_percent_hack" formatted="false">Egy százalékos kijelzés</string>
   <string name="pref_one_percent_hack_summary" formatted="false">Megoldás alkalmazása azokon az eszközökön, amelyek 10%-os pontossággal mutatnak</string>
   <string name="pref_one_percent_hack_help" formatted="false">Ez a megoldás a Motorola eszközökön ajánlott, amik csak 10%-os pontosságot mutatnak.\n\nA legtöbb eszköznek nincs erre szüksége. Ha az ön eszköze jelenleg is százalékos pontosságú értékeket mutat, nincs szükség erre az opcióra.\n\nHa ez az opció szürke, és nem tudja bekapcsolni, akkor az ön eszköze nem képes használni ezt a lehetőséget.\n\nTovábbi információkért tekintse meg a <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">OnePercentHack</a>(angol nyelvű) wiki oldalt.</string>
-  <string-array name="statuses">
-    <item>Szétkapcsolva</item>
-    <item>Ismeretlen</item>
-    <item>Töltés</item>
-    <item>Lemerítés</item>
-    <item>Nincs töltés</item>
-    <item>Teljesen feltöltve</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Szétkapcsolva</item>
-    <item>Ismeretlen</item>
-    <item>Csatlakoztatva</item>
-    <item>Ismeretlen</item>
-    <item>Ismeretlen</item>
-    <item>Teljesen feltöltve</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Lemerítés</item>
-    <item>Ismeretlen</item>
-    <item>Töltés</item>
-    <item>Ismeretlen</item>
-    <item>Ismeretlen</item>
-    <item>Teljesen feltöltve</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Ismeretlen</item>
-    <item>Ismeretlen</item>
-    <item>Jó állapot</item>
-    <item>Túlmelegedés</item>
-    <item>Halott</item>
-    <item>Túlfeszültség</item>
-    <item>Hiba</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Szétkapcsolva</item>
-    <item>(hálózati feszültség)</item>
-    <item>(USB-n keresztül)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>Teljesen feltöltve</item>
-    <item>Töltöttség ez alá csökken</item>
-    <item>Töltöttség meghaladja</item>
-    <item>Hőmérséklet meghaladja</item>
-    <item>Állapot probléma</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Teljesen feltöltődik</item>
-    <item>Töltöttség ez alá csökken...</item>
-    <item>Töltöttség meghaladja...</item>
-    <item>Hőmérséklet meghaladja...</item>
-    <item>Állapot probléma</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Alap, kisméretű</item>
-    <item>Színes, kisméretű</item>
-    <item>Teljes ablak</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Mindig</item>
-    <item>Soha</item>
-    <item>Ha kikapcsoláskor aktív</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Mindig</item>
-    <item>1 óra után</item>
-    <item>2 óra után</item>
-    <item>3 óra után</item>
-    <item>6 óra után</item>
-    <item>12 óra után</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 nap</item>
-    <item>2 nap</item>
-    <item>4 nap</item>
-    <item>1 hét</item>
-    <item>2 hét</item>
-    <item>3 hét</item>
-    <item>4 hét</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Mindig</string>
+  <string name="boot_pref_never" formatted="false">Soha</string>
+  <string name="boot_pref_if_running" formatted="false">Ha kikapcsoláskor aktív</string>
   <plurals name="n_log_items">
     <item quantity="zero">%d naplóelem</item>
     <item quantity="one">%d naplóelem</item>

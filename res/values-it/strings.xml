@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Premi INDIETRO per uscire.</string>
   <string name="press_menu_for_more" formatted="false">Premi MENU per più opzioni.</string>
+  <string name="status_unplugged" formatted="false">Scollegato</string>
+  <string name="status_unknown" formatted="false">Sconosciuto</string>
+  <string name="status_charging" formatted="false">In carica</string>
+  <string name="status_discharging" formatted="false">Scarico</string>
+  <string name="status_not_charging" formatted="false">Non in carica</string>
+  <string name="status_fully_charged" formatted="false">Completamente carico</string>
+  <string name="health_unknown" formatted="false">Sconosciuto</string>
+  <string name="health_good" formatted="false">Buono stato</string>
+  <string name="health_overheat" formatted="false">Surriscaldamento</string>
+  <string name="health_dead" formatted="false">Defunta</string>
+  <string name="health_overvoltage" formatted="false">Sovratensione</string>
+  <string name="health_failure" formatted="false">Non riuscito</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Scollegato</string>
+  <string name="plugged_ac" formatted="false">(CA)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">In scarica dalle</string>
   <string name="charging_from" formatted="false">In carica dalle</string>
   <string name="fully_charged" formatted="false">Completamente carico</string>
@@ -74,88 +92,9 @@
   <string name="pref_one_percent_hack" formatted="false">Trucco 1%</string>
   <string name="pref_one_percent_hack_summary" formatted="false">Utilizzare una soluzione per dispositivi che mostrano solo multipli di 10%?</string>
   <string name="pref_one_percent_hack_help" formatted="false">Questo trucco sembra funzionare per tutti i dispositivi Motorola con incrementi di default al 10%, diverse da quella originale Droid\n\nMolti dispositivi non necessitano di questo trucco. Se il tuo dispositivo segna già incrementi da 1%, non abilitare questo trucco.\n\nSe l\'opzione è in grigio e non riuscito ad abilitarla, alloro il dispositivo non è compatibile con questo trucco.\n\nVedi <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">OnePercentHack</a> per maggiori info.</string>
-  <string-array name="statuses">
-    <item>Scollegato</item>
-    <item>Sconosciuto</item>
-    <item>In carica</item>
-    <item>Scarico</item>
-    <item>Non in carica</item>
-    <item>Completamente carico</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Scollegato</item>
-    <item>Sconosciuto</item>
-    <item>Collegato</item>
-    <item>Sconosciuto</item>
-    <item>Sconosciuto</item>
-    <item>Completamente carico</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Scarico</item>
-    <item>Sconosciuto</item>
-    <item>In carica</item>
-    <item>Sconosciuto</item>
-    <item>Sconosciuto</item>
-    <item>Completamente carico</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Sconosciuto</item>
-    <item>Sconosciuto</item>
-    <item>Buono stato</item>
-    <item>Surriscaldamento</item>
-    <item>Defunta</item>
-    <item>Sovratensione</item>
-    <item>Non riuscito</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Scollegato</item>
-    <item>(CA)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>Completamente carico</item>
-    <item>La carica è scesa al di sotto</item>
-    <item>La carica è salita al di sopra</item>
-    <item>Temperatura salita al di sopra</item>
-    <item>Recupero stato non riuscito</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Diventa completamente carico</item>
-    <item>La carica scende al di sotto...</item>
-    <item>La carica sale al di sopra...</item>
-    <item>La temperatura sale al di sopra...</item>
-    <item>Recupero stato non riuscito</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Piccolo predefinito</item>
-    <item>Piccolo colorato</item>
-    <item>Finestra intera</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Sempre</item>
-    <item>Mai</item>
-    <item>Se è in esecuzione allo spegnimento</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Sempre</item>
-    <item>Dopo 1 ora</item>
-    <item>Dopo 2 ore</item>
-    <item>Dopo 3 ore</item>
-    <item>Dopo 6 ore</item>
-    <item>Dopo 12 ore</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 giorno</item>
-    <item>2 giorni</item>
-    <item>4 giorni</item>
-    <item>1 settimana</item>
-    <item>2 settimane</item>
-    <item>3 settimane</item>
-    <item>4 settimane</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Sempre</string>
+  <string name="boot_pref_never" formatted="false">Mai</string>
+  <string name="boot_pref_if_running" formatted="false">Se è in esecuzione allo spegnimento</string>
   <plurals name="n_log_items">
     <item quantity="one">%d elemento log</item>
     <item quantity="other">%d elementi log</item>

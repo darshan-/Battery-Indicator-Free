@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Spauskite Grįžti, kad išeitumėte</string>
   <string name="press_menu_for_more" formatted="false">Spauskite MENU daugiau pasirinkimų</string>
+  <string name="status_unplugged" formatted="false">Atjungta</string>
+  <string name="status_unknown" formatted="false">Nežinoma</string>
+  <string name="status_charging" formatted="false">Įkraunama</string>
+  <string name="status_discharging" formatted="false">Iškraunama</string>
+  <string name="status_not_charging" formatted="false">Ne kraunama</string>
+  <string name="status_fully_charged" formatted="false">Pilnai įkrauta</string>
+  <string name="health_unknown" formatted="false">Nežinoma</string>
+  <string name="health_good" formatted="false">Gera Būklė</string>
+  <string name="health_overheat" formatted="false">Perkaitimas</string>
+  <string name="health_dead" formatted="false">Mirusi</string>
+  <string name="health_overvoltage" formatted="false">Per didelė įtampa</string>
+  <string name="health_failure" formatted="false">Klaida</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Atjungta</string>
+  <string name="plugged_ac" formatted="false">(AC)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Įkraunama nuo</string>
   <string name="charging_from" formatted="false">Iškraunama nuo</string>
   <string name="fully_charged" formatted="false">Pilnai įkrauta</string>
@@ -70,88 +88,9 @@
   <string name="pref_cat_one_percent_hack" formatted="false">Vieno procento nulaužimas</string>
   <string name="pref_one_percent_hack" formatted="false">Vieno procento nulaužimas</string>
   <string name="pref_one_percent_hack_summary" formatted="false">Naudoti šį nulaužimą prietaisams rodantiems kas 10%?</string>
-  <string-array name="statuses">
-    <item>Atjungta</item>
-    <item>Nežinoma</item>
-    <item>Įkraunama</item>
-    <item>Iškraunama</item>
-    <item>Ne kraunama</item>
-    <item>Pilnai įkrauta</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Atjungta</item>
-    <item>Nežinoma</item>
-    <item>Prijungta</item>
-    <item>Nežinoma</item>
-    <item>Nežinoma</item>
-    <item>Pilnai Įkrauta</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Iškraunama</item>
-    <item>Nežinoma</item>
-    <item>Įkraunama</item>
-    <item>Nežinoma</item>
-    <item>Nežinoma</item>
-    <item>Pilnai Įkraunama</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Nežinoma</item>
-    <item>Nežinoma</item>
-    <item>Gera Būklė</item>
-    <item>Perkaitimas</item>
-    <item>Mirusi</item>
-    <item>Per didelė įtampa</item>
-    <item>Klaida</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Atjungta</item>
-    <item>(AC)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>Pilnai įkrauta</item>
-    <item>Įkrovimas žemiau</item>
-    <item>Įkrovimas aukščiau</item>
-    <item>Temperatūra aukščiau</item>
-    <item>Būklės klaida</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Visiškai įkrauta</item>
-    <item>Įkrovimas žemiau...</item>
-    <item>Įkrovimas aukščiau...</item>
-    <item>Temperatūra aukščiau...</item>
-    <item>Būklės klaida</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Numatytasis Mažas</item>
-    <item>Spalvotas Mažas</item>
-    <item>Pilnas Langas</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Visada</item>
-    <item>Niekada</item>
-    <item>Jei veikia išjungiant</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Visada</item>
-    <item>Po valandos</item>
-    <item>Po 2-jų valandų</item>
-    <item>Po 3-jų valandų</item>
-    <item>Po 6-jų valandų</item>
-    <item>Po 12-os valandų</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 diena</item>
-    <item>2 dienos</item>
-    <item>4 dienos</item>
-    <item>1 savaitė</item>
-    <item>2 savaitės</item>
-    <item>3 savaitės</item>
-    <item>4 savaitės</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Visada</string>
+  <string name="boot_pref_never" formatted="false">Niekada</string>
+  <string name="boot_pref_if_running" formatted="false">Jei veikia išjungiant</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Įrašo Punktas</item>
     <item quantity="few">%d Įrašo Punktai</item>

@@ -66,62 +66,24 @@
   <string formatted="false" name="press_back_to_leave">Press BACK to leave.</string>
   <string formatted="false" name="press_menu_for_more">Press MENU for more items.</string>
   <!-- These are used for the CSV export. -->
-  <string-array name="statuses">
-    <item>Unplugged</item>
-    <item>Unknown</item>
-    <item>Charging</item>
-    <item>Discharging</item>
-    <item>Not Charging</item>
-    <item>Fully Charged</item>
-  </string-array>
-  <string-array name="log_statuses"><!-- The same as above, worded for the Log screen -->
-    <item>Unplugged</item>
-    <item>Unknown</item>
-    <item>Plugged In</item>
-    <item>Unknown</item>
-    <item>Unknown</item>
-    <item>Fully Charged</item>
-  </string-array>
-  <string-array name="log_statuses_old"><!-- The same as above, worded for old Log screen statuses -->
-    <item>Discharging</item>
-    <item>Unknown</item>
-    <item>Charging</item>
-    <item>Unknown</item>
-    <item>Unknown</item>
-    <item>Fully Charged</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Unknown</item>
-    <item>Unknown</item>
-    <item>Good Health</item>
-    <item>Overheat</item>
-    <item>Dead</item>
-    <item>Overvoltage</item>
-    <item>Failure</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Unplugged</item>
-    <item>(AC)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-
-  <string-array name="alarm_types_display">
-    <item>Fully charged</item>
-    <item>Charge drops below</item>
-    <item>Charge rises above</item>
-    <item>Temperature rises above</item>
-    <item>Health failure</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Becomes fully charged</item>
-    <item>Charge drops below...</item>
-    <item>Charge rises above...</item>
-    <item>Temperature rises above...</item>
-    <item>Health fails</item>
-  </string-array>
+  <string formatted="false" name="status_unplugged">Unplugged</string>
+  <string formatted="false" name="status_unknown">Unknown</string>
+  <string formatted="false" name="status_charging">Charging</string>
+  <string formatted="false" name="status_discharging">Discharging</string>
+  <string formatted="false" name="status_not_charging">Not Charging</string>
+  <string formatted="false" name="status_fully_charged">Fully Charged</string>
+  <string formatted="false" name="health_unknown">Unknown</string>
+  <string formatted="false" name="health_good">Good Health</string>
+  <string formatted="false" name="health_overheat">Overheat</string>
+  <string formatted="false" name="health_dead">Dead</string>
+  <string formatted="false" name="health_overvoltage">Overvoltage</string>
+  <string formatted="false" name="health_failure">Failure</string>
+  <string formatted="false" name="health_cold">Cold</string>
+  <string formatted="false" name="plugged_unplugged">Unplugged</string>
+  <string formatted="false" name="plugged_ac">(AC)</string>
+  <string formatted="false" name="plugged_usb">(USB)</string>
+  <string formatted="false" name="plugged_unknown">(?)</string>
+  <string formatted="false" name="plugged_wireless">(WL)</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Log Item</item>
     <item quantity="other">%d Log Items</item>
@@ -341,48 +303,10 @@
   <!--string name="pref_alarm_ringtone_summary"></string-->
   <!--string name="pref_alarm_vibrate_summary"></string-->
   <!--string name="pref_alarm_lights_summary"></string-->
-  <string-array name="mw_theme_pref_entries">
-    <item>Default Small</item>
-    <item>Colorful Small</item>
-    <item>Full Window</item>
-  </string-array>
-
-  <string-array name="boot_pref_entries">
-    <item>Always</item>
-    <item>Never</item>
-    <item>If running on shutdown</item>
-  </string-array>
-
-  <string-array name="status_dur_est_entries">
-    <item>Always</item>
-    <item>After 1 hour</item>
-    <item>After 2 hours</item>
-    <item>After 3 hours</item>
-    <item>After 6 hours</item>
-    <item>After 12 hours</item>
-  </string-array>
-
-  <string-array name="max_log_age_entries">
-    <item>1 day</item>
-    <item>2 days</item>
-    <item>4 days</item>
-    <item>1 week</item>
-    <item>2 weeks</item>
-    <item>3 weeks</item>
-    <item>4 weeks</item>
-  </string-array>
-
-  <string-array name="notification_priority_entries">
-    <item>Maximum</item>
-    <item>High</item>
-    <item>Default</item>
-    <item>Low</item>
-    <item>Minimum</item>
-  </string-array>
-
-  <string-array name="icon_set_entries">
-    <item>Classic</item>
-    <item>Plain Number</item>
-    <item>Smaller Number</item>
-  </string-array>
+  <string formatted="false" name="boot_pref_always">Always</string>
+  <string formatted="false" name="boot_pref_never">Never</string>
+  <string formatted="false" name="boot_pref_if_running">If running on shutdown</string>
+  <string formatted="false" name="icon_set_classic">Classic</string>
+  <string formatted="false" name="icon_set_plain">Plain Number</string>
+  <string formatted="false" name="icon_set_smaller">Smaller Number</string>
 </resources>

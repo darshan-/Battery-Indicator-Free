@@ -386,4 +386,43 @@
     \nMiltos (Κύπρος)
     \nDenis Bence
   </string>
+
+  <string-array name="statuses">
+    <item>@string/status_unplugged</item>
+    <item>@string/status_unknown</item>
+    <item>@string/status_charging</item>
+    <item>@string/status_discharging</item>
+    <item>@string/status_not_charging</item>
+    <item>@string/status_fully_charged</item>
+  </string-array>
+
+  <string-array name="healths">
+    <item>@string/health_unknown</item>
+    <item>@string/health_unknown</item>
+    <item>@string/health_good</item>
+    <item>@string/health_overheat</item>
+    <item>@string/health_dead</item>
+    <item>@string/health_overvoltage</item>
+    <item>@string/health_failure</item>
+    <item>@string/health_cold</item>
+  </string-array>
+  <string-array name="pluggeds">
+    <item>@string/plugged_unplugged</item>
+    <item>@string/plugged_ac</item>
+    <item>@string/plugged_usb</item>
+    <item>@string/plugged_unknown</item>
+    <item>@string/plugged_wireless</item>
+  </string-array>
+
+  <string-array name="boot_pref_entries">
+    <item>@string/boot_pref_always</item>
+    <item>@string/boot_pref_never</item>
+    <item>@string/boot_pref_if_running</item>
+  </string-array>
+
+  <string-array name="icon_set_entries">
+    <item>@string/icon_set_classic</item>
+    <item>@string/icon_set_plain</item>
+    <item>@string/icon_set_smaller</item>
+  </string-array>
 </resources>

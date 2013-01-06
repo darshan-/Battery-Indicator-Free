@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Pulse VOLVER para salir.</string>
   <string name="press_menu_for_more" formatted="false">Pulse MENU para más opciones.</string>
+  <string name="status_unplugged" formatted="false">Desenchufado</string>
+  <string name="status_unknown" formatted="false">Desconocido</string>
+  <string name="status_charging" formatted="false">Cargando</string>
+  <string name="status_discharging" formatted="false">Descargando</string>
+  <string name="status_not_charging" formatted="false">No está cargando</string>
+  <string name="status_fully_charged" formatted="false">Cargado</string>
+  <string name="health_unknown" formatted="false">Desconocido</string>
+  <string name="health_good" formatted="false">Buen estado</string>
+  <string name="health_overheat" formatted="false">Sobrecalentamiento</string>
+  <string name="health_dead" formatted="false">Batería muerta</string>
+  <string name="health_overvoltage" formatted="false">Sobretensión</string>
+  <string name="health_failure" formatted="false">Fallo</string>
+  <string name="health_cold" formatted="false">Frío</string>
+  <string name="plugged_unplugged" formatted="false">Unplugged</string>
+  <string name="plugged_ac" formatted="false">(Red)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Descargando desde</string>
   <string name="charging_from" formatted="false">Cargando desde</string>
   <string name="fully_charged" formatted="false">Cargado</string>
@@ -70,79 +88,12 @@
   <string name="pref_charge_as_text" formatted="false">Nivel de carga textual</string>
   <string name="pref_charge_as_text_summary" formatted="false">¿Mostrar el nivel de carga como un texto maś grande junto al icono?</string>
   <string name="pref_charge_as_text_help" formatted="false">Algunos usuarios con problemas de visión me pidieron que añadiera esta opción, en la que el nivel de carga se muestra como un texto (más grande y fácil de leer) justo al lado del icono que aparece al bajar la barra de notificaciones. El icono en sí mismo no será diferente, por lo que el efecto sólo será apreciable al bajar la barra, pero es mejor que nada, y suficientemente fácil de añadir al programa para aquellos que lo pidieron.\n\nPara ahorrar espacio, simplemente he puesto el número junto al icono. Esto además resulta ser más fácil de leer que si se incluyera también el tanto por ciento, y evita problemas de espacio en pantalla. Aun así, si tiene una pantalla especialmente pequeña esto podría hacer que el AM/PM que se muestra a la derecha no se viera completamente bien.</string>
-  <string-array name="statuses">
-    <item>Desenchufado</item>
-    <item>Desconocido</item>
-    <item>Cargando</item>
-    <item>Descargando</item>
-    <item>No está cargando</item>
-    <item>Cargado</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Desenchufado</item>
-    <item>Desconocido</item>
-    <item>Enchufado</item>
-    <item>Desconocido</item>
-    <item>Desconocido</item>
-    <item>Cargado</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Descargando</item>
-    <item>Desconocido</item>
-    <item>Cargando</item>
-    <item>Desconocido</item>
-    <item>Desconocido</item>
-    <item>Cargado</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Desconocido</item>
-    <item>Desconocido</item>
-    <item>Buen estado</item>
-    <item>Sobrecalentamiento</item>
-    <item>Batería muerta</item>
-    <item>Sobretensión</item>
-    <item>Fallo</item>
-    <item>Frío</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Unplugged</item>
-    <item>(Red)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Por defecto (Pequeña)</item>
-    <item>Colorida (Pequeña)</item>
-    <item>Pantalla completa</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Siempre</item>
-    <item>Nunca</item>
-    <item>Si estaba ejecutándose al apagar</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Siempre</item>
-    <item>Tras 1 hora</item>
-    <item>Tras 2 horas</item>
-    <item>Tras 3 horas</item>
-    <item>Tras 6 horas</item>
-    <item>Tras 12 horas</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 día</item>
-    <item>2 días</item>
-    <item>4 días</item>
-    <item>1 semana</item>
-    <item>2 semanas</item>
-    <item>3 semanas</item>
-    <item>4 semanas</item>
-  </string-array>
-  <string-array name="icon_set_entries">
-    <item>Clásico</item>
-    <item>Número Sencillo</item>
-    <item>Número más Pequeño</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Siempre</string>
+  <string name="boot_pref_never" formatted="false">Nunca</string>
+  <string name="boot_pref_if_running" formatted="false">Si estaba ejecutándose al apagar</string>
+  <string name="icon_set_classic" formatted="false">Clásico</string>
+  <string name="icon_set_plain" formatted="false">Número Sencillo</string>
+  <string name="icon_set_smaller" formatted="false">Número más Pequeño</string>
   <plurals name="n_log_items">
     <item quantity="one">%d entrada en el registro</item>
     <item quantity="other">%d entradas en el registro</item>

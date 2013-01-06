@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">單擊「返回」鍵退出。</string>
   <string name="press_menu_for_more" formatted="false">單擊「選單」查看更多選項。</string>
+  <string name="status_unplugged" formatted="false">拔下電源</string>
+  <string name="status_unknown" formatted="false">未知</string>
+  <string name="status_charging" formatted="false">充電中</string>
+  <string name="status_discharging" formatted="false">放電中</string>
+  <string name="status_not_charging" formatted="false">未充電</string>
+  <string name="status_fully_charged" formatted="false">電池充滿</string>
+  <string name="health_unknown" formatted="false">未知</string>
+  <string name="health_good" formatted="false">正常</string>
+  <string name="health_overheat" formatted="false">過熱</string>
+  <string name="health_dead" formatted="false">損壞</string>
+  <string name="health_overvoltage" formatted="false">超壓</string>
+  <string name="health_failure" formatted="false">錯誤</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Unplugged</string>
+  <string name="plugged_ac" formatted="false">(AC)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">放電起始電量</string>
   <string name="charging_from" formatted="false">充電起始電量</string>
   <string name="fully_charged" formatted="false">完全充滿</string>
@@ -70,74 +88,9 @@
   <string name="pref_charge_as_text" formatted="false">文本顯示電量</string>
   <string name="pref_charge_as_text_summary" formatted="false">確認以大字體文本在圖標旁顯示剩餘電量？</string>
   <string name="pref_charge_as_text_help" formatted="false">鑒於部分視力不佳用戶的要求，此功能可在狀態列下拉托盤中電量指示器圖標右側以易閱讀的大字體顯示剩餘電量信息，原電量圖標無任何改變。勾選/取消此項只能在狀態列下拉托盤中看到變化，但此功能有勝於無，且對有需求的用戶而言易於實現。\n\n為節約寶貴的顯示空間，經過多次單調乏味的調試實現此功能，在不使用百分符號的前提下，文本已能完美的顯示並易於閱讀。對於部分非常小型的設備而言，開啟此功能可能導致AM/PM字符偏離原位導致不協調。</string>
-  <string-array name="statuses">
-    <item>拔下電源</item>
-    <item>未知</item>
-    <item>充電中</item>
-    <item>放電中</item>
-    <item>未充電</item>
-    <item>電池充滿</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>拔下電源</item>
-    <item>未知</item>
-    <item>插入電源</item>
-    <item>未知</item>
-    <item>未知</item>
-    <item>已充滿</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>充電中</item>
-    <item>未知</item>
-    <item>放電中</item>
-    <item>未知</item>
-    <item>未知</item>
-    <item>已充滿</item>
-  </string-array>
-  <string-array name="healths">
-    <item>未知</item>
-    <item>未知</item>
-    <item>正常</item>
-    <item>過熱</item>
-    <item>損壞</item>
-    <item>超壓</item>
-    <item>錯誤</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Unplugged</item>
-    <item>(AC)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>預設小視窗</item>
-    <item>彩色小視窗</item>
-    <item>全屏視窗</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>始終</item>
-    <item>從不</item>
-    <item>關機時運行</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>始終</item>
-    <item>一小時後</item>
-    <item>兩小時後</item>
-    <item>三小時後</item>
-    <item>六小時後</item>
-    <item>十二小時後</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>一天</item>
-    <item>兩天</item>
-    <item>四天</item>
-    <item>一周</item>
-    <item>二周</item>
-    <item>三周</item>
-    <item>四周</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">始終</string>
+  <string name="boot_pref_never" formatted="false">從不</string>
+  <string name="boot_pref_if_running" formatted="false">關機時運行</string>
   <plurals name="n_log_items">
     <item quantity="one">%d項日誌記錄</item>
     <item quantity="other">%d項日誌記錄</item>

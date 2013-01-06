@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Stiskni ZPĚT pro návrat.</string>
   <string name="press_menu_for_more" formatted="false">Stiskni MENU pro více položek.</string>
+  <string name="status_unplugged" formatted="false">Nepřipojeno</string>
+  <string name="status_unknown" formatted="false">Neznámý</string>
+  <string name="status_charging" formatted="false">Nabíjení</string>
+  <string name="status_discharging" formatted="false">Vybíjení</string>
+  <string name="status_not_charging" formatted="false">Nenabíjí</string>
+  <string name="status_fully_charged" formatted="false">Plně nabito</string>
+  <string name="health_unknown" formatted="false">Neznámý</string>
+  <string name="health_good" formatted="false">Dobrá kondice</string>
+  <string name="health_overheat" formatted="false">Přehřátý</string>
+  <string name="health_dead" formatted="false">Nepoužitelný</string>
+  <string name="health_overvoltage" formatted="false">Přepětí</string>
+  <string name="health_failure" formatted="false">Vadný</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Unplugged</string>
+  <string name="plugged_ac" formatted="false">(Napáječ)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Vybíjení od</string>
   <string name="charging_from" formatted="false">Nabíjení od</string>
   <string name="fully_charged" formatted="false">Plně nabito</string>
@@ -64,88 +82,9 @@
   <string name="pref_cat_charge_as_text" formatted="false">Textové zobrazení úrovně nabití</string>
   <string name="pref_charge_as_text" formatted="false">Textové zobrazení úrovně nabití</string>
   <string name="pref_charge_as_text_summary" formatted="false">Zobrazit úroveň nabití jako text vedle ikony ?</string>
-  <string-array name="statuses">
-    <item>Nepřipojeno</item>
-    <item>Neznámý</item>
-    <item>Nabíjení</item>
-    <item>Vybíjení</item>
-    <item>Nenabíjí</item>
-    <item>Plně nabito</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Nepřipojeno</item>
-    <item>Neznámý</item>
-    <item>Připojeno</item>
-    <item>Neznámý</item>
-    <item>Neznámý</item>
-    <item>Plně nabito</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Vybíjení</item>
-    <item>Neznámý</item>
-    <item>Nabíjení</item>
-    <item>Neznámý</item>
-    <item>Neznámý</item>
-    <item>Plně nabito</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Neznámý</item>
-    <item>Neznámý</item>
-    <item>Dobrá kondice</item>
-    <item>Přehřátý</item>
-    <item>Nepoužitelný</item>
-    <item>Přepětí</item>
-    <item>Vadný</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Unplugged</item>
-    <item>(Napáječ)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>Plně nabito</item>
-    <item>Stav klesne pod</item>
-    <item>Stav překročí hranici</item>
-    <item>Teplota překročí hranici</item>
-    <item>Selhání</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Jakmile je plně nabito...</item>
-    <item>Stav klesne pod...</item>
-    <item>Stav překročí hranici...</item>
-    <item>Teplota překročí hranici...</item>
-    <item>Selhání</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Standardní malé</item>
-    <item>Barevné malé</item>
-    <item>Plné okno</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Vždy</item>
-    <item>Nikdy</item>
-    <item>Ručně</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Vždy</item>
-    <item>Po 1 hodině</item>
-    <item>Po 2 hodinách</item>
-    <item>Po 3 hodinách</item>
-    <item>Po 6 hodinách</item>
-    <item>Po 12 hodinách</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 den</item>
-    <item>2 dny</item>
-    <item>4 dny</item>
-    <item>1 týden</item>
-    <item>2 týdny</item>
-    <item>3 týdny</item>
-    <item>4 týdny</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Vždy</string>
+  <string name="boot_pref_never" formatted="false">Nikdy</string>
+  <string name="boot_pref_if_running" formatted="false">Ručně</string>
   <plurals name="n_log_items">
     <item quantity="one">%d položka záznamů</item>
     <item quantity="other">%d položek záznamů</item>

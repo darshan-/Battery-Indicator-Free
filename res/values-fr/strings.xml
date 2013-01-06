@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Appuyez sur RETOUR pour quitter.</string>
   <string name="press_menu_for_more" formatted="false">Appuyez sur MENU pour plus d\'options.</string>
+  <string name="status_unplugged" formatted="false">Débranché</string>
+  <string name="status_unknown" formatted="false">Inconnu</string>
+  <string name="status_charging" formatted="false">En charge</string>
+  <string name="status_discharging" formatted="false">Se décharge</string>
+  <string name="status_not_charging" formatted="false">Pas de charge</string>
+  <string name="status_fully_charged" formatted="false">Complètement chargée</string>
+  <string name="health_unknown" formatted="false">Inconnu</string>
+  <string name="health_good" formatted="false">Bon état</string>
+  <string name="health_overheat" formatted="false">Surchauffe</string>
+  <string name="health_dead" formatted="false">Morte</string>
+  <string name="health_overvoltage" formatted="false">Surtension</string>
+  <string name="health_failure" formatted="false">Défaut</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Débranché</string>
+  <string name="plugged_ac" formatted="false">(CA)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Se décharge depuis</string>
   <string name="charging_from" formatted="false">En charge depuis</string>
   <string name="fully_charged" formatted="false">Complètement chargée</string>
@@ -74,88 +92,9 @@
   <string name="pref_one_percent_hack" formatted="false">Hack \"Un pourcent\"</string>
   <string name="pref_one_percent_hack_summary" formatted="false">Utiliser la solution de contournement pour les appareils qui affichent uniquement des multiples de 10%?</string>
   <string name="pref_one_percent_hack_help" formatted="false">Cela fonctionne apparemment sur tous les appareils Motorola qui affichent par défaut des multiples de 10%, à l\'exception du Droid original.\n\nLa plupart des appareils n\'ont pas besoin de cela. Si votre appareil affiche déjà des incréments d\'un pourcent, n\'activez pas ce hack.\n\nSi l\'option est grisée et ne peut pas être activée, alors, votre appareil n\'est pas capable d\'utiliser ce hack.\n\nVoir la page wiki du <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">Hack \"Un pourcent\"</a> pour plus d\'information.</string>
-  <string-array name="statuses">
-    <item>Débranché</item>
-    <item>Inconnu</item>
-    <item>En charge</item>
-    <item>Se décharge</item>
-    <item>Pas de charge</item>
-    <item>Complètement chargée</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Débranché</item>
-    <item>Inconnu</item>
-    <item>Branché</item>
-    <item>Inconnu</item>
-    <item>Inconnu</item>
-    <item>Complètement chargée</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Se décharge</item>
-    <item>Inconnu</item>
-    <item>En charge</item>
-    <item>Inconnu</item>
-    <item>Inconnu</item>
-    <item>Complètement chargée</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Inconnu</item>
-    <item>Inconnu</item>
-    <item>Bon état</item>
-    <item>Surchauffe</item>
-    <item>Morte</item>
-    <item>Surtension</item>
-    <item>Défaut</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Débranché</item>
-    <item>(CA)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>Complètement chargée</item>
-    <item>Charge inférieure à</item>
-    <item>Charge supérieure à</item>
-    <item>Température supérieure à</item>
-    <item>Santé critique</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>Charge terminée</item>
-    <item>Charge inférieure à...</item>
-    <item>Charge supérieure à...</item>
-    <item>Température supérieure à...</item>
-    <item>Santé critique</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Par défaut (petit)</item>
-    <item>Coloré (petit)</item>
-    <item>Plein écran</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Toujours</item>
-    <item>Jamais</item>
-    <item>Si fonctionne lors de l\'arrêt</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Toujours</item>
-    <item>Après 1 heure</item>
-    <item>Après 2 heures</item>
-    <item>Après 3 heures</item>
-    <item>Après 6 heures</item>
-    <item>Après 12 heures</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 jour</item>
-    <item>2 jours</item>
-    <item>4 jours</item>
-    <item>1 semaine</item>
-    <item>2 semaines</item>
-    <item>3 semaines</item>
-    <item>4 semaines</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Toujours</string>
+  <string name="boot_pref_never" formatted="false">Jamais</string>
+  <string name="boot_pref_if_running" formatted="false">Si fonctionne lors de l\'arrêt</string>
   <plurals name="n_log_items">
     <item quantity="one">%d élément de journal</item>
     <item quantity="other">%d éléments de journal</item>

@@ -31,6 +31,24 @@
   <string name="volt_symbol" formatted="false">V</string>
   <string name="press_back_to_leave" formatted="false">Naciśnij Wstecz aby wyjść.</string>
   <string name="press_menu_for_more" formatted="false">Naciśnij Menu dla więcej opcji.</string>
+  <string name="status_unplugged" formatted="false">Odłączony</string>
+  <string name="status_unknown" formatted="false">Nieznany</string>
+  <string name="status_charging" formatted="false">Ładowanie</string>
+  <string name="status_discharging" formatted="false">Rozładowanie</string>
+  <string name="status_not_charging" formatted="false">Nie ładuje</string>
+  <string name="status_fully_charged" formatted="false">W pełni naładowany</string>
+  <string name="health_unknown" formatted="false">Nieznany</string>
+  <string name="health_good" formatted="false">Zdrowa</string>
+  <string name="health_overheat" formatted="false">Przegrzana</string>
+  <string name="health_dead" formatted="false">Martwa</string>
+  <string name="health_overvoltage" formatted="false">Przeładowana</string>
+  <string name="health_failure" formatted="false">Defekt</string>
+  <string name="health_cold" formatted="false">Cold</string>
+  <string name="plugged_unplugged" formatted="false">Odłączony</string>
+  <string name="plugged_ac" formatted="false">(AC)</string>
+  <string name="plugged_usb" formatted="false">(USB)</string>
+  <string name="plugged_unknown" formatted="false">(?)</string>
+  <string name="plugged_wireless" formatted="false">(WL)</string>
   <string name="discharging_from" formatted="false">Rozładowywanie od</string>
   <string name="charging_from" formatted="false">Ładowanie od</string>
   <string name="fully_charged" formatted="false">W pełni naładowana</string>
@@ -74,88 +92,9 @@
   <string name="pref_one_percent_hack" formatted="false">Hack dla 1%</string>
   <string name="pref_one_percent_hack_summary" formatted="false">Użyć dla urządzeń, które pokazują poziom co 10%</string>
   <string name="pref_one_percent_hack_help" formatted="false">Ten hack działa dla wszystkich modeli Motoroli, które pokazują poziom tylko co 10%.\n\nWiększość urządzeń nie potrzebuje tego. Jeżeli twoje urządzenie pokazuje już poziom co 1% nie włączaj tego hacka.\n\nJeżeli opcja jest szara i nie da się jej włączyć, oznacza to, że twoje urządzenie nie jest kompatybilne z tym hackiem.\n\nZobacz <a href="http://code.google.com/p/battery-indicator/wiki/ OnePercentHack?tm=6">OnePercentHack</a> po więcej informacji.</string>
-  <string-array name="statuses">
-    <item>Odłączony</item>
-    <item>Nieznany</item>
-    <item>Ładowanie</item>
-    <item>Rozładowanie</item>
-    <item>Nie ładuje</item>
-    <item>W pełni naładowany</item>
-  </string-array>
-  <string-array name="log_statuses">
-    <item>Odłączony</item>
-    <item>Nieznany</item>
-    <item>Podłączony</item>
-    <item>Nieznany</item>
-    <item>Nieznany</item>
-    <item>W pełni naładowany</item>
-  </string-array>
-  <string-array name="log_statuses_old">
-    <item>Rozładowanie</item>
-    <item>Nieznany</item>
-    <item>Ładowanie</item>
-    <item>Nieznany</item>
-    <item>Nieznany</item>
-    <item>W pełni naładowany</item>
-  </string-array>
-  <string-array name="healths">
-    <item>Nieznany</item>
-    <item>Nieznany</item>
-    <item>Zdrowa</item>
-    <item>Przegrzana</item>
-    <item>Martwa</item>
-    <item>Przeładowana</item>
-    <item>Defekt</item>
-    <item>Cold</item>
-  </string-array>
-  <string-array name="pluggeds">
-    <item>Odłączony</item>
-    <item>(AC)</item>
-    <item>(USB)</item>
-    <item>(?)</item>
-    <item>(WL)</item>
-  </string-array>
-  <string-array name="alarm_types_display">
-    <item>W pełni naładowana</item>
-    <item>Poziom spadł poniżej</item>
-    <item>Poziom wzrósł powyżej</item>
-    <item>Temperatura wzrosła powyżej</item>
-    <item>Defekt zdrowia</item>
-  </string-array>
-  <string-array name="alarm_type_entries">
-    <item>W pełni naładowana</item>
-    <item>Poziom spadł poniżej...</item>
-    <item>Poziom wzrósł powyżej</item>
-    <item>Temperatura wzrosła powyżej...</item>
-    <item>Defekt zdrowia</item>
-  </string-array>
-  <string-array name="mw_theme_pref_entries">
-    <item>Domyślnie mały</item>
-    <item>Kolorowy mały</item>
-    <item>Pełne okno</item>
-  </string-array>
-  <string-array name="boot_pref_entries">
-    <item>Zawsze</item>
-    <item>Nigdy</item>
-    <item>Jeżeli uruchomiona przy wyłączaniu</item>
-  </string-array>
-  <string-array name="status_dur_est_entries">
-    <item>Zawsze</item>
-    <item>Po 1 godzinie</item>
-    <item>Po 2 godzinach</item>
-    <item>Po 3 godzinach</item>
-    <item>Po 6 godzinach</item>
-    <item>Po 12 godzinach</item>
-  </string-array>
-  <string-array name="max_log_age_entries">
-    <item>1 dzień</item>
-    <item>2 dni</item>
-    <item>4 dni</item>
-    <item>1 tydzień</item>
-    <item>2 tygodnie</item>
-    <item>3 tygodnie</item>
-    <item>4 tygodnie</item>
-  </string-array>
+  <string name="boot_pref_always" formatted="false">Zawsze</string>
+  <string name="boot_pref_never" formatted="false">Nigdy</string>
+  <string name="boot_pref_if_running" formatted="false">Jeżeli uruchomiona przy wyłączaniu</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Log</item>
     <item quantity="other">%d Logów</item>
