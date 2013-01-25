@@ -53,7 +53,6 @@
   <string name="charging_from" formatted="false">Ładowanie od</string>
   <string name="fully_charged" formatted="false">W pełni naładowana</string>
   <string name="since" formatted="false">Od</string>
-  <string name="one_six_needed" formatted="false">Tylko dla Android 1.6+!</string>
   <string name="currently_using" formatted="false">W użyciu</string>
   <string name="currently_set_to" formatted="false">"Ustawione na: "</string>
   <string name="currently_disabled" formatted="false">Wyłączone</string>

@@ -53,7 +53,6 @@
   <string name="charging_from" formatted="false">In carica dalle</string>
   <string name="fully_charged" formatted="false">Completamente carico</string>
   <string name="since" formatted="false">Dalle</string>
-  <string name="one_six_needed" formatted="false">Ci spiace, è necessario Android 1.6 o superiore!</string>
   <string name="currently_using" formatted="false">Attualmente in uso</string>
   <string name="currently_set_to" formatted="false">"Attualmente impostato su: "</string>
   <string name="currently_disabled" formatted="false">Attualmente disattivato</string>

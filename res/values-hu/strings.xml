@@ -53,7 +53,6 @@
   <string name="charging_from" formatted="false">Töltés innen:</string>
   <string name="fully_charged" formatted="false">Teljesen feltöltve</string>
   <string name="since" formatted="false">óta</string>
-  <string name="one_six_needed" formatted="false">Elnézést, legalább Android 1.6 szükséges!</string>
   <string name="currently_using" formatted="false">Jelenleg használatban</string>
   <string name="currently_set_to" formatted="false">"Jelenlegi beállítás:"</string>
   <string name="currently_disabled" formatted="false">Jelenleg Letiltva</string>

@@ -88,7 +88,6 @@
     <item quantity="one">%d Log Item</item>
     <item quantity="other">%d Log Items</item>
   </plurals>
-
   <string formatted="false" name="discharging_from">Discharging from</string>
   <string formatted="false" name="charging_from">Charging from</string>
   <string formatted="false" name="fully_charged">Fully Charged</string>
@@ -98,8 +97,6 @@
     <item quantity="one">For %d Hour</item>
     <item quantity="other">For %d Hours</item>
   </plurals>
-
-  <string formatted="false" name="one_six_needed">Sorry, Android 1.6+ needed!</string>
 
   <string formatted="false" name="currently_using">Currently using</string>
   <string formatted="false" name="currently_set_to">"Currently set to: "</string>

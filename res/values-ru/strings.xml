@@ -53,7 +53,6 @@
   <string name="charging_from" formatted="false">Заряжается с</string>
   <string name="fully_charged" formatted="false">Полностью заряжено</string>
   <string name="since" formatted="false">С</string>
-  <string name="one_six_needed" formatted="false">Извините, для работы необходим Android 1.6 и старше!</string>
   <string name="currently_using" formatted="false">Текущее использование</string>
   <string name="currently_set_to" formatted="false">"Текущая настройка: "</string>
   <string name="currently_disabled" formatted="false">Сейчас отключено</string>

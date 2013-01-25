@@ -241,7 +241,6 @@ public class BatteryIndicator extends Activity {
             try {
                 startActivity(batteryUseIntent);
             } catch (Exception e) {
-                Toast.makeText(context, str.one_six_needed, Toast.LENGTH_SHORT).show();
                 battery_use_b.setEnabled(false);
             }
         }
@@ -300,7 +299,6 @@ public class BatteryIndicator extends Activity {
         public String percent_symbol;
         public String reenable_lock_screen;
         public String disable_lock_screen;
-        public String one_six_needed;
         public String confirm_disable;
         public String confirm_disable_hint;
         public String confirm_close;
@@ -319,7 +317,6 @@ public class BatteryIndicator extends Activity {
             percent_symbol       = res.getString(R.string.percent_symbol);
             reenable_lock_screen = res.getString(R.string.reenable_lock_screen);
             disable_lock_screen  = res.getString(R.string.disable_lock_screen);
-            one_six_needed       = res.getString(R.string.one_six_needed);
             confirm_disable      = res.getString(R.string.confirm_disable);
             confirm_disable_hint = res.getString(R.string.confirm_disable_hint);
             confirm_close        = res.getString(R.string.confirm_close);

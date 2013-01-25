@@ -53,7 +53,6 @@
   <string name="charging_from" formatted="false">Iškraunama nuo</string>
   <string name="fully_charged" formatted="false">Pilnai įkrauta</string>
   <string name="since" formatted="false">Nuo</string>
-  <string name="one_six_needed" formatted="false">Apgailestaujame, reikalinga Android 1.6+ versija</string>
   <string name="currently_using" formatted="false">Dabar naudojama</string>
   <string name="currently_set_to" formatted="false">"Dabar nustatyta: "</string>
   <string name="currently_disabled" formatted="false">Dabar išjungta</string>
