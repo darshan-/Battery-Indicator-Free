@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string formatted="false" name="app_full_name">Battery Indicator Pro</string>
-  <string formatted="false" name="settings_activity_name">Battery Indicator Pro - Settings</string><!-- depricated -->
-  <!-- depricated -->
-  <!-- depricated -->
   <string formatted="false" name="app_full_name_free">Battery Indicator</string>
-  <string formatted="false" name="settings_activity_name_free">Battery Indicator - Settings</string><!-- depricated -->
-  <string formatted="false" name="help_activity_name_free">Battery Indicator - Help</string><!-- depricated -->
 
   <string formatted="false" name="battery_use_b">View Battery Use</string>
   <string formatted="false" name="upgrade_donate_b">Upgrade/Donate...</string>
@@ -31,26 +26,18 @@
   </string>
   <string formatted="false" name="first_run_title">Thank you!</string>
   <string formatted="false" name="first_run_message">Thanks
-    for your donation/purchase!  <b><i>These two points are very important</i> :</b>\n
+    for your donation/purchase!  <b><i>This is very important</i> :</b>\n
 
     \n• If you have a \"<b>task killer</b>\" / process manager of some kind, you should either
       uninstall it or try to get it to ignore Battery Indicator Pro.  Even if you
       have it set to ignore the free version, <i>you still need to tell it to
       ignore this Pro version</i> !\n
-
-    \n• If your device only shows the battery level in 10% increments by default (<b>most
-      Motorola phones work this way</b>), then you should turn on the \"One-percent Hack\" in
-      \"Other Settings\" to enable one-percent increments.
   </string>
   <string formatted="false" name="first_run_message_free">Thanks
-    for downloading Battery Indicator!  <b><i>These two points are very important</i> :</b>\n
+    for downloading Battery Indicator!  <b><i>This is very important</i> :</b>\n
 
     \n• If you have a \"<b>task killer</b>\" / process manager of some kind, you should either
       uninstall it or try to get it to ignore Battery Indicator.
-
-    \n• If your device only shows the battery level in 10% increments by default (<b>most
-      Motorola phones work this way</b>), then you should turn on the \"One-percent Hack\" in
-      the settings to enable one-percent increments.
   </string>
   <string formatted="false" name="okay">Okay</string>
   <string formatted="false" name="menu_settings">Settings</string>
@@ -137,8 +124,6 @@
     \n• Fully configurable estimated charge/discharge time left.
     \n• Downloadable icon plugins.
     \n• Logging of battery state.
-    \n• Themes for the main window (including a full-size window with
-    large, easy-to-read text).
     \n• Manually disable/reenable the device lock screen, with the option
     to automatically disable it when plugged in and reenable it when unplugged.
     \n• Many more useful things that you\'ll discover throughout.
@@ -227,7 +212,7 @@
   <string formatted="false" name="pref_cat_more_settings_in_pro">More Settings in Pro</string>
   <string formatted="false" name="pref_please_upgrade">
     The Pro version has many more settings and features, including
-    colorful icons, downloadable icon plugins, alarms, window themes,
+    colorful icons, downloadable icon plugins, alarms,
     battery state logging, auto/manual lock screen disable,
     charge/discharge remaining estimates, and more.
   </string>
@@ -281,19 +266,6 @@
 
     \nOn some devices, enabling this cuts off the rightmost portion of
     the notification text.
-  </string>
-
-  <string formatted="false" name="pref_cat_one_percent_hack">One-percent hack</string>
-  <string formatted="false" name="pref_one_percent_hack">One-percent hack</string>
-  <string formatted="false" name="pref_one_percent_hack_summary">Use workaround for devices that show only multiples of 10%?</string>
-  <string formatted="false" name="pref_one_percent_hack_help">This
-    hack appears to work for all Motorola devices that default to 10% increments, other than the original Droid.\n
-
-    \nMost devices do not need this.  If your device already shows one-percent increments, do not enable this hack.\n
-
-    \nIf the option is grayed-out and not able to be turned on, then your device is not capable of using this hack.\n
-
-    \nSee the <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">OnePercentHack</a> wiki page for more info.
   </string>
   <!--string name="pref_cat_device_specific_help"></string-->
   <!--string name="pref_alarm_enabled_summary"></string-->

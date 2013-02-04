@@ -89,10 +89,6 @@
   <string name="pref_charge_as_text" formatted="false">Batterijpercentage in tekst</string>
   <string name="pref_charge_as_text_summary" formatted="false">Laat het batterijpercentage zien in de meldingstekst</string>
   <string name="pref_charge_as_text_help" formatted="false">Deze optie is voor mensen met slechter zicht. Vooral wanneer je een schermlezer gebruikt.</string>
-  <string name="pref_cat_one_percent_hack" formatted="false">Percentagehack</string>
-  <string name="pref_one_percent_hack" formatted="false">Percentagehack</string>
-  <string name="pref_one_percent_hack_summary" formatted="false">Gebruik een hack voor apparaten waarvan het percentage alleen per 10% verandert.</string>
-  <string name="pref_one_percent_hack_help" formatted="false">Deze hack werkt op alle Motorola apparaten die het percentage per 10% weergeven, behalve de originele Motorola Droid.\n\nDe meeste apparaten hebben deze optie niet nodig.\n\nAls de optie grijs is en je kunt hem niet aanzetten, dan ondersteunt jouw apparaat deze optie niet.\n\nZie de <a href="http://code.google.com/p/battery-indicator/wiki/OnePercentHack?tm=6">OnePercentHack</a> wiki pagina voor meer informatie.</string>
   <string name="boot_pref_always" formatted="false">Altijd</string>
   <string name="boot_pref_never" formatted="false">Nooit</string>
   <string name="boot_pref_if_running" formatted="false">Wanneer ingeschakeld bij afsluiten</string>

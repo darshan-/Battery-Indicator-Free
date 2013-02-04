@@ -26,7 +26,7 @@ import android.widget.TextView;
 
 public class SettingsHelpActivity extends Activity {
     private Resources res;
-    private static final int[] HAS_LINKS = {R.id.one_percent_hack};
+    private static final int[] HAS_LINKS = {};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

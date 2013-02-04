@@ -40,7 +40,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_AUTO_DISABLE_LOCKING = "auto_disable_lock_screen";
     public static final String KEY_ICON_SET = "icon_set";
     public static final String KEY_CONVERT_F = "convert_to_fahrenheit";
-    public static final String KEY_ONE_PERCENT_HACK = "one_percent_hack";
     public static final String KEY_CHARGE_AS_TEXT = "charge_as_text";
     public static final String KEY_STATUS_DUR_EST = "status_dur_est";
 
@@ -50,7 +49,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     private static final String[] LIST_PREFS = {KEY_STATUS_DUR_EST, KEY_ICON_SET};
 
     private static final String[] RESET_SERVICE = {KEY_CONVERT_F, KEY_CHARGE_AS_TEXT, KEY_STATUS_DUR_EST,
-                                                   KEY_AUTO_DISABLE_LOCKING, KEY_ONE_PERCENT_HACK, KEY_ICON_SET};
+                                                   KEY_AUTO_DISABLE_LOCKING, KEY_ICON_SET};
 
     public static final int CHARGE_COUNTER_LEGIT_MAX = 115; /* From what I understand, charge_counter can go somewhat over 100; I'm guessing at 115 being an appropriate cutoff point. */
 
@@ -74,8 +73,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         mSharedPreferences = getPreferenceManager().getSharedPreferences();
 
         setPrefScreen(R.xml.main_pref_screen);
-
-        enableOnePercentIfAppropriate();
 
         for (int i=0; i < PARENTS.length; i++)
             setEnablednessOfDeps(i);
@@ -212,17 +209,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             pref1.setEnabled(true);
             pref2.setEnabled(true);
         }
-    }
-
-    private void enableOnePercentIfAppropriate() {
-        Preference pref = mPreferenceScreen.findPreference(KEY_ONE_PERCENT_HACK);
-
-        try {
-            java.io.FileReader fReader = new java.io.FileReader("/sys/class/power_supply/battery/charge_counter");
-            java.io.BufferedReader bReader = new java.io.BufferedReader(fReader);
-            if (Integer.valueOf(bReader.readLine()) <= CHARGE_COUNTER_LEGIT_MAX)
-                pref.setEnabled(true);
-        } catch (Exception e) {}
     }
 
     private void updateListPrefSummary(String key) {
