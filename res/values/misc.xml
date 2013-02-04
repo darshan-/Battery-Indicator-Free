@@ -316,7 +316,7 @@
 
   <string name ="default_main_notification_priority">-1</string>
 
-  <string name="settings_help_activity_name">@string/settings_activity_name</string>
+  <string name="settings_help_activity_name">@string/settings_activity_name_free</string>
   <string name="settings_help_activity_name_free">@string/settings_activity_name_free</string>
   <string name="main_window_title">@string/app_full_name</string>
   <string name="main_window_title_free">@string/app_full_name_free</string>
