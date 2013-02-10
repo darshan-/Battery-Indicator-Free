@@ -146,8 +146,10 @@ public class BatteryIndicatorService extends Service {
             if (hack_file.exists()) {
                 try {
                     java.io.FileReader fReader = new java.io.FileReader(hack_file);
-                    java.io.BufferedReader bReader = new java.io.BufferedReader(fReader);
-                    int charge_counter = Integer.valueOf(bReader.readLine());
+                    java.io.BufferedReader bReader = new java.io.BufferedReader(fReader, 8);
+                    String line = bReader.readLine();
+                    bReader.close();
+                    int charge_counter = Integer.valueOf(line);
 
                     if (charge_counter < percent + 10 && charge_counter > percent - 10) {
                         if (charge_counter > 100) // This happens
@@ -164,8 +166,13 @@ public class BatteryIndicatorService extends Service {
                 } catch (java.io.FileNotFoundException e) {
                     /* These error messages are only really useful to me and might as well be left hardwired here in English. */
                     Log.e(LOG_TAG, "charge_counter file doesn't exist");
+                    e.printStackTrace();
                 } catch (java.io.IOException e) {
                     Log.e(LOG_TAG, "Error reading charge_counter file");
+                    e.printStackTrace();
+                } catch (NumberFormatException e) {
+                    Log.e(LOG_TAG, "Read charge_counter file but couldn't convert contents to int");
+                    e.printStackTrace();
                 }
             }
 
