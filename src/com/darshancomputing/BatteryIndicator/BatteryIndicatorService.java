@@ -133,9 +133,9 @@ public class BatteryIndicatorService extends Service {
 
             int level = intent.getIntExtra("level", 0);
             int scale = intent.getIntExtra("scale", 100);
-            int status = intent.getIntExtra("status", 0);
-            int health = intent.getIntExtra("health", 0);
-            int plugged = intent.getIntExtra("plugged", 0);
+            int status = intent.getIntExtra("status", STATUS_UNKNOWN);
+            int health = intent.getIntExtra("health", HEALTH_UNKNOWN);
+            int plugged = intent.getIntExtra("plugged", PLUGGED_UNKNOWN);
             int temperature = intent.getIntExtra("temperature", 0);
             int voltage = intent.getIntExtra("voltage", 0);
             //String technology = intent.getStringExtra("technology");
@@ -169,9 +169,9 @@ public class BatteryIndicatorService extends Service {
                 }
             }
 
-            if (status  > 5){ status  = 1; /* Unknown */ }
-            if (health  > 6){ health  = 1; /* Unknown */ }
-            if (plugged > 2){ plugged = 0; /* Unknown */ }
+            if (status  > STATUS_MAX) status  = STATUS_UNKNOWN;
+            if (health  > HEALTH_MAX) health  = HEALTH_UNKNOWN;
+            if (plugged > PLUGGED_MAX) plugged = PLUGGED_UNKNOWN;
 
             /* I Take advantage of (count on) R.java having resources alphabetical and incrementing by one */
 
