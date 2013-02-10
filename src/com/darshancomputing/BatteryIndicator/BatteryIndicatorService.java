@@ -17,7 +17,6 @@ package com.darshancomputing.BatteryIndicator;
 import android.app.KeyguardManager;
 import android.app.KeyguardManager.KeyguardLock;
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -38,7 +37,6 @@ public class BatteryIndicatorService extends Service {
     private final IntentFilter batteryChanged = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
     private Intent notificationIntent;
 
-    private NotificationManager mNotificationManager;
     private SharedPreferences settings;
     private KeyguardLock kl;
 
@@ -89,8 +87,6 @@ public class BatteryIndicatorService extends Service {
         res = getResources();
         str = new Str();
 
-        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
         registerReceiver(mBatteryInfoReceiver, batteryChanged);
         settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
@@ -108,8 +104,7 @@ public class BatteryIndicatorService extends Service {
         setEnablednessOfKeyguard(true);
 
         unregisterReceiver(mBatteryInfoReceiver);
-        mNotificationManager.cancelAll();
-        //android.os.Debug.stopMethodTracing();
+        stopForeground(true);
     }
 
     @Override
@@ -309,7 +304,7 @@ public class BatteryIndicatorService extends Service {
 
             notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
 
-            mNotificationManager.notify(1, notification);
+            startForeground(1, notification);
         }
     };
 
