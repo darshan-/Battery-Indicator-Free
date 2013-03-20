@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string formatted="false" name="app_full_name">Battery Indicator Pro</string>
-  <string formatted="false" name="app_full_name_free">Battery Indicator</string>
-  <string formatted="false" name="settings_activity_name_free">Battery Indicator - Settings</string><!-- depricated -->
-  <string formatted="false" name="help_activity_name_free">Battery Indicator - Help</string><!-- depricated -->
+  <string formatted="false" name="app_full_name">BatteryBot Pro</string>
+  <string formatted="false" name="app_launcher_name">BatteryBot</string>
+  <string formatted="false" name="settings_activity_subtitle">Settings</string>
+  <string formatted="false" name="app_full_name_free">BatteryBot</string>
+
   <string formatted="false" name="battery_use_b">View Battery Use</string>
   <string formatted="false" name="upgrade_donate_b">Upgrade/Donate...</string>
-  <string formatted="false" name="reenable_lock_screen">Reenable Lock Screen</string>
-  <string formatted="false" name="disable_lock_screen">Disable Lock Screen</string>
-
-  <string formatted="false" name="confirm_disable">Really disable lock screen?</string>
-  <string formatted="false" name="confirm_disable_hint">
-    Hint: Disable this confirmation dialog in the settings...
-  </string>
   <string formatted="false" name="yes">Yes</string>
   <string formatted="false" name="cancel">Cancel</string>
 
   <string formatted="false" name="confirm_close">Really Close?</string>
   <string formatted="false" name="confirm_close_hint">
-    Battery Indicator will be completely closed, and you won\'t see it
+    BatteryBot will be completely closed, and you won\'t see it
     in your status bar any more.\n
 
     \nIf you just want to leave the main window and keep the indicator
     running, press Cancel and then just press your device\'s BACK
     button to leave the main window.
   </string>
-  <string formatted="false" name="first_run_title">Thank you!</string>
-  <string formatted="false" name="first_run_message">Thanks
-    for your donation/purchase!  <b><i>This is very important</i> :</b>\n
 
-    \n• If you have a \"<b>task killer</b>\" / process manager of some kind, you should either
-      uninstall it or try to get it to ignore Battery Indicator Pro.  Even if you
-      have it set to ignore the free version, <i>you still need to tell it to
-      ignore this Pro version</i> !\n
-  </string>
-  <string formatted="false" name="first_run_message_free">Thanks
-    for downloading Battery Indicator!  <b><i>This is very important</i> :</b>\n
+  <string formatted="false" name="confirm_clear_logs">Really clear all logs?</string>
 
-    \n• If you have a \"<b>task killer</b>\" / process manager of some kind, you should either
-      uninstall it or try to get it to ignore Battery Indicator.
+  <string formatted="false" name="configure_log_filter">Show which log items?</string>
+
+  <string formatted="false" name="confirm_ten_percent_enable">Really enable 10% Mode?</string>
+  <string formatted="false" name="confirm_ten_percent_disable">Really disable 10% Mode?</string>
+  <string formatted="false" name="confirm_ten_percent_hint">
+    Warning: Changing this setting (both enabling and disabling it)
+    will reset your color settings.\n
+
+    \nIf you have a Motorola Droid, Droid X, Droid 2, Defy,
+    or Samsung Moment, you should turn
+    this on when you first get the app, and then leave it alone.  All
+    other devices, as far as I know, should always leave this off.
   </string>
+
   <string formatted="false" name="okay">Okay</string>
+  <string formatted="false" name="tab_current_info">Current Info</string>
+  <string formatted="false" name="notification_until_charged">" until charged"</string>
+  <string formatted="false" name="notification_until_drained">" left"</string>
+  <string formatted="false" name="activity_until_charged">until charged</string>
+  <string formatted="false" name="activity_until_drained">until drained</string>
+
   <string formatted="false" name="menu_settings">Settings</string>
   <string formatted="false" name="menu_close">Close</string>
   <string formatted="false" name="menu_help">Help</string>
+  <string formatted="false" name="menu_rate_and_review">Rate &amp; Review</string>
   <string formatted="false" name="percent_symbol">%</string>
   <string formatted="false" name="degree_symbol">°</string>
   <string formatted="false" name="fahrenheit">Fahrenheit</string>
@@ -51,15 +54,27 @@
   <string formatted="false" name="celsius">Celsius</string>
   <string formatted="false" name="celsius_symbol">C</string>
   <string formatted="false" name="volt_symbol">V</string>
-  <string formatted="false" name="press_back_to_leave">Press BACK to leave.</string>
-  <string formatted="false" name="press_menu_for_more">Press MENU for more items.</string>
+  <string formatted="false" name="inaccessible_storage">SD Card is inaccessible.</string>
+  <string formatted="false" name="inaccessible_w_reason">SD Card inaccessible: </string>
+  <string formatted="false" name="read_only_storage">SD Card is read only.</string>
+  <string formatted="false" name="file_written">File successfully written to root of SD card.</string>
+
   <!-- These are used for the CSV export. -->
+  <string formatted="false" name="date">date</string>
+  <string formatted="false" name="time">time</string>
+  <string formatted="false" name="status">status</string>
+  <string formatted="false" name="charge">charge_percentage</string>
+  <string formatted="false" name="temperature">degrees_celsius</string>
+  <string formatted="false" name="voltage">volts</string>
+
   <string formatted="false" name="status_unplugged">Unplugged</string>
   <string formatted="false" name="status_unknown">Unknown</string>
   <string formatted="false" name="status_charging">Charging</string>
   <string formatted="false" name="status_discharging">Discharging</string>
   <string formatted="false" name="status_not_charging">Not Charging</string>
   <string formatted="false" name="status_fully_charged">Fully Charged</string>
+  <string formatted="false" name="status_plugged_in">Plugged In</string>
+
   <string formatted="false" name="health_unknown">Unknown</string>
   <string formatted="false" name="health_good">Good Health</string>
   <string formatted="false" name="health_overheat">Overheat</string>
@@ -71,15 +86,66 @@
   <string formatted="false" name="plugged_ac">(AC)</string>
   <string formatted="false" name="plugged_usb">(USB)</string>
   <string formatted="false" name="plugged_unknown">(?)</string>
-  <string formatted="false" name="plugged_wireless">(WL)</string>
+  <string formatted="false" name="plugged_wireless">(Wireless)</string>
+
+  <string formatted="false" name="alarm_type_fully_charged">Fully charged</string>
+  <string formatted="false" name="alarm_type_charge_drops">Charge drops below</string>
+  <string formatted="false" name="alarm_type_charge_rises">Charge rises above</string>
+  <string formatted="false" name="alarm_type_temperature_rises">Temperature rises above</string>
+  <string formatted="false" name="alarm_type_health_failure">Health failure</string>
+  <string formatted="false" name="alarm_type_entry_fully_charged">Becomes fully charged</string>
+  <string formatted="false" name="alarm_type_entry_charge_drops">Charge drops below...</string>
+  <string formatted="false" name="alarm_type_entry_charge_rises">Charge rises above...</string>
+  <string formatted="false" name="alarm_type_entry_temperature_rises">Temperature rises above...</string>
+  <string formatted="false" name="alarm_type_entry_health_failure">Health fails</string>
+
+  <string formatted="false" name="alarm_fully_charged">Battery is now fully charged</string>
+  <string formatted="false" name="alarm_charge_drops">"Battery charge is below "</string>
+  <string formatted="false" name="alarm_charge_rises">"Battery charge is above "</string>
+  <string formatted="false" name="alarm_temp_rises">"Battery temp. is above "</string>
+  <string formatted="false" name="alarm_health_failure">"Battery health is: "</string>
+  <string formatted="false" name="alarm_text">Select to edit alarms.</string>
+
+  <string formatted="false" name="logs_empty">Logs Are Empty</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Log Item</item>
     <item quantity="other">%d Log Items</item>
   </plurals>
-  <string formatted="false" name="discharging_from">Discharging from</string>
-  <string formatted="false" name="charging_from">Charging from</string>
-  <string formatted="false" name="fully_charged">Fully Charged</string>
+  <plurals name="n_hours_long">
+    <item quantity="one">"%d hour, "</item>
+    <item quantity="other">"%d hours, "</item>
+  </plurals>
 
+  <plurals name="n_minutes_long">
+    <item quantity="one">%d minute</item>
+    <item quantity="other">%d minutes</item>
+  </plurals>
+
+  <plurals name="n_hours_medium">
+    <item quantity="other">"%d hrs, "</item>
+  </plurals>
+
+  <plurals name="n_minutes_medium">
+    <item quantity="other">%d mins.</item>
+  </plurals>
+
+  <plurals name="n_hours_short">
+    <item quantity="other">"%dh "</item>
+  </plurals>
+
+  <plurals name="n_minutes_short">
+    <item quantity="other">%dm</item>
+  </plurals>
+
+  <plurals name="n_days">
+    <item quantity="one">"%d day, "</item>
+    <item quantity="other">"%d days, "</item>
+  </plurals>
+
+  <plurals name="n_hours">
+    <item quantity="one">%d hour</item>
+    <item quantity="other">%d hours</item>
+  </plurals>
   <string formatted="false" name="since">Since</string>
   <plurals name="for_n_hours">
     <item quantity="one">For %d Hour</item>
@@ -99,8 +165,8 @@
 
   <string formatted="false" name="help_cat_introduction">Introduction</string>
   <string formatted="false" name="help_introduction_free">This
-    is <i>Battery Indicator</i>, the free version of the
-    <i>Battery Indicator</i> family of apps.  It\'s available from
+    is <i>BatteryBot</i>, the free version of the
+    <i>BatteryBot</i> family of apps.  It\'s available from
     the Android Market, and it\'s an open source project,
     which means you can download the source for free
     from <a href="http://code.google.com/p/battery-indicator/">the
@@ -112,8 +178,8 @@
   </string>
 
   <string formatted="false" name="help_cat_summary">Summary</string>
-  <string formatted="false" name="help_summary_free"><i>Battery
-    Indicator</i> is a lightweight battery indicator for the
+  <string formatted="false" name="help_summary_free"><i>BatteryBot</i>
+    is a lightweight battery indicator for the
     Android™ mobile operating system.  Its core feature is that it
     provides an icon that lives in the status bar and shows you the
     percentage of battery charge left.\n
@@ -122,7 +188,7 @@
     however.  Besides offering red, amber, and green icons, it also
     has the following key features as of version 3.0:\n
 
-    \n• Fully configurable estimated charge/discharge time left.
+    \n• Fully automated estimated charge/discharge time left.
     \n• Downloadable icon plugins.
     \n• Logging of battery state.
     \n• Manually disable/reenable the device lock screen, with the option
@@ -138,7 +204,7 @@
     \n• The notification icon in the status bar and the message you see in the
     notification tray are tied together — you can\'t have one without the other.
     \n• Many apps should allow installation to removable storage (SD card); some
-    should not.  Battery Indicator is of the latter group.  See
+    should not.  BatteryBot is of the latter group.  See
     <a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">the project
       FAQ</a> if you\'d like further explanation.
   </string>
@@ -153,7 +219,7 @@
     battery.  I estimate that it will cost you about 1 minute of usage time
     off of a full discharge as a worst case scenario.  If you are experiencing
     anything worse than that, you probably have another app (such as a \"task
-    killer\" app of some kind) interfering with Battery Indicator\'s normal
+    killer\" app of some kind) interfering with BatteryBot\'s normal
     operation.
     \n• Easy access to Battery Use screen (requires Android 1.6+).
     \n• Configure to always start on boot, never start on boot, or start on boot
@@ -204,8 +270,7 @@
   <string formatted="false" name="help_cat_contact">Contact</string>
   <string formatted="false" name="help_contact">If
     you have a question or a problem, please
-    see <a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">the
-      project FAQ</a> for how to contact me.\n
+    <a href="mailto:battery-indicator-support@darshancomputing.com">email me</a>.\n
   </string>
 
   <string formatted="false" name="pref_hint">Hint: Press MENU for help.</string>
@@ -213,7 +278,7 @@
   <string formatted="false" name="pref_cat_more_settings_in_pro">More Settings in Pro</string>
   <string formatted="false" name="pref_please_upgrade">
     The Pro version has many more settings and features, including
-    colorful icons, downloadable icon plugins, alarms,
+    colorful icons, alarms,
     battery state logging, auto/manual lock screen disable,
     charge/discharge remaining estimates, and more.
   </string>
@@ -240,11 +305,13 @@
     some newer devices do not actually shrink the icon like stock
     Android does, and the very large number in \"Plain Number\" can
     appear comically large on these devices.\n
-    \nIf you have any Battery Indicator Pro icon plugins installed
+
+    \nIf you have any BatteryBot Pro icon plugins installed
     (press MENU, then Get Plugins to get free plugins, or just press
     the Get Plugins button on the Action Bar on newer devices), you
     can choose among them here.
   </string>
+  <string formatted="false" name="pref_main_notification_priority">Main Notification Priority</string>
   <string formatted="false" name="pref_cat_temperature_unit">Temperature Unit</string>
   <string formatted="false" name="pref_convert_to_fahrenheit">Convert to Fahrenheit</string>
   <string formatted="false" name="pref_convert_to_fahrenheit_help">
@@ -252,30 +319,38 @@
     you prefer to see the battery temperature in degrees Fahrenheit,
     check this option, and the app will convert for you.
   </string>
-  <string formatted="false" name="pref_cat_charge_as_text">Textual Charge Level</string>
-  <string formatted="false" name="pref_charge_as_text">Textual Charge Level</string>
-  <string formatted="false" name="pref_charge_as_text_summary">Show as text next to icon?</string>
-  <string formatted="false" name="pref_charge_as_text_help">
-    I\'ve had a few users with poorer eyesight ask me to add this
-    option, whereby the charge level is displayed as text (which is a
-    bit larger and easier to read) right next to the icon when you
-    pull down the notification area.  The actual icon won\'t be any
-    different, so this will only help when you pull down the
-    notification tray, but it\'s better than nothing, and easy enough
-    to add for those that want it.  It is particularly useful for those
-    using a screen reader.\n
-
-    \nOn some devices, enabling this cuts off the rightmost portion of
-    the notification text.
-  </string>
   <!--string name="pref_cat_device_specific_help"></string-->
   <!--string name="pref_alarm_enabled_summary"></string-->
+  <string formatted="false" name="alarm_pref_not_used">Not used for this alarm type</string>
   <!--string name="pref_alarm_ringtone_summary"></string-->
+  <string formatted="false" name="silent">Silent</string>
   <!--string name="pref_alarm_vibrate_summary"></string-->
   <!--string name="pref_alarm_lights_summary"></string-->
   <string formatted="false" name="boot_pref_always">Always</string>
   <string formatted="false" name="boot_pref_never">Never</string>
   <string formatted="false" name="boot_pref_if_running">If running on shutdown</string>
+
+  <string formatted="false" name="status_dur_always">Always</string>
+  <string formatted="false" name="status_dur_after_1h">After 1 hour</string>
+  <string formatted="false" name="status_dur_after_2h">After 2 hours</string>
+  <string formatted="false" name="status_dur_after_3h">After 3 hours</string>
+  <string formatted="false" name="status_dur_after_6h">After 6 hours</string>
+  <string formatted="false" name="status_dur_after_12h">After 12 hours</string>
+
+  <string formatted="false" name="age_1_day">1 day</string>
+  <string formatted="false" name="age_2_days">2 days</string>
+  <string formatted="false" name="age_4_days">4 days</string>
+  <string formatted="false" name="age_1_week">1 week</string>
+  <string formatted="false" name="age_2_weeks">2 weeks</string>
+  <string formatted="false" name="age_3_weeks">3 weeks</string>
+  <string formatted="false" name="age_4_weeks">4 weeks</string>
+
+  <string formatted="false" name="notification_priority_max">Maximum</string>
+  <string formatted="false" name="notification_priority_high">High</string>
+  <string formatted="false" name="notification_priority_default">Default</string>
+  <string formatted="false" name="notification_priority_low">Low</string>
+  <string formatted="false" name="notification_priority_min">Minimum</string>
+
   <string formatted="false" name="icon_set_classic">Classic</string>
   <string formatted="false" name="icon_set_plain">Plain Number</string>
   <string formatted="false" name="icon_set_smaller">Smaller Number</string>

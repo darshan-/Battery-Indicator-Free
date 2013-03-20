@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
-  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
-  <string name="settings_activity_name_free" formatted="false">Battery Indicator - Impostazioni</string>
-  <string name="help_activity_name_free" formatted="false">Battery Indicator - Aiuto</string>
+  <string name="app_full_name" formatted="false">BatteryBot Pro</string>
+  <string name="app_launcher_name" formatted="false">BatteryBot</string>
+  <string name="settings_activity_subtitle" formatted="false">Impostazioni</string>
+  <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Mostra utilizzo batteria</string>
   <string name="upgrade_donate_b" formatted="false">Aggiorna/Dona...</string>
-  <string name="reenable_lock_screen" formatted="false">Riattiva blocca schermo</string>
-  <string name="disable_lock_screen" formatted="false">Disabilita blocca schermo</string>
-  <string name="confirm_disable" formatted="false">Vuoi davvero disabilitare il blocca schermo?</string>
-  <string name="confirm_disable_hint" formatted="false">Suggerimento: Disattiva questa finestra di conferma nelle impostazioni...</string>
   <string name="yes" formatted="false">Si</string>
   <string name="cancel" formatted="false">Annulla</string>
   <string name="confirm_close" formatted="false">Vuoi davvero uscire?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator sarà completamente chiuso, e non sarà più visualizzato nella barra di stato.\n\nSe si desidera solo abbandonare la finestra principale e mantenere l\'indicatore in esecuzione, premere Annulla e quindi premere il pulsante INDIETRO del tuo cellulare per uscire dalla finestra principale.</string>
-  <string name="first_run_title" formatted="false">Grazie!</string>
-  <string name="first_run_message" formatted="false">Grazie per la tua donazione/acquisto! <b><i>Questi tre punti sono molto importanti</i> :</b>\n\n• Se hai un \"<b>task killer</b>\" / gestore processi o qualcosa di simile, sarebbe opportuno disinstallarlo o provare a ignorare Battery Indicator Pro. Anche se lo si è impostato per ignorare la versione gratuita, <i>è necessario ripetere l\'operazione anche per la versione Pro</i> !\n\n• Se hai un <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, o <b>Samsung Moment</b>, è necessario attivare la \"Modalità 10%\" in \"Altre Impostazioni\".\n\n• Se la barra di stato è nera, specialmente se stai usando Android 3o superiore, devi scaricare ed installare il plugin \"Black Square\".</string>
-  <string name="first_run_message_free" formatted="false">Grazie per aver scaricato Battery Indicator! <b><i>Impostante</i> :</b>\n\nSe hai un \"<b>task killer</b>\" / gestore processi o qualcosa di simile, sarebbe opportuno disinstallarlo o provar a ignorare Battery Indicator.</string>
+  <string name="confirm_clear_logs" formatted="false">Vuoi davvero cancellare tutto il registro?</string>
+  <string name="confirm_ten_percent_enable" formatted="false">Vuoi davvero attivare la modalità 10%?</string>
+  <string name="confirm_ten_percent_disable" formatted="false">Vuoi davvero disattivare la modalità 10%?</string>
+  <string name="confirm_ten_percent_hint" formatted="false">Attenzione: La modifica di questa impostazione (attivazione e disattivazione) resetterà le tue impostazioni di colore.\n\nSe hai un Motorola Droid, Droid X, Droid 2, Defy, o un Samsung Moment, devi impostarlo ON appena ottenuta l\'app, e lasciarlo così. Tutti gli altri dispositivi, per quanto ne so, dovrebbero sempre lasciare questo su OFF.</string>
   <string name="okay" formatted="false">Ok</string>
   <string name="menu_settings" formatted="false">Impostazioni</string>
   <string name="menu_close" formatted="false">Chiudi</string>
@@ -28,14 +25,23 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">Premi INDIETRO per uscire.</string>
-  <string name="press_menu_for_more" formatted="false">Premi MENU per più opzioni.</string>
+  <string name="inaccessible_storage" formatted="false">Scheda SD inaccessibile.</string>
+  <string name="inaccessible_w_reason" formatted="false">Scheda SD inaccessibile:</string>
+  <string name="read_only_storage" formatted="false">Scheda SD in sola lettura.</string>
+  <string name="file_written" formatted="false">File scritti con successo nella root della scheda SD.</string>
+  <string name="date" formatted="false">data</string>
+  <string name="time" formatted="false">tempo</string>
+  <string name="status" formatted="false">stato</string>
+  <string name="charge" formatted="false">percentuale_carica</string>
+  <string name="temperature" formatted="false">gradi_celsius</string>
+  <string name="voltage" formatted="false">volts</string>
   <string name="status_unplugged" formatted="false">Scollegato</string>
   <string name="status_unknown" formatted="false">Sconosciuto</string>
   <string name="status_charging" formatted="false">In carica</string>
   <string name="status_discharging" formatted="false">Scarico</string>
   <string name="status_not_charging" formatted="false">Non in carica</string>
   <string name="status_fully_charged" formatted="false">Completamente carico</string>
+  <string name="status_plugged_in" formatted="false">Collegato</string>
   <string name="health_unknown" formatted="false">Sconosciuto</string>
   <string name="health_good" formatted="false">Buono stato</string>
   <string name="health_overheat" formatted="false">Surriscaldamento</string>
@@ -48,9 +54,23 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="discharging_from" formatted="false">In scarica dalle</string>
-  <string name="charging_from" formatted="false">In carica dalle</string>
-  <string name="fully_charged" formatted="false">Completamente carico</string>
+  <string name="alarm_type_fully_charged" formatted="false">Completamente carico</string>
+  <string name="alarm_type_charge_drops" formatted="false">La carica è scesa al di sotto</string>
+  <string name="alarm_type_charge_rises" formatted="false">La carica è salita al di sopra</string>
+  <string name="alarm_type_temperature_rises" formatted="false">Temperatura salita al di sopra</string>
+  <string name="alarm_type_health_failure" formatted="false">Recupero stato non riuscito</string>
+  <string name="alarm_type_entry_fully_charged" formatted="false">Diventa completamente carico</string>
+  <string name="alarm_type_entry_charge_drops" formatted="false">La carica scende al di sotto...</string>
+  <string name="alarm_type_entry_charge_rises" formatted="false">La carica sale al di sopra...</string>
+  <string name="alarm_type_entry_temperature_rises" formatted="false">La temperatura sale al di sopra...</string>
+  <string name="alarm_type_entry_health_failure" formatted="false">Recupero stato non riuscito</string>
+  <string name="alarm_fully_charged" formatted="false">La batteria è ora completamente carica</string>
+  <string name="alarm_charge_drops" formatted="false">"La carica della batteria è inferiore a "</string>
+  <string name="alarm_charge_rises" formatted="false">"La carica della batteria è superiore a "</string>
+  <string name="alarm_temp_rises" formatted="false">"La temp. della batteria è superiore a "</string>
+  <string name="alarm_health_failure" formatted="false">"La salute della batteria è: "</string>
+  <string name="alarm_text" formatted="false">Seleziona per modificare gli allarmi.</string>
+  <string name="logs_empty" formatted="false">Registro vuoto</string>
   <string name="since" formatted="false">Dalle</string>
   <string name="currently_using" formatted="false">Attualmente in uso</string>
   <string name="currently_set_to" formatted="false">"Attualmente impostato su: "</string>
@@ -82,13 +102,24 @@
   <string name="pref_cat_temperature_unit" formatted="false">Unità temperatura</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Converti in Fahrenheit</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android riporta la temperatura della batteria in gradi Celsius. Se preferisci vedere la temperatura della batteria in gradi Fahrenheit, spunta questa opzione.</string>
-  <string name="pref_cat_charge_as_text" formatted="false">Livello carica testuale</string>
-  <string name="pref_charge_as_text" formatted="false">Livello carica testuale</string>
-  <string name="pref_charge_as_text_summary" formatted="false">Mostrare il livello di carica come testo in grande a fianco dell\' icona?</string>
-  <string name="pref_charge_as_text_help" formatted="false">Ho avuto alcuni utenti con problemi di vista che mi hanno chiesto di aggiungere questa opzione, per cui il livello di carica viene mostrato come testo (che è più grande e facile da leggere) proprio accanto all\' icona quando si trascina verso il basso l\' area notifiche. L\'icona attuale non sarà diversa, quindi questo aiuterà solo quando si trascinerà verso il basso la barra delle notifiche, ma è meglio di niente, ed è abbastanza facile da aggiungere per chi la vuole.\n\nIn alcuni dispositivi, abilitando questa opzione è possibile che venga troncata la porzione più a destra dell\'area notifiche.</string>
+  <string name="alarm_pref_not_used" formatted="false">Non utilizzato per questo tipo di allarme</string>
+  <string name="silent" formatted="false">Silenzioso</string>
   <string name="boot_pref_always" formatted="false">Sempre</string>
   <string name="boot_pref_never" formatted="false">Mai</string>
   <string name="boot_pref_if_running" formatted="false">Se è in esecuzione allo spegnimento</string>
+  <string name="status_dur_always" formatted="false">Sempre</string>
+  <string name="status_dur_after_1h" formatted="false">Dopo 1 ora</string>
+  <string name="status_dur_after_2h" formatted="false">Dopo 2 ore</string>
+  <string name="status_dur_after_3h" formatted="false">Dopo 3 ore</string>
+  <string name="status_dur_after_6h" formatted="false">Dopo 6 ore</string>
+  <string name="status_dur_after_12h" formatted="false">Dopo 12 ore</string>
+  <string name="age_1_day" formatted="false">1 giorno</string>
+  <string name="age_2_days" formatted="false">2 giorni</string>
+  <string name="age_4_days" formatted="false">4 giorni</string>
+  <string name="age_1_week" formatted="false">1 settimana</string>
+  <string name="age_2_weeks" formatted="false">2 settimane</string>
+  <string name="age_3_weeks" formatted="false">3 settimane</string>
+  <string name="age_4_weeks" formatted="false">4 settimane</string>
   <plurals name="n_log_items">
     <item quantity="one">%d elemento log</item>
     <item quantity="other">%d elementi log</item>

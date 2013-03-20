@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009, 2010 Josiah Barber (aka Darshan)
+    Copyright (c) 2009-2013 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,10 +25,14 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences sp_store = context.getSharedPreferences("sp_store", 0);
 
-        if (settings.getBoolean(BatteryIndicatorService.KEY_SERVICE_DESIRED, false)){
+        String startPref = settings.getString(SettingsActivity.KEY_AUTOSTART, "auto");
+
+        if (startPref.equals("always") ||
+            (startPref.equals("auto") && sp_store.getBoolean(BatteryInfoService.KEY_SERVICE_DESIRED, false))){
             ComponentName comp = new ComponentName(context.getPackageName(),
-                                                   BatteryIndicatorService.class.getName());
+                                                   BatteryInfoService.class.getName());
             context.startService(new Intent().setComponent(comp));
         }
     }

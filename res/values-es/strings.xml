@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
-  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
-  <string name="settings_activity_name_free" formatted="false">Battery Indicator - Ajustes</string>
-  <string name="help_activity_name_free" formatted="false">Battery Indicator - Ayuda</string>
+  <string name="app_full_name" formatted="false">BatteryBot Pro</string>
+  <string name="app_launcher_name" formatted="false">BatteryBot</string>
+  <string name="settings_activity_subtitle" formatted="false">Ajustes</string>
+  <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Ver uso de batería</string>
   <string name="upgrade_donate_b" formatted="false">Actualizar/Donar...</string>
-  <string name="reenable_lock_screen" formatted="false">Reactivar Pantalla de Bloqueo</string>
-  <string name="disable_lock_screen" formatted="false">Desactivar Pantalla de Bloqueo</string>
-  <string name="confirm_disable" formatted="false">¿Desea desactivar la pantalla de bloqueo?</string>
-  <string name="confirm_disable_hint" formatted="false">Consejo: Puede desactivar este cuadro de confirmación en los Ajustes.</string>
   <string name="yes" formatted="false">Sí</string>
   <string name="cancel" formatted="false">Cancelar</string>
   <string name="confirm_close" formatted="false">¿Está seguro de que desea cerrar la aplicación?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator se cerrará completamente, y dejará de aparecer en la barra de estado.\n\nSi solamente desea abandonar la ventana principal pero manteniendo activo el indicador, pulse la tecla VOLVER de su teléfono.</string>
-  <string name="first_run_title" formatted="false">¡Gracias!</string>
-  <string name="first_run_message" formatted="false">¡Gracias por su donación/compra! <b><i>Información de interés</i> :</b>\n\n• Si tiene instalado algún \"<b>gestor de tareas</b>\" debería desinstalarlo o configurarlo para que ignore Battery Indicator Pro. Aunque ya lo tuviera configurado para ignorar Battery Indicator, debe repetir el proceso para Battery Indicator Pro.\n\n• Si su teléfono es un <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, o <b>Samsung Moment</b>, debe activar el \"Modo 10%\" en \"Otros Ajustes\".</string>
-  <string name="first_run_message_free" formatted="false">¡Gracias por descargar Battery Indicator! <b><i>Información de interés</i> :</b>\n\nSi tiene instalado algún \"<b>gestor de tareas</b>\" debería desinstalarlo o configurarlo para que ignore Battery Indicator.\n</string>
+  <string name="confirm_clear_logs" formatted="false">¿Está seguro de que desea borrar el registro?</string>
   <string name="okay" formatted="false">Ok</string>
   <string name="menu_settings" formatted="false">Ajustes</string>
   <string name="menu_close" formatted="false">Cerrar</string>
@@ -28,14 +22,23 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">Pulse VOLVER para salir.</string>
-  <string name="press_menu_for_more" formatted="false">Pulse MENU para más opciones.</string>
+  <string name="inaccessible_storage" formatted="false">No se puede acceder a la tarjeta SD.</string>
+  <string name="inaccessible_w_reason" formatted="false">No se puede acceder a la tarjeta SD:</string>
+  <string name="read_only_storage" formatted="false">La tarjeta SD está en modo sólo lectura.</string>
+  <string name="file_written" formatted="false">Fichero escrito con éxito en el directorio raíz de la tarjeta SD.</string>
+  <string name="date" formatted="false">fecha</string>
+  <string name="time" formatted="false">hora</string>
+  <string name="status" formatted="false">estado</string>
+  <string name="charge" formatted="false">porcentaje_carga</string>
+  <string name="temperature" formatted="false">grados_celsius</string>
+  <string name="voltage" formatted="false">voltios</string>
   <string name="status_unplugged" formatted="false">Desenchufado</string>
   <string name="status_unknown" formatted="false">Desconocido</string>
   <string name="status_charging" formatted="false">Cargando</string>
   <string name="status_discharging" formatted="false">Descargando</string>
   <string name="status_not_charging" formatted="false">No está cargando</string>
   <string name="status_fully_charged" formatted="false">Cargado</string>
+  <string name="status_plugged_in" formatted="false">Enchufado</string>
   <string name="health_unknown" formatted="false">Desconocido</string>
   <string name="health_good" formatted="false">Buen estado</string>
   <string name="health_overheat" formatted="false">Sobrecalentamiento</string>
@@ -48,9 +51,7 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="discharging_from" formatted="false">Descargando desde</string>
-  <string name="charging_from" formatted="false">Cargando desde</string>
-  <string name="fully_charged" formatted="false">Cargado</string>
+  <string name="logs_empty" formatted="false">El registro está vacío</string>
   <string name="since" formatted="false">desde</string>
   <string name="currently_using" formatted="false">Usando actualmente</string>
   <string name="currently_set_to" formatted="false">"Seleccionado:"</string>
@@ -82,13 +83,22 @@
   <string name="pref_cat_temperature_unit" formatted="false">Unidad de temperatura</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Convertir a Fahrenheit</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android informa de la temperatura en grados Celsius. Si prefiere ver la temperatura de la batería en grados Fahrenheit, marque esta opción.</string>
-  <string name="pref_cat_charge_as_text" formatted="false">Nivel de carga textual</string>
-  <string name="pref_charge_as_text" formatted="false">Nivel de carga textual</string>
-  <string name="pref_charge_as_text_summary" formatted="false">¿Mostrar el nivel de carga como un texto maś grande junto al icono?</string>
-  <string name="pref_charge_as_text_help" formatted="false">Algunos usuarios con problemas de visión me pidieron que añadiera esta opción, en la que el nivel de carga se muestra como un texto (más grande y fácil de leer) justo al lado del icono que aparece al bajar la barra de notificaciones. El icono en sí mismo no será diferente, por lo que el efecto sólo será apreciable al bajar la barra, pero es mejor que nada, y suficientemente fácil de añadir al programa para aquellos que lo pidieron.\n\nPara ahorrar espacio, simplemente he puesto el número junto al icono. Esto además resulta ser más fácil de leer que si se incluyera también el tanto por ciento, y evita problemas de espacio en pantalla. Aun así, si tiene una pantalla especialmente pequeña esto podría hacer que el AM/PM que se muestra a la derecha no se viera completamente bien.</string>
   <string name="boot_pref_always" formatted="false">Siempre</string>
   <string name="boot_pref_never" formatted="false">Nunca</string>
   <string name="boot_pref_if_running" formatted="false">Si estaba ejecutándose al apagar</string>
+  <string name="status_dur_always" formatted="false">Siempre</string>
+  <string name="status_dur_after_1h" formatted="false">Tras 1 hora</string>
+  <string name="status_dur_after_2h" formatted="false">Tras 2 horas</string>
+  <string name="status_dur_after_3h" formatted="false">Tras 3 horas</string>
+  <string name="status_dur_after_6h" formatted="false">Tras 6 horas</string>
+  <string name="status_dur_after_12h" formatted="false">Tras 12 horas</string>
+  <string name="age_1_day" formatted="false">1 día</string>
+  <string name="age_2_days" formatted="false">2 días</string>
+  <string name="age_4_days" formatted="false">4 días</string>
+  <string name="age_1_week" formatted="false">1 semana</string>
+  <string name="age_2_weeks" formatted="false">2 semanas</string>
+  <string name="age_3_weeks" formatted="false">3 semanas</string>
+  <string name="age_4_weeks" formatted="false">4 semanas</string>
   <string name="icon_set_classic" formatted="false">Clásico</string>
   <string name="icon_set_plain" formatted="false">Número Sencillo</string>
   <string name="icon_set_smaller" formatted="false">Número más Pequeño</string>

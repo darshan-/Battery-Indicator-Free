@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010 Josiah Barber (aka Darshan)
+    Copyright (c) 2010-2013 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,30 +26,49 @@ import android.widget.TextView;
 
 public class SettingsHelpActivity extends Activity {
     private Resources res;
-    private static final int[] HAS_LINKS = {};
+    private int[] has_links = {};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Intent intent = getIntent();
+        String pref_screen = intent.getStringExtra(SettingsActivity.EXTRA_SCREEN);
         res = getResources();
-        setContentView(R.layout.main_settings_help);
+
+        // Stranglely disabled by default for API level 14+
+        if (android.os.Build.VERSION.SDK_INT >= 14)
+            getActionBar().setHomeButtonEnabled(true);
+
+        if (pref_screen == null) {
+            setContentView(R.layout.main_settings_help);
+            setWindowSubtitle(res.getString(R.string.settings_activity_subtitle));
+        } else {
+            setContentView(R.layout.main_settings_help);
+        }
 
         TextView tv;
         MovementMethod linkMovement = LinkMovementMethod.getInstance();
 
-        for (int i=0; i < HAS_LINKS.length; i++) {
-            tv = (TextView) findViewById(HAS_LINKS[i]);
+        for (int i=0; i < has_links.length; i++) {
+            tv = (TextView) findViewById(has_links[i]);
             tv.setMovementMethod(linkMovement);
             tv.setAutoLinkMask(Linkify.WEB_URLS | Linkify.EMAIL_ADDRESSES);
         }
+    }
+
+    private void setWindowSubtitle(String subtitle) {
+        if (res.getBoolean(R.bool.long_activity_names))
+            setTitle(res.getString(R.string.app_full_name) + " - " + subtitle);
+        else
+            setTitle(subtitle);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         case android.R.id.home:
-            startActivity(new Intent(this, BatteryIndicator.class));
+            startActivity(new Intent(this, BatteryInfoActivity.class));
             return true;
         default:
             return super.onOptionsItemSelected(item);

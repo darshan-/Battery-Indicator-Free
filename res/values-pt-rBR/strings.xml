@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
-  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
-  <string name="settings_activity_name_free" formatted="false">Battery Indicator - Configurações</string>
-  <string name="help_activity_name_free" formatted="false">Battery Indicator - Ajuda</string>
+  <string name="app_full_name" formatted="false">BatteryBot Pro</string>
+  <string name="app_launcher_name" formatted="false">BatteryBot</string>
+  <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Exibir Uso da Bateria</string>
   <string name="upgrade_donate_b" formatted="false">Fazer Upgrade/Doar...</string>
-  <string name="reenable_lock_screen" formatted="false">Reativar o Bloqueio de Tela</string>
-  <string name="disable_lock_screen" formatted="false">Desabilitar o Bloqueio de Tela</string>
-  <string name="confirm_disable" formatted="false">Deseja realmente desativar o bloqueio de tela?</string>
-  <string name="confirm_disable_hint" formatted="false">Sugestão: Essa confirmação pode ser desativada nas configurações...</string>
   <string name="yes" formatted="false">Sim</string>
   <string name="cancel" formatted="false">Cancelar</string>
   <string name="confirm_close" formatted="false">Deseja realmente fechar?</string>
   <string name="confirm_close_hint" formatted="false">O Estado da Bateria será fechado completamente, e não será mais exibido na barra de estado.\n\nSe quiser sair da janela principal e manter o indicador rodando, aperte Cancelar e depois a tecla BACK do seu aparelho.</string>
-  <string name="first_run_title" formatted="false">Obrigado!</string>
-  <string name="first_run_message" formatted="false">Obrigado por sua doação/compra! <b> <i>Estes dois pontos são muito importantes</i> </b>\n• Se você usa um \"<b>task killer</b>\" ou um gerenciador de processos, você deve desinstalá-los ou fazer com que eles ignorem o Battery Indicator Pro. Mesmo que eles estejam configurados para ignorar a versão gratuita, <i>será necessário fazê-los ignorar esta versão Pro</i>!\n\n• Se você possui um <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, ou um <b>Samsung Moment</b>, você deve ativar o \"Modo 10%\" nas \"Outras Definições\".</string>
-  <string name="first_run_message_free" formatted="false">Obrigado por instalar o Battery Indicator! <b><i>Isto é importante</i> :</b>\n\n• Se você usa um \"<b>task killer</b>\" ou um gerenciador de processos, você deve desinstalá-los ou fazer com que eles ignorem o Battery Indicator Pro.</string>
+  <string name="confirm_clear_logs" formatted="false">Limpar todos os logs?</string>
+  <string name="confirm_ten_percent_enable" formatted="false">Ativar mesmo o modo 10%?</string>
+  <string name="confirm_ten_percent_disable" formatted="false">Desativar mesmo o modo 10%?</string>
+  <string name="confirm_ten_percent_hint" formatted="false">Aviso: Mudar esta definição (tanto ativando como desativando) vai resetar as configurações de cor.\n\nSe você possui um Motorola Droid, Droid X, Droid 2, Defy, ou um Samsung Moment, você deve ativar essa opção quando instalar o aplicativo, e depois não mexer mais. Em outros aparelhos, até onde sei, essa opção deve estar sempre desativada.</string>
   <string name="okay" formatted="false">OK</string>
   <string name="menu_settings" formatted="false">Configurações</string>
   <string name="menu_close" formatted="false">Fechar</string>
@@ -28,11 +24,23 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">Pressione BACK para sair.</string>
-  <string name="press_menu_for_more" formatted="false">Pressione MENU para mais opções.</string>
-  <string name="discharging_from" formatted="false">Descarregando de</string>
-  <string name="charging_from" formatted="false">Carregando de</string>
-  <string name="fully_charged" formatted="false">Completamente Carregado</string>
+  <string name="inaccessible_storage" formatted="false">Cartão SD inacessível</string>
+  <string name="inaccessible_w_reason" formatted="false">Cartão SD inacessível:</string>
+  <string name="read_only_storage" formatted="false">Cartão SD é apenas de leitura.</string>
+  <string name="file_written" formatted="false">Arquivo salvo com sucesso na raíz do Cartão SD.</string>
+  <string name="date" formatted="false">data</string>
+  <string name="time" formatted="false">hora</string>
+  <string name="status" formatted="false">estado</string>
+  <string name="charge" formatted="false">charge_percentage</string>
+  <string name="temperature" formatted="false">degrees_celsius</string>
+  <string name="voltage" formatted="false">volts</string>
+  <string name="alarm_fully_charged" formatted="false">Bateria está completamente carregada</string>
+  <string name="alarm_charge_drops" formatted="false">"Carga da bateria abaixo de "</string>
+  <string name="alarm_charge_rises" formatted="false">"Carga da bateria acima de "</string>
+  <string name="alarm_temp_rises" formatted="false">"Temp. bateria acima de "</string>
+  <string name="alarm_health_failure" formatted="false">"Saúde da bateria é: "</string>
+  <string name="alarm_text" formatted="false">Selecione para editar alarmes.</string>
+  <string name="logs_empty" formatted="false">Não existem relatórios</string>
   <string name="since" formatted="false">Desde</string>
   <string name="currently_using" formatted="false">Usando</string>
   <string name="currently_set_to" formatted="false">"Definido para: "</string>
@@ -53,4 +61,11 @@
   <string name="pref_hint" formatted="false">Sugestão: Pressiona a tecla MENU para ajuda.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Mais Configurações na versão Pro</string>
   <string name="pref_cat_themes" formatted="false">Temas</string>
+  <string name="age_1_day" formatted="false">1 dia</string>
+  <string name="age_2_days" formatted="false">2 dias</string>
+  <string name="age_4_days" formatted="false">4 dias</string>
+  <string name="age_1_week" formatted="false">1 semana</string>
+  <string name="age_2_weeks" formatted="false">2 semanas</string>
+  <string name="age_3_weeks" formatted="false">3 semanas</string>
+  <string name="age_4_weeks" formatted="false">4 semanas</string>
 </resources>

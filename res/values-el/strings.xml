@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
-  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
-  <string name="settings_activity_name_free" formatted="false">Battery Indicator - Ρυθμίσεις</string>
-  <string name="help_activity_name_free" formatted="false">Battery Indicator - Βοήθεια</string>
+  <string name="app_full_name" formatted="false">BatteryBot Pro</string>
+  <string name="app_launcher_name" formatted="false">BatteryBot</string>
+  <string name="settings_activity_subtitle" formatted="false">Ρυθμίσεις</string>
+  <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Χρήση Μπαταρίας</string>
   <string name="upgrade_donate_b" formatted="false">Αναβάθμιση/Δωρεά</string>
-  <string name="reenable_lock_screen" formatted="false">Ενεργοποίηση Κλειδώματος Οθόνης</string>
-  <string name="disable_lock_screen" formatted="false">Απενεργοποίηση Κλειδώματος Οθόνης</string>
-  <string name="confirm_disable" formatted="false">Πραγματικά θέλετε να απενεργοποιήσετε το κλείδωμα της Οθόνης;</string>
-  <string name="confirm_disable_hint" formatted="false">Συμβουλή: Απενεργοποιήστε αυτό το μήνυμα στις ρυθμίσεις...</string>
   <string name="yes" formatted="false">Ναι</string>
   <string name="cancel" formatted="false">Ακύρωση</string>
   <string name="confirm_close" formatted="false">Θέλετε να Κλείσετε την εφαρμογή;</string>
   <string name="confirm_close_hint" formatted="false">Ο Battery Indicator θα κλείσει εντελώς, και δε θα υπάρχει στην μπάρα κατάστασης πλέον.\n\nΑν επιθυμείτε να φύγετε από το κυρίως παράθυρο και να αφήσετε το πρόγραμμα να τρέχει, πατήστε Ακύρωση και μετά πατήστε το κουμπί BACK της συσκευής σας για να φύγετε από το κυρίως παράθυρο.</string>
-  <string name="first_run_title" formatted="false">Ευχαριστώ!</string>
-  <string name="first_run_message" formatted="false">Ευχαριστούμε για τη δωρεά/αγορά! <b><i>Τα τρία αυτά σημεία είναι πολύ σημαντικά</i> :</b>\n\n• Αν έχετε ένα \"<b>task killer</b>\" / process manager ή παρόμοιο πρόγραμμα θα πρέπει είτε να το απεγκαταστήσετε ή να το ρυθμίσετε ώστε να \"αγνοεί\" το Battery Indicator Pro. Ακόμα κι αν το έχετε ρυθμίσει να \"αγνοεί\" τη Free έκδοση, <i>θα πρέπει να το ρυθμίσετε να \"αγνοεί\" και αυτήν την Pro έκδοση.</i> !\n\n• Αν η συσκευή σας δείχνει το επίπεδο της μπαταρίας μόνο σε αυξήσεις 10% (<b>τα περισσότερα τηλέφωνα Motorola είναι έτσι</b>), τότε θα πρέπει να ενεργοποιήσετε το \"One-percent Hack\" στις \"Άλλες Ρυθμίσεις\" για να έχετε αυξήσεις του 1%.\n\n• Αν η μπάρα κατάστασης της συσκευής σας είναι μαύρη, και ειδικά αν έχετε Android 3 ή νεότερο, θα πρέπει να κατεβάσετε και να χρησιμοποιήσετε το plugin \"Black Square\".</string>
-  <string name="first_run_message_free" formatted="false">Ευχαριστύμε που χρησιμοποιείτε το Battery Indicator! <b><i>Αυτά τα δύο σημεία είναι πολύ σημαντικά</i> :</b>\n\n•Αν έχετε ένα \"<b>task killer</b>\" / process manager ή παρόμοιο πρόγραμμα θα πρέπει είτε να το απεγκαταστήσετε ή να το ρυθμίσετε ώστε να \"αγνοεί\" το Battery Indicator Pro.\n\n• Αν η συσκευή σας δείχνει το επίπεδο της μπαταρίας μόνο σε αυξήσεις 10% (<b>τα περισσότερα τηλέφωνα Motorola είναι έτσι</b>), τότε θα πρέπει να ενεργοποιήσετε το \"One-percent Hack\" στις ρυθμίσεις για να έχετε αυξήσεις του 1%.</string>
+  <string name="confirm_clear_logs" formatted="false">Θέλετε να διαγράψετε όλες τις καταγραφές δεδομένων;</string>
+  <string name="confirm_ten_percent_enable" formatted="false">Θέλετε να ενεργοποιήσετε τη λειτουργία 10%;</string>
+  <string name="confirm_ten_percent_disable" formatted="false">Θέλετε να απενεργοποιήσετε τη λειτουργία 10%;</string>
+  <string name="confirm_ten_percent_hint" formatted="false">Προειδοποίηση: Αν αλλάξετε αυτή τη ρύθμιση (ενεργοποιώντας και απενεργοποιώντας την) θα επαναφέρετε στην αρχή τις ρυθμίσεις χρώματος.\n\nΑν έχετε ένα Motorola Droid, Droid X, Droid 2, Defy, ή Samsung Moment, θα πρέπει να ενεργοποιήσετε αυτή τη ρύθμιση όταν τρέξετε για πρώτη φορά την εφαρμογή και μετά να το αφήσετε έτσι. Όλες οι άλλες συσκευές, από όσο ξέρω, θα πρέπει να απενεργοποιήσουν τη ρύθμιση αυτή.</string>
   <string name="okay" formatted="false">Εντάξει</string>
   <string name="menu_settings" formatted="false">Ρυθμίσεις</string>
   <string name="menu_close" formatted="false">Κλείσιμο</string>
@@ -28,14 +25,23 @@
   <string name="celsius" formatted="false">Κελσίου</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">Πατήστε BACK για να φύγετε.</string>
-  <string name="press_menu_for_more" formatted="false">Πατήστε MENU για περισσότερες επιλογές.</string>
+  <string name="inaccessible_storage" formatted="false">Η Κάρτα SD είναι απροσπέλαστη.</string>
+  <string name="inaccessible_w_reason" formatted="false">Κάρτα SD απροσπέλαστη:</string>
+  <string name="read_only_storage" formatted="false">Η Κάρτα SD είναι αναγνώσιμη μόνο.</string>
+  <string name="file_written" formatted="false">Το έγγραφο αποθηκεύτηκε επιτυχώς στην κάρτα SD.</string>
+  <string name="date" formatted="false">ημερομηνία</string>
+  <string name="time" formatted="false">ώρα</string>
+  <string name="status" formatted="false">κατάσταση</string>
+  <string name="charge" formatted="false">ποσοστό_φόρτισης</string>
+  <string name="temperature" formatted="false">βαθμοί_κελσίου</string>
+  <string name="voltage" formatted="false">βόλτς</string>
   <string name="status_unplugged" formatted="false">Αποσυνδεδεμένο</string>
   <string name="status_unknown" formatted="false">Άγνωστο</string>
   <string name="status_charging" formatted="false">Φόρτιση</string>
   <string name="status_discharging" formatted="false">Αποφόρτιση</string>
   <string name="status_not_charging" formatted="false">Δε Φορτίζει</string>
   <string name="status_fully_charged" formatted="false">Πλήρως Φορτισμένη</string>
+  <string name="status_plugged_in" formatted="false">Συνδεδεμένο</string>
   <string name="health_unknown" formatted="false">Άγνωστο</string>
   <string name="health_good" formatted="false">Καλή Υγεία</string>
   <string name="health_overheat" formatted="false">Υπερθέρμανση</string>
@@ -48,9 +54,23 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(;)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="discharging_from" formatted="false">Αποφόρτιση από</string>
-  <string name="charging_from" formatted="false">Φόρτιση από</string>
-  <string name="fully_charged" formatted="false">Πλήρως Φορτισμένη</string>
+  <string name="alarm_type_fully_charged" formatted="false">Πλήρως Φορτισμένη</string>
+  <string name="alarm_type_charge_drops" formatted="false">Το επίπεδο φόρτισης πέφτει κάτω από</string>
+  <string name="alarm_type_charge_rises" formatted="false">Το επίπεδο φόρτισης ανεβαίνει πάνω από</string>
+  <string name="alarm_type_temperature_rises" formatted="false">Η θερμοκρασία ανεβαίνει πάνω από</string>
+  <string name="alarm_type_health_failure" formatted="false">Καλή υγεία απέτυχε</string>
+  <string name="alarm_type_entry_fully_charged" formatted="false">Καθίσταται πλήρως φορτισμένη</string>
+  <string name="alarm_type_entry_charge_drops" formatted="false">Το επίπεδο φόρτισης πέφτει κάτω από...</string>
+  <string name="alarm_type_entry_charge_rises" formatted="false">Το επίπεδο φόρτισης ανεβαίνει πάνω από...</string>
+  <string name="alarm_type_entry_temperature_rises" formatted="false">Η θερμοκρασία ανεβαίνει πάνω από...</string>
+  <string name="alarm_type_entry_health_failure" formatted="false">Καλή υγεία αποτυγχάνει</string>
+  <string name="alarm_fully_charged" formatted="false">Η μπαταρία είναι φορτισμένη πλήρως</string>
+  <string name="alarm_charge_drops" formatted="false">"Το φορτίο της μπαταρίας είναι πιο κάτω "</string>
+  <string name="alarm_charge_rises" formatted="false">Το φορτίο της μπαταρίας είναι πάνω \"</string>
+  <string name="alarm_temp_rises" formatted="false">"Η θερμοκρασία της μπαταρίας είναι πάνω "</string>
+  <string name="alarm_health_failure" formatted="false">"Η υγεία της μπαταρίας είναι: "</string>
+  <string name="alarm_text" formatted="false">Επιλέξτε για επεξεργασία ειδοποιήσεων.</string>
+  <string name="logs_empty" formatted="false">Λίστες Καταγραφής Άδειες</string>
   <string name="since" formatted="false">Από</string>
   <string name="currently_using" formatted="false">Τώρα χρησιμοποιείται</string>
   <string name="currently_set_to" formatted="false">"Τώρα έχει ρυθμιστεί σε: "</string>
@@ -81,13 +101,24 @@
   <string name="pref_cat_temperature_unit" formatted="false">Μονάδες Θερμοκρασίας</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Μετατροπή σε Φάρεναϊτ</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Το Android αναφέρει τη θερμοκρασία της μπαταρίας σε βαθμούς Κελσίου. Αν προτιμάτε να τη βλέπετε σε Φάρεναϊτ, επιλέξετε αυτήν την επιλογή και η εφαρμογή θα σας τη μετατρέπει.</string>
-  <string name="pref_cat_charge_as_text" formatted="false">Κειμενικό Επίπεδο Φόρτισης</string>
-  <string name="pref_charge_as_text" formatted="false">Κειμενικό Επίπεδο Φόρτισης</string>
-  <string name="pref_charge_as_text_summary" formatted="false">Προβολή ως κείμενο δίπλα από την εικόνα;</string>
-  <string name="pref_charge_as_text_help" formatted="false">Υπάρχουν μερικοί χρήστες με φτωχότερη όραση που μου ζητούν να προσθέσω αυτήν την επιλογή, δηλαδή το επίπεδο μπαταρίας να φαίνεται και ως κείμενο (το οποίο είναι μεγαλύτερο και ευκολότερο στο διάβασμα) ακριβώς δίπλα από την εικόνα στην περιοχή ειδοποιήσεων. Η εικόνα δε θα διαφέρει καθόλου, έτσι θα βοηθά καθώς θα ανοίγετε τη γραμμή ειδοποίησης, αλλά είναι καλύτερο από καθόλου και βολεύει αυτούς που το επιθυμούν. Είναι ιδιαίτερα χρήσιμο για αυτούς που χρησιμοποιούν αναγνώστη οθόνης.\n\nΣε μερικές συσκευές, η ενεργοποίηση της επιλογής αυτής μπορεί να αποκόψει τη δεξιά πλευρά του κειμένου της γραμμής ειδοποιήσεων.</string>
+  <string name="alarm_pref_not_used" formatted="false">Δε χρησιμοποιείται για αυτόν τον τύπο ειδοποίησης</string>
+  <string name="silent" formatted="false">Σιωπηλό</string>
   <string name="boot_pref_always" formatted="false">Πάντα</string>
   <string name="boot_pref_never" formatted="false">Ποτέ</string>
   <string name="boot_pref_if_running" formatted="false">Αν ήταν ενεργό στην απενεργοποίηση</string>
+  <string name="status_dur_always" formatted="false">Πάντα</string>
+  <string name="status_dur_after_1h" formatted="false">Μετά από 1 ώρα</string>
+  <string name="status_dur_after_2h" formatted="false">Μετά από 2 ώρες</string>
+  <string name="status_dur_after_3h" formatted="false">Μετά από 3 ώρες</string>
+  <string name="status_dur_after_6h" formatted="false">Μετά από 6 ώρες</string>
+  <string name="status_dur_after_12h" formatted="false">Μετά από 12 ώρες</string>
+  <string name="age_1_day" formatted="false">1 μέρα</string>
+  <string name="age_2_days" formatted="false">2 μέρες</string>
+  <string name="age_4_days" formatted="false">4 μέρες</string>
+  <string name="age_1_week" formatted="false">1 εβδομάδα</string>
+  <string name="age_2_weeks" formatted="false">2 εβδομάδες</string>
+  <string name="age_3_weeks" formatted="false">3 εβδομάδες</string>
+  <string name="age_4_weeks" formatted="false">4 εβδομάδες</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Καταγραφή αντικειμένου στη Λίστα</item>
     <item quantity="other">%d Καταγραφή αντικειμένων στη Λίστα</item>

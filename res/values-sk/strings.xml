@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
-  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
-  <string name="settings_activity_name_free" formatted="false">Battery Indicator - Nastavenia</string>
-  <string name="help_activity_name_free" formatted="false">Battery Indicator - Pomocník</string>
+  <string name="app_full_name" formatted="false">BatteryBot Pro</string>
+  <string name="app_launcher_name" formatted="false">BatteryBot</string>
+  <string name="settings_activity_subtitle" formatted="false">Nastavenia</string>
+  <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Pozrieť používanie batérie</string>
   <string name="upgrade_donate_b" formatted="false">Aktualizácia/Podporiť...</string>
-  <string name="reenable_lock_screen" formatted="false">Zapnúť zámok obrazovky</string>
-  <string name="disable_lock_screen" formatted="false">Vypnúť zámok obrazovky</string>
-  <string name="confirm_disable" formatted="false">Naozaj vypnúť zámok obrazovky?</string>
-  <string name="confirm_disable_hint" formatted="false">Pomôcka: Vypnite tento potvrdzovací dialóg v nastaveniach...</string>
   <string name="yes" formatted="false">Áno</string>
   <string name="cancel" formatted="false">Zrušiť</string>
   <string name="confirm_close" formatted="false">Naozaj zavrieť?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator bude úplne zatvorený a nebudete ho viac vidieť ani v notifikačnej lište.\n\nAk len chcete odísť z hlavného okna a nechať indikátor spustený, stlačte Zrušiť a potom stlačte na vašom telefóne tlačidlo späť pre odídenie z hlavného okna.</string>
-  <string name="first_run_title" formatted="false">Ďakujeme Vám!</string>
-  <string name="first_run_message" formatted="false">Ďakujeme Vám za Vašu podporu/zakúpenie! <b><i>Tieto dva body, sú veľmi dôležité</i> :</b>\n\n• Ak máte \"<b>správcu úloh</b>\" / správcu procesov nejakého druhu, mali by ste ho buď odinštalovať alebo skúsiť zaradiť Battery Indicator Pro do zoznamu ignorovaných. Hoci ste mali verziu zdarma v zozname ignorovaných, <i>potrebujete pridať aj verziu Pro</i> !\n\n• Ak máte <b>Motorolu Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, alebo <b>Samsung Moment</b>, mali by ste zapnúť \"10% mód\" v \"Ostatných nastaveniach\".</string>
-  <string name="first_run_message_free" formatted="false">Ďakujeme za stiahnutie Battery Indicator! <b><i>Toto je dôležité</i> :</b>\n\nAk máte \"<b>správcu úloh</b>\" / správcu procesov nejakého druhu, mali by ste ho buď odinštalovať alebo skúsiť zaradiť Battery Indicator do zoznamu ignorovaných.</string>
+  <string name="confirm_clear_logs" formatted="false">Naozaj odstrániť všetky záznamy?</string>
+  <string name="confirm_ten_percent_enable" formatted="false">Naozaj zapnúť 10% mód?</string>
+  <string name="confirm_ten_percent_disable" formatted="false">Naozaj vypnúť 10% mód?</string>
+  <string name="confirm_ten_percent_hint" formatted="false">Upozornenie: Zmena tohto nastavenia (zapnutie aj vypnutie) resetuje vaše nastavenia farieb.\n\nAk máte Motorolu Droid, Droid X, Droid 2, Defy, alebo Samsung Moment, mali by ste toto nastavenie zapnúť keď prvý krát spúšťate aplikáciu, a potom to nechať tak. VŠETKY ostatné telefóny, pokiaľ viem, by mali vždy nechať toto nastavenie vypnuté.</string>
   <string name="okay" formatted="false">OK</string>
   <string name="menu_settings" formatted="false">Nastavenia</string>
   <string name="menu_close" formatted="false">Zavrieť</string>
@@ -28,14 +25,23 @@
   <string name="celsius" formatted="false">Celzia</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">Pre návrat stlačte Späť.</string>
-  <string name="press_menu_for_more" formatted="false">Pre viac položiek stlačte Menu.</string>
+  <string name="inaccessible_storage" formatted="false">SD karta nie je prístupná.</string>
+  <string name="inaccessible_w_reason" formatted="false">SD karta neprístupná:</string>
+  <string name="read_only_storage" formatted="false">SD karta je len na čítanie.</string>
+  <string name="file_written" formatted="false">Súbor úspešne zapísaný na kartu SD.</string>
+  <string name="date" formatted="false">dátum</string>
+  <string name="time" formatted="false">čas</string>
+  <string name="status" formatted="false">stav</string>
+  <string name="charge" formatted="false">percento nabitia</string>
+  <string name="temperature" formatted="false">stupňov celzia</string>
+  <string name="voltage" formatted="false">voltov</string>
   <string name="status_unplugged" formatted="false">Odpojený</string>
   <string name="status_unknown" formatted="false">Neznámy</string>
   <string name="status_charging" formatted="false">Nabíjanie</string>
   <string name="status_discharging" formatted="false">Vybíjanie</string>
   <string name="status_not_charging" formatted="false">Nenabíja</string>
   <string name="status_fully_charged" formatted="false">Plne nabitá</string>
+  <string name="status_plugged_in" formatted="false">Pripojený</string>
   <string name="health_unknown" formatted="false">Neznámy</string>
   <string name="health_good" formatted="false">Dobré zdravie</string>
   <string name="health_overheat" formatted="false">Prehriata</string>
@@ -48,9 +54,23 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="discharging_from" formatted="false">Vybíjanie od</string>
-  <string name="charging_from" formatted="false">Nabíjanie od</string>
-  <string name="fully_charged" formatted="false">Plne nabitá</string>
+  <string name="alarm_type_fully_charged" formatted="false">Plne nabitá</string>
+  <string name="alarm_type_charge_drops" formatted="false">Nabitie klesne pod</string>
+  <string name="alarm_type_charge_rises" formatted="false">Nabitie stúpne nad</string>
+  <string name="alarm_type_temperature_rises" formatted="false">Teplota stúpne nad</string>
+  <string name="alarm_type_health_failure" formatted="false">Porucha zdravia</string>
+  <string name="alarm_type_entry_fully_charged" formatted="false">Bude plne nabitá</string>
+  <string name="alarm_type_entry_charge_drops" formatted="false">Nabitie klesne pod...</string>
+  <string name="alarm_type_entry_charge_rises" formatted="false">Nabitie stúpne nad...</string>
+  <string name="alarm_type_entry_temperature_rises" formatted="false">Teplota stúpne nad...</string>
+  <string name="alarm_type_entry_health_failure" formatted="false">Porucha zdravia</string>
+  <string name="alarm_fully_charged" formatted="false">Batéria je teraz úplne nabitá</string>
+  <string name="alarm_charge_drops" formatted="false">"Nabitie batérie je pod "</string>
+  <string name="alarm_charge_rises" formatted="false">"Nabitie batérie je nad "</string>
+  <string name="alarm_temp_rises" formatted="false">"Teplota batérie je nad "</string>
+  <string name="alarm_health_failure" formatted="false">"Zdravie batérie je: "</string>
+  <string name="alarm_text" formatted="false">Označiť pre úpravu upozornení.</string>
+  <string name="logs_empty" formatted="false">Záznamy sú prázdne</string>
   <string name="since" formatted="false">Od</string>
   <string name="currently_using" formatted="false">Práve používate</string>
   <string name="currently_set_to" formatted="false">"V súčasnosti nastavený na: "</string>
@@ -79,12 +99,24 @@
   <string name="pref_cat_themes" formatted="false">Témy</string>
   <string name="pref_cat_temperature_unit" formatted="false">Jednotky teploty</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Premeniť na Fahrenheity</string>
-  <string name="pref_cat_charge_as_text" formatted="false">Stav nabitia v textovej podobe</string>
-  <string name="pref_charge_as_text" formatted="false">Stav nabitia v textovej podobe</string>
-  <string name="pref_charge_as_text_summary" formatted="false">Zobraziť stav nabitia ako väčší text vedľa ikonky?</string>
+  <string name="alarm_pref_not_used" formatted="false">Nepoužité pre tento typ upozornenia</string>
+  <string name="silent" formatted="false">Tichý</string>
   <string name="boot_pref_always" formatted="false">Vždy</string>
   <string name="boot_pref_never" formatted="false">Nikdy</string>
   <string name="boot_pref_if_running" formatted="false">Ak je spustený pri vypínaní</string>
+  <string name="status_dur_always" formatted="false">Vždy</string>
+  <string name="status_dur_after_1h" formatted="false">Po 1 hodine</string>
+  <string name="status_dur_after_2h" formatted="false">Po 2 hodinách</string>
+  <string name="status_dur_after_3h" formatted="false">Po 3 hodinách</string>
+  <string name="status_dur_after_6h" formatted="false">Po 6 hodinách</string>
+  <string name="status_dur_after_12h" formatted="false">Po 12 hodinách</string>
+  <string name="age_1_day" formatted="false">1 deň</string>
+  <string name="age_2_days" formatted="false">2 dni</string>
+  <string name="age_4_days" formatted="false">4 dni</string>
+  <string name="age_1_week" formatted="false">1 týždeň</string>
+  <string name="age_2_weeks" formatted="false">2 týždne</string>
+  <string name="age_3_weeks" formatted="false">3 týždne</string>
+  <string name="age_4_weeks" formatted="false">4 týždne</string>
   <plurals name="n_log_items">
     <item quantity="zero">%d záznamov</item>
     <item quantity="one">%d záznam</item>

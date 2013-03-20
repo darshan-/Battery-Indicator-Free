@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_full_name" formatted="false">Baterijos Indikatorius Pro</string>
+  <string name="app_launcher_name" formatted="false">Baterijos Indikatorius Pro</string>
+  <string name="settings_activity_subtitle" formatted="false">Nustatymai</string>
   <string name="app_full_name_free" formatted="false">Baterijos Indikatorius</string>
-  <string name="settings_activity_name_free" formatted="false">Baterijos Indikatorius - Nustatymai</string>
-  <string name="help_activity_name_free" formatted="false">Baterijos Indikatorius - Pagalba</string>
   <string name="battery_use_b" formatted="false">Baterijos naudojimas</string>
   <string name="upgrade_donate_b" formatted="false">Patobulinti/Paremti...</string>
-  <string name="reenable_lock_screen" formatted="false">Įjungti Ekrano Užraktą</string>
-  <string name="disable_lock_screen" formatted="false">Išjungti Ekrano Užraktą</string>
-  <string name="confirm_disable" formatted="false">Ar tikrai norite išjungti?</string>
-  <string name="confirm_disable_hint" formatted="false">Patarimas: Išjunkite ši patvirtinimą nustatymuose...</string>
   <string name="yes" formatted="false">Taip</string>
   <string name="cancel" formatted="false">Nutraukti</string>
   <string name="confirm_close" formatted="false">Tikrai Uždaryti?</string>
   <string name="confirm_close_hint" formatted="false">Baterijos Indikatorius bus visiškai uždarytas ir Jūs jo nebematysite savo būsenos juostoje.\n\nJei jus tiesiog norite palikti pagrindinį langą ir leisti indikatoriui toliau veikti, paspauskite Nutraukti ir tada paspauskite Grįžti mygtuką, ant savo telefono.</string>
-  <string name="first_run_title" formatted="false">Ačiū!</string>
-  <string name="first_run_message" formatted="false">Ačiū už Jūsų paramą/pirkimą! <b><i>Šie trys punktai yra labai svarbūs</i> :</b>\n\n• Jei Jūs turite \"<b>task killer</b>\" / kitokį procesų tvarkytoją, Jūms reikėtu jį ištrinti arba padaryti taip, kad būtų ignoruojamas Baterijos Indikatorius Pro. Net jei Jūs nustatėte nemokamos versijos ignoravimą, <i>vistiek turite ignoruoti ir Pro versiją</i> !\n\n• Jei Jūsų prietaisas baterijos lygį rodo tik kas 10% (<b>dauguma Motorola telefonų dirba taip</b>), tai turėtumėte įjungti \"Vieno procento nulaužimą\", nustatymuose, kad būtų rodoma kas vieną procentą.\n\n• Jei Jūsų būsenos juosta yra juoda ir jei Jūs naudojate Android 3 ar naujesnę versiją, turėtumėte atsisiųsti arba naudoti papildinį \"Black Square\".</string>
-  <string name="first_run_message_free" formatted="false">Ačiū, kad atsisiuntėte Baterijos Indikatorių! <b><i>Šie du punktai yra labai svarbūs</i> :</b>\n\n• Jei Jūs turite \"<b>task killer</b>\" / kitokį procesų tvarkytoją, Jūms reikėtu jį ištrinti arba padaryti taip, kad būtų ignoruojamas Baterijos Indikatorius.\n\n• Jei Jūsų prietaisas baterijos lygį rodo tik kas 10% (<b>dauguma Motorola telefonų dirba taip</b>), tai turėtumėte įjungti \"Vieno procento nulaužimą\", nustatymuose, kad būtų rodoma kas vieną procentą.\n</string>
+  <string name="confirm_clear_logs" formatted="false">Ar tikrai ištrinti visus įrašus?</string>
+  <string name="confirm_ten_percent_enable" formatted="false">Ar tikrai įjungti 10% Režimą?</string>
+  <string name="confirm_ten_percent_disable" formatted="false">Ar tikrai išjungti 10% Režimą?</string>
+  <string name="confirm_ten_percent_hint" formatted="false">Įspėjimas: Keičiant šį nustatymą (jį įjungiant ir išjungiant), anuliuosis spalvų pasirinkimai.\n\nJei Jūs turite: Motorola Droid, Droid X, Droid 2, Defy, ar Samsung Moment prietaisą, Jums reikėtų tai įjungti ir palikti. Visų kitų prietaisų turėtojai, galite palikti išjungtą.</string>
   <string name="okay" formatted="false">Gerai</string>
   <string name="menu_settings" formatted="false">Nustatymai</string>
   <string name="menu_close" formatted="false">Uždaryti</string>
@@ -28,14 +25,23 @@
   <string name="celsius" formatted="false">Celsijus</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">Spauskite Grįžti, kad išeitumėte</string>
-  <string name="press_menu_for_more" formatted="false">Spauskite MENU daugiau pasirinkimų</string>
+  <string name="inaccessible_storage" formatted="false">SD kortelė nepasiekiama.</string>
+  <string name="inaccessible_w_reason" formatted="false">SD kortelė nepasiekiama:</string>
+  <string name="read_only_storage" formatted="false">SD kortele yra \"read-only\"</string>
+  <string name="file_written" formatted="false">Failą sėkmingai įrašytas į SD kortelę.</string>
+  <string name="date" formatted="false">Data</string>
+  <string name="time" formatted="false">Laikas</string>
+  <string name="status" formatted="false">Būsena</string>
+  <string name="charge" formatted="false">įkrovimo_lygis</string>
+  <string name="temperature" formatted="false">laispnai_celsijaus</string>
+  <string name="voltage" formatted="false">voltai</string>
   <string name="status_unplugged" formatted="false">Atjungta</string>
   <string name="status_unknown" formatted="false">Nežinoma</string>
   <string name="status_charging" formatted="false">Įkraunama</string>
   <string name="status_discharging" formatted="false">Iškraunama</string>
   <string name="status_not_charging" formatted="false">Ne kraunama</string>
   <string name="status_fully_charged" formatted="false">Pilnai įkrauta</string>
+  <string name="status_plugged_in" formatted="false">Prijungta</string>
   <string name="health_unknown" formatted="false">Nežinoma</string>
   <string name="health_good" formatted="false">Gera Būklė</string>
   <string name="health_overheat" formatted="false">Perkaitimas</string>
@@ -48,9 +54,23 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="discharging_from" formatted="false">Įkraunama nuo</string>
-  <string name="charging_from" formatted="false">Iškraunama nuo</string>
-  <string name="fully_charged" formatted="false">Pilnai įkrauta</string>
+  <string name="alarm_type_fully_charged" formatted="false">Pilnai įkrauta</string>
+  <string name="alarm_type_charge_drops" formatted="false">Įkrovimas žemiau</string>
+  <string name="alarm_type_charge_rises" formatted="false">Įkrovimas aukščiau</string>
+  <string name="alarm_type_temperature_rises" formatted="false">Temperatūra aukščiau</string>
+  <string name="alarm_type_health_failure" formatted="false">Būklės klaida</string>
+  <string name="alarm_type_entry_fully_charged" formatted="false">Visiškai įkrauta</string>
+  <string name="alarm_type_entry_charge_drops" formatted="false">Įkrovimas žemiau...</string>
+  <string name="alarm_type_entry_charge_rises" formatted="false">Įkrovimas aukščiau...</string>
+  <string name="alarm_type_entry_temperature_rises" formatted="false">Temperatūra aukščiau...</string>
+  <string name="alarm_type_entry_health_failure" formatted="false">Būklės klaida</string>
+  <string name="alarm_fully_charged" formatted="false">Baterija pilnai įkrauta</string>
+  <string name="alarm_charge_drops" formatted="false">"Baterijos lygis yra žemiau "</string>
+  <string name="alarm_charge_rises" formatted="false">"Baterijos lygis yra aukščiau "</string>
+  <string name="alarm_temp_rises" formatted="false">"Baterijos temp. yra aukščiau "</string>
+  <string name="alarm_health_failure" formatted="false">"Baterijos būklė yra: "</string>
+  <string name="alarm_text" formatted="false">Koreguoti aliarmus.</string>
+  <string name="logs_empty" formatted="false">Įrašai tušti</string>
   <string name="since" formatted="false">Nuo</string>
   <string name="currently_using" formatted="false">Dabar naudojama</string>
   <string name="currently_set_to" formatted="false">"Dabar nustatyta: "</string>
@@ -80,12 +100,24 @@
   <string name="pref_cat_themes" formatted="false">Temos</string>
   <string name="pref_cat_temperature_unit" formatted="false">Temperatūros</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Pakeisti į Farengeitą</string>
-  <string name="pref_cat_charge_as_text" formatted="false">Tekstinis Įkrovimo Lygis</string>
-  <string name="pref_charge_as_text" formatted="false">Tekstinis Įkrovimo Lygis</string>
-  <string name="pref_charge_as_text_summary" formatted="false">Rodyti kaip tekstą prie ikonos?</string>
+  <string name="alarm_pref_not_used" formatted="false">Nenaudojama šiam aliarmo tipui</string>
+  <string name="silent" formatted="false">Tyla</string>
   <string name="boot_pref_always" formatted="false">Visada</string>
   <string name="boot_pref_never" formatted="false">Niekada</string>
   <string name="boot_pref_if_running" formatted="false">Jei veikia išjungiant</string>
+  <string name="status_dur_always" formatted="false">Visada</string>
+  <string name="status_dur_after_1h" formatted="false">Po valandos</string>
+  <string name="status_dur_after_2h" formatted="false">Po 2-jų valandų</string>
+  <string name="status_dur_after_3h" formatted="false">Po 3-jų valandų</string>
+  <string name="status_dur_after_6h" formatted="false">Po 6-jų valandų</string>
+  <string name="status_dur_after_12h" formatted="false">Po 12-os valandų</string>
+  <string name="age_1_day" formatted="false">1 diena</string>
+  <string name="age_2_days" formatted="false">2 dienos</string>
+  <string name="age_4_days" formatted="false">4 dienos</string>
+  <string name="age_1_week" formatted="false">1 savaitė</string>
+  <string name="age_2_weeks" formatted="false">2 savaitės</string>
+  <string name="age_3_weeks" formatted="false">3 savaitės</string>
+  <string name="age_4_weeks" formatted="false">4 savaitės</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Įrašo Punktas</item>
     <item quantity="few">%d Įrašo Punktai</item>

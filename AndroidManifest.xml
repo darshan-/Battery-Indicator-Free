@@ -1,52 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.darshancomputing.BatteryIndicator"
-          android:versionCode="011074"
-          android:versionName="7.0.6"
+          android:versionCode="011076"
+          android:versionName="8.0.0 (Beta)"
 >
-  <application android:label="@string/app_full_name_free"
-               android:icon="@drawable/battery"
-               android:hardwareAccelerated="true"
+  <application
+      android:label="@string/app_full_name_free"
+      android:icon="@drawable/battery"
+      android:hardwareAccelerated="true"
   >
-    <activity android:name=".BatteryIndicator"
-              android:label="@string/app_full_name_free"
-              android:theme="@style/bi_theme"
-              android:screenOrientation="unspecified"
-              android:stateNotNeeded="true"
-              android:launchMode="singleTask"
-	      android:excludeFromRecents="true"
+    <activity
+        android:name=".BatteryInfoActivity"
+        android:label="@string/app_full_name_free"
+        android:stateNotNeeded="true"
+        android:launchMode="singleTask"
     >
-      <intent-filter>
+      <intent-filter android:label="@string/app_launcher_name">
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
 
+
     <activity android:name=".SettingsActivity"
-              android:label="@string/settings_activity_name_free"
 	      android:excludeFromRecents="true"
     />
 
     <activity android:name=".SettingsHelpActivity"
-              android:label="@string/settings_help_activity_name_free"
               android:theme="@style/bi_help_theme"
               android:stateNotNeeded="true"
 	      android:excludeFromRecents="true"
     />
 
     <activity android:name=".HelpActivity"
-              android:label="@string/help_activity_name_free"
               android:theme="@style/bi_help_theme"
               android:stateNotNeeded="true"
 	      android:excludeFromRecents="true"
     />
 
-    <service android:name=".BatteryIndicatorService" />
+    <service
+        android:name=".BatteryInfoService"
+        android:process="com.darshancomputing.BatteryBot.BIS"
+        android:icon="@drawable/battery"
+    />
 
-    <receiver android:name=".BootCompletedReceiver"
-              android:enabled="true"
-              android:exported="false"
-              android:label="BootCompletedReceiver">
+    <receiver
+        android:name=".BootCompletedReceiver"
+        android:enabled="true"
+        android:exported="false"
+        android:process="com.darshancomputing.BatteryBot.BCR"
+    >
       <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED" />
       </intent-filter>
@@ -57,8 +61,9 @@
     </receiver>
   </application>
 
-  <uses-sdk android:minSdkVersion="7"
-            android:targetSdkVersion="14"
+  <uses-sdk
+      android:minSdkVersion="7"
+      android:targetSdkVersion="17"
   />
 
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />

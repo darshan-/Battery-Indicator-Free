@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
-  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
-  <string name="settings_activity_name_free" formatted="false">Battery Indicator - Einstellungen</string>
-  <string name="help_activity_name_free" formatted="false">Battery Indicator - Hilfe</string>
+  <string name="app_full_name" formatted="false">BatteryBot Pro</string>
+  <string name="app_launcher_name" formatted="false">BatteryBot</string>
+  <string name="settings_activity_subtitle" formatted="false">Einstellungen</string>
+  <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Akkuverbrauch anzeigen</string>
   <string name="upgrade_donate_b" formatted="false">Erweitern/Spenden...</string>
-  <string name="reenable_lock_screen" formatted="false">Bildschirmsperre einschalten</string>
-  <string name="disable_lock_screen" formatted="false">Bildschirmsperre ausschalten</string>
-  <string name="confirm_disable" formatted="false">Wirklich Bildschirmsperre ausschalten?</string>
-  <string name="confirm_disable_hint" formatted="false">Tip: Die Bestätigungsabfrage in den Einstellungen ausschalten...</string>
   <string name="yes" formatted="false">Ja</string>
   <string name="cancel" formatted="false">Abbrechen</string>
   <string name="confirm_close" formatted="false">Wirklich schließen?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator wird komplett beendet, damit wird auch die Anzeige im Statusbalken verschwinden.\n\nWenn sie nur das Fenster schließen wollen und die Anzeige im Statusbalken behalten, dann drücken Sie Abbrechen und benutzen sie die ZURÜCK-Schaltfläche ihres Gerätes.</string>
-  <string name="first_run_title" formatted="false">Danke!</string>
-  <string name="first_run_message" formatted="false">Vielen Dank für Ihre Spende / Kauf! <b><i>Diese beiden Punkte sind sehr wichtig</i> :</b>\n\n• Wenn Sie einen \"<b> Task Killer </b>\" / Prozess-Manager in irgendeiner Art haben, sollten Sie ihn entweder deinstallieren oder versuchen \'Battery Indicator Pro\' zu ignorieren. Auch wenn die kostenlose Version ignoriert wurde, <i> Sie müssen die Pro-Version erneut ignorieren </i>!\n\n• Wenn sie eins folgender Geräte haben: <b>Motorola Milestone</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, oder <b>Samsung Moment</b>, sollten sie den \"10% Modus\" in Punkt \"Andere Einstellungen\" setzen.</string>
-  <string name="first_run_message_free" formatted="false">Vielen Dank für das von Battery Indicator! <b><i>Dies ist wichtig,</i>: </b>\n\nWenn Sie einen \"<b>Task Killer</b>\" / Prozess-Manager in irgendeiner Art haben, sollten Sie ihn entweder deinstallieren oder versuchen das er \'Battery Indicator\' ignoriert.</string>
+  <string name="confirm_clear_logs" formatted="false">Wirklich alle Protokolle löschen?</string>
+  <string name="confirm_ten_percent_enable" formatted="false">Wirklich 10% Modus einschalten?</string>
+  <string name="confirm_ten_percent_disable" formatted="false">Wirklich 10% Modus ausschalten?</string>
+  <string name="confirm_ten_percent_hint" formatted="false">Warnung: Ändern dieser Einstellnung (ein- und ausschalten) führt dazu, dass die Farbeinstellungen zurückgesetzt werden.\n\nBei einem Motorola Droid, Droid X, Droid 2, Defy, or Samsung Moment, sollten Sie diese Einstellung einschalten. Bei allen anderen Geräten kann es, meines Wissens nach, immer ausgeschaltet bleiben.</string>
   <string name="okay" formatted="false">OK</string>
   <string name="menu_settings" formatted="false">Einstellungen</string>
   <string name="menu_close" formatted="false">Schließen</string>
@@ -28,14 +25,23 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">ZURÜCK drücken zum beenden.</string>
-  <string name="press_menu_for_more" formatted="false">MENÜ drücken für mehr Möglichkeiten.</string>
+  <string name="inaccessible_storage" formatted="false">SD-Karte ist nicht verfügbar.</string>
+  <string name="inaccessible_w_reason" formatted="false">SD-Karte nicht verfügbar:</string>
+  <string name="read_only_storage" formatted="false">SD-Karte ist schreibgeschützt.</string>
+  <string name="file_written" formatted="false">Datei wurde erfolgreich in das Wurzelverzeichnis ihrer SD-Karte geschrieben.</string>
+  <string name="date" formatted="false">Datum</string>
+  <string name="time" formatted="false">Zeit</string>
+  <string name="status" formatted="false">Status</string>
+  <string name="charge" formatted="false">Ladung in Prozent</string>
+  <string name="temperature" formatted="false">Grad Celsius</string>
+  <string name="voltage" formatted="false">Volt</string>
   <string name="status_unplugged" formatted="false">Ausgesteckt</string>
   <string name="status_unknown" formatted="false">Unbekannt</string>
   <string name="status_charging" formatted="false">Ladend</string>
   <string name="status_discharging" formatted="false">Entladend</string>
   <string name="status_not_charging" formatted="false">Nicht ladend</string>
   <string name="status_fully_charged" formatted="false">Voll geladen</string>
+  <string name="status_plugged_in" formatted="false">Angesteckt</string>
   <string name="health_unknown" formatted="false">Unbekannt</string>
   <string name="health_good" formatted="false">Guter Zustand</string>
   <string name="health_overheat" formatted="false">Überhitzung</string>
@@ -48,9 +54,23 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="discharging_from" formatted="false">Entlädt von</string>
-  <string name="charging_from" formatted="false">Lädt von</string>
-  <string name="fully_charged" formatted="false">Voll geladen</string>
+  <string name="alarm_type_fully_charged" formatted="false">Voll geladen</string>
+  <string name="alarm_type_charge_drops" formatted="false">Ladung unterschreite</string>
+  <string name="alarm_type_charge_rises" formatted="false">Ladung überschreitet...</string>
+  <string name="alarm_type_temperature_rises" formatted="false">Temperatur überschreitet</string>
+  <string name="alarm_type_health_failure" formatted="false">Zustand Störung</string>
+  <string name="alarm_type_entry_fully_charged" formatted="false">Wird voll geladen</string>
+  <string name="alarm_type_entry_charge_drops" formatted="false">Ladung unterschreitet...</string>
+  <string name="alarm_type_entry_charge_rises" formatted="false">Ladung überschreitet...</string>
+  <string name="alarm_type_entry_temperature_rises" formatted="false">Temperatur überschreitet...</string>
+  <string name="alarm_type_entry_health_failure" formatted="false">Status gestört</string>
+  <string name="alarm_fully_charged" formatted="false">Batterie ist nun voll geladen</string>
+  <string name="alarm_charge_drops" formatted="false">"Batterieladung ist unter "</string>
+  <string name="alarm_charge_rises" formatted="false">"Batterieladung ist über "</string>
+  <string name="alarm_temp_rises" formatted="false">"Batterietemperatur ist über "</string>
+  <string name="alarm_health_failure" formatted="false">"Batteriezustand ist: "</string>
+  <string name="alarm_text" formatted="false">Auswählen um Alarme zu bearbeiten.</string>
+  <string name="logs_empty" formatted="false">Protokoll ist leer</string>
   <string name="since" formatted="false">Seit</string>
   <string name="currently_using" formatted="false">Im Moment</string>
   <string name="currently_set_to" formatted="false">"Im Moment gesetzt auf: "</string>
@@ -80,12 +100,24 @@
   <string name="pref_cat_themes" formatted="false">Themes</string>
   <string name="pref_cat_temperature_unit" formatted="false">Temperatureinheit</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Umrechnen in Fahrenheit</string>
-  <string name="pref_cat_charge_as_text" formatted="false">Ladezustand als Text</string>
-  <string name="pref_charge_as_text" formatted="false">Ladezustand als Text</string>
-  <string name="pref_charge_as_text_summary" formatted="false">Den Ladezustand als größeren Text neben dem Icon anzeigen?</string>
+  <string name="alarm_pref_not_used" formatted="false">Nicht benutzt für diesen Alarmtyp</string>
+  <string name="silent" formatted="false">Still</string>
   <string name="boot_pref_always" formatted="false">Immer</string>
   <string name="boot_pref_never" formatted="false">Nie</string>
   <string name="boot_pref_if_running" formatted="false">Wenn es beim Herunterfahren läuft</string>
+  <string name="status_dur_always" formatted="false">Immer</string>
+  <string name="status_dur_after_1h" formatted="false">Nach 1 Stunde</string>
+  <string name="status_dur_after_2h" formatted="false">Nach 2 Stunden</string>
+  <string name="status_dur_after_3h" formatted="false">Nach 3 Stunden</string>
+  <string name="status_dur_after_6h" formatted="false">Nach 6 Stunden</string>
+  <string name="status_dur_after_12h" formatted="false">Nach 12 Stunden</string>
+  <string name="age_1_day" formatted="false">1 Tag</string>
+  <string name="age_2_days" formatted="false">2 Tage</string>
+  <string name="age_4_days" formatted="false">4 Tage</string>
+  <string name="age_1_week" formatted="false">1 Woche</string>
+  <string name="age_2_weeks" formatted="false">2 Wochen</string>
+  <string name="age_3_weeks" formatted="false">3 Wochen</string>
+  <string name="age_4_weeks" formatted="false">4 Wochen</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Protokoll Eintrag</item>
     <item quantity="other">%d Protokoll Einträge</item>

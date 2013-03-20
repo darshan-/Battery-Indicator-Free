@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_full_name" formatted="false">電量指示器專業版</string>
+  <string name="app_launcher_name" formatted="false">電量指示器</string>
   <string name="app_full_name_free" formatted="false">電量指示器</string>
-  <string name="settings_activity_name_free" formatted="false">電量指示器 - 設定</string>
-  <string name="help_activity_name_free" formatted="false">電量指示器 - 說明</string>
   <string name="battery_use_b" formatted="false">查看電量使用情況</string>
   <string name="upgrade_donate_b" formatted="false">升級/捐助...</string>
-  <string name="reenable_lock_screen" formatted="false">恢復自動鎖屏</string>
-  <string name="disable_lock_screen" formatted="false">關閉自動鎖屏</string>
-  <string name="confirm_disable" formatted="false">確認禁止自動鎖屏？</string>
-  <string name="confirm_disable_hint" formatted="false">提示：可在「設定」中關閉此提示信息。</string>
   <string name="yes" formatted="false">確認</string>
   <string name="cancel" formatted="false">取消</string>
   <string name="confirm_close" formatted="false">確認退出？</string>
   <string name="confirm_close_hint" formatted="false">電量指示器將完全退出，狀態列電量指示圖標將不再顯示。\n\n如果您想讓本程序背景運行，可以單擊手機「返回」鍵關閉主視窗。</string>
-  <string name="first_run_title" formatted="false">非常感謝！</string>
-  <string name="first_run_message" formatted="false">非常感謝您的購買或捐助！<b> <i>您的支持對我們來說非常重要！</i> </b>\n\n‧ 如果您安裝了「<b>任務殺手</b>」之類的程序管理工具，請卸載或將「電量指示器專業版」加入到自動關閉排除列表中。如果您曾使用過免費版的該軟體，<i>您仍然需要將此專業版加入到排除列表</i> ！\n\n‧ 如果您使用的是<b>Motorola Droid</b>、<b>Droid X</b>、 <b>Droid 2</b>、 <b>Defy</b>或<b>Samsung Moment</b>機型，請在「其他設定」中勾選「10%步進模式」。</string>
-  <string name="first_run_message_free" formatted="false">感謝下載試用「電量指示器」! <b> <i>重要提示：</i> </b>\n\n如果您安裝了「<b>任務殺手</b>」之類的程序管理工具，請將其卸載或將「電量指示器專業版」加入到自動關閉排除列表中。</string>
+  <string name="confirm_clear_logs" formatted="false">確認清理所有日誌？</string>
   <string name="okay" formatted="false">完成</string>
   <string name="menu_settings" formatted="false">設定</string>
   <string name="menu_close" formatted="false">關閉</string>
@@ -28,14 +21,17 @@
   <string name="celsius" formatted="false">攝氏溫度</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="press_back_to_leave" formatted="false">單擊「返回」鍵退出。</string>
-  <string name="press_menu_for_more" formatted="false">單擊「選單」查看更多選項。</string>
+  <string name="inaccessible_storage" formatted="false">SD卡無法存取。</string>
+  <string name="inaccessible_w_reason" formatted="false">SD卡無法存取：</string>
+  <string name="read_only_storage" formatted="false">SD卡已設定為「唯讀」模式。</string>
+  <string name="file_written" formatted="false">文件已在SD卡根目錄成功創建。</string>
   <string name="status_unplugged" formatted="false">拔下電源</string>
   <string name="status_unknown" formatted="false">未知</string>
   <string name="status_charging" formatted="false">充電中</string>
   <string name="status_discharging" formatted="false">放電中</string>
   <string name="status_not_charging" formatted="false">未充電</string>
   <string name="status_fully_charged" formatted="false">電池充滿</string>
+  <string name="status_plugged_in" formatted="false">插入電源</string>
   <string name="health_unknown" formatted="false">未知</string>
   <string name="health_good" formatted="false">正常</string>
   <string name="health_overheat" formatted="false">過熱</string>
@@ -48,9 +44,7 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="discharging_from" formatted="false">放電起始電量</string>
-  <string name="charging_from" formatted="false">充電起始電量</string>
-  <string name="fully_charged" formatted="false">完全充滿</string>
+  <string name="logs_empty" formatted="false">日誌記錄為空</string>
   <string name="since" formatted="false">開始於</string>
   <string name="currently_using" formatted="false">當前使用</string>
   <string name="currently_set_to" formatted="false">"當前設定為"</string>
@@ -82,13 +76,22 @@
   <string name="pref_cat_temperature_unit" formatted="false">溫度顯示單位</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">確認切換到華氏單位？</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android系統以攝氏單位報告電池溫度信息。若您想使溫度信息以華氏單位顯示，請勾選此項。</string>
-  <string name="pref_cat_charge_as_text" formatted="false">文本顯示電量</string>
-  <string name="pref_charge_as_text" formatted="false">文本顯示電量</string>
-  <string name="pref_charge_as_text_summary" formatted="false">確認以大字體文本在圖標旁顯示剩餘電量？</string>
-  <string name="pref_charge_as_text_help" formatted="false">鑒於部分視力不佳用戶的要求，此功能可在狀態列下拉托盤中電量指示器圖標右側以易閱讀的大字體顯示剩餘電量信息，原電量圖標無任何改變。勾選/取消此項只能在狀態列下拉托盤中看到變化，但此功能有勝於無，且對有需求的用戶而言易於實現。\n\n為節約寶貴的顯示空間，經過多次單調乏味的調試實現此功能，在不使用百分符號的前提下，文本已能完美的顯示並易於閱讀。對於部分非常小型的設備而言，開啟此功能可能導致AM/PM字符偏離原位導致不協調。</string>
   <string name="boot_pref_always" formatted="false">始終</string>
   <string name="boot_pref_never" formatted="false">從不</string>
   <string name="boot_pref_if_running" formatted="false">關機時運行</string>
+  <string name="status_dur_always" formatted="false">始終</string>
+  <string name="status_dur_after_1h" formatted="false">一小時後</string>
+  <string name="status_dur_after_2h" formatted="false">兩小時後</string>
+  <string name="status_dur_after_3h" formatted="false">三小時後</string>
+  <string name="status_dur_after_6h" formatted="false">六小時後</string>
+  <string name="status_dur_after_12h" formatted="false">十二小時後</string>
+  <string name="age_1_day" formatted="false">一天</string>
+  <string name="age_2_days" formatted="false">兩天</string>
+  <string name="age_4_days" formatted="false">四天</string>
+  <string name="age_1_week" formatted="false">一周</string>
+  <string name="age_2_weeks" formatted="false">二周</string>
+  <string name="age_3_weeks" formatted="false">三周</string>
+  <string name="age_4_weeks" formatted="false">四周</string>
   <plurals name="n_log_items">
     <item quantity="one">%d項日誌記錄</item>
     <item quantity="other">%d項日誌記錄</item>

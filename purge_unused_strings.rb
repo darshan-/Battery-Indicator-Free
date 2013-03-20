@@ -10,7 +10,7 @@ string_files = []
 data = [{:matches => `grep R.string src/com/darshancomputing/BatteryIndicator/*.java`,
           :regex => /R.string.([a-z_]*)/},
         {:matches => `grep -R --exclude-dir=.svn @string res AndroidManifest.xml`,
-          :regex => /@string\/([a-z_]*)/}]
+          :regex => /@string\/([a-z0-9_]*)/}]
 
 data.each do |set|
   set[:matches].each_line do |s|

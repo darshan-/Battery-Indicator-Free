@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
-  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
-  <string name="settings_activity_name_free" formatted="false">Battery Indicator - Настройки</string>
-  <string name="help_activity_name_free" formatted="false">Battery Indicator - Помощь</string>
+  <string name="app_full_name" formatted="false">BatteryBot Pro</string>
+  <string name="app_launcher_name" formatted="false">BatteryBot</string>
+  <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Посмотреть использование батареи</string>
   <string name="upgrade_donate_b" formatted="false">Улучшить/Помочь проекту</string>
-  <string name="reenable_lock_screen" formatted="false">Включить блокировку экрана</string>
-  <string name="disable_lock_screen" formatted="false">Выключить блокировку экрана</string>
-  <string name="confirm_disable" formatted="false">Вы действительно хотите отключить блокировку экрана?</string>
-  <string name="confirm_disable_hint" formatted="false">Подсказка: Вы можете отключить \"запрос подтверждения\" в настройках...</string>
   <string name="yes" formatted="false">Да</string>
   <string name="cancel" formatted="false">Отмена</string>
   <string name="confirm_close" formatted="false">Действительно закрыть?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator будет полностью закрыт и Вы не увидите индикатор в строке состояния.\n\nЕсли Вы хотите выйти из главного меню и оставить индикатор активным, нажмите \"Отмена\" и после этого просто нажмите кнопку \"BACK\" для выхода из главного меню.</string>
-  <string name="first_run_title" formatted="false">Спасибо!</string>
-  <string name="first_run_message" formatted="false">Спасибо за покупку программы! <b> <i>Важные моменты: </i> </b>\n\n• Если у Вас установлена программа отслеживающая запущенные процессы <b>Task killer</b> или подобная, убедитесь в том что в данной программе можно внести в исключения Battery Indicator Pro. Если Вы внесли в исключения бесплатную версию Battery Indicator, после установки Battery Indicator Pro <i>Вам понадобится внести её исключения тоже.</i>!\n• Если Вы являетесь владельцем <b>Motorola Droid</b>, <b>Droid X</b>, <b>Droid 2</b>, <b>Defy</b>, или <b>Samsung Moment</b> Вы должны включить \"режим 10%\" в расширенных настройках.</string>
-  <string name="first_run_message_free" formatted="false">Спасибо за установку Battery Indicator! <b> <i>Обратите внимание на следующие два пункта: </i> </b>\n\n• Если у Вас установлена программа отслеживающая запущенные процессы <b>Task killer</b> или подобная, убедитесь в том что в данной программе можно внести в исключения Battery Indicator.</string>
+  <string name="confirm_clear_logs" formatted="false">Действительно удалить весь журнал работы?</string>
+  <string name="confirm_ten_percent_enable" formatted="false">Действительно включить режим 10%?</string>
+  <string name="confirm_ten_percent_disable" formatted="false">Действительно выключить режим 10%?</string>
+  <string name="confirm_ten_percent_hint" formatted="false">ВНИМАНИЕ: Изменение этой настройки (её включение и выключение) сбросит Ваши цветовые настройки программы.\n\nЕсли Вы являетесь владельцем Motorola Droid, Droid X, Droid 2, Defy или Samsung Moment, Вы обязательно должны включить данную настройку сразу же после установки этого приложения. Для остальных устройств данную настройку следует отключить.</string>
   <string name="okay" formatted="false">Да</string>
   <string name="menu_settings" formatted="false">Настройки</string>
   <string name="menu_close" formatted="false">Закрыть</string>
@@ -28,14 +24,23 @@
   <string name="celsius" formatted="false">Цельсий</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">v</string>
-  <string name="press_back_to_leave" formatted="false">Нажмите BACK для выхода.</string>
-  <string name="press_menu_for_more" formatted="false">Нажмите MENU для настройки.</string>
+  <string name="inaccessible_storage" formatted="false">SD Card недоступна.</string>
+  <string name="inaccessible_w_reason" formatted="false">SD Card недоступна:</string>
+  <string name="read_only_storage" formatted="false">SD Card доступна только для чтения.</string>
+  <string name="file_written" formatted="false">Файл успешно сохранен в корень SD карты.</string>
+  <string name="date" formatted="false">дата</string>
+  <string name="time" formatted="false">время</string>
+  <string name="status" formatted="false">состояние</string>
+  <string name="charge" formatted="false">процент_заряда</string>
+  <string name="temperature" formatted="false">градусы_цельсия</string>
+  <string name="voltage" formatted="false">Напряжение</string>
   <string name="status_unplugged" formatted="false">Отключен</string>
   <string name="status_unknown" formatted="false">Неизвестно</string>
   <string name="status_charging" formatted="false">Заряжается</string>
   <string name="status_discharging" formatted="false">Разряжается</string>
   <string name="status_not_charging" formatted="false">Не заряжается</string>
   <string name="status_fully_charged" formatted="false">Полностью заряжен</string>
+  <string name="status_plugged_in" formatted="false">Подключен</string>
   <string name="health_unknown" formatted="false">Неизвестно</string>
   <string name="health_good" formatted="false">Хорошее состояние</string>
   <string name="health_overheat" formatted="false">Перегрев</string>
@@ -48,9 +53,23 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="discharging_from" formatted="false">Разряжается с</string>
-  <string name="charging_from" formatted="false">Заряжается с</string>
-  <string name="fully_charged" formatted="false">Полностью заряжено</string>
+  <string name="alarm_type_fully_charged" formatted="false">Полностью заряжено</string>
+  <string name="alarm_type_charge_drops" formatted="false">Заряд падает ниже</string>
+  <string name="alarm_type_charge_rises" formatted="false">Заряд поднимается выше</string>
+  <string name="alarm_type_temperature_rises" formatted="false">Температура поднимается выше</string>
+  <string name="alarm_type_health_failure" formatted="false">Неисправность</string>
+  <string name="alarm_type_entry_fully_charged" formatted="false">Становится полностью заряжен</string>
+  <string name="alarm_type_entry_charge_drops" formatted="false">Заряд падает ниже...</string>
+  <string name="alarm_type_entry_charge_rises" formatted="false">Заряд поднимается выше...</string>
+  <string name="alarm_type_entry_temperature_rises" formatted="false">Температура поднимается выше...</string>
+  <string name="alarm_type_entry_health_failure" formatted="false">Неисправность</string>
+  <string name="alarm_fully_charged" formatted="false">Батарея полностью заряжена</string>
+  <string name="alarm_charge_drops" formatted="false">"Уровень заряда аккумулятора ниже "</string>
+  <string name="alarm_charge_rises" formatted="false">"Уровень заряда аккумулятора выше "</string>
+  <string name="alarm_temp_rises" formatted="false">"Температура батареи выше "</string>
+  <string name="alarm_health_failure" formatted="false">"Состояние батареи: "</string>
+  <string name="alarm_text" formatted="false">Выберите для редактирования оповещений.</string>
+  <string name="logs_empty" formatted="false">Файл журнала работы пуст</string>
   <string name="since" formatted="false">С</string>
   <string name="currently_using" formatted="false">Текущее использование</string>
   <string name="currently_set_to" formatted="false">"Текущая настройка: "</string>
@@ -67,7 +86,22 @@
   <string name="help_contact" formatted="false">Если у Вас возникнут вопросы или проблемы, пожалуйста перейдите по ссылке<a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">FAQ проекта</a>, чтобы узнать как можно связаться со мной.\n</string>
   <string name="pref_hint" formatted="false">Подсказка: Нажмите MENU для вызова помощи.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Больше настроек в версии Pro</string>
+  <string name="alarm_pref_not_used" formatted="false">Не используется для этого типа оповещения</string>
+  <string name="silent" formatted="false">Беззвучно</string>
   <string name="boot_pref_always" formatted="false">Всегда</string>
   <string name="boot_pref_never" formatted="false">Никогда</string>
   <string name="boot_pref_if_running" formatted="false">Если было запущено при выключении</string>
+  <string name="status_dur_always" formatted="false">Всегда</string>
+  <string name="status_dur_after_1h" formatted="false">Через 1 час</string>
+  <string name="status_dur_after_2h" formatted="false">Через 2 часа</string>
+  <string name="status_dur_after_3h" formatted="false">Через 3 часа</string>
+  <string name="status_dur_after_6h" formatted="false">Через 6 часов</string>
+  <string name="status_dur_after_12h" formatted="false">Через 12 часов</string>
+  <string name="age_1_day" formatted="false">1 день</string>
+  <string name="age_2_days" formatted="false">2 дня</string>
+  <string name="age_4_days" formatted="false">4 дня</string>
+  <string name="age_1_week" formatted="false">1 неделю</string>
+  <string name="age_2_weeks" formatted="false">2-х недель</string>
+  <string name="age_3_weeks" formatted="false">3 недели</string>
+  <string name="age_4_weeks" formatted="false">4 недель</string>
 </resources>
