@@ -133,6 +133,7 @@ public class BatteryInfoService extends Service {
 
     @Override
     public void onDestroy() {
+        alarmManager.cancel(updatePredictorPendingIntent);
         unregisterReceiver(mBatteryInfoReceiver);
         mHandler.removeCallbacks(mNotify);
         mNotificationManager.cancelAll();
