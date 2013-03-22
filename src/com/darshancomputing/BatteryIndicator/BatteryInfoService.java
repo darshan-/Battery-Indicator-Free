@@ -271,11 +271,18 @@ public class BatteryInfoService extends Service {
     }
 
     private void prepareNotification() {
-        if (info.prediction.what == BatteryInfo.Prediction.NONE) {
+        if (settings.getBoolean(SettingsActivity.KEY_NOTIFY_STATUS_DURATION, false)) {
+            long statusDuration = System.currentTimeMillis() - info.last_status_cTM;
+            int statusDurationHours = (int)((statusDuration + (1000 * 60 * 30)) / (1000 * 60 * 60));
+
+            mainNotificationTitle = str.statuses[info.status] + " ";
+            if (statusDuration < 1000 * 60 * 60)
+                mainNotificationTitle += str.since + " " + formatTime(new Date(info.last_status_cTM));
+            else
+                mainNotificationTitle += str.for_n_hours(statusDurationHours);
+        } else if (info.prediction.what == BatteryInfo.Prediction.NONE) {
             mainNotificationTitle = str.statuses[info.status];
         } else {
-            // TODO: Pro option to choose between long, medium, and short
-
             if (info.prediction.days > 0)
                 mainNotificationTitle = str.n_days_m_hours(info.prediction.days, info.prediction.hours);
             else if (info.prediction.hours > 0)
@@ -394,5 +401,16 @@ public class BatteryInfoService extends Service {
         }
 
         editor.commit();
+    }
+
+    private String formatTime(Date d) {
+        String format = android.provider.Settings.System.getString(getContentResolver(),
+                                                                   android.provider.Settings.System.TIME_12_24);
+        if (format == null || format.equals("12")) {
+            return java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT,
+                                                        java.util.Locale.getDefault()).format(d);
+        } else {
+            return (new java.text.SimpleDateFormat("HH:mm")).format(d);
+        }
     }
 }

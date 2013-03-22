@@ -312,6 +312,15 @@
     can choose among them here.
   </string>
   <string formatted="false" name="pref_main_notification_priority">Main Notification Priority</string>
+  <string formatted="false" name="pref_cat_notification_content">Notification Content</string>
+  <string formatted="false" name="pref_notify_status_duration">Show Status Duration</string>
+  <string formatted="false" name="pref_notify_status_duration_summary">Show time since status changed rather than estimate of time remaining?</string>
+  <string formatted="false" name="pref_notify_status_duration_help">
+    Enable this setting if you\'d prefer the main notification to show
+    the time since the status changed (e.g., \"Unplugged for 5
+    hours\") rather than the estimate of time remaining.  Both pieces
+    of information are available from the main window.
+  </string>
   <string formatted="false" name="pref_cat_temperature_unit">Temperature Unit</string>
   <string formatted="false" name="pref_convert_to_fahrenheit">Convert to Fahrenheit</string>
   <string formatted="false" name="pref_convert_to_fahrenheit_help">

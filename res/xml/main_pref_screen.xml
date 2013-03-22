@@ -23,6 +23,15 @@
     />
   </PreferenceCategory>
 
+  <PreferenceCategory android:title="@string/pref_cat_notification_content">
+    <CheckBoxPreference
+       android:key="notify_status_duration"
+       android:title="@string/pref_notify_status_duration"
+       android:summary="@string/pref_notify_status_duration_summary"
+       android:defaultValue="false"
+    />
+  </PreferenceCategory>
+
   <PreferenceCategory android:title="@string/pref_cat_more_settings_in_pro">
     <Preference
        android:summary="@string/pref_please_upgrade"
