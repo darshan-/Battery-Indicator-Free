@@ -112,7 +112,7 @@ public class BatteryInfoService extends Service {
 
         predictor = new Predictor(context);
         bl = new BatteryLevel(context, BatteryLevel.SIZE_NOTIFICATION);
-        notificationRV = new RemoteViews(getPackageName(), R.layout.main_notification);
+        notificationRV = new RemoteViews(getPackageName(), R.layout.main_notification_textual);
         notificationRV.setImageViewBitmap(R.id.battery_level_view, bl.getBitmap());
 
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -286,7 +286,7 @@ public class BatteryInfoService extends Service {
             if (info.prediction.days > 0)
                 mainNotificationTitle = str.n_days_m_hours(info.prediction.days, info.prediction.hours);
             else if (info.prediction.hours > 0)
-                mainNotificationTitle = str.n_hours_m_minutes_short(info.prediction.hours, info.prediction.minutes);
+                mainNotificationTitle = str.n_hours_long_m_minutes_medium(info.prediction.hours, info.prediction.minutes);
             else
                 mainNotificationTitle = str.n_minutes_long(info.prediction.minutes);
 
@@ -306,7 +306,7 @@ public class BatteryInfoService extends Service {
         mainNotification = new Notification(iconFor(info.percent), null, 0l);
 
         //if (android.os.Build.VERSION.SDK_INT < 11) {
-            notificationRV = new RemoteViews(getPackageName(), R.layout.main_notification);
+            notificationRV = new RemoteViews(getPackageName(), R.layout.main_notification_textual);
             notificationRV.setImageViewBitmap(R.id.battery_level_view, bl.getBitmap());
         //}
 
