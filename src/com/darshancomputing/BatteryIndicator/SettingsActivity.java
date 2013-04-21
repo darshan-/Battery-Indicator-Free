@@ -396,7 +396,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
         if (key.equals(KEY_ICON_SET)) {
             resetService();
-            restartThisScreen(); // To show/hide icon-set/plugin settings
         }
 
         for (int i=0; i < PARENTS.length; i++) {
