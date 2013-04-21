@@ -37,6 +37,7 @@ import android.os.Messenger;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.RemoteViews;
 import java.util.Date;
 
@@ -86,7 +87,7 @@ public class BatteryInfoService extends Service {
 
     /* Global variables for these Notification Runnables */
     private Notification mainNotification;
-    private String mainNotificationTitle, mainNotificationText;
+    private String mainNotificationTopLine, mainNotificationBottomLine;
     private RemoteViews notificationRV;
 
     private Predictor predictor;
@@ -112,8 +113,6 @@ public class BatteryInfoService extends Service {
 
         predictor = new Predictor(context);
         bl = new BatteryLevel(context, BatteryLevel.SIZE_NOTIFICATION);
-        notificationRV = new RemoteViews(getPackageName(), R.layout.main_notification_textual);
-        notificationRV.setImageViewBitmap(R.id.battery_level_view, bl.getBitmap());
 
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -271,44 +270,15 @@ public class BatteryInfoService extends Service {
     }
 
     private void prepareNotification() {
-        if (settings.getBoolean(SettingsActivity.KEY_NOTIFY_STATUS_DURATION, false)) {
-            long statusDuration = System.currentTimeMillis() - info.last_status_cTM;
-            int statusDurationHours = (int)((statusDuration + (1000 * 60 * 30)) / (1000 * 60 * 60));
+        if (settings.getBoolean(SettingsActivity.KEY_NOTIFY_STATUS_DURATION, false))
+            mainNotificationTopLine = statusDurationLine();
+        else
+            mainNotificationTopLine = predictionLine();
 
-            mainNotificationTitle = str.statuses[info.status] + " ";
-            if (statusDuration < 1000 * 60 * 60)
-                mainNotificationTitle += str.since + " " + formatTime(new Date(info.last_status_cTM));
-            else
-                mainNotificationTitle += str.for_n_hours(statusDurationHours);
-        } else if (info.prediction.what == BatteryInfo.Prediction.NONE) {
-            mainNotificationTitle = str.statuses[info.status];
-        } else {
-            if (info.prediction.days > 0)
-                mainNotificationTitle = str.n_days_m_hours(info.prediction.days, info.prediction.hours);
-            else if (info.prediction.hours > 0)
-                mainNotificationTitle = str.n_hours_long_m_minutes_medium(info.prediction.hours, info.prediction.minutes);
-            else
-                mainNotificationTitle = str.n_minutes_long(info.prediction.minutes);
-
-            if (info.prediction.what == BatteryInfo.Prediction.UNTIL_CHARGED)
-                mainNotificationTitle += res.getString(R.string.notification_until_charged);
-            else
-                mainNotificationTitle += res.getString(R.string.notification_until_drained);
-        }
-
-        Boolean convertF = settings.getBoolean(SettingsActivity.KEY_CONVERT_F, false);
-        mainNotificationText = str.healths[info.health] + " / " + str.formatTemp(info.temperature, convertF);
-
-        if (info.voltage > 500)
-            mainNotificationText += " / " + str.formatVoltage(info.voltage);
+        mainNotificationBottomLine = vitalStatsLine();
 
         // TODO: Is it necessary to call new() every time here, or can I get away with just setting the icon on existing Notif.?
         mainNotification = new Notification(iconFor(info.percent), null, 0l);
-
-        //if (android.os.Build.VERSION.SDK_INT < 11) {
-            notificationRV = new RemoteViews(getPackageName(), R.layout.main_notification_textual);
-            notificationRV.setImageViewBitmap(R.id.battery_level_view, bl.getBitmap());
-        //}
 
         if (android.os.Build.VERSION.SDK_INT >= 16) {
             mainNotification.priority = Integer.valueOf(settings.getString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
@@ -317,14 +287,65 @@ public class BatteryInfoService extends Service {
 
         mainNotification.flags |= Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
 
-        bl.setLevel(info.percent);
+        if (settings.getBoolean(SettingsActivity.KEY_USE_SYSTEM_NOTIFICATION_LAYOUT, false)) {
+            mainNotification.setLatestEventInfo(context, mainNotificationTopLine, mainNotificationBottomLine, mainWindowPendingIntent);
+        } else {
+            notificationRV = new RemoteViews(getPackageName(), R.layout.main_notification);
+            //notificationRV.setImageViewBitmap(R.id.battery, bl.getBitmap());
+            bl.setLevel(info.percent);
 
-        notificationRV.setTextViewText(R.id.percent, "" + info.percent + str.percent_symbol);
-        notificationRV.setTextViewText(R.id.top_line, android.text.Html.fromHtml(mainNotificationTitle));
-        notificationRV.setTextViewText(R.id.bottom_line, mainNotificationText);
+            notificationRV.setTextViewText(R.id.percent, "" + info.percent + str.percent_symbol);
+            notificationRV.setTextViewText(R.id.top_line, android.text.Html.fromHtml(mainNotificationTopLine));
+            notificationRV.setTextViewText(R.id.bottom_line, mainNotificationBottomLine);
 
-        mainNotification.contentIntent = mainWindowPendingIntent;
-        mainNotification.contentView = notificationRV;
+            mainNotification.contentIntent = mainWindowPendingIntent;
+            mainNotification.contentView = notificationRV;
+        }
+    }
+
+    private String predictionLine() {
+        String line;
+
+        if (info.prediction.what == BatteryInfo.Prediction.NONE) {
+            line = str.statuses[info.status];
+        } else {
+            if (info.prediction.days > 0)
+                line = str.n_days_m_hours(info.prediction.days, info.prediction.hours);
+            else if (info.prediction.hours > 0) {
+                line = str.n_hours_long_m_minutes_medium(info.prediction.hours, info.prediction.minutes);
+            } else
+                line = str.n_minutes_long(info.prediction.minutes);
+
+            if (info.prediction.what == BatteryInfo.Prediction.UNTIL_CHARGED)
+                line += res.getString(R.string.notification_until_charged);
+            else
+                line += res.getString(R.string.notification_until_drained);
+        }
+
+        return line;
+    }
+
+    private String vitalStatsLine() {
+        Boolean convertF = settings.getBoolean(SettingsActivity.KEY_CONVERT_F, false);
+        String line = str.healths[info.health] + " / " + str.formatTemp(info.temperature, convertF);
+
+        if (info.voltage > 500)
+            line += " / " + str.formatVoltage(info.voltage);
+
+        return line;
+    }
+
+    private String statusDurationLine() {
+        long statusDuration = System.currentTimeMillis() - info.last_status_cTM;
+        int statusDurationHours = (int) ((statusDuration + (1000 * 60 * 30)) / (1000 * 60 * 60));
+        String line = str.statuses[info.status] + " ";
+
+        if (statusDuration < 1000 * 60 * 60)
+            line += str.since + " " + formatTime(new Date(info.last_status_cTM));
+        else
+            line += str.for_n_hours(statusDurationHours);
+
+        return line;
     }
 
     private void doNotify() {

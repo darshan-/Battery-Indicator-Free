@@ -153,7 +153,6 @@
     <item quantity="one">For %d Hour</item>
     <item quantity="other">For %d Hours</item>
   </plurals>
-
   <string formatted="false" name="currently_using">Currently using</string>
   <string formatted="false" name="currently_set_to">"Currently set to: "</string>
   <string formatted="false" name="currently_disabled">Currently Disabled</string>
@@ -276,7 +275,6 @@
   </string>
 
   <string formatted="false" name="pref_hint">Hint: Press MENU for help.</string>
-  <!--string name="other_settings_summary"></string-->
   <string formatted="false" name="pref_cat_more_settings_in_pro">More Settings in Pro</string>
   <string formatted="false" name="pref_please_upgrade">
     The Pro version has many more settings and features, including
@@ -284,7 +282,25 @@
     battery state logging, auto/manual lock screen disable,
     charge/discharge remaining estimates, and more.
   </string>
-  <string formatted="false" name="pref_cat_themes">Themes</string>
+  <string formatted="false" name="pref_cat_notification_layout">Layout</string>
+  <string formatted="false" name="pref_use_system_notification_layout">Use System Layout</string>
+  <string formatted="false" name="pref_use_system_notification_layout_summary">Use system notification layout rather than custom BatteryBot layout?</string>
+  <string formatted="false" name="pref_use_system_notification_layout_help">
+    If enabled, the system notification layout will be used instead of
+    BatteryBot\'s custom layout. The system layout is less
+    customizable, but a small minority of devices don\'t report
+    default colors properly, making the custom layout ugly or hard to
+    read. Other devices use an unusual layout, making the custom
+    layout not fit in. Selecting this option will ensure that the
+    notification will look like any other notification.\n
+
+    \nNote that this will result in having the status bar icon used in
+    the notification.
+  </string>
+
+  <string formatted="false" name="pref_cat_notification_content">Content</string>
+  <string formatted="false" name="pref_main_notification_priority">Main Notification Priority</string>
+  <string formatted="false" name="pref_cat_icon_set">Icon Set</string>
   <string formatted="false" name="pref_icon_set">Icon Set</string>
   <string formatted="false" name="pref_icon_set_help">
     Android comes in many flavors, so there is no one perfect icon set
@@ -313,8 +329,6 @@
     the Get Plugins button on the Action Bar on newer devices), you
     can choose among them here.
   </string>
-  <string formatted="false" name="pref_main_notification_priority">Main Notification Priority</string>
-  <string formatted="false" name="pref_cat_notification_content">Notification Content</string>
   <string formatted="false" name="pref_notify_status_duration">Show Status Duration</string>
   <string formatted="false" name="pref_notify_status_duration_summary">Show time since status changed rather than estimate of time remaining?</string>
   <string formatted="false" name="pref_notify_status_duration_help">

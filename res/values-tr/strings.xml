@@ -94,9 +94,8 @@
   <string name="help_contact" formatted="false">Eğer herhangi bir sorunuz yada bir probleminiz varsa, benimle nasıl bağlantı kuracağınız için lütfen <a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">proje SSS </a> sayfasına bakınız.\n</string>
   <string name="pref_hint" formatted="false">İpucu: Yardım için MENU tuşuna bas.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Pro da fazla ayarlar</string>
-  <string name="pref_cat_themes" formatted="false">Temalar</string>
-  <string name="pref_icon_set" formatted="false">Simge ayarla</string>
   <string name="pref_main_notification_priority" formatted="false">Temel Bildirim Önceliği</string>
+  <string name="pref_icon_set" formatted="false">Simge ayarla</string>
   <string name="pref_cat_temperature_unit" formatted="false">Sıcaklık Birimi</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Fahrenhayt\'a çevir</string>
   <string name="alarm_pref_not_used" formatted="false">Bu alarm türü için kullanılmıyor</string>

@@ -94,7 +94,6 @@
   <string name="pref_hint" formatted="false">Tip: Stiskněte MENU pro nápovědu.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Více nastavení pouze ve verzi Pro</string>
   <string name="pref_please_upgrade" formatted="false">Pro verze obsahuje mnohem více nastavení a funkcí, včetně zelené, oranžové a červené ikony stavu, témata pro okno, záznamy stavu baterie, nastavení zámku obrazovky, odhady časů zbývající energie atd.</string>
-  <string name="pref_cat_themes" formatted="false">Témata</string>
   <string name="pref_cat_temperature_unit" formatted="false">Měrná jednotka teploty</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Změnit na Fahrenheity</string>
   <string name="alarm_pref_not_used" formatted="false">Není použito pro tento druh upozornění.</string>

@@ -60,7 +60,6 @@
   <string name="help_cat_contact" formatted="false">Contato</string>
   <string name="pref_hint" formatted="false">Sugestão: Pressiona a tecla MENU para ajuda.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Mais Configurações na versão Pro</string>
-  <string name="pref_cat_themes" formatted="false">Temas</string>
   <string name="age_1_day" formatted="false">1 dia</string>
   <string name="age_2_days" formatted="false">2 dias</string>
   <string name="age_4_days" formatted="false">4 dias</string>

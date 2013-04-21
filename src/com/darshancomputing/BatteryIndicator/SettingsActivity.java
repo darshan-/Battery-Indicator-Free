@@ -80,6 +80,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_GREEN = "use_green";
     public static final String KEY_GREEN_THRESH = "green_threshold";
     public static final String KEY_COLOR_PREVIEW = "color_preview";
+    public static final String KEY_USE_SYSTEM_NOTIFICATION_LAYOUT = "use_system_notification_layout";
     public static final String KEY_FIRST_RUN = "first_run";
     //public static final String KEY_LANGUAGE_OVERRIDE = "language_override";
 
@@ -97,7 +98,9 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
                                                    KEY_NOTIFY_WHEN_KG_DISABLED, KEY_ICON_SET,
                                                    KEY_INDICATE_CHARGING, KEY_TEN_PERCENT_MODE}; /* 10% mode changes color settings */
 
-    private static final String[] RESET_SERVICE_WITH_CANCEL_NOTIFICATION = {KEY_MAIN_NOTIFICATION_PRIORITY};
+    private static final String[] RESET_SERVICE_WITH_CANCEL_NOTIFICATION = {KEY_MAIN_NOTIFICATION_PRIORITY,
+                                                                            KEY_USE_SYSTEM_NOTIFICATION_LAYOUT
+    };
 
     public static final String EXTRA_SCREEN = "com.darshancomputing.BatteryIndicator.PrefScreen";
 
