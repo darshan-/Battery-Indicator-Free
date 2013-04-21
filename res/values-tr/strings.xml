@@ -96,9 +96,9 @@
   <string name="pref_cat_more_settings_in_pro" formatted="false">Pro da fazla ayarlar</string>
   <string name="pref_main_notification_priority" formatted="false">Temel Bildirim Önceliği</string>
   <string name="pref_icon_set" formatted="false">Simge ayarla</string>
-  <string name="pref_cat_temperature_unit" formatted="false">Sıcaklık Birimi</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Fahrenhayt\'a çevir</string>
   <string name="alarm_pref_not_used" formatted="false">Bu alarm türü için kullanılmıyor</string>
+  <string name="pref_cat_notification_settings" formatted="false">Bildirim Ayarları</string>
   <string name="silent" formatted="false">Sessiz</string>
   <string name="boot_pref_always" formatted="false">Daima</string>
   <string name="boot_pref_never" formatted="false">Asla</string>

@@ -101,10 +101,10 @@
   <string name="pref_cat_more_settings_in_pro" formatted="false">További beállítások a Pro verzióban</string>
   <string name="pref_please_upgrade" formatted="false">A Pro verzió számos további beállítással és képességgel rendelkezik. Pl. zöld, sárga és vörös ikon, riasztások, ablak témák, akku állapot naplózása, képernyőzár kézi és automatikus tiltása, becslés a hátralévő töltési vagy használati időre, stb.</string>
   <string name="pref_icon_set" formatted="false">Ikon stílus</string>
-  <string name="pref_cat_temperature_unit" formatted="false">Hőmérséklet mértékegysége</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Fahrenheit használata</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Az Android Celsius°-ban közli a hőmérsékletet. Ha jobban szeretné az akkumlátor hőmérsékletét Fahrenheit-ben látni, kapcsolja be ezt az opciót, és az alkalmásás konvértálni fogja önnek.</string>
   <string name="alarm_pref_not_used" formatted="false">Nem használt ehhez a riasztás típushoz</string>
+  <string name="pref_cat_notification_settings" formatted="false">Értesítés beállítások</string>
   <string name="silent" formatted="false">Nincs hang</string>
   <string name="boot_pref_always" formatted="false">Mindig</string>
   <string name="boot_pref_never" formatted="false">Soha</string>

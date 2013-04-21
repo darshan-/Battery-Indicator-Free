@@ -11,26 +11,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
   >
-    <TextView style="@style/help_cat"  android:text="@string/pref_cat_temperature_unit" />
+    <TextView style="@style/help_cat"  android:text="@string/pref_cat_notification_settings" />
     <View style="@style/help_cat_post_margin" />
     <TextView style="@style/help_pref" android:text="@string/pref_convert_to_fahrenheit" />
     <TextView style="@style/help_text" android:text="@string/pref_convert_to_fahrenheit_help" />
-
-    <View style="@style/help_cat_pre_margin" />
-    <TextView style="@style/help_cat"  android:text="@string/pref_cat_icon_set" />
-    <View style="@style/help_cat_post_margin" />
     <TextView style="@style/help_pref" android:text="@string/pref_icon_set" />
     <TextView style="@style/help_text" android:text="@string/pref_icon_set_help" />
-
-    <View style="@style/help_cat_pre_margin" />
-    <TextView style="@style/help_cat"  android:text="@string/pref_cat_notification_content" />
-    <View style="@style/help_cat_post_margin" />
     <TextView style="@style/help_pref" android:text="@string/pref_notify_status_duration" />
     <TextView style="@style/help_text" android:text="@string/pref_notify_status_duration_help" />
-
-    <View style="@style/help_cat_pre_margin" />
-    <TextView style="@style/help_cat"  android:text="@string/pref_cat_notification_layout" />
-    <View style="@style/help_cat_post_margin" />
     <TextView style="@style/help_pref" android:text="@string/pref_use_system_notification_layout" />
     <TextView style="@style/help_text" android:text="@string/pref_use_system_notification_layout_help" />
   </LinearLayout>

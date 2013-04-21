@@ -97,9 +97,9 @@
   <string name="pref_hint" formatted="false">Patarimas: Spauskite MENU pagalbai.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Daugiau nustatytmų Pro versijoje</string>
   <string name="pref_please_upgrade" formatted="false">Pro versija turi daug daugiau nustatymų ir funkcijų: spalvotos ikonos, atsisiunčiami ikonų papildiniai, aliarmai, lango temos, baterijos statuso įrašų sudarymas, auto/rankinis ekrano užrakto išjungimas, įkrovimo/iškrovimo likęs laikas ir daugiau.</string>
-  <string name="pref_cat_temperature_unit" formatted="false">Temperatūros</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Pakeisti į Farengeitą</string>
   <string name="alarm_pref_not_used" formatted="false">Nenaudojama šiam aliarmo tipui</string>
+  <string name="pref_cat_notification_settings" formatted="false">Perspėjimų Nustatymai</string>
   <string name="silent" formatted="false">Tyla</string>
   <string name="boot_pref_always" formatted="false">Visada</string>
   <string name="boot_pref_never" formatted="false">Niekada</string>

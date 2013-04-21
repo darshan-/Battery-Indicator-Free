@@ -90,6 +90,7 @@
   <string name="pref_hint" formatted="false">Подсказка: Нажмите MENU для вызова помощи.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Больше настроек в версии Pro</string>
   <string name="alarm_pref_not_used" formatted="false">Не используется для этого типа оповещения</string>
+  <string name="pref_cat_notification_settings" formatted="false">Настройки оповещений</string>
   <string name="silent" formatted="false">Беззвучно</string>
   <string name="boot_pref_always" formatted="false">Всегда</string>
   <string name="boot_pref_never" formatted="false">Никогда</string>

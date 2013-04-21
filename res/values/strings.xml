@@ -282,7 +282,6 @@
     battery state logging, auto/manual lock screen disable,
     charge/discharge remaining estimates, and more.
   </string>
-  <string formatted="false" name="pref_cat_notification_layout">Layout</string>
   <string formatted="false" name="pref_use_system_notification_layout">Use System Layout</string>
   <string formatted="false" name="pref_use_system_notification_layout_summary">Use system notification layout rather than custom BatteryBot layout?</string>
   <string formatted="false" name="pref_use_system_notification_layout_help">
@@ -297,10 +296,7 @@
     \nNote that this will result in having the status bar icon used in
     the notification.
   </string>
-
-  <string formatted="false" name="pref_cat_notification_content">Content</string>
   <string formatted="false" name="pref_main_notification_priority">Main Notification Priority</string>
-  <string formatted="false" name="pref_cat_icon_set">Icon Set</string>
   <string formatted="false" name="pref_icon_set">Icon Set</string>
   <string formatted="false" name="pref_icon_set_help">
     Android comes in many flavors, so there is no one perfect icon set
@@ -337,7 +333,6 @@
     hours\") rather than the estimate of time remaining.  Both pieces
     of information are available from the main window.
   </string>
-  <string formatted="false" name="pref_cat_temperature_unit">Temperature Unit</string>
   <string formatted="false" name="pref_convert_to_fahrenheit">Convert to Fahrenheit</string>
   <string formatted="false" name="pref_convert_to_fahrenheit_help">
     Android reports the battery temperature in degrees Celsius.  If
@@ -347,6 +342,7 @@
   <!--string name="pref_cat_device_specific_help"></string-->
   <!--string name="pref_alarm_enabled_summary"></string-->
   <string formatted="false" name="alarm_pref_not_used">Not used for this alarm type</string>
+  <string formatted="false" name="pref_cat_notification_settings">Notification Settings</string>
   <!--string name="pref_alarm_ringtone_summary"></string-->
   <string formatted="false" name="silent">Silent</string>
   <!--string name="pref_alarm_vibrate_summary"></string-->
