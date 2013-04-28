@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_full_name" formatted="false">BatteryBot Pro</string>
-  <string name="app_launcher_name" formatted="false">BatteryBot</string>
+  <string name="app_full_name" formatted="false">Battery Indicator Pro</string>
+  <string name="app_launcher_name" formatted="false">Battery Indicator</string>
   <string name="settings_activity_subtitle" formatted="false">Instellingen</string>
-  <string name="app_full_name_free" formatted="false">BatteryBot</string>
+  <string name="app_full_name_free" formatted="false">Battery Indicator</string>
   <string name="battery_use_b" formatted="false">Batterijgebruik bekijken</string>
   <string name="upgrade_donate_b" formatted="false">Upgraden of doneren</string>
   <string name="yes" formatted="false">Ja</string>
@@ -16,9 +16,15 @@
   <string name="confirm_ten_percent_disable" formatted="false">10% Modus deactiveren?</string>
   <string name="confirm_ten_percent_hint" formatted="false">Waarschuwing: Met het wijzigen van deze instelling (activeren en deactiveren) zullen de kleurinstellingen gereset worden.\n\nAls je een Motorola Droid, Droid X, Droid 2, Defy of Samsung Moment hebt: deze functie na installatie van de applicatie aanzetten. Alle andere telefoons: deze functie uit laten staan.</string>
   <string name="okay" formatted="false">OK</string>
+  <string name="tab_current_info" formatted="false">Huidige informatie</string>
+  <string name="notification_until_charged" formatted="false">" tot opgeladen"</string>
+  <string name="notification_until_drained" formatted="false">" over"</string>
+  <string name="activity_until_charged" formatted="false">tot opgeladen</string>
+  <string name="activity_until_drained" formatted="false">tot leeg</string>
   <string name="menu_settings" formatted="false">Instellingen</string>
   <string name="menu_close" formatted="false">Sluiten</string>
   <string name="menu_help" formatted="false">Help</string>
+  <string name="menu_rate_and_review" formatted="false">Beoordelen</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">Fahrenheit</string>
@@ -46,7 +52,7 @@
   <string name="health_overheat" formatted="false">Oververhit</string>
   <string name="health_dead" formatted="false">Dood :(</string>
   <string name="health_overvoltage" formatted="false">Voltage te hoog</string>
-  <string name="health_failure" formatted="false">Falen</string>
+  <string name="health_failure" formatted="false">Gezondheid faalt</string>
   <string name="health_cold" formatted="false">Koud</string>
   <string name="plugged_unplugged" formatted="false">Losgekoppeld</string>
   <string name="plugged_ac" formatted="false">(AC)</string>
@@ -100,6 +106,7 @@
   <string name="pref_main_notification_priority" formatted="false">Prioriteit van melding</string>
   <string name="pref_icon_set" formatted="false">Iconen</string>
   <string name="pref_icon_set_help" formatted="false">Er zijn verschillende soorten Android, dus er is niet een perfecte set iconen die overal goed werken. Je kunt plugins gebruiken voor meer iconen, maar er zijn nu 3 standaard opties./n /n</string>
+  <string name="pref_notify_status_duration" formatted="false">Laat tijd van status zien</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Converteren naar Fahrenheit</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android geeft de batterijtemperatuur in graden Celsius. Selecteer deze optie om Fahrenheit te gebruiken.</string>
   <string name="alarm_pref_not_used" formatted="false">Niet gebruikt voor dit alarmtype</string>
@@ -132,6 +139,32 @@
   <plurals name="n_log_items">
     <item quantity="one">%d logboekitem</item>
     <item quantity="other">%d logboekitems</item>
+  </plurals>
+  <plurals name="n_hours_long">
+    <item quantity="other">"%d uur, "</item>
+  </plurals>
+  <plurals name="n_minutes_long">
+    <item quantity="one">%d minuut</item>
+    <item quantity="other">%d minuten</item>
+  </plurals>
+  <plurals name="n_hours_medium">
+    <item quantity="other">"%d uur, "</item>
+  </plurals>
+  <plurals name="n_minutes_medium">
+    <item quantity="other">%d min.</item>
+  </plurals>
+  <plurals name="n_hours_short">
+    <item quantity="other">"%du "</item>
+  </plurals>
+  <plurals name="n_minutes_short">
+    <item quantity="other">%dm</item>
+  </plurals>
+  <plurals name="n_days">
+    <item quantity="one">"%d dag, "</item>
+    <item quantity="other">"%d dagen, "</item>
+  </plurals>
+  <plurals name="n_hours">
+    <item quantity="other">%d uur</item>
   </plurals>
   <plurals name="for_n_hours">
     <item quantity="other">(%d uur)</item>

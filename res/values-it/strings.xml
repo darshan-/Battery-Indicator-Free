@@ -6,18 +6,25 @@
   <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Mostra utilizzo batteria</string>
   <string name="upgrade_donate_b" formatted="false">Aggiorna/Dona...</string>
-  <string name="yes" formatted="false">Si</string>
+  <string name="yes" formatted="false">Sì</string>
   <string name="cancel" formatted="false">Annulla</string>
   <string name="confirm_close" formatted="false">Vuoi davvero uscire?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator sarà completamente chiuso, e non sarà più visualizzato nella barra di stato.\n\nSe si desidera solo abbandonare la finestra principale e mantenere l\'indicatore in esecuzione, premere Annulla e quindi premere il pulsante INDIETRO del tuo cellulare per uscire dalla finestra principale.</string>
   <string name="confirm_clear_logs" formatted="false">Vuoi davvero cancellare tutto il registro?</string>
+  <string name="configure_log_filter" formatted="false">Quali log mostrare?</string>
   <string name="confirm_ten_percent_enable" formatted="false">Vuoi davvero attivare la modalità 10%?</string>
   <string name="confirm_ten_percent_disable" formatted="false">Vuoi davvero disattivare la modalità 10%?</string>
   <string name="confirm_ten_percent_hint" formatted="false">Attenzione: La modifica di questa impostazione (attivazione e disattivazione) resetterà le tue impostazioni di colore.\n\nSe hai un Motorola Droid, Droid X, Droid 2, Defy, o un Samsung Moment, devi impostarlo ON appena ottenuta l\'app, e lasciarlo così. Tutti gli altri dispositivi, per quanto ne so, dovrebbero sempre lasciare questo su OFF.</string>
   <string name="okay" formatted="false">Ok</string>
+  <string name="tab_current_info" formatted="false">Info correnti</string>
+  <string name="notification_until_charged" formatted="false">" alla ricarica"</string>
+  <string name="notification_until_drained" formatted="false">" rimasti/o"</string>
+  <string name="activity_until_charged" formatted="false">alla ricarica</string>
+  <string name="activity_until_drained" formatted="false">al completo scaricamento</string>
   <string name="menu_settings" formatted="false">Impostazioni</string>
   <string name="menu_close" formatted="false">Chiudi</string>
   <string name="menu_help" formatted="false">Aiuto</string>
+  <string name="menu_rate_and_review" formatted="false">Vota e recensisci</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">Fahrenheit</string>
@@ -34,11 +41,11 @@
   <string name="status" formatted="false">stato</string>
   <string name="charge" formatted="false">percentuale_carica</string>
   <string name="temperature" formatted="false">gradi_celsius</string>
-  <string name="voltage" formatted="false">volts</string>
+  <string name="voltage" formatted="false">volt</string>
   <string name="status_unplugged" formatted="false">Scollegato</string>
   <string name="status_unknown" formatted="false">Sconosciuto</string>
   <string name="status_charging" formatted="false">In carica</string>
-  <string name="status_discharging" formatted="false">Scarico</string>
+  <string name="status_discharging" formatted="false">In scarica</string>
   <string name="status_not_charging" formatted="false">Non in carica</string>
   <string name="status_fully_charged" formatted="false">Completamente carico</string>
   <string name="status_plugged_in" formatted="false">Collegato</string>
@@ -48,12 +55,12 @@
   <string name="health_dead" formatted="false">Defunta</string>
   <string name="health_overvoltage" formatted="false">Sovratensione</string>
   <string name="health_failure" formatted="false">Non riuscito</string>
-  <string name="health_cold" formatted="false">Cold</string>
+  <string name="health_cold" formatted="false">Freddo</string>
   <string name="plugged_unplugged" formatted="false">Scollegato</string>
   <string name="plugged_ac" formatted="false">(CA)</string>
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
-  <string name="plugged_wireless" formatted="false">(WL)</string>
+  <string name="plugged_wireless" formatted="false">(Wireless)</string>
   <string name="alarm_type_fully_charged" formatted="false">Completamente carico</string>
   <string name="alarm_type_charge_drops" formatted="false">La carica è scesa al di sotto</string>
   <string name="alarm_type_charge_rises" formatted="false">La carica è salita al di sopra</string>
@@ -95,7 +102,7 @@
   <string name="help_subcat_translators" formatted="false">Traduttori</string>
   <string name="help_cat_contact" formatted="false">Contatti</string>
   <string name="help_contact" formatted="false">Se hai domande o probemi, leggi <a href="http://code.google.com/p/battery-indicator/wiki/FAQ">le FAQ del progetto</a> come prima cosa.\n\nSe hai commenti o suggerimenti, o altre domande o problemi che non sono stati risolti nelle FAQ, contattaci a <a href="mailto:android@darshancomputing.com">android@darshancomputing.com</a>.</string>
-  <string name="pref_hint" formatted="false">Suggerimento: Premi MENU\' per aiuto.</string>
+  <string name="pref_hint" formatted="false">Suggerimento: Premi MENU per aiuto.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Altre impostazioni nella versione Pro</string>
   <string name="pref_please_upgrade" formatted="false">La versione Pro ha molte impostazioni e caratteristiche, tra cui icone verdi, ambra, e rosse, temi finestre, log stato batteria, disabilitazione automatica/manuale blocco schermo, stime tempo rimanente di carica/scarica, e altro.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Converti in Fahrenheit</string>
