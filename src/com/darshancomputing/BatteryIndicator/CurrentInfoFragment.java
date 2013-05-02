@@ -288,17 +288,18 @@ public class CurrentInfoFragment extends Fragment {
                 until_text = activity.res.getString(R.string.activity_until_drained);
 
             tv = (TextView) view.findViewById(R.id.time_remaining);
-            if (info.prediction.days > 0)
+            BatteryInfo.RelativeTime predicted = info.prediction.last_rtime;
+            if (predicted.days > 0)
                 // TODO: Translatable, color, better layout
-                tv.setText(android.text.Html.fromHtml("<font color=\"#6fc14b\">" + info.prediction.days + "d</font> " +
-                                                      "<font color=\"#33b5e5\"><small>" + info.prediction.hours + "h</small></font>"));
-            else if (info.prediction.hours > 0)
+                tv.setText(android.text.Html.fromHtml("<font color=\"#6fc14b\">" + predicted.days + "d</font> " +
+                                                      "<font color=\"#33b5e5\"><small>" + predicted.hours + "h</small></font>"));
+            else if (predicted.hours > 0)
                 // TODO: Translatable ("h" and "m"); color
-                tv.setText(android.text.Html.fromHtml("<font color=\"#6fc14b\">" + info.prediction.hours + "h</font> " +
-                                                      "<font color=\"#33b5e5\"><small>" + info.prediction.minutes + "m</small></font>"));
+                tv.setText(android.text.Html.fromHtml("<font color=\"#6fc14b\">" + predicted.hours + "h</font> " +
+                                                      "<font color=\"#33b5e5\"><small>" + predicted.minutes + "m</small></font>"));
             else
                 // TODO: Translatable, color, better layout
-                tv.setText(android.text.Html.fromHtml("<font color=\"#33b5e5\"><small>" + info.prediction.minutes + " mins</small></font>"));
+                tv.setText(android.text.Html.fromHtml("<font color=\"#33b5e5\"><small>" + predicted.minutes + " mins</small></font>"));
 
 
             tv = (TextView) view.findViewById(R.id.until_what);
@@ -309,10 +310,10 @@ public class CurrentInfoFragment extends Fragment {
         int hours = secs / (60 * 60);
         int mins = (secs / 60) % 60;
 
-        String s = activity.str.statuses[info.status];
+        String s = activity.str.statuses[info.last_status];
 
-        if (info.status == BatteryInfo.STATUS_CHARGING)
-            s += " " + activity.str.pluggeds[info.plugged];
+        if (info.last_status == BatteryInfo.STATUS_CHARGING)
+            s += " " + activity.str.pluggeds[info.last_plugged];
 
         tv = (TextView) view.findViewById(R.id.status);
         tv.setText(s);
@@ -320,7 +321,7 @@ public class CurrentInfoFragment extends Fragment {
         if (info.last_percent >= 0) {
             s = "Since "; // TODO: Translatable
 
-            if (info.status != BatteryInfo.STATUS_FULLY_CHARGED)
+            if (info.last_status != BatteryInfo.STATUS_FULLY_CHARGED)
                 s += info.last_percent + activity.str.percent_symbol + ", ";
 
             s += hours + "h " + mins + "m ago"; // TODO: Translatable

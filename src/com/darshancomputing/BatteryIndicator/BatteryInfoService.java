@@ -51,12 +51,15 @@ public class BatteryInfoService extends Service {
     private AlarmManager alarmManager;
     private SharedPreferences settings;
     private SharedPreferences sp_store;
+    SharedPreferences.Editor sps_editor;
 
     private Context context;
     private Resources res;
     private Str str;
     private BatteryLevel bl;
     private BatteryInfo info;
+    private long now;
+    private boolean updated_lasts;
     private java.util.HashSet<Messenger> clientMessengers;
     private final Messenger messenger = new Messenger(new MessageHandler());
 
@@ -248,25 +251,43 @@ public class BatteryInfoService extends Service {
     };
 
     private void update(Intent intent) {
+        now = System.currentTimeMillis();
+        sps_editor = sp_store.edit();
+        updated_lasts = false;
+
         if (intent != null)
-            updateBatteryInfo(intent);
-        else
-            predictor.update(info);
+            info.load(intent, sp_store);
+
+        predictor.update(info);
+        info.prediction.updateRelativeTime();
 
         if (statusHasChanged())
             handleUpdateWithChangedStatus();
         else
             handleUpdateWithSameStatus();
 
+        prepareNotification();
+        doNotify();
+
+        syncSpsEditor(); // Important to sync after other Service code that uses 'lasts' but before sending info to client
+
         for (Messenger messenger : clientMessengers) {
             // TODO: Can I send the same message to multiple clients instead of sending duplicates?
             sendClientMessage(messenger, RemoteConnection.CLIENT_BATTERY_INFO_UPDATED, info.toBundle());
         }
 
-        prepareNotification();
-        doNotify();
-
         alarmManager.set(AlarmManager.ELAPSED_REALTIME, android.os.SystemClock.elapsedRealtime() + (2 * 60 * 1000), updatePredictorPendingIntent);
+    }
+
+    private void syncSpsEditor() {
+        sps_editor.commit();
+
+        if (updated_lasts) {
+            info.last_status_cTM = now;
+            info.last_status = info.status;
+            info.last_percent = info.percent;
+            info.last_plugged = info.plugged;
+        }
     }
 
     private void prepareNotification() {
@@ -305,16 +326,17 @@ public class BatteryInfoService extends Service {
 
     private String predictionLine() {
         String line;
+        BatteryInfo.RelativeTime predicted = info.prediction.last_rtime;
 
         if (info.prediction.what == BatteryInfo.Prediction.NONE) {
             line = str.statuses[info.status];
         } else {
-            if (info.prediction.days > 0)
-                line = str.n_days_m_hours(info.prediction.days, info.prediction.hours);
-            else if (info.prediction.hours > 0) {
-                line = str.n_hours_long_m_minutes_medium(info.prediction.hours, info.prediction.minutes);
+            if (predicted.days > 0)
+                line = str.n_days_m_hours(predicted.days, predicted.hours);
+            else if (predicted.hours > 0) {
+                line = str.n_hours_long_m_minutes_medium(predicted.hours, predicted.minutes);
             } else
-                line = str.n_minutes_long(info.prediction.minutes);
+                line = str.n_minutes_long(predicted.minutes);
 
             if (info.prediction.what == BatteryInfo.Prediction.UNTIL_CHARGED)
                 line += res.getString(R.string.notification_until_charged);
@@ -336,7 +358,7 @@ public class BatteryInfoService extends Service {
     }
 
     private String statusDurationLine() {
-        long statusDuration = System.currentTimeMillis() - info.last_status_cTM;
+        long statusDuration = now - info.last_status_cTM;
         int statusDurationHours = (int) ((statusDuration + (1000 * 60 * 30)) / (1000 * 60 * 60));
         String line = str.statuses[info.status] + " ";
 
@@ -380,48 +402,34 @@ public class BatteryInfoService extends Service {
         }
     }
 
-    private void updateBatteryInfo(Intent intent) {
-        info.load(intent, sp_store);
-        predictor.update(info);
-    }
-
     private boolean statusHasChanged() {
         int previous_charge = sp_store.getInt(KEY_PREVIOUS_CHARGE, 100);
 
         return (info.last_status != info.status ||
                 info.last_status_cTM == BatteryInfo.DEFAULT_LAST_STATUS_CTM ||
                 info.last_percent == BatteryInfo.DEFAULT_LAST_PERCENT ||
-                info.last_status_cTM > System.currentTimeMillis() ||
+                info.last_status_cTM > now ||
                 info.last_plugged != info.plugged ||
                 (info.plugged == BatteryInfo.PLUGGED_UNPLUGGED && info.percent > previous_charge + 20));
     }
 
     private void handleUpdateWithChangedStatus() {
-        SharedPreferences.Editor editor = sp_store.edit();
-        long time = System.currentTimeMillis();
-
-        editor.putLong(BatteryInfo.KEY_LAST_STATUS_CTM, time);
-        editor.putInt(BatteryInfo.KEY_LAST_STATUS, info.status);
-        editor.putInt(BatteryInfo.KEY_LAST_PERCENT, info.percent);
-        editor.putInt(BatteryInfo.KEY_LAST_PLUGGED, info.plugged);
-        editor.putInt(KEY_PREVIOUS_CHARGE, info.percent);
-        editor.putInt(KEY_PREVIOUS_TEMP, info.temperature);
-        editor.putInt(KEY_PREVIOUS_HEALTH, info.health);
-
-        editor.commit();
+        updated_lasts = true;
+        sps_editor.putLong(BatteryInfo.KEY_LAST_STATUS_CTM, now);
+        sps_editor.putInt(BatteryInfo.KEY_LAST_STATUS, info.status);
+        sps_editor.putInt(BatteryInfo.KEY_LAST_PERCENT, info.percent);
+        sps_editor.putInt(BatteryInfo.KEY_LAST_PLUGGED, info.plugged);
+        sps_editor.putInt(KEY_PREVIOUS_CHARGE, info.percent);
+        sps_editor.putInt(KEY_PREVIOUS_TEMP, info.temperature);
+        sps_editor.putInt(KEY_PREVIOUS_HEALTH, info.health);
     }
 
     private void handleUpdateWithSameStatus() {
-        SharedPreferences.Editor editor = sp_store.edit();
-        long time = System.currentTimeMillis();
-
         if (info.percent % 10 == 0) {
-            editor.putInt(KEY_PREVIOUS_CHARGE, info.percent);
-            editor.putInt(KEY_PREVIOUS_TEMP, info.temperature);
-            editor.putInt(KEY_PREVIOUS_HEALTH, info.health);
+            sps_editor.putInt(KEY_PREVIOUS_CHARGE, info.percent);
+            sps_editor.putInt(KEY_PREVIOUS_TEMP, info.temperature);
+            sps_editor.putInt(KEY_PREVIOUS_HEALTH, info.health);
         }
-
-        editor.commit();
     }
 
     private String formatTime(Date d) {
