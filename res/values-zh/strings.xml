@@ -9,7 +9,6 @@
   <string name="cancel" formatted="false">取消</string>
   <string name="confirm_close" formatted="false">確認退出？</string>
   <string name="confirm_close_hint" formatted="false">電量指示器將完全退出，狀態列電量指示圖標將不再顯示。\n\n如果您想讓本程序背景運行，可以單擊手機「返回」鍵關閉主視窗。</string>
-  <string name="confirm_clear_logs" formatted="false">確認清理所有日誌？</string>
   <string name="okay" formatted="false">完成</string>
   <string name="menu_settings" formatted="false">設定</string>
   <string name="menu_close" formatted="false">關閉</string>
@@ -21,17 +20,12 @@
   <string name="celsius" formatted="false">攝氏溫度</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="inaccessible_storage" formatted="false">SD卡無法存取。</string>
-  <string name="inaccessible_w_reason" formatted="false">SD卡無法存取：</string>
-  <string name="read_only_storage" formatted="false">SD卡已設定為「唯讀」模式。</string>
-  <string name="file_written" formatted="false">文件已在SD卡根目錄成功創建。</string>
   <string name="status_unplugged" formatted="false">拔下電源</string>
   <string name="status_unknown" formatted="false">未知</string>
   <string name="status_charging" formatted="false">充電中</string>
   <string name="status_discharging" formatted="false">放電中</string>
   <string name="status_not_charging" formatted="false">未充電</string>
   <string name="status_fully_charged" formatted="false">電池充滿</string>
-  <string name="status_plugged_in" formatted="false">插入電源</string>
   <string name="health_unknown" formatted="false">未知</string>
   <string name="health_good" formatted="false">正常</string>
   <string name="health_overheat" formatted="false">過熱</string>
@@ -44,7 +38,6 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="logs_empty" formatted="false">日誌記錄為空</string>
   <string name="since" formatted="false">開始於</string>
   <string name="currently_using" formatted="false">當前使用</string>
   <string name="currently_set_to" formatted="false">"當前設定為"</string>
@@ -74,22 +67,6 @@
   <string name="pref_please_upgrade" formatted="false">專業版包含了以紅色、黃色及綠色圖標提示剩餘電量等級、電池狀態記錄、自動/手動關閉鎖屏、充電/放電剩餘時間預估等多種高級功能。</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">確認切換到華氏單位？</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android系統以攝氏單位報告電池溫度信息。若您想使溫度信息以華氏單位顯示，請勾選此項。</string>
-  <string name="boot_pref_always" formatted="false">始終</string>
-  <string name="boot_pref_never" formatted="false">從不</string>
-  <string name="boot_pref_if_running" formatted="false">關機時運行</string>
-  <string name="status_dur_always" formatted="false">始終</string>
-  <string name="status_dur_after_1h" formatted="false">一小時後</string>
-  <string name="status_dur_after_2h" formatted="false">兩小時後</string>
-  <string name="status_dur_after_3h" formatted="false">三小時後</string>
-  <string name="status_dur_after_6h" formatted="false">六小時後</string>
-  <string name="status_dur_after_12h" formatted="false">十二小時後</string>
-  <string name="age_1_day" formatted="false">一天</string>
-  <string name="age_2_days" formatted="false">兩天</string>
-  <string name="age_4_days" formatted="false">四天</string>
-  <string name="age_1_week" formatted="false">一周</string>
-  <string name="age_2_weeks" formatted="false">二周</string>
-  <string name="age_3_weeks" formatted="false">三周</string>
-  <string name="age_4_weeks" formatted="false">四周</string>
   <plurals name="n_log_items">
     <item quantity="one">%d項日誌記錄</item>
     <item quantity="other">%d項日誌記錄</item>

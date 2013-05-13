@@ -10,10 +10,6 @@
   <string name="cancel" formatted="false">Nutraukti</string>
   <string name="confirm_close" formatted="false">Tikrai Uždaryti?</string>
   <string name="confirm_close_hint" formatted="false">Baterijos Indikatorius bus visiškai uždarytas ir Jūs jo nebematysite savo būsenos juostoje.\n\nJei jus tiesiog norite palikti pagrindinį langą ir leisti indikatoriui toliau veikti, paspauskite Nutraukti ir tada paspauskite Grįžti mygtuką, ant savo telefono.</string>
-  <string name="confirm_clear_logs" formatted="false">Ar tikrai ištrinti visus įrašus?</string>
-  <string name="confirm_ten_percent_enable" formatted="false">Ar tikrai įjungti 10% Režimą?</string>
-  <string name="confirm_ten_percent_disable" formatted="false">Ar tikrai išjungti 10% Režimą?</string>
-  <string name="confirm_ten_percent_hint" formatted="false">Įspėjimas: Keičiant šį nustatymą (jį įjungiant ir išjungiant), anuliuosis spalvų pasirinkimai.\n\nJei Jūs turite: Motorola Droid, Droid X, Droid 2, Defy, ar Samsung Moment prietaisą, Jums reikėtų tai įjungti ir palikti. Visų kitų prietaisų turėtojai, galite palikti išjungtą.</string>
   <string name="okay" formatted="false">Gerai</string>
   <string name="menu_settings" formatted="false">Nustatymai</string>
   <string name="menu_close" formatted="false">Uždaryti</string>
@@ -25,23 +21,12 @@
   <string name="celsius" formatted="false">Celsijus</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="inaccessible_storage" formatted="false">SD kortelė nepasiekiama.</string>
-  <string name="inaccessible_w_reason" formatted="false">SD kortelė nepasiekiama:</string>
-  <string name="read_only_storage" formatted="false">SD kortele yra \"read-only\"</string>
-  <string name="file_written" formatted="false">Failą sėkmingai įrašytas į SD kortelę.</string>
-  <string name="date" formatted="false">Data</string>
-  <string name="time" formatted="false">Laikas</string>
-  <string name="status" formatted="false">Būsena</string>
-  <string name="charge" formatted="false">įkrovimo_lygis</string>
-  <string name="temperature" formatted="false">laispnai_celsijaus</string>
-  <string name="voltage" formatted="false">voltai</string>
   <string name="status_unplugged" formatted="false">Atjungta</string>
   <string name="status_unknown" formatted="false">Nežinoma</string>
   <string name="status_charging" formatted="false">Įkraunama</string>
   <string name="status_discharging" formatted="false">Iškraunama</string>
   <string name="status_not_charging" formatted="false">Ne kraunama</string>
   <string name="status_fully_charged" formatted="false">Pilnai įkrauta</string>
-  <string name="status_plugged_in" formatted="false">Prijungta</string>
   <string name="health_unknown" formatted="false">Nežinoma</string>
   <string name="health_good" formatted="false">Gera Būklė</string>
   <string name="health_overheat" formatted="false">Perkaitimas</string>
@@ -54,23 +39,6 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="alarm_type_fully_charged" formatted="false">Pilnai įkrauta</string>
-  <string name="alarm_type_charge_drops" formatted="false">Įkrovimas žemiau</string>
-  <string name="alarm_type_charge_rises" formatted="false">Įkrovimas aukščiau</string>
-  <string name="alarm_type_temperature_rises" formatted="false">Temperatūra aukščiau</string>
-  <string name="alarm_type_health_failure" formatted="false">Būklės klaida</string>
-  <string name="alarm_type_entry_fully_charged" formatted="false">Visiškai įkrauta</string>
-  <string name="alarm_type_entry_charge_drops" formatted="false">Įkrovimas žemiau...</string>
-  <string name="alarm_type_entry_charge_rises" formatted="false">Įkrovimas aukščiau...</string>
-  <string name="alarm_type_entry_temperature_rises" formatted="false">Temperatūra aukščiau...</string>
-  <string name="alarm_type_entry_health_failure" formatted="false">Būklės klaida</string>
-  <string name="alarm_fully_charged" formatted="false">Baterija pilnai įkrauta</string>
-  <string name="alarm_charge_drops" formatted="false">"Baterijos lygis yra žemiau "</string>
-  <string name="alarm_charge_rises" formatted="false">"Baterijos lygis yra aukščiau "</string>
-  <string name="alarm_temp_rises" formatted="false">"Baterijos temp. yra aukščiau "</string>
-  <string name="alarm_health_failure" formatted="false">"Baterijos būklė yra: "</string>
-  <string name="alarm_text" formatted="false">Koreguoti aliarmus.</string>
-  <string name="logs_empty" formatted="false">Įrašai tušti</string>
   <string name="since" formatted="false">Nuo</string>
   <string name="currently_using" formatted="false">Dabar naudojama</string>
   <string name="currently_set_to" formatted="false">"Dabar nustatyta: "</string>
@@ -98,25 +66,8 @@
   <string name="pref_cat_more_settings_in_pro" formatted="false">Daugiau nustatytmų Pro versijoje</string>
   <string name="pref_please_upgrade" formatted="false">Pro versija turi daug daugiau nustatymų ir funkcijų: spalvotos ikonos, atsisiunčiami ikonų papildiniai, aliarmai, lango temos, baterijos statuso įrašų sudarymas, auto/rankinis ekrano užrakto išjungimas, įkrovimo/iškrovimo likęs laikas ir daugiau.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Pakeisti į Farengeitą</string>
-  <string name="alarm_pref_not_used" formatted="false">Nenaudojama šiam aliarmo tipui</string>
   <string name="pref_cat_notification_settings" formatted="false">Perspėjimų Nustatymai</string>
   <string name="silent" formatted="false">Tyla</string>
-  <string name="boot_pref_always" formatted="false">Visada</string>
-  <string name="boot_pref_never" formatted="false">Niekada</string>
-  <string name="boot_pref_if_running" formatted="false">Jei veikia išjungiant</string>
-  <string name="status_dur_always" formatted="false">Visada</string>
-  <string name="status_dur_after_1h" formatted="false">Po valandos</string>
-  <string name="status_dur_after_2h" formatted="false">Po 2-jų valandų</string>
-  <string name="status_dur_after_3h" formatted="false">Po 3-jų valandų</string>
-  <string name="status_dur_after_6h" formatted="false">Po 6-jų valandų</string>
-  <string name="status_dur_after_12h" formatted="false">Po 12-os valandų</string>
-  <string name="age_1_day" formatted="false">1 diena</string>
-  <string name="age_2_days" formatted="false">2 dienos</string>
-  <string name="age_4_days" formatted="false">4 dienos</string>
-  <string name="age_1_week" formatted="false">1 savaitė</string>
-  <string name="age_2_weeks" formatted="false">2 savaitės</string>
-  <string name="age_3_weeks" formatted="false">3 savaitės</string>
-  <string name="age_4_weeks" formatted="false">4 savaitės</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Įrašo Punktas</item>
     <item quantity="few">%d Įrašo Punktai</item>

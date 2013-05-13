@@ -10,10 +10,6 @@
   <string name="cancel" formatted="false">Anuleaza</string>
   <string name="confirm_close" formatted="false">Sigur inchideti?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator se va inchide complet. Informatiile despre baterie nu vor mai fi afisate in bara de stare a telefonului./n Daca doriti sa inchideti fereastra principala, pastrand afisarea informatiilor despre baterie, apasati Anuleaza si apoi butonul BACK al telefonului.</string>
-  <string name="confirm_clear_logs" formatted="false">Sigur stergeti toate logurile?</string>
-  <string name="confirm_ten_percent_enable" formatted="false">Sigur activati modul 10%?</string>
-  <string name="confirm_ten_percent_disable" formatted="false">Sigur dezactivati modul 10%</string>
-  <string name="confirm_ten_percent_hint" formatted="false">Avertisment: Schimbarea acestei setari (fie activarea fie dezactivarea ei) va reseta schema de culori.\nDaca aveti un Motorola Droid, Droid X, Droid 2, Defy, sau Samsung Moment, ar trebui sa activati aceasta setare imediat dupa prima instalare a aplicatiei si sa nu o modificati ulterior. Pentru toate celelalte dispozitive, din cate stim pana acum, aceasta setare nu ar trebui activata.</string>
   <string name="okay" formatted="false">Okay</string>
   <string name="tab_current_info" formatted="false">Informatie actuala</string>
   <string name="notification_until_charged" formatted="false">pana la incarcare completa</string>
@@ -31,23 +27,12 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="inaccessible_storage" formatted="false">Cartela SD nu este accesibila</string>
-  <string name="inaccessible_w_reason" formatted="false">Cartela SD nu este accesibila</string>
-  <string name="read_only_storage" formatted="false">Cartela SD nu este protejata la scriere (Read Only)</string>
-  <string name="file_written" formatted="false">Fisier scris cu succes in radacina cartelei SD</string>
-  <string name="date" formatted="false">data</string>
-  <string name="time" formatted="false">ora</string>
-  <string name="status" formatted="false">stare</string>
-  <string name="charge" formatted="false">procentaj_incarcare</string>
-  <string name="temperature" formatted="false">grade_celsius</string>
-  <string name="voltage" formatted="false">volti</string>
   <string name="status_unplugged" formatted="false">Deconectat</string>
   <string name="status_unknown" formatted="false">Necunoscut</string>
   <string name="status_charging" formatted="false">Se incarca</string>
   <string name="status_discharging" formatted="false">Se descarca</string>
   <string name="status_not_charging" formatted="false">Nu se incarca</string>
   <string name="status_fully_charged" formatted="false">Incarcat complet</string>
-  <string name="status_plugged_in" formatted="false">Conectat</string>
   <string name="health_unknown" formatted="false">Necunoscut</string>
   <string name="health_good" formatted="false">Stare buna</string>
   <string name="health_overheat" formatted="false">Supraincalzire</string>
@@ -60,16 +45,6 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">Wireless</string>
-  <string name="alarm_type_fully_charged" formatted="false">Incarcat complet</string>
-  <string name="alarm_type_charge_drops" formatted="false">Cand incarcarea scade sub</string>
-  <string name="alarm_type_charge_rises" formatted="false">Cand incarcare urca peste</string>
-  <string name="alarm_fully_charged" formatted="false">Bateria este acum incarcata complet</string>
-  <string name="alarm_charge_drops" formatted="false">"Nivelul bateriei este sub "</string>
-  <string name="alarm_charge_rises" formatted="false">"Nivelul bateriei este peste "</string>
-  <string name="alarm_temp_rises" formatted="false">"Temperatura bateriei este peste "</string>
-  <string name="alarm_health_failure" formatted="false">Calitatea Bateriei este:</string>
-  <string name="alarm_text" formatted="false">Selecteaza pentru a edita alarmele.</string>
-  <string name="logs_empty" formatted="false">Nu sunt loguri/loguri goale</string>
   <string name="since" formatted="false">De la</string>
   <string name="currently_using" formatted="false">Folosire curenta</string>
   <string name="currently_set_to" formatted="false">"Acum setat la: "</string>

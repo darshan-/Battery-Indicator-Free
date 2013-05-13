@@ -33,22 +33,13 @@ public class PredictorCore {
     public static final int EIGHT_HOURS     = ONE_HOUR *  8;
     public static final int TWELVE_HOURS    = ONE_HOUR * 12;
     public static final int ONE_DAY         = ONE_HOUR * 24;
-    public static final int SINCE_STATUS_CHANGE = -1;
 
-    public static final int TYPE_FIVE_MINUTES    =  1;
-    public static final int TYPE_TEN_MINUTES     =  2;
-    public static final int TYPE_FIFTEEN_MINUTES =  3;
-    public static final int TYPE_THIRTY_MINUTES  =  4;
-    public static final int TYPE_ONE_HOUR        =  5;
-    public static final int TYPE_TWO_HOURS       =  6;
-    public static final int TYPE_THREE_HOURS     =  7;
-    public static final int TYPE_FOUR_HOURS      =  8;
-    public static final int TYPE_SIX_HOURS       =  9;
-    public static final int TYPE_EIGHT_HOURS     = 10;
-    public static final int TYPE_TWELVE_HOURS    = 11;
-    public static final int TYPE_ONE_DAY         = 12;
-    public static final int TYPE_STATUS_CHANGE   = 13;
-    public static final int TYPE_LONG_TERM       = 14;
+    public static final int SINCE_STATUS_CHANGE = -1;
+    public static final int LONG_TERM = -2;
+    public static final int AUTOMAGIC = -3;
+    public static final int WEIGHTED_FIVE = -4;
+
+    private static final int MIN_PREDICTION = ONE_MINUTE;
 
     private static final double WEIGHT_OLD_AVERAGE = 0.998;
     private static final double WEIGHT_NEW_DATA =  1 - WEIGHT_OLD_AVERAGE;
@@ -58,8 +49,7 @@ public class PredictorCore {
                                             4 * 60 * 60 * 1000 / 100,
                                             6 * 60 * 60 * 1000 / 100 };
 
-    private int recent_duration = FIVE_MINUTES;
-    private int prediction_type = TYPE_FIVE_MINUTES;
+    private int prediction_type = AUTOMAGIC;
 
     private long[] timestamps = new long[101];
     private int ts_head;
@@ -87,10 +77,19 @@ public class PredictorCore {
         average[RECHARGE_USB] = ave_recharge_usb == -1 ? DEFAULT[RECHARGE_USB] : ave_recharge_usb;
     }
 
+    public void setPredictionType(int type) {
+        prediction_type = type;
+    }
+
     public void update(BatteryInfo info, long when) {
         cur_info = info;
         cur_charging_status = chargingStatusForCurInfo();
         now = when;
+
+        if (last_prediction < now + MIN_PREDICTION) {
+            last_prediction = now + MIN_PREDICTION;
+            info.prediction.update(last_prediction);
+        }
 
         if (info.status != last_status ||
             info.plugged != last_plugged ||
@@ -175,6 +174,10 @@ public class PredictorCore {
 
     private void updateInfoPrediction() {
         last_prediction = prediction();
+
+        if (last_prediction < now + MIN_PREDICTION)
+            last_prediction = now + MIN_PREDICTION;
+
         cur_info.prediction.update(last_prediction);
         setLasts();
     }
@@ -211,7 +214,7 @@ public class PredictorCore {
             from = now;
         }
 
-        return from + (long) ((100 - level) * recent_average);
+        return from + (long) ((101 - level) * recent_average);
     }
 
     private void setLasts() {
@@ -221,37 +224,121 @@ public class PredictorCore {
     }
 
     private double recentAverage() {
+        if (prediction_type > 100)
+            return recentAverageByTime(prediction_type);
+        else if (prediction_type > 0)
+            return recentAverageByPoints(prediction_type);
+        else if (prediction_type == SINCE_STATUS_CHANGE)
+            return recentAverageByPoints(Math.abs(ts_head - cur_info.percent));
+        else if (prediction_type == AUTOMAGIC)
+            return middleOf(recentAverageByTime(FIVE_MINUTES), recentAverageByPoints(5), average[cur_charging_status]);
+        else if (prediction_type == WEIGHTED_FIVE)
+            return weightedAverageFivePoints();
+        else //if (prediction_type == LONG_TERM)
+            return average[cur_charging_status];
+    }
+
+    private double middleOf(double first, double second, double third) {
+        if ((first >= second && second >= third) || (third >= second && second >= first))
+            return second;
+        else if ((second >= first && first >= third) || (third >= first && first >= second))
+            return first;
+        else
+            return third;
+    }
+
+    private double recents[] = new double[5]; // Don't want to allocate every time
+    private static final double recencyWeights[]  = {0.39, 0.27, 0.18, 0.11, 0.05}; // Most recent to least recent
+    //private static final double durationWeights[] = {0.09, 0.13, 0.18, 0.25, 0.30}; // Shortest to longest
+    private double weightedAverageFivePoints() {
+        double total_ms = 0d;
+        double needed_points = recents.length;
+
+        int start = cur_info.percent;
+        if (partial) start -= dir_inc;
+
+        for (int i = start, ri = 0; ri < recents.length; ri++, i += dir_inc) {
+            if (i >= ts_head)
+                recents[ri] = average[cur_charging_status];
+            else if (i == start && partial)
+                recents[ri] = now - timestamps[cur_info.percent];
+            else
+                recents[ri] = timestamps[i] - timestamps[i + dir_inc];
+        }
+
+        double average = 0.0;
+        for (int ri = 0; ri < recents.length; ri++)
+            average += recents[ri] * recencyWeights[ri];
+
+        //java.util.Arrays.sort(recents);
+
+        //for (int ri = 0; ri < recents.length; ri++)
+        //    average += recents[ri] * durationWeights[ri];
+
+        return average;// / 2.0;
+    }
+
+    private double recentAverageByTime(double duration_in_ms) {
         double total_points = 0d;
         double total_ms = 0d;
-        double needed_ms = recent_duration;
+        double needed_ms = duration_in_ms;
 
         int start = cur_info.percent;
         if (partial) start -= dir_inc;
 
         for (int i = start; i != ts_head; i += dir_inc) {
-            double t;
+            double potential_ms;
 
             if (i == start && partial)
-                t = now - timestamps[cur_info.percent];
+                potential_ms = now - timestamps[cur_info.percent];
             else
-                t = timestamps[i] - timestamps[i + dir_inc];
+                potential_ms = timestamps[i] - timestamps[i + dir_inc];
 
-            if (t > needed_ms) {
-                total_points += needed_ms / t;
+            if (potential_ms > needed_ms) {
+                total_points += needed_ms / potential_ms;
                 total_ms += needed_ms;
                 needed_ms = 0;
                 break;
             }
 
             total_points += 1;
-            total_ms += t;
-            needed_ms -= t;
+            total_ms += potential_ms;
+            needed_ms -= potential_ms;
         }
 
         if (needed_ms > 0)
             total_points += needed_ms / average[cur_charging_status];
 
-        return recent_duration / total_points;
+        return duration_in_ms / total_points;
+    }
+
+    private double recentAverageByPoints(double duration_in_points) {
+        double total_ms = 0d;
+        double needed_points = duration_in_points;
+        //double cur = -1d;//For using only most recent when it's large enough
+
+        int start = cur_info.percent;
+        if (partial) start -= dir_inc;
+
+        for (int i = start; i != ts_head && needed_points > 0; i += dir_inc) {
+            double new_ms;
+
+            if (i == start && partial)
+                new_ms = now - timestamps[cur_info.percent];
+            else
+                new_ms = timestamps[i] - timestamps[i + dir_inc];
+
+            //if (cur < 0) cur = new_ms;//For using only most recent when it's large enough
+            //
+            total_ms += new_ms;
+            needed_points -= 1;
+        }
+
+        if (needed_points > 0)
+            total_ms += needed_points * average[cur_charging_status];
+
+        //if (cur > total_ms / 2) return cur;//For using only most recent when it's large enough
+        return total_ms / duration_in_points;
     }
 
     private int chargingStatusForCurInfo() {

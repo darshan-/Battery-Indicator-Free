@@ -10,9 +10,6 @@
   <string name="cancel" formatted="false">Prekliči</string>
   <string name="confirm_close" formatted="false">Ste prepričani da želite zapreti?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator bo popolnoma zaprt in ga ne boste več videli v statusni vrstici.\n\nČe bi radi zaprli le glavno okno in pustili indikator zagnan, pritisnite Prekliči in nato samo pritisnite tipko NAZAJ na napravi da zapustite glavno okno.</string>
-  <string name="confirm_clear_logs" formatted="false">Ste prepričani da želite izbrisati vsa poročila?</string>
-  <string name="confirm_ten_percent_enable" formatted="false">Ste prepričani da želite omogočiti 10% način?</string>
-  <string name="confirm_ten_percent_disable" formatted="false">Ste prepričani da želite onemogočiti 10% način?</string>
   <string name="okay" formatted="false">Vredu</string>
   <string name="menu_settings" formatted="false">Nastavitve</string>
   <string name="menu_close" formatted="false">Zapri</string>
@@ -24,23 +21,12 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="inaccessible_storage" formatted="false">SD kartica je nedostopna.</string>
-  <string name="inaccessible_w_reason" formatted="false">SD kartica nedostopna:</string>
-  <string name="read_only_storage" formatted="false">SD kartica samo za branje.</string>
-  <string name="file_written" formatted="false">Datoteka uspešno zapisana v korensko mapo SD kartice.</string>
-  <string name="date" formatted="false">datum</string>
-  <string name="time" formatted="false">čas</string>
-  <string name="status" formatted="false">status</string>
-  <string name="charge" formatted="false">napolnjen_procent</string>
-  <string name="temperature" formatted="false">stopinj_celzija</string>
-  <string name="voltage" formatted="false">voltov</string>
   <string name="status_unplugged" formatted="false">Odklopljeno</string>
   <string name="status_unknown" formatted="false">Neznano</string>
   <string name="status_charging" formatted="false">Polnjenje</string>
   <string name="status_discharging" formatted="false">Praznenje</string>
   <string name="status_not_charging" formatted="false">Se ne polni</string>
   <string name="status_fully_charged" formatted="false">Napolnjeno</string>
-  <string name="status_plugged_in" formatted="false">Priklopljeno</string>
   <string name="health_unknown" formatted="false">Neznano</string>
   <string name="health_good" formatted="false">Dobro zdravje</string>
   <string name="health_overheat" formatted="false">Pregreto</string>
@@ -53,21 +39,6 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="alarm_type_fully_charged" formatted="false">Napolnjeno</string>
-  <string name="alarm_type_charge_drops" formatted="false">Baterija pade pod</string>
-  <string name="alarm_type_charge_rises" formatted="false">Baterija pride nad</string>
-  <string name="alarm_type_temperature_rises" formatted="false">Temperatura pride nad</string>
-  <string name="alarm_type_entry_fully_charged" formatted="false">Se napolni</string>
-  <string name="alarm_type_entry_charge_drops" formatted="false">Baterije pade pod...</string>
-  <string name="alarm_type_entry_charge_rises" formatted="false">Baterija pride nad...</string>
-  <string name="alarm_type_entry_temperature_rises" formatted="false">Temperatura pride nad...</string>
-  <string name="alarm_fully_charged" formatted="false">Baterija je popolnoma napolnjena</string>
-  <string name="alarm_charge_drops" formatted="false">"Stanje baterije pod "</string>
-  <string name="alarm_charge_rises" formatted="false">"Stanje baterije nad "</string>
-  <string name="alarm_temp_rises" formatted="false">"Temperatura baterije nad "</string>
-  <string name="alarm_health_failure" formatted="false">"Zdravje baterije je: "</string>
-  <string name="alarm_text" formatted="false">Izberite za urejanje alarmov.</string>
-  <string name="logs_empty" formatted="false">Poročila so prazna</string>
   <string name="since" formatted="false">od</string>
   <string name="currently_using" formatted="false">Trenutno uporabljeno</string>
   <string name="currently_set_to" formatted="false">"Trenutno nastavljeno na: "</string>
@@ -81,23 +52,6 @@
   <string name="pref_hint" formatted="false">Namig: Pritisnite MENU za pomoč.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Več nastavitev v Pro različici</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Pretvori v Fahrenheit</string>
-  <string name="alarm_pref_not_used" formatted="false">Se ne uporablja za to vrsto alarma.</string>
   <string name="pref_cat_notification_settings" formatted="false">Nastavitve obvestil</string>
   <string name="silent" formatted="false">Tiho</string>
-  <string name="boot_pref_always" formatted="false">Vedno</string>
-  <string name="boot_pref_never" formatted="false">Nikoli</string>
-  <string name="boot_pref_if_running" formatted="false">Če je zagnano ob izklopu</string>
-  <string name="status_dur_always" formatted="false">Vedno</string>
-  <string name="status_dur_after_1h" formatted="false">Po 1 uri</string>
-  <string name="status_dur_after_2h" formatted="false">Po 2 urah</string>
-  <string name="status_dur_after_3h" formatted="false">Po 3 urah</string>
-  <string name="status_dur_after_6h" formatted="false">Po 6 urah</string>
-  <string name="status_dur_after_12h" formatted="false">Po 12 urah</string>
-  <string name="age_1_day" formatted="false">1 dan</string>
-  <string name="age_2_days" formatted="false">2 dnei</string>
-  <string name="age_4_days" formatted="false">4 dni</string>
-  <string name="age_1_week" formatted="false">1 teden</string>
-  <string name="age_2_weeks" formatted="false">2 tedna</string>
-  <string name="age_3_weeks" formatted="false">3 tedne</string>
-  <string name="age_4_weeks" formatted="false">4 tedne</string>
 </resources>

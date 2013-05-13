@@ -9,10 +9,6 @@
   <string name="cancel" formatted="false">Cancelar</string>
   <string name="confirm_close" formatted="false">Fechar mesmo?</string>
   <string name="confirm_close_hint" formatted="false">O Estado da Bateria vai ser fechado completamente, e não o vais ver na tua barra de estado.\n\nSe apenas queres sair da janela principal e manter o indicador, toca em Cancel e depois carrega na tecla Back do teu aparelho.</string>
-  <string name="confirm_clear_logs" formatted="false">Limpar todos os relatórios?</string>
-  <string name="confirm_ten_percent_enable" formatted="false">Activar mesmo o modo 10%?</string>
-  <string name="confirm_ten_percent_disable" formatted="false">Desactivar mesmo o modo 10%?</string>
-  <string name="confirm_ten_percent_hint" formatted="false">Aviso: Mudar esta definição (tanto desactivar como activar) vai repor as tuas definições de cor.\n\nSe tens um Motorola Droid, Droid X, Droid 2, Defy, ou um Samsung Moment, deves activar isto quando instalares a aplicação, e depois não lhe mexer mais. Nos outros telemóveis, pelo que sei, deves deixar isto sempre desactivado.</string>
   <string name="okay" formatted="false">OK</string>
   <string name="menu_settings" formatted="false">Definições</string>
   <string name="menu_close" formatted="false">Fechar</string>
@@ -24,23 +20,6 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="inaccessible_storage" formatted="false">Cartão SD inacessível</string>
-  <string name="inaccessible_w_reason" formatted="false">Cartão SD inacessível:</string>
-  <string name="read_only_storage" formatted="false">Cartão SD é apenas de leitura</string>
-  <string name="file_written" formatted="false">Ficheiro escrito com sucesso.</string>
-  <string name="date" formatted="false">Data</string>
-  <string name="time" formatted="false">Hora</string>
-  <string name="status" formatted="false">Estado</string>
-  <string name="charge" formatted="false">Percentagem de Carga</string>
-  <string name="temperature" formatted="false">Graus Celsius</string>
-  <string name="voltage" formatted="false">Volts</string>
-  <string name="alarm_fully_charged" formatted="false">Bateria está completamente carregada</string>
-  <string name="alarm_charge_drops" formatted="false">"Carga da bateria abaixo de "</string>
-  <string name="alarm_charge_rises" formatted="false">"Carga da bateria acima de "</string>
-  <string name="alarm_temp_rises" formatted="false">"Temperatura da bateria está acima de "</string>
-  <string name="alarm_health_failure" formatted="false">"Saúde da bateria é: "</string>
-  <string name="alarm_text" formatted="false">Selecciona para editar alarmes.</string>
-  <string name="logs_empty" formatted="false">Relatórios vazios</string>
   <string name="since" formatted="false">Desde</string>
   <string name="currently_using" formatted="false">A usar</string>
   <string name="currently_set_to" formatted="false">"Definido para: "</string>

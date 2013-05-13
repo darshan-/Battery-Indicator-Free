@@ -10,10 +10,6 @@
   <string name="cancel" formatted="false">Annuler</string>
   <string name="confirm_close" formatted="false">Fermer l\'application ?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator va être complètement fermé et l\'indicateur de batterie va être retiré de la barre d\'état.\n\nSi vous souhaitez juste fermer la fenêtre principale et garder l\'indicateur de batterie affiché, appuyez sur Annuler et pressez simplement le bouton retour de votre téléphone.</string>
-  <string name="confirm_clear_logs" formatted="false">Voulez-vous vraiment vider les journaux ?</string>
-  <string name="confirm_ten_percent_enable" formatted="false">Activer le \"Mode 10%\" ?</string>
-  <string name="confirm_ten_percent_disable" formatted="false">Désactiver le \"Mode 10%\" ?</string>
-  <string name="confirm_ten_percent_hint" formatted="false">Attention : Activer ou désactiver ce paramètre réinitialisera vos paramètres de couleurs.\n\nSi vous avez un Motorola Droid, Droid X, Droid 2, Defy, ou un Samsung Moment, vous devez activer cette option dès le début et la laisser activée. Pour tous les autres téléphones, autant que je sache, il faut la laisser désactivée.</string>
   <string name="okay" formatted="false">Ok</string>
   <string name="menu_settings" formatted="false">Paramètres</string>
   <string name="menu_close" formatted="false">Fermer</string>
@@ -25,23 +21,12 @@
   <string name="celsius" formatted="false">Celsius</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">V</string>
-  <string name="inaccessible_storage" formatted="false">Carte SD inaccessible.</string>
-  <string name="inaccessible_w_reason" formatted="false">Carte SD inaccessible :</string>
-  <string name="read_only_storage" formatted="false">Carte SD en lecture seule.</string>
-  <string name="file_written" formatted="false">Fichier correctement écrit à la racine de la carte SD.</string>
-  <string name="date" formatted="false">date</string>
-  <string name="time" formatted="false">heure</string>
-  <string name="status" formatted="false">statut</string>
-  <string name="charge" formatted="false">pourcentage_de_charge</string>
-  <string name="temperature" formatted="false">degres_celsius</string>
-  <string name="voltage" formatted="false">volts</string>
   <string name="status_unplugged" formatted="false">Débranché</string>
   <string name="status_unknown" formatted="false">Inconnu</string>
   <string name="status_charging" formatted="false">En charge</string>
   <string name="status_discharging" formatted="false">Se décharge</string>
   <string name="status_not_charging" formatted="false">Pas de charge</string>
   <string name="status_fully_charged" formatted="false">Complètement chargée</string>
-  <string name="status_plugged_in" formatted="false">Branché</string>
   <string name="health_unknown" formatted="false">Inconnu</string>
   <string name="health_good" formatted="false">Bon état</string>
   <string name="health_overheat" formatted="false">Surchauffe</string>
@@ -54,23 +39,6 @@
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="alarm_type_fully_charged" formatted="false">Complètement chargée</string>
-  <string name="alarm_type_charge_drops" formatted="false">Charge inférieure à</string>
-  <string name="alarm_type_charge_rises" formatted="false">Charge supérieure à</string>
-  <string name="alarm_type_temperature_rises" formatted="false">Température supérieure à</string>
-  <string name="alarm_type_health_failure" formatted="false">Santé critique</string>
-  <string name="alarm_type_entry_fully_charged" formatted="false">Charge terminée</string>
-  <string name="alarm_type_entry_charge_drops" formatted="false">Charge inférieure à...</string>
-  <string name="alarm_type_entry_charge_rises" formatted="false">Charge supérieure à...</string>
-  <string name="alarm_type_entry_temperature_rises" formatted="false">Température supérieure à...</string>
-  <string name="alarm_type_entry_health_failure" formatted="false">Santé critique</string>
-  <string name="alarm_fully_charged" formatted="false">La batterie est complètement chargée</string>
-  <string name="alarm_charge_drops" formatted="false">"Charge de la batterie inférieure à "</string>
-  <string name="alarm_charge_rises" formatted="false">"Charge de la batterie supérieure à "</string>
-  <string name="alarm_temp_rises" formatted="false">"T° de la batterie supérieure à "</string>
-  <string name="alarm_health_failure" formatted="false">"Santé de la batterie : "</string>
-  <string name="alarm_text" formatted="false">Sélectionnez pour modifier l\'alarme.</string>
-  <string name="logs_empty" formatted="false">Les journaux sont vides</string>
   <string name="since" formatted="false">depuis</string>
   <string name="currently_using" formatted="false">Valeur actuelle :</string>
   <string name="currently_set_to" formatted="false">"Valeur actuelle :"</string>
@@ -100,25 +68,8 @@
   <string name="pref_please_upgrade" formatted="false">La version Pro possède de nombreux autres paramètres et fonctionnalités, comme la couleur de l\'icône, les thèmes de la fenêtre principale, et bien plus...</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Convertir en Fahrenheit</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android donne la température de la batterie en degrés Celsius. Si vous préférez avoir la température en degrés Fahrenheit, cochez cette option et l\'application changera l\'unité pour vous.</string>
-  <string name="alarm_pref_not_used" formatted="false">Non utilisé par ce type d\'alarme</string>
   <string name="pref_cat_notification_settings" formatted="false">Paramètres de notification</string>
   <string name="silent" formatted="false">Silence</string>
-  <string name="boot_pref_always" formatted="false">Toujours</string>
-  <string name="boot_pref_never" formatted="false">Jamais</string>
-  <string name="boot_pref_if_running" formatted="false">Si fonctionne lors de l\'arrêt</string>
-  <string name="status_dur_always" formatted="false">Toujours</string>
-  <string name="status_dur_after_1h" formatted="false">Après 1 heure</string>
-  <string name="status_dur_after_2h" formatted="false">Après 2 heures</string>
-  <string name="status_dur_after_3h" formatted="false">Après 3 heures</string>
-  <string name="status_dur_after_6h" formatted="false">Après 6 heures</string>
-  <string name="status_dur_after_12h" formatted="false">Après 12 heures</string>
-  <string name="age_1_day" formatted="false">1 jour</string>
-  <string name="age_2_days" formatted="false">2 jours</string>
-  <string name="age_4_days" formatted="false">4 jours</string>
-  <string name="age_1_week" formatted="false">1 semaine</string>
-  <string name="age_2_weeks" formatted="false">2 semaines</string>
-  <string name="age_3_weeks" formatted="false">3 semaines</string>
-  <string name="age_4_weeks" formatted="false">4 semaines</string>
   <plurals name="n_log_items">
     <item quantity="one">%d élément de journal</item>
     <item quantity="other">%d éléments de journal</item>

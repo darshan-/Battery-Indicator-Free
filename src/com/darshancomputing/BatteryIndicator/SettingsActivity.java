@@ -148,8 +148,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     private int iAmberThresh;
     private int iGreenThresh;
 
-    private Boolean ten_percent_mode;
-
     private int menu_res = R.menu.settings;
 
     private static final String[] fivePercents = {
@@ -173,14 +171,8 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         int i; /* How many values to remove from the front */
         int j; /* How many values to remove from the end   */
 
-        if (ten_percent_mode) {
-            for (i = 0; i < tenPercentEntries.length - 1; i++)
-                if (Integer.valueOf(tenPercentEntries[i]) >= Integer.valueOf(x)) break;
-            j = (100 - y) / 10;
-        } else {
-            i = (x / 5) - 1;
-            j = (100 - y) / 5;
-        }
+        i = (x / 5) - 1;
+        j = (100 - y) / 5;
 
         a[0] = i;
         a[1] = j;
@@ -300,7 +292,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
         try {
             serviceMessenger.send(outgoing);
-        } catch (android.os.RemoteException e) {
+        } catch (Exception e) {
             startService(new Intent(this, BatteryInfoService.class));
         }
     }
@@ -361,29 +353,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         Str str = new Str(getResources());
 
         switch (id) {
-        /* Android saves and reuses these dialogs; we want different titles for each, hence two IDs */
-        case DIALOG_CONFIRM_TEN_PERCENT_ENABLE:
-        case DIALOG_CONFIRM_TEN_PERCENT_DISABLE:
-            builder.setTitle(ten_percent_mode ? str.confirm_ten_percent_disable : str.confirm_ten_percent_enable)
-                .setMessage(str.confirm_ten_percent_hint)
-                .setCancelable(false)
-                .setPositiveButton(str.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface di, int id) {
-                        ten_percent_mode = ! ten_percent_mode;
-                        ((CheckBoxPreference) mPreferenceScreen.findPreference(KEY_TEN_PERCENT_MODE)).setChecked(ten_percent_mode);
-                        di.cancel();
-
-                        restartThisScreen();
-                    }
-                })
-                .setNegativeButton(str.cancel, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface di, int id) {
-                        di.cancel();
-                    }
-                });
-
-            dialog = builder.create();
-            break;
         default:
             dialog = null;
         }

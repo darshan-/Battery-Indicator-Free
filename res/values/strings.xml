@@ -19,23 +19,6 @@
     running, press Cancel and then just press your device\'s BACK
     button to leave the main window.
   </string>
-
-  <string formatted="false" name="confirm_clear_logs">Really clear all logs?</string>
-
-  <string formatted="false" name="configure_log_filter">Show which log items?</string>
-
-  <string formatted="false" name="confirm_ten_percent_enable">Really enable 10% Mode?</string>
-  <string formatted="false" name="confirm_ten_percent_disable">Really disable 10% Mode?</string>
-  <string formatted="false" name="confirm_ten_percent_hint">
-    Warning: Changing this setting (both enabling and disabling it)
-    will reset your color settings.\n
-
-    \nIf you have a Motorola Droid, Droid X, Droid 2, Defy,
-    or Samsung Moment, you should turn
-    this on when you first get the app, and then leave it alone.  All
-    other devices, as far as I know, should always leave this off.
-  </string>
-
   <string formatted="false" name="okay">Okay</string>
   <string formatted="false" name="tab_current_info">Current Info</string>
   <string formatted="false" name="notification_until_charged">" until charged"</string>
@@ -54,27 +37,13 @@
   <string formatted="false" name="celsius">Celsius</string>
   <string formatted="false" name="celsius_symbol">C</string>
   <string formatted="false" name="volt_symbol">V</string>
-  <string formatted="false" name="inaccessible_storage">SD Card is inaccessible.</string>
-  <string formatted="false" name="inaccessible_w_reason">SD Card inaccessible: </string>
-  <string formatted="false" name="read_only_storage">SD Card is read only.</string>
-  <string formatted="false" name="file_written">File successfully written to root of SD card.</string>
-
   <!-- These are used for the CSV export. -->
-  <string formatted="false" name="date">date</string>
-  <string formatted="false" name="time">time</string>
-  <string formatted="false" name="status">status</string>
-  <string formatted="false" name="charge">charge_percentage</string>
-  <string formatted="false" name="temperature">degrees_celsius</string>
-  <string formatted="false" name="voltage">volts</string>
-
   <string formatted="false" name="status_unplugged">Unplugged</string>
   <string formatted="false" name="status_unknown">Unknown</string>
   <string formatted="false" name="status_charging">Charging</string>
   <string formatted="false" name="status_discharging">Discharging</string>
   <string formatted="false" name="status_not_charging">Not Charging</string>
   <string formatted="false" name="status_fully_charged">Fully Charged</string>
-  <string formatted="false" name="status_plugged_in">Plugged In</string>
-
   <string formatted="false" name="health_unknown">Unknown</string>
   <string formatted="false" name="health_good">Good Health</string>
   <string formatted="false" name="health_overheat">Overheat</string>
@@ -87,26 +56,6 @@
   <string formatted="false" name="plugged_usb">(USB)</string>
   <string formatted="false" name="plugged_unknown">(?)</string>
   <string formatted="false" name="plugged_wireless">(Wireless)</string>
-
-  <string formatted="false" name="alarm_type_fully_charged">Fully charged</string>
-  <string formatted="false" name="alarm_type_charge_drops">Charge drops below</string>
-  <string formatted="false" name="alarm_type_charge_rises">Charge rises above</string>
-  <string formatted="false" name="alarm_type_temperature_rises">Temperature rises above</string>
-  <string formatted="false" name="alarm_type_health_failure">Health failure</string>
-  <string formatted="false" name="alarm_type_entry_fully_charged">Becomes fully charged</string>
-  <string formatted="false" name="alarm_type_entry_charge_drops">Charge drops below...</string>
-  <string formatted="false" name="alarm_type_entry_charge_rises">Charge rises above...</string>
-  <string formatted="false" name="alarm_type_entry_temperature_rises">Temperature rises above...</string>
-  <string formatted="false" name="alarm_type_entry_health_failure">Health fails</string>
-
-  <string formatted="false" name="alarm_fully_charged">Battery is now fully charged</string>
-  <string formatted="false" name="alarm_charge_drops">"Battery charge is below "</string>
-  <string formatted="false" name="alarm_charge_rises">"Battery charge is above "</string>
-  <string formatted="false" name="alarm_temp_rises">"Battery temp. is above "</string>
-  <string formatted="false" name="alarm_health_failure">"Battery health is: "</string>
-  <string formatted="false" name="alarm_text">Select to edit alarms.</string>
-
-  <string formatted="false" name="logs_empty">Logs Are Empty</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Log Item</item>
     <item quantity="other">%d Log Items</item>
@@ -296,7 +245,6 @@
     \nNote that this will result in having the status bar icon used in
     the notification.
   </string>
-  <string formatted="false" name="pref_main_notification_priority">Main Notification Priority</string>
   <string formatted="false" name="pref_icon_set">Icon Set</string>
   <string formatted="false" name="pref_icon_set_help">
     Android comes in many flavors, so there is no one perfect icon set
@@ -341,37 +289,11 @@
   </string>
   <!--string name="pref_cat_device_specific_help"></string-->
   <!--string name="pref_alarm_enabled_summary"></string-->
-  <string formatted="false" name="alarm_pref_not_used">Not used for this alarm type</string>
   <string formatted="false" name="pref_cat_notification_settings">Notification Settings</string>
   <!--string name="pref_alarm_ringtone_summary"></string-->
   <string formatted="false" name="silent">Silent</string>
   <!--string name="pref_alarm_vibrate_summary"></string-->
   <!--string name="pref_alarm_lights_summary"></string-->
-  <string formatted="false" name="boot_pref_always">Always</string>
-  <string formatted="false" name="boot_pref_never">Never</string>
-  <string formatted="false" name="boot_pref_if_running">If running on shutdown</string>
-
-  <string formatted="false" name="status_dur_always">Always</string>
-  <string formatted="false" name="status_dur_after_1h">After 1 hour</string>
-  <string formatted="false" name="status_dur_after_2h">After 2 hours</string>
-  <string formatted="false" name="status_dur_after_3h">After 3 hours</string>
-  <string formatted="false" name="status_dur_after_6h">After 6 hours</string>
-  <string formatted="false" name="status_dur_after_12h">After 12 hours</string>
-
-  <string formatted="false" name="age_1_day">1 day</string>
-  <string formatted="false" name="age_2_days">2 days</string>
-  <string formatted="false" name="age_4_days">4 days</string>
-  <string formatted="false" name="age_1_week">1 week</string>
-  <string formatted="false" name="age_2_weeks">2 weeks</string>
-  <string formatted="false" name="age_3_weeks">3 weeks</string>
-  <string formatted="false" name="age_4_weeks">4 weeks</string>
-
-  <string formatted="false" name="notification_priority_max">Maximum</string>
-  <string formatted="false" name="notification_priority_high">High</string>
-  <string formatted="false" name="notification_priority_default">Default</string>
-  <string formatted="false" name="notification_priority_low">Low</string>
-  <string formatted="false" name="notification_priority_min">Minimum</string>
-
   <string formatted="false" name="icon_set_classic">Classic</string>
   <string formatted="false" name="icon_set_plain">Plain Number</string>
   <string formatted="false" name="icon_set_smaller">Smaller Number</string>
