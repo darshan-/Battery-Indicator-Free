@@ -130,7 +130,8 @@ public class BatteryInfoService extends Service {
         updatePredictorIntent.putExtra(EXTRA_UPDATE_PREDICTOR, true);
         updatePredictorPendingIntent = PendingIntent.getService(context, 0, updatePredictorIntent, 0);
 
-        registerReceiver(mBatteryInfoReceiver, batteryChanged);
+        Intent bc_intent = registerReceiver(mBatteryInfoReceiver, batteryChanged);
+        info.load(bc_intent, sp_store);
     }
 
     @Override
