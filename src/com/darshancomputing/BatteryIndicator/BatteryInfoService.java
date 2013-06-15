@@ -19,6 +19,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -39,7 +40,9 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
+
 import java.util.Date;
+import java.util.HashSet;
 
 public class BatteryInfoService extends Service {
     private final IntentFilter batteryChanged = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
@@ -49,19 +52,25 @@ public class BatteryInfoService extends Service {
 
     private NotificationManager mNotificationManager;
     private AlarmManager alarmManager;
-    private SharedPreferences settings;
-    private SharedPreferences sp_store;
-    SharedPreferences.Editor sps_editor;
+    private static SharedPreferences settings;
+    private static SharedPreferences sp_store;
+    private static SharedPreferences.Editor sps_editor;
 
     private Context context;
     private Resources res;
     private Str str;
     private BatteryLevel bl;
+    private CircleWidgetBackground cwbg;
     private BatteryInfo info;
     private long now;
     private boolean updated_lasts;
-    private java.util.HashSet<Messenger> clientMessengers;
-    private final Messenger messenger = new Messenger(new MessageHandler());
+    private static java.util.HashSet<Messenger> clientMessengers;
+    private static Messenger messenger;
+
+    private static HashSet<Integer> widgetIds = new HashSet<Integer>();
+    private static AppWidgetManager widgetManager;
+    private static boolean widgetsPresent = false;
+
 
     private static final String LOG_TAG = "com.darshancomputing.BatteryIndicator - BatteryInfoService";
 
@@ -76,6 +85,9 @@ public class BatteryInfoService extends Service {
     public static final String KEY_PREVIOUS_HEALTH = "previous_health";
     public static final String KEY_DISABLE_LOCKING = "disable_lock_screen";
     public static final String KEY_SERVICE_DESIRED = "serviceDesired";
+    public static final String KEY_SHOW_NOTIFICATION = "show_notification";
+
+    public static final String KEY_WIDGETS_PRESENT = "widgets_present";
 
     private static final String EXTRA_UPDATE_PREDICTOR = "com.darshancomputing.BatteryBot.EXTRA_UPDATE_PREDICTOR";
 
@@ -112,16 +124,18 @@ public class BatteryInfoService extends Service {
 
         info = new BatteryInfo();
 
+        messenger = new Messenger(new MessageHandler());
         clientMessengers = new java.util.HashSet<Messenger>();
 
         predictor = new Predictor(context);
         bl = new BatteryLevel(context, BatteryLevel.SIZE_NOTIFICATION);
+        cwbg = new CircleWidgetBackground(context);
 
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
-        loadSettingsFiles();
+        loadSettingsFiles(context);
 
         Intent mainWindowIntent = new Intent(context, BatteryInfoActivity.class);
         mainWindowPendingIntent = PendingIntent.getActivity(context, 0, mainWindowIntent, 0);
@@ -129,6 +143,15 @@ public class BatteryInfoService extends Service {
         Intent updatePredictorIntent = new Intent(context, BatteryInfoService.class);
         updatePredictorIntent.putExtra(EXTRA_UPDATE_PREDICTOR, true);
         updatePredictorPendingIntent = PendingIntent.getService(context, 0, updatePredictorIntent, 0);
+
+        // TODO: This probably a good idea, in case the Service is ever killed?
+        widgetManager = AppWidgetManager.getInstance(context);
+
+        int[] ids = widgetManager.getAppWidgetIds(new ComponentName(context, BatteryInfoAppWidgetProvider.class));
+        for (int i = 0; i < ids.length; i++)
+            widgetIds.add(ids[i]);
+
+        widgetsPresent = sp_store.getBoolean(KEY_WIDGETS_PRESENT, false);
 
         Intent bc_intent = registerReceiver(mBatteryInfoReceiver, batteryChanged);
         info.load(bc_intent, sp_store);
@@ -145,8 +168,9 @@ public class BatteryInfoService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent != null && intent.getBooleanExtra(EXTRA_UPDATE_PREDICTOR, false))
-            update(null);
+        // TODO: Do I need a filter, or is it okay to just update(null) every time?
+        //if (intent != null && intent.getBooleanExtra(EXTRA_UPDATE_PREDICTOR, false))
+        update(null);
 
         return Service.START_STICKY;
     }
@@ -166,6 +190,12 @@ public class BatteryInfoService extends Service {
             case RemoteConnection.SERVICE_REGISTER_CLIENT:
                 clientMessengers.add(incoming.replyTo);
                 sendClientMessage(incoming.replyTo, RemoteConnection.CLIENT_BATTERY_INFO_UPDATED, info.toBundle());
+
+                if (widgetsPresent)
+                    sendClientMessage(incoming.replyTo, RemoteConnection.CLIENT_SERVICE_UNCLOSEABLE);
+                else
+                    sendClientMessage(incoming.replyTo, RemoteConnection.CLIENT_SERVICE_CLOSEABLE);
+
                 break;
             case RemoteConnection.SERVICE_UNREGISTER_CLIENT:
                 clientMessengers.remove(incoming.replyTo);
@@ -182,11 +212,11 @@ public class BatteryInfoService extends Service {
         }
     }
 
-    private void sendClientMessage(Messenger clientMessenger, int what) {
+    private static void sendClientMessage(Messenger clientMessenger, int what) {
         sendClientMessage(clientMessenger, what, null);
     }
 
-    private void sendClientMessage(Messenger clientMessenger, int what, Bundle data) {
+    private static void sendClientMessage(Messenger clientMessenger, int what, Bundle data) {
         Message outgoing = Message.obtain();
         outgoing.what = what;
         outgoing.replyTo = messenger;
@@ -205,6 +235,8 @@ public class BatteryInfoService extends Service {
         // Messages the service sends to clients
         public static final int CLIENT_SERVICE_CONNECTED = 0;
         public static final int CLIENT_BATTERY_INFO_UPDATED = 1;
+        public static final int CLIENT_SERVICE_CLOSEABLE = 2;
+        public static final int CLIENT_SERVICE_UNCLOSEABLE = 3;
 
         public Messenger serviceMessenger;
         private Messenger clientMessenger;
@@ -227,13 +259,13 @@ public class BatteryInfoService extends Service {
         }
     }
 
-    private void loadSettingsFiles() {
+    private static void loadSettingsFiles(Context context) {
         settings = context.getSharedPreferences(SettingsActivity.SETTINGS_FILE, Context.MODE_MULTI_PROCESS);
         sp_store = context.getSharedPreferences(SettingsActivity.SP_STORE_FILE, Context.MODE_MULTI_PROCESS);
     }
 
     private void reloadSettings(boolean cancelFirst) {
-        loadSettingsFiles();
+        loadSettingsFiles(context);
 
         str = new Str(res); // Language override may have changed
 
@@ -267,8 +299,12 @@ public class BatteryInfoService extends Service {
         else
             handleUpdateWithSameStatus();
 
-        prepareNotification();
-        doNotify();
+        if (sp_store.getBoolean(KEY_SHOW_NOTIFICATION, true)) {
+            prepareNotification();
+            doNotify();
+        }
+
+        updateWidgets();
 
         syncSpsEditor(); // Important to sync after other Service code that uses 'lasts' but before sending info to client
 
@@ -278,6 +314,26 @@ public class BatteryInfoService extends Service {
         }
 
         alarmManager.set(AlarmManager.ELAPSED_REALTIME, android.os.SystemClock.elapsedRealtime() + (2 * 60 * 1000), updatePredictorPendingIntent);
+    }
+
+    private void updateWidgets() {
+        Intent mainWindowIntent = new Intent(context, BatteryInfoActivity.class);
+        PendingIntent mainWindowPendingIntent = PendingIntent.getActivity(context, 0, mainWindowIntent, 0);
+
+        cwbg.setLevel(info.percent);
+
+        for (Integer widgetId : widgetIds) {
+            // TODO: remove id from Set if something goes wrong?
+            RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.circle_app_widget);
+
+            //if (android.os.Build.VERSION.SDK_INT < 11) { // No resizeable widgets
+                rv.setTextViewText(R.id.level, "" + info.percent + str.percent_symbol);
+            //}
+
+            rv.setImageViewBitmap(R.id.circle_widget_image_view, cwbg.getBitmap());
+            rv.setOnClickPendingIntent(R.id.widget_layout, mainWindowPendingIntent);
+            widgetManager.updateAppWidget(widgetId, rv);
+        }
     }
 
     private void syncSpsEditor() {
@@ -437,6 +493,52 @@ public class BatteryInfoService extends Service {
                                                         java.util.Locale.getDefault()).format(d);
         } else {
             return (new java.text.SimpleDateFormat("HH:mm")).format(d);
+        }
+    }
+
+    public static void onWidgetUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+        widgetManager = appWidgetManager;
+
+        for (int i = 0; i < appWidgetIds.length; i++) {
+            widgetIds.add(appWidgetIds[i]);
+        }
+
+        context.startService(new Intent(context, BatteryInfoService.class));
+    }
+
+    public static void onWidgetDeleted(Context context, int[] appWidgetIds) {
+        for (int i = 0; i < appWidgetIds.length; i++) {
+            widgetIds.remove(appWidgetIds[i]);
+        }
+    }
+
+    public static void onWidgetEnabled(Context context) {
+        widgetsPresent = true;
+
+        if (sp_store == null) loadSettingsFiles(context);
+        sps_editor = sp_store.edit();
+        sps_editor.putBoolean(KEY_WIDGETS_PRESENT, widgetsPresent);
+        sps_editor.commit();
+
+        if (clientMessengers == null) return;
+
+        for (Messenger messenger : clientMessengers) {
+            sendClientMessage(messenger, RemoteConnection.CLIENT_SERVICE_UNCLOSEABLE);
+        }
+    }
+
+    public static void onWidgetDisabled(Context context) {
+        widgetsPresent = false;
+
+        if (sp_store == null) loadSettingsFiles(context);
+        sps_editor = sp_store.edit();
+        sps_editor.putBoolean(KEY_WIDGETS_PRESENT, widgetsPresent);
+        sps_editor.commit();
+
+        if (clientMessengers == null) return;
+
+        for (Messenger messenger : clientMessengers) {
+            sendClientMessage(messenger, RemoteConnection.CLIENT_SERVICE_CLOSEABLE);
         }
     }
 }
