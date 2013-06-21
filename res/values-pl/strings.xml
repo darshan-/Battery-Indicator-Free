@@ -11,9 +11,15 @@
   <string name="confirm_close" formatted="false">Zamknąć?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator zostanie zamknięty i nie będziesz widział statusu w powiadomieniach.\n\nJeżeli chcesz widzieć status, zostaw program uruchomiony naciskając Anuluj a następnie przycisk Wstecz.</string>
   <string name="okay" formatted="false">OK</string>
+  <string name="tab_current_info" formatted="false">Aktualny stan</string>
+  <string name="notification_until_charged" formatted="false">" do naładowania"</string>
+  <string name="notification_until_drained" formatted="false">" pozostało"</string>
+  <string name="activity_until_charged" formatted="false">do naładowania</string>
+  <string name="activity_until_drained" formatted="false">do rozładowania</string>
   <string name="menu_settings" formatted="false">Ustawienia</string>
   <string name="menu_close" formatted="false">Zamknij</string>
   <string name="menu_help" formatted="false">Pomoc</string>
+  <string name="menu_rate_and_review" formatted="false">Oceń i zrecenzuj</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">Fahrenheit</string>
@@ -33,13 +39,13 @@
   <string name="health_dead" formatted="false">Martwa</string>
   <string name="health_overvoltage" formatted="false">Przeładowana</string>
   <string name="health_failure" formatted="false">Defekt</string>
-  <string name="health_cold" formatted="false">Cold</string>
+  <string name="health_cold" formatted="false">Zimna</string>
   <string name="plugged_unplugged" formatted="false">Odłączony</string>
   <string name="plugged_ac" formatted="false">(AC)</string>
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
   <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="since" formatted="false">Od</string>
+  <string name="since" formatted="false">od</string>
   <string name="currently_using" formatted="false">W użyciu</string>
   <string name="currently_set_to" formatted="false">"Ustawione na: "</string>
   <string name="currently_disabled" formatted="false">Wyłączone</string>
@@ -63,16 +69,56 @@
   <string name="help_subcat_translators" formatted="false">Tłumacze</string>
   <string name="help_cat_contact" formatted="false">Kontakt</string>
   <string name="help_contact" formatted="false">Jeżeli masz pytanie lub problem, zobacz <a href="http://code.google.com/ p/battery-indicator/wiki/FAQ?tm=6">FAQ projektu</a> i sposób kontaktu że mną.</string>
-  <string name="pref_hint" formatted="false">Podpowiedź: Naciśnij Menu po pomoc.</string>
+  <string name="pref_hint" formatted="false">Podpowiedź: Naciśnij MENU po pomoc.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Więcej ustawień w wersji Pro</string>
   <string name="pref_please_upgrade" formatted="false">Wersja Pro ma wiele innych ustawień, włączając w to kolorowe ikony, wtyczki z ikonami, alarmy, tematy, zapisywanie stanu baterii w logach, auto/ ręczne wyłączenie blokady ekranu, przybliżone czasy ładowania/rozładowania i wiele więcej.</string>
+  <string name="pref_use_system_notification_layout" formatted="false">Użyj kompozycji systemu</string>
+  <string name="pref_use_system_notification_layout_summary" formatted="false">Użyć systemowego wyglądu notyfikacji zamiast wyglądu BatteryBot?</string>
+  <string name="pref_use_system_notification_layout_help" formatted="false">Jeśli opcja jest włączona, stosowany będzie wygląd systemowy notyfikacji zamiast niestandardowego układu BatteryBot. Wygląd systemowy jest mniej konfigurowalny, ale niewielka część urządzeń nie zgłasza domyślnych kolorów poprawnie, przez co wygląd jest brzydki lub ciężko cokolwiek odczytać. Inne urządzenia wykorzystują nietypowy wygląd, czyniąc układ niestandardowy zbyt dużym. Wybór tej opcji zapewni, że powiadomienie będzie wyglądać jak te inne.\n\nNote that this will result in having the status bar icon used in the notification.</string>
+  <string name="pref_icon_set" formatted="false">Zestaw ikon</string>
+  <string name="pref_icon_set_help" formatted="false">Android jest w wielu wersjach, więc nie istnieje jeden idealny zestaw ikon, który działa dobrze na każdym urządzeniu. Użytkownicy wersji Pro mogą korzystać z wtyczek, aby uzyskać więcej opcji, ale do dyspozycji są trzy wbudowane zestawy ikon, które powinny być chociaż jeden dobrym rozwiązaniem dla praktycznie każdego urządzenia.\n\n\"Classic\" to oryginalny zestaw ikon z 2009 roku. Jest wciąż najlepsza dla starszych urządzeń, ale nowsze wersje Androida (począwszy od Android 3.0, Honeycomb) kurczą i przyciemniają ikony powiadomień, co czyni ten zestaw bardzo trudnym do odczytania.\n\n\"Plain number\" jest domyślne dla wszystkich nowych urządzeń z systemem Android. Jest to bardzo duży biały numer, który jest dobrze widoczny nawet po skurczeniu i przyciemnieniu. Podczas ładowania pod numerkiem pokazuje się \"błyskawica\".\n\n\"Smaller number\" jest jak \"Plain number\" ale mniejszy, bo niektóre nowsze urządzenia nie kurczą ikonek jak seryjny Android i \"Plain number\" robi się bardzo duży.\n\nJeśli masz jakieś wtyczki ikon do BatteryBot Pro zainstalowane (naciśnij przycisk MENU, a następnie Pobierz Wtyczki by otrzymać darmowe wtyczki) to możesz wybrać spośród nich tutaj.</string>
+  <string name="pref_notify_status_duration" formatted="false">Pokaż czas stanu</string>
+  <string name="pref_notify_status_duration_summary" formatted="false">Pokaż czas od kiedy status się zmienił zamiast prognozy pozostałego czasu?</string>
+  <string name="pref_notify_status_duration_help" formatted="false">Włącz to ustawienie, jeśli wolisz główne powiadomienie pokazujące czas od zmiany statusu (np. \"Odłączony przez 5 godzin\"), a nie szacunku czasu pozostałego. Obie informacje są dostępne z głównego okna.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Konwertuj na Fahrenheita</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android raportuje temperaturę baterii w stopniach Celcjusza. Jeżeli wolisz stopnie Fahrenheita, to zaznacz tą opcję a aplikacja wykona konwersję.</string>
   <string name="pref_cat_notification_settings" formatted="false">Ustawienia powiadomień</string>
-  <string name="silent" formatted="false">Wuciszony</string>
+  <string name="silent" formatted="false">Wyciszony</string>
+  <string name="icon_set_classic" formatted="false">Klasyczny</string>
+  <string name="icon_set_plain" formatted="false">Zwykły numer</string>
+  <string name="icon_set_smaller" formatted="false">Mniejszy numer</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Log</item>
     <item quantity="other">%d Logów</item>
+  </plurals>
+  <plurals name="n_hours_long">
+    <item quantity="one">"%d godzina, "</item>
+  </plurals>
+  <plurals name="n_minutes_long">
+    <item quantity="one">%d minuta</item>
+    <item quantity="other">%d minuty</item>
+  </plurals>
+  <plurals name="n_hours_medium">
+    <item quantity="one">"%d godz, "</item>
+    <item quantity="other">"%d godz, "</item>
+  </plurals>
+  <plurals name="n_minutes_medium">
+    <item quantity="one">%d min.</item>
+    <item quantity="other">%d min.</item>
+  </plurals>
+  <plurals name="n_hours_short">
+    <item quantity="other">"%dh "</item>
+  </plurals>
+  <plurals name="n_minutes_short">
+    <item quantity="other">%dm</item>
+  </plurals>
+  <plurals name="n_days">
+    <item quantity="one">"%d dzień, "</item>
+    <item quantity="other">"%d dni, "</item>
+  </plurals>
+  <plurals name="n_hours">
+    <item quantity="one">%d godzina</item>
+    <item quantity="other">%d godzin</item>
   </plurals>
   <plurals name="for_n_hours">
     <item quantity="one">Przez %d godzinę</item>
