@@ -9,11 +9,17 @@
   <string name="yes" formatted="false">Ja</string>
   <string name="cancel" formatted="false">Abbrechen</string>
   <string name="confirm_close" formatted="false">Wirklich schließen?</string>
-  <string name="confirm_close_hint" formatted="false">Battery Indicator wird komplett beendet, damit wird auch die Anzeige im Statusbalken verschwinden.\n\nWenn sie nur das Fenster schließen wollen und die Anzeige im Statusbalken behalten, dann drücken Sie \"Abbrechen\" und benutzen sie die \"ZURÜCK\"-Schaltfläche ihres Gerätes.</string>
-  <string name="okay" formatted="false">OK</string>
+  <string name="confirm_close_hint" formatted="false">Battery Indicator wird komplett beendet, somit wird auch die Anzeige im Statusbalken verschwinden.\n\nWenn Sie nur das Fenster schließen wollen und die Anzeige im Statusbalken behalten, dann drücken Sie \"Abbrechen\" und benutzen Sie die \"ZURÜCK\"-Schaltfläche ihres Gerätes.</string>
+  <string name="okay" formatted="false">Okay</string>
+  <string name="tab_current_info" formatted="false">Derzeitige Info</string>
+  <string name="notification_until_charged" formatted="false">" bis vollständig aufgeladen"</string>
+  <string name="notification_until_drained" formatted="false">" verbleibend"</string>
+  <string name="activity_until_charged" formatted="false">bis vollständig aufgeladen</string>
+  <string name="activity_until_drained" formatted="false">bis Akku leer ist</string>
   <string name="menu_settings" formatted="false">Einstellungen</string>
   <string name="menu_close" formatted="false">Schließen</string>
   <string name="menu_help" formatted="false">Hilfe</string>
+  <string name="menu_rate_and_review" formatted="false">Bewerten</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">Fahrenheit</string>
@@ -30,24 +36,24 @@
   <string name="health_unknown" formatted="false">Unbekannt</string>
   <string name="health_good" formatted="false">Guter Zustand</string>
   <string name="health_overheat" formatted="false">Überhitzung</string>
-  <string name="health_dead" formatted="false">Tot</string>
+  <string name="health_dead" formatted="false">Leer</string>
   <string name="health_overvoltage" formatted="false">Überladung</string>
   <string name="health_failure" formatted="false">Fehler</string>
-  <string name="health_cold" formatted="false">Cold</string>
+  <string name="health_cold" formatted="false">Kalt</string>
   <string name="plugged_unplugged" formatted="false">Nicht angeschlossen</string>
   <string name="plugged_ac" formatted="false">(Netz)</string>
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
-  <string name="plugged_wireless" formatted="false">(WL)</string>
+  <string name="plugged_wireless" formatted="false">(Wireless)</string>
   <string name="since" formatted="false">Seit</string>
-  <string name="currently_using" formatted="false">Im Moment</string>
+  <string name="currently_using" formatted="false">Im Moment in Benutzung</string>
   <string name="currently_set_to" formatted="false">"Im Moment gesetzt auf: "</string>
   <string name="currently_disabled" formatted="false">Im Moment ausgeschalten</string>
   <string name="help_cat_version" formatted="false">Version</string>
   <string name="help_cat_changelog" formatted="false">Änderungsprotokoll</string>
   <string name="help_changelog" formatted="false">Besuchen Sie die <a href="http://code.google.com/p/battery-indicator/wiki/FAQ#What's_new_in_the_update?">Versionshistorie, auf der Projekt-FAQ seite (engl.)</a>.</string>
   <string name="help_cat_introduction" formatted="false">Einführung</string>
-  <string name="help_introduction_free" formatted="false">Dies ist <i>Battery Indicator</i>, die freier Version der <i>Battery Indicator</i> Produktfamilie. Es ist erhältlich im Android Market, aber es ist ein Open Source Projekt, d.h. Sie können die Quellen frei erhalten auf <a href="http://code.google.com/p/battery-indicator/">der Projekt-Website</a>.\n\nBitte denken Sie über eine Spende nach, in dem sie auf die <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a> aktualisieren.</string>
+  <string name="help_introduction_free" formatted="false">Dies ist <i>Battery Indicator</i>, die kostenlose Version der <i>Battery Indicator</i> Produktfamilie. Sie ist erhältlich im Android Market, jedoch ist dies ein Open Source Projekt, d.h. Sie haben auf <a href="http://code.google.com/p/battery-indicator/">der Projekt-Website</a> Zugriff auf die verwendeten Quellen.\n\nBitte denken Sie über eine Spende nach, indem Sie auf die <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a> aktualisieren.</string>
   <string name="help_cat_summary" formatted="false">Zusammenfassung</string>
   <string name="help_summary_free" formatted="false"><i>Battery Indicator Pro</i> ist eine leichtgewichtige Batterieanzeige für das Android™ Betriebssystem für Mobilgeräte. Die Kernfunktion ist das Icon in der Statusleiste, die den verbleibenden Prozentsatz der Batterieladung anzeigt.\n\nDie Pro-Version bietet noch viel mehr Nutzen. Neben der Anzeige des Icons in rot, gelb und grün, hat es auch die folgenden Hauptfunktionen ab Version 3.0:\n\n• Vollständig konfigurierbare geschätzte Lade-/Entladezeit.\n• Protokollierung des Ladezustands des Akkus.\n• Themes für das Hauptfenster (einschließlich eines Vollbildschirm-Fensters mit großem und leicht zu lesendem Text).\n• Manuelles deaktivieren / reaktivieren der Bildschirmsperre mit der Option sie automatisch zu deaktivieren, wenn eingesteckt und wieder zu aktivieren, wenn ausgesteckt.\n• Viele weitere nützliche Dinge, die Sie beim benutzen entdecken werden.</string>
   <string name="help_cat_limitations" formatted="false">Einschränkungen</string>
