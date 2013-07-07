@@ -144,12 +144,18 @@ public class BatteryInfoService extends Service {
         updatePredictorIntent.putExtra(EXTRA_UPDATE_PREDICTOR, true);
         updatePredictorPendingIntent = PendingIntent.getService(context, 0, updatePredictorIntent, 0);
 
-        // TODO: This probably a good idea, in case the Service is ever killed?
         widgetManager = AppWidgetManager.getInstance(context);
 
-        int[] ids = widgetManager.getAppWidgetIds(new ComponentName(context, BatteryInfoAppWidgetProvider.class));
-        for (int i = 0; i < ids.length; i++)
-            widgetIds.add(ids[i]);
+        Class[] appWidgetProviders = {BatteryInfoAppWidgetProvider.class /* Circle widget! */
+                                      };
+
+         for (int i = 0; i < appWidgetProviders.length; i++) {
+            int[] ids = widgetManager.getAppWidgetIds(new ComponentName(context, appWidgetProviders[i]));
+
+            for (int j = 0; j < ids.length; j++) {
+                widgetIds.add(ids[j]);
+            }
+        }
 
         widgetsPresent = sp_store.getBoolean(KEY_WIDGETS_PRESENT, false);
 
