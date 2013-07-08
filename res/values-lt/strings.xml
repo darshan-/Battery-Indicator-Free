@@ -61,7 +61,6 @@
   <string name="help_cat_translations" formatted="false">Vertimai</string>
   <string name="help_subcat_translators" formatted="false">Vertėjai</string>
   <string name="help_cat_contact" formatted="false">Kontaktai</string>
-  <string name="help_contact" formatted="false">Jei turite klausimą ar problemą, aplankykite <a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">projekto DUK</a>, kad sužinotumėte kaip susisiekti su manimi.\n</string>
   <string name="pref_hint" formatted="false">Patarimas: Spauskite MENU pagalbai.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Daugiau nustatytmų Pro versijoje</string>
   <string name="pref_please_upgrade" formatted="false">Pro versija turi daug daugiau nustatymų ir funkcijų: spalvotos ikonos, atsisiunčiami ikonų papildiniai, aliarmai, lango temos, baterijos statuso įrašų sudarymas, auto/rankinis ekrano užrakto išjungimas, įkrovimo/iškrovimo likęs laikas ir daugiau.</string>

@@ -61,7 +61,6 @@
   <string name="help_cat_translations" formatted="false">Μεταφράσεις</string>
   <string name="help_subcat_translators" formatted="false">Μεταφραστές</string>
   <string name="help_cat_contact" formatted="false">Επικοινωνία</string>
-  <string name="help_contact" formatted="false">Αν έχετε κάποια ερώτηση ή πρόβλημα, παρακαλώ δείτε <a href="http://code.google.com/p/battery-indicator/wiki/FAQ?tm=6">the project FAQ</a> πώς να επικοινωνήσετε μαζί μου.\n</string>
   <string name="pref_hint" formatted="false">Συμβουλή: Πατήστε MENU για βοήθεια</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Επιπλέον Ρυθμίσεις στο Pro</string>
   <string name="pref_please_upgrade" formatted="false">Η έκδοση Pro έχει πολύ περισσότερες ρυθμίσεις και δυνατότητες, συμπεριλαμβανομένων έγχρωμων εικόνων, λαμβανόμενα plugins, ειδοποιήσεις, θέματα παραθύρων, καταγραφή κατάστασης μπαταρίας, αυτόματη/χειροκίνητη απενεργοποίηση κλειδώματος οθόνης, υπολογισμό χρόνου για φόρτιση/αποφόρτιση, και άλλα ακόμη.</string>
