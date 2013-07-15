@@ -46,10 +46,7 @@
   <string name="currently_disabled" formatted="false">Сейчас отключено</string>
   <string name="help_cat_version" formatted="false">Версия</string>
   <string name="help_cat_changelog" formatted="false">Журнал изменений</string>
-  <string name="help_changelog" formatted="false">Смотрите в <a href="http://code.google.com/p/battery-indicator/wiki/FAQ#What's_new_in_the_update?">истории изменений программы</a>.</string>
-  <string name="help_cat_introduction" formatted="false">Введение</string>
-  <string name="help_introduction_free" formatted="false">Данная версия <i>Battery Indicator</i> является бесплатной. Версия доступна для покупки в Android Market, но не забывайте, что данное приложение является открытым проектом, что означает то, что вы можете помочь в разработке и скачать исходники <a href="http://code.google.com/p/battery-indicator/">сайт проекта</a>.\n\nВы можете поддержать проект, перейдя на \"PRO\" версию программы <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Battery Indicator Pro</a>.</string>
-  <string name="help_cat_summary" formatted="false">О программе</string>
+  <string name="help_changelog" formatted="false">Смотрите в <a href="http://batterybot.info/changelog">истории изменений программы</a>.</string>
   <string name="help_cat_no_warranty" formatted="false">Отказ от гарантий</string>
   <string name="help_subcat_translators" formatted="false">Переводчики</string>
   <string name="help_cat_contact" formatted="false">Контакты</string>

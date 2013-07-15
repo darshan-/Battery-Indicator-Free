@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_full_name" formatted="false">مؤشر البطارية الإحترافي</string>
+  <string name="app_launcher_name" formatted="false">مؤشر البطارية الإحترافي</string>
+  <string name="settings_activity_subtitle" formatted="false">الخيارات</string>
+  <string name="app_full_name_free" formatted="false">مؤشر البطارية</string>
+  <string name="battery_use_b" formatted="false">عرض استخدام البطارية</string>
+  <string name="upgrade_donate_b" formatted="false">ترقية/تبرع</string>
+  <string name="circle_widget" formatted="false">دائرةالمؤشر</string>
+  <string name="yes" formatted="false">نعم</string>
+  <string name="cancel" formatted="false">لا</string>
+  <string name="confirm_close" formatted="false">تأكيد الغلق؟</string>
+  <string name="confirm_close_hint" formatted="false">\nبرنامج المؤشر سوف يتم غلقه بشكل تام ولن تراه في شريط الاشعارات\nاذا اردت ان تغادر البرنامج وتريد ان يبقى المؤشر مشغل اضغط على الغاء وبعدها اظغط على زر الرجوع للمغادرة البرنامج</string>
+  <string name="okay" formatted="false">موافق</string>
+  <string name="tab_current_info" formatted="false">معلومات الحالية</string>
+  <string name="notification_until_charged" formatted="false">"حتى الشحن"</string>
+  <string name="notification_until_drained" formatted="false">"ترك"</string>
+  <string name="activity_until_charged" formatted="false">حتى الشحن</string>
+  <string name="activity_until_drained" formatted="false">حتى الاستنزاف</string>
+  <string name="menu_settings" formatted="false">اعدادات</string>
+  <string name="menu_close" formatted="false">اغلاق</string>
+  <string name="menu_help" formatted="false">مساعدة</string>
+  <string name="menu_rate_and_review" formatted="false">تقييم ومراجعة التطبيق</string>
+  <string name="menu_show_notification" formatted="false">عرض الاشعارات</string>
+  <string name="menu_hide_notification" formatted="false">اخفاء الاشعارات</string>
+  <string name="percent_symbol" formatted="false">%</string>
+  <string name="degree_symbol" formatted="false">درجة</string>
+  <string name="fahrenheit" formatted="false">فهرنهايت</string>
+  <string name="fahrenheit_symbol" formatted="false">ف</string>
+  <string name="celsius" formatted="false">سلسيوسي</string>
+  <string name="celsius_symbol" formatted="false">س</string>
+  <string name="volt_symbol" formatted="false">ف</string>
+  <string name="status_unplugged" formatted="false">غير موصل</string>
+  <string name="status_unknown" formatted="false">غير معروف</string>
+  <string name="status_charging" formatted="false">جاري الشحن</string>
+  <string name="status_discharging" formatted="false">تفريغ الشحن</string>
+  <string name="status_not_charging" formatted="false">لا يشحن</string>
+  <string name="status_fully_charged" formatted="false">تم الشحن بالكامل</string>
+  <string name="health_unknown" formatted="false">غير معروف</string>
+  <string name="health_good" formatted="false">حالة جيدة</string>
+  <string name="health_overheat" formatted="false">ساخن</string>
+  <string name="health_dead" formatted="false">حالة ميتة</string>
+  <string name="health_overvoltage" formatted="false">جهد زائد</string>
+  <string name="health_failure" formatted="false">فاشل</string>
+  <string name="health_cold" formatted="false">بارد</string>
+  <string name="plugged_unplugged" formatted="false">غير موصل</string>
+  <string name="plugged_ac" formatted="false">تيار مستمر</string>
+  <string name="plugged_usb" formatted="false">يو اي بي</string>
+  <string name="plugged_unknown" formatted="false">غير معروف</string>
+  <string name="plugged_wireless" formatted="false">لا سلكي</string>
+  <string name="since" formatted="false">منذ</string>
+  <string name="currently_using" formatted="false">تستخدم حاليا</string>
+  <string name="currently_set_to" formatted="false">"حاليا ضبط الى: "</string>
+  <string name="currently_disabled" formatted="false">معطل حاليا</string>
+  <string name="help_cat_version" formatted="false">الاصدار</string>
+  <string name="help_cat_changelog" formatted="false">التغيير</string>
+  <string name="help_changelog" formatted="false">انظر الى<a href="http://batterybot.info/changelog">التغيير بالانترنيت</a></string>
+  <string name="help_cat_no_warranty" formatted="false">لا ضمان</string>
+  <string name="help_no_warranty" formatted="false">يتم نشر هذا التطبيق على امل ان يكون مفيدا وعملي لكن من دون اي ضمان حتى دون صلاحية التسويق وللاستخدام لغرض معين\n\nبينما أنا أبذل قصارى جهدي للتأكد من أنه يعمل بشكل جيد ولا يسبب المشاكل، وأنا لست مسؤولا عن أي ضرر أو إزعاج قد يسببه تحت أي ظرف من الظروف</string>
+  <string name="help_cat_acknowledgments" formatted="false">شكر وتقدير</string>
+  <string name="help_acknowledgments" formatted="false">هذا التطبيق متاح بلغة الانكليزية فقط ولكن مع مساعدة كبيرة من المترجمين , اشكركم\n\nوالكثير من الشكر لشركة كوكل لسماحها بصناعة التطبيقات بمصادر مفتوحة\n\nايقونة التطبيق (عندما رايته في سوق الاندرويد)مصدرها من هنا<a href="http://www.oxygen-icons.org">the Oxygen icon theme</a> واستخدمت تحت <a href="http://creativecommons.org/licenses/by-sa/3.0/"> الشروط والاحكام</a></string>
+  <string name="help_cat_translations" formatted="false">ترجمات</string>
+  <string name="help_translations" formatted="false">احتاج لمساعدة لترجمة هذا التطبيق اذا كنت تود مساعدتي راسلني على الايميل التالي<a href="mailto:support%2Btranslations@batterybot.info">email</a> ودعوني اوضح لكم عندما تتم ترجمة التطبيق سوف اقوم بأدراج اسم المترجم في قائمة الشكر التقدير</string>
+  <string name="help_subcat_translators" formatted="false">المترجمين</string>
+  <string name="help_cat_contact" formatted="false">للتواصل</string>
+  <string name="help_contact" formatted="false">اذا كنت تملك اسئلة او مشاكل رجاء <a href="mailto:support@batterybot.info">راسلني على</a>.\n</string>
+  <string name="pref_hint" formatted="false">تلميح:اضغط على الخيارات للمساعدة</string>
+  <string name="pref_cat_more_settings_in_pro" formatted="false">اعدادات اكثر في النسخة الكاملة</string>
+  <string name="pref_please_upgrade" formatted="false">اصدار النسخة الكاملة يحتوي على اعدادات ومميزات اكثر ايقونات منبهات وسجلات حالة البطارية والتعطيل الاوتوماتيكي والعادي لقفل الشاشة والشحن المنقضي والمتبقي والمزيد</string>
+  <string name="pref_use_system_notification_layout" formatted="false">استخدام التصميم النظتمي</string>
+  <string name="pref_use_system_notification_layout_summary" formatted="false">استخدام الاشعارات النظامية بالاحرى تخصيص اعدادات تصميم المؤشر؟</string>
+  <string name="pref_use_system_notification_layout_help" formatted="false">اذا تم التمكين الاشعارات النظاميةسوف تختلط مع الاشعارات الخاصة بلمؤشر الاحترافي الاشعارات النظامية اقل تخصيص لكن عدد لايذكر من الاجهزة لاتعمل هذا الخيار معها بشكل ملائم بحيث ان التصاميم ستصبح قبيحة وهناك هواتف اخرى لاتطابق الحجم الخاص بالتصاميم تمكين هذا الخير سيؤدي الاشعارات وسوف يقفل اقي الاشعارات\n\nلاحظ أن هذا سوف يؤدي إلى وجود رمز شريط المعلومات المستخدمة في الاشعارات.</string>
+</resources>
