@@ -6,12 +6,13 @@
   <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Akkuverbrauch anzeigen</string>
   <string name="upgrade_donate_b" formatted="false">Erweitern/Spenden...</string>
+  <string name="circle_widget" formatted="false">BatteryBot Kreis</string>
   <string name="yes" formatted="false">Ja</string>
   <string name="cancel" formatted="false">Abbrechen</string>
   <string name="confirm_close" formatted="false">Wirklich schließen?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator wird komplett beendet, somit wird auch die Anzeige im Statusbalken verschwinden.\n\nWenn Sie nur das Fenster schließen wollen und die Anzeige im Statusbalken behalten, dann drücken Sie \"Abbrechen\" und benutzen Sie die \"ZURÜCK\"-Schaltfläche ihres Gerätes.</string>
   <string name="okay" formatted="false">In Ordnung</string>
-  <string name="tab_current_info" formatted="false">Derzeitige Info</string>
+  <string name="tab_current_info" formatted="false">Aktuelle Info</string>
   <string name="notification_until_charged" formatted="false">" bis vollständig aufgeladen"</string>
   <string name="notification_until_drained" formatted="false">" verbleibend"</string>
   <string name="activity_until_charged" formatted="false">bis vollständig aufgeladen</string>
@@ -20,6 +21,8 @@
   <string name="menu_close" formatted="false">Schließen</string>
   <string name="menu_help" formatted="false">Hilfe</string>
   <string name="menu_rate_and_review" formatted="false">Bewerten</string>
+  <string name="menu_show_notification" formatted="false">Zeige Benachrichtigung</string>
+  <string name="menu_hide_notification" formatted="false">Verstecke Benachrichtigung</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">Fahrenheit</string>
@@ -51,6 +54,12 @@
   <string name="currently_disabled" formatted="false">Im Moment ausgeschalten</string>
   <string name="help_cat_version" formatted="false">Version</string>
   <string name="help_cat_changelog" formatted="false">Änderungsprotokoll</string>
+  <string name="help_cat_faq" formatted="false">Fragen und Antworten</string>
+  <string name="help_faq" formatted="false">Bitte nachsehen <a href="http://batterybot.info/faq">online FAQ</a>.</string>
+  <string name="help_cat_website" formatted="false">Webseite</string>
+  <string name="help_website" formatted="false">Weitere Informationen sind verfügbar unter <a href="http://batterybot.info/">BatteryBot website</a>.</string>
+  <string name="help_open_source" formatted="false">Dies ist ein Open Source Projekt, was bedeutet du kannst den <a href="http://batterybot.info/sourcecode">Source Code runterladen</a>.</string>
+  <string name="help_cat_donate" formatted="false">Spenden</string>
   <string name="help_cat_no_warranty" formatted="false">Keine Garantie</string>
   <string name="help_no_warranty" formatted="false">Diese Software ist in der Hoffnung erstellt, dass sie nützlich sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTGÄNGIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.\n\nWährend ich mein Bestes gebe, um sicherzustellen, dass sie gut funktioniert und sie keine Probleme erzeugt, bin ich keinen Umständen verantwortlich für jegliche Schäden oder Unannehmlichkeiten.</string>
   <string name="help_cat_acknowledgments" formatted="false">Danksagungen</string>
@@ -65,6 +74,8 @@
   <string name="pref_convert_to_fahrenheit" formatted="false">Umrechnen in Fahrenheit</string>
   <string name="pref_cat_notification_settings" formatted="false">Benachrichtigungs Einstellungen</string>
   <string name="silent" formatted="false">Still</string>
+  <string name="icon_set_classic" formatted="false">Klassik</string>
+  <string name="icon_set_smaller" formatted="false">kleinere Nummer</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Protokoll Eintrag</item>
     <item quantity="other">%d Protokoll Einträge</item>
