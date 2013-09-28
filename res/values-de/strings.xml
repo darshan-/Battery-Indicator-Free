@@ -5,18 +5,18 @@
   <string name="settings_activity_subtitle" formatted="false">Einstellungen</string>
   <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">Akkuverbrauch anzeigen</string>
-  <string name="upgrade_donate_b" formatted="false">Erweitern/Spenden...</string>
+  <string name="upgrade_donate_b" formatted="false">Upgrade/Spenden...</string>
   <string name="circle_widget" formatted="false">BatteryBot Kreis</string>
   <string name="yes" formatted="false">Ja</string>
   <string name="cancel" formatted="false">Abbrechen</string>
   <string name="confirm_close" formatted="false">Wirklich schließen?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator wird komplett beendet, somit wird auch die Anzeige im Statusbalken verschwinden.\n\nWenn Sie nur das Fenster schließen wollen und die Anzeige im Statusbalken behalten, dann drücken Sie \"Abbrechen\" und benutzen Sie die \"ZURÜCK\"-Schaltfläche ihres Gerätes.</string>
-  <string name="okay" formatted="false">In Ordnung</string>
+  <string name="okay" formatted="false">Okay</string>
   <string name="tab_current_info" formatted="false">Aktuelle Info</string>
   <string name="notification_until_charged" formatted="false">" bis vollständig aufgeladen"</string>
   <string name="notification_until_drained" formatted="false">" verbleibend"</string>
   <string name="activity_until_charged" formatted="false">bis vollständig aufgeladen</string>
-  <string name="activity_until_drained" formatted="false">bis Akku leer ist</string>
+  <string name="activity_until_drained" formatted="false">bis der Akku leer ist</string>
   <string name="menu_settings" formatted="false">Einstellungen</string>
   <string name="menu_close" formatted="false">Schließen</string>
   <string name="menu_help" formatted="false">Hilfe</string>
@@ -63,17 +63,19 @@
   <string name="help_cat_no_warranty" formatted="false">Keine Garantie</string>
   <string name="help_no_warranty" formatted="false">Diese Software ist in der Hoffnung erstellt, dass sie nützlich sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTGÄNGIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.\n\nWährend ich mein Bestes gebe, um sicherzustellen, dass sie gut funktioniert und sie keine Probleme erzeugt, bin ich keinen Umständen verantwortlich für jegliche Schäden oder Unannehmlichkeiten.</string>
   <string name="help_cat_acknowledgments" formatted="false">Danksagungen</string>
-  <string name="help_acknowledgments" formatted="false">Diese App wäre nur in englischer Sprache zur Verfügung, ohne die großzügige Unterstützung durch die ehrenamtlichen Übersetzer. Vielen Dank!\n\nGroßer Dank gebührt Google und allen Open-Source-Programmierern, die die Android-Plattform und diese App möglich machen.\n\nDas Starter-Symbol (die aufrechte Batterie, die Sie im Android-Market sehen) ist auf ein Symbol von <a href="http://www.oxygen-icons.org">auf Basis des Oxygen Icon-Themes</a> und unter der verwendet <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Common Attribution-Share Alike 3.0 License</a>.</string>
+  <string name="help_acknowledgments" formatted="false">Diese App würde ohne die großzügige Unterstützung durch die ehrenamtlichen Übersetzer, nur in englischer Sprache zur Verfügung stehen. Vielen Dank!\n\nGroßer Dank gebührt Google und allen Open-Source-Programmierern, die die Android-Plattform und diese App möglich machen.\n\nDas Starter-Symbol (die aufrechte Batterie, die Sie im Android-Market sehen) ist auf ein Symbol von <a href="http://www.oxygen-icons.org">auf Basis des Oxygen Icon-Themes</a> und unter der verwendet <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Common Attribution-Share Alike 3.0 License</a>.</string>
   <string name="help_cat_translations" formatted="false">Übersetzungen</string>
-  <string name="help_translations" formatted="false">Ich brauche Hilfe bei der Übersetzung dieses App in andere Sprachen. Wenn Sie helfen möchten, bitte senden Sie mir eine <a href="mailto:support%2Btranslations@batterybot.info">E-Mail</a>. Es seid denn Sie wollen es nicht, werde ich Ihren Namen diesem Abschnitt hinzufügen als Anerkennung Ihrer Unterstützung.</string>
+  <string name="help_translations" formatted="false">Ich brauche Hilfe bei der Übersetzung dieser App in andere Sprachen. Wenn Sie helfen möchten, senden Sie mir bitte eine <a href="mailto:support%2Btranslations@batterybot.info">E-Mail</a>. Es seid denn Sie wollen es nicht, werde ich Ihren Namen diesem Abschnitt hinzufügen als Anerkennung Ihrer Unterstützung.</string>
   <string name="help_subcat_translators" formatted="false">Übersetzer</string>
   <string name="help_cat_contact" formatted="false">Kontakt</string>
+  <string name="help_contact" formatted="false">Wenn Sie eine Frage,ein Problem oder einen Kommentar haben, teilen Sie es uns bitte unter <a href="mailto:support@batterybot.info">E-Mail</a>.</string>
   <string name="pref_hint" formatted="false">Tip: MENÜ drücken für Hilfe.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Mehr Einstellungen in der Pro-Version</string>
   <string name="pref_please_upgrade" formatted="false">Die Pro-Version hat mehr Einstellungen und Funktionen, wie grüne, gelbe und rote Icons, Alarme, Window-Themes, Batteriestatus-Protokollierung, automatische/manuelle Bildschirmsperre Abschaltung, Lade-/Entladezeit-Schätzung und mehr.</string>
+  <string name="pref_use_system_notification_layout_summary" formatted="false">Das System Benachrichtigungs-Layout bevorzugen.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Umrechnen in Fahrenheit</string>
   <string name="pref_cat_notification_settings" formatted="false">Benachrichtigungs Einstellungen</string>
-  <string name="silent" formatted="false">Still</string>
+  <string name="silent" formatted="false">Stumm</string>
   <string name="icon_set_classic" formatted="false">Klassik</string>
   <string name="icon_set_smaller" formatted="false">kleinere Nummer</string>
   <plurals name="n_log_items">
