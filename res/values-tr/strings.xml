@@ -14,6 +14,8 @@
   <string name="menu_settings" formatted="false">Ayarlar</string>
   <string name="menu_close" formatted="false">Kapat</string>
   <string name="menu_help" formatted="false">Yardım</string>
+  <string name="menu_show_notification" formatted="false">Bildirimleri Göster</string>
+  <string name="menu_hide_notification" formatted="false">Bildirimleri Gizle</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">Fahrenhayt</string>
@@ -38,7 +40,7 @@
   <string name="plugged_ac" formatted="false">(AC)</string>
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
-  <string name="plugged_wireless" formatted="false">(Wi-Fi)</string>
+  <string name="plugged_wireless" formatted="false">(Kablosuz)</string>
   <string name="since" formatted="false">den itibaren</string>
   <string name="currently_using" formatted="false">Şu an kullanılıyor</string>
   <string name="currently_set_to" formatted="false">"Şu an buna ayarlı: "</string>
@@ -46,6 +48,11 @@
   <string name="help_cat_version" formatted="false">Sürüm</string>
   <string name="help_cat_changelog" formatted="false">Değişiklik Listesi</string>
   <string name="help_changelog" formatted="false">çevrimiçi Değişiklik Listesi <a href="http://batterybot.info/changelog">ni gör</a></string>
+  <string name="help_cat_faq" formatted="false">Sıkça Sorulan SOrular</string>
+  <string name="help_faq" formatted="false">Online yardım için lütfen <a href="http://batterybot.info/faq">bakınız</a>.</string>
+  <string name="help_cat_website" formatted="false">Website</string>
+  <string name="help_cat_open_source" formatted="false">Açık Kaynak</string>
+  <string name="help_cat_donate" formatted="false">Bağış</string>
   <string name="help_cat_no_warranty" formatted="false">Garanti Yok</string>
   <string name="help_cat_acknowledgments" formatted="false">Onaylar</string>
   <string name="help_cat_translations" formatted="false">Çeviriler</string>
