@@ -268,6 +268,7 @@
   <bool name="show_main_title">false</bool>
   <bool name="api_level_14_plus">false</bool>
   <bool name="api_level_16_plus">false</bool>
+  <bool name="api_level_21_plus">false</bool>
 
   <string name="help_translators_list">
     Matthew McBaul(包明)
@@ -321,4 +322,6 @@
   </string-array>
 
   <bool name="long_notification_okay">false</bool>
+
+  <bool name="default_use_system_notification_layout">false</bool>
 </resources>
