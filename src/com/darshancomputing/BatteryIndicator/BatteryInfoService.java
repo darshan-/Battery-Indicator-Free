@@ -372,6 +372,11 @@ public class BatteryInfoService extends Service {
         if (settings.getBoolean(SettingsActivity.KEY_USE_SYSTEM_NOTIFICATION_LAYOUT,
                                 res.getBoolean(R.bool.default_use_system_notification_layout))) {
             mainNotification.setLatestEventInfo(context, mainNotificationTopLine, mainNotificationBottomLine, mainWindowPendingIntent);
+
+            /* This must be set AFTER setLatestEventInfo(), which resets it to PRIVATE */
+            if (android.os.Build.VERSION.SDK_INT >= 21) {
+                mainNotification.visibility = Notification.VISIBILITY_PUBLIC;
+            }
         } else {
             notificationRV = new RemoteViews(getPackageName(), R.layout.main_notification);
             //notificationRV.setImageViewBitmap(R.id.battery, bl.getBitmap());
