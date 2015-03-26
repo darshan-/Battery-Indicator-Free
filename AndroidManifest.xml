@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.darshancomputing.BatteryIndicator"
-          android:versionCode="011123"
-          android:versionName="8.2.2-dev"
+          android:versionCode="011124"
+          android:versionName="8.2.2"
 >
   <application
       android:label="@string/app_full_name_free"
@@ -79,7 +79,7 @@
 
   <uses-sdk
       android:minSdkVersion="7"
-      android:targetSdkVersion="21"
+      android:targetSdkVersion="22"
   />
 
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
