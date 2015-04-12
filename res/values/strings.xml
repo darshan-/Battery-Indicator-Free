@@ -246,6 +246,22 @@
     you prefer to see the battery temperature in degrees Fahrenheit,
     check this option, and the app will convert for you.
   </string>
+  <string formatted="false" name="pref_classic_color_mode">Force Classic Color Mode</string>
+  <string formatted="false" name="pref_classic_color_mode_summary">
+    This usually does not work; please read the help
+  </string>
+  <string formatted="false" name="pref_classic_color_mode_help">
+    Starting with Android 5.0 (Lollipop), colored notification icons
+    officially no longer work on Android, making the Classic icon show
+    up as solid white. So by default, on these devices the app uses a
+    plain white outline with white number.\n
+
+    \nHowever, not all devices follow the spec, so this is not
+    necessary and does not work correctly everywhere.  You can try to
+    make the Classic icon set work in the classic way by turning this
+    option on.  Remember, on most devices this will just make the icon
+    turn solid white.
+  </string>
   <!--string name="pref_cat_device_specific_help"></string-->
   <!--string name="pref_alarm_enabled_summary"></string-->
   <string formatted="false" name="pref_cat_notification_settings">Notification Settings</string>

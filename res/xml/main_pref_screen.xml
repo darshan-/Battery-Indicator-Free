@@ -6,7 +6,10 @@
      android:selectable="false"
   />
 
-  <PreferenceCategory android:title="@string/pref_cat_notification_settings">
+  <PreferenceCategory
+      android:key="category_notification_settings"
+      android:title="@string/pref_cat_notification_settings"
+  >
     <CheckBoxPreference
        android:key="convert_to_fahrenheit"
        android:title="@string/pref_convert_to_fahrenheit"
@@ -18,6 +21,13 @@
        android:title="@string/pref_icon_set"
        android:entries="@array/icon_set_entries"
        android:entryValues="@array/icon_set_values"
+    />
+
+    <CheckBoxPreference
+       android:key="classic_color_mode"
+       android:title="@string/pref_classic_color_mode"
+       android:summary="@string/pref_classic_color_mode_summary"
+       android:defaultValue="false"
     />
 
     <CheckBoxPreference

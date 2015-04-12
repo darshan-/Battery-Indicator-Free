@@ -67,10 +67,13 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_NOTIFY_STATUS_DURATION = "notify_status_duration";
     public static final String KEY_AUTOSTART = "autostart";
     public static final String KEY_TEN_PERCENT_MODE = "ten_percent_mode";
+    public static final String KEY_CLASSIC_COLOR_MODE = "classic_color_mode";
     public static final String KEY_STATUS_DUR_EST = "status_dur_est";
+    public static final String KEY_CAT_CLASSIC_COLOR_MODE = "category_classic_color_mode";
     public static final String KEY_CAT_COLOR = "category_color";
     public static final String KEY_CAT_CHARGING_INDICATOR = "category_charging_indicator";
     public static final String KEY_CAT_PLUGIN_SETTINGS = "category_plugin_settings";
+    public static final String KEY_CAT_NOTIFICATION_SETTINGS = "category_notification_settings";
     public static final String KEY_PLUGIN_SETTINGS = "plugin_settings";
     public static final String KEY_INDICATE_CHARGING = "indicate_charging";
     public static final String KEY_RED = "use_red";
@@ -96,6 +99,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
                                                    KEY_AUTO_DISABLE_LOCKING, KEY_RED, KEY_RED_THRESH,
                                                    KEY_AMBER, KEY_AMBER_THRESH, KEY_GREEN, KEY_GREEN_THRESH,
                                                    KEY_NOTIFY_WHEN_KG_DISABLED, KEY_ICON_SET,
+                                                   KEY_CLASSIC_COLOR_MODE,
                                                    KEY_INDICATE_CHARGING, KEY_TEN_PERCENT_MODE}; /* 10% mode changes color settings */
 
     private static final String[] RESET_SERVICE_WITH_CANCEL_NOTIFICATION = {KEY_MAIN_NOTIFICATION_PRIORITY,
@@ -225,6 +229,14 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             setWindowSubtitle(res.getString(R.string.settings_activity_subtitle));
         } else {
             setPrefScreen(R.xml.main_pref_screen);
+        }
+
+        if (android.os.Build.VERSION.SDK_INT < 21 ||
+            !mSharedPreferences.getString(SettingsActivity.KEY_ICON_SET, "null").equals("builtin.classic")) {
+            PreferenceCategory cat = (PreferenceCategory) mPreferenceScreen.findPreference(KEY_CAT_NOTIFICATION_SETTINGS);
+            Preference pref = (Preference) mPreferenceScreen.findPreference(KEY_CLASSIC_COLOR_MODE);
+            cat.removePreference(pref);
+            pref.setLayoutResource(R.layout.none);
         }
 
         for (int i=0; i < PARENTS.length; i++)
@@ -366,6 +378,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         mSharedPreferences.unregisterOnSharedPreferenceChangeListener(this);
 
         if (key.equals(KEY_ICON_SET)) {
+            restartThisScreen();
             resetService();
         }
 
