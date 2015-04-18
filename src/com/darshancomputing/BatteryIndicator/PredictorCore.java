@@ -125,7 +125,7 @@ public class PredictorCore {
         }
 
         if ((info.status == BatteryInfo.STATUS_CHARGING && info.percent < last_level) ||
-            (info.status == BatteryInfo.STATUS_UNPLUGGED && info.percent > last_level))
+            (info.status != BatteryInfo.STATUS_CHARGING && info.percent > last_level))
         {
             use_partial = false;
             timestamps[info.percent] = now;
@@ -280,7 +280,7 @@ public class PredictorCore {
         if (use_partial) start -= dir_inc;
 
         for (int i = start, ri = 0; ri < recents.length; ri++, i += dir_inc) {
-            if (i >= ts_head)
+            if (i >= ts_head || i < 0)
                 recents[ri] = average[cur_charging_status];
             else if (i == start && use_partial)
                 recents[ri] = now - timestamps[cur_info.percent];
@@ -311,7 +311,7 @@ public class PredictorCore {
         for (int i = start; i != ts_head; i += dir_inc) {
             double potential_ms;
 
-            if (i == start && use_partial)
+            if ((i == start && use_partial) || (i + dir_inc > 100) || (i + dir_inc < 0))
                 potential_ms = now - timestamps[cur_info.percent];
             else
                 potential_ms = timestamps[i] - timestamps[i + dir_inc];
@@ -347,7 +347,7 @@ public class PredictorCore {
         for (int i = start; i != ts_head && needed_points > 0; i += dir_inc) {
             double new_ms;
 
-            if (i == start && use_partial) // TODO: If timestamps[cur_level] is set every time, I shouldn't need a special case here...
+            if ((i == start && use_partial) || (i + dir_inc > 100) || (i + dir_inc < 0))
                 new_ms = now - timestamps[cur_info.percent];
             else
                 new_ms = timestamps[i] - timestamps[i + dir_inc];
