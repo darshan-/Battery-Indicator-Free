@@ -69,7 +69,6 @@ public class BatteryInfoService extends Service {
 
     private static HashSet<Integer> widgetIds = new HashSet<Integer>();
     private static AppWidgetManager widgetManager;
-    private static boolean widgetsPresent = false;
 
 
     private static final String LOG_TAG = "com.darshancomputing.BatteryIndicator - BatteryInfoService";
@@ -86,8 +85,6 @@ public class BatteryInfoService extends Service {
     public static final String KEY_DISABLE_LOCKING = "disable_lock_screen";
     public static final String KEY_SERVICE_DESIRED = "serviceDesired";
     public static final String KEY_SHOW_NOTIFICATION = "show_notification";
-
-    public static final String KEY_WIDGETS_PRESENT = "widgets_present";
 
     private static final String EXTRA_UPDATE_PREDICTOR = "com.darshancomputing.BatteryBot.EXTRA_UPDATE_PREDICTOR";
 
@@ -149,15 +146,13 @@ public class BatteryInfoService extends Service {
         Class[] appWidgetProviders = {BatteryInfoAppWidgetProvider.class /* Circle widget! */
                                       };
 
-         for (int i = 0; i < appWidgetProviders.length; i++) {
+        for (int i = 0; i < appWidgetProviders.length; i++) {
             int[] ids = widgetManager.getAppWidgetIds(new ComponentName(context, appWidgetProviders[i]));
 
             for (int j = 0; j < ids.length; j++) {
                 widgetIds.add(ids[j]);
             }
         }
-
-        widgetsPresent = sp_store.getBoolean(KEY_WIDGETS_PRESENT, false);
 
         Intent bc_intent = registerReceiver(mBatteryInfoReceiver, batteryChanged);
         info.load(bc_intent, sp_store);
@@ -169,6 +164,7 @@ public class BatteryInfoService extends Service {
         unregisterReceiver(mBatteryInfoReceiver);
         mHandler.removeCallbacks(mNotify);
         mNotificationManager.cancelAll();
+        updateWidgets(null);
         stopForeground(true);
     }
 
@@ -196,11 +192,6 @@ public class BatteryInfoService extends Service {
             case RemoteConnection.SERVICE_REGISTER_CLIENT:
                 clientMessengers.add(incoming.replyTo);
                 sendClientMessage(incoming.replyTo, RemoteConnection.CLIENT_BATTERY_INFO_UPDATED, info.toBundle());
-
-                if (widgetsPresent)
-                    sendClientMessage(incoming.replyTo, RemoteConnection.CLIENT_SERVICE_UNCLOSEABLE);
-                else
-                    sendClientMessage(incoming.replyTo, RemoteConnection.CLIENT_SERVICE_CLOSEABLE);
 
                 break;
             case RemoteConnection.SERVICE_UNREGISTER_CLIENT:
@@ -241,8 +232,6 @@ public class BatteryInfoService extends Service {
         // Messages the service sends to clients
         public static final int CLIENT_SERVICE_CONNECTED = 0;
         public static final int CLIENT_BATTERY_INFO_UPDATED = 1;
-        public static final int CLIENT_SERVICE_CLOSEABLE = 2;
-        public static final int CLIENT_SERVICE_UNCLOSEABLE = 3;
 
         public Messenger serviceMessenger;
         private Messenger clientMessenger;
@@ -310,7 +299,7 @@ public class BatteryInfoService extends Service {
             doNotify();
         }
 
-        updateWidgets();
+        updateWidgets(info);
 
         syncSpsEditor(); // Important to sync after other Service code that uses 'lasts' but before sending info to client
 
@@ -322,19 +311,25 @@ public class BatteryInfoService extends Service {
         alarmManager.set(AlarmManager.ELAPSED_REALTIME, android.os.SystemClock.elapsedRealtime() + (2 * 60 * 1000), updatePredictorPendingIntent);
     }
 
-    private void updateWidgets() {
+    private void updateWidgets(BatteryInfo info) {
         Intent mainWindowIntent = new Intent(context, BatteryInfoActivity.class);
         PendingIntent mainWindowPendingIntent = PendingIntent.getActivity(context, 0, mainWindowIntent, 0);
 
-        cwbg.setLevel(info.percent);
+        if (info == null)
+            cwbg.setLevel(0);
+        else
+            cwbg.setLevel(info.percent);
 
         for (Integer widgetId : widgetIds) {
-            // TODO: remove id from Set if something goes wrong?
+            android.appwidget.AppWidgetProviderInfo awpInfo = widgetManager.getAppWidgetInfo(widgetId);
+            if (awpInfo == null) continue; // Based on Developer Console crash reports, this can be null sometimes
+
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.circle_app_widget);
 
-            //if (android.os.Build.VERSION.SDK_INT < 11) { // No resizeable widgets
+            if (info == null)
+                rv.setTextViewText(R.id.level, "XX" + str.percent_symbol);
+            else
                 rv.setTextViewText(R.id.level, "" + info.percent + str.percent_symbol);
-            //}
 
             rv.setImageViewBitmap(R.id.circle_widget_image_view, cwbg.getBitmap());
             rv.setOnClickPendingIntent(R.id.widget_layout, mainWindowPendingIntent);
@@ -524,36 +519,6 @@ public class BatteryInfoService extends Service {
     public static void onWidgetDeleted(Context context, int[] appWidgetIds) {
         for (int i = 0; i < appWidgetIds.length; i++) {
             widgetIds.remove(appWidgetIds[i]);
-        }
-    }
-
-    public static void onWidgetEnabled(Context context) {
-        widgetsPresent = true;
-
-        if (sp_store == null) loadSettingsFiles(context);
-        sps_editor = sp_store.edit();
-        sps_editor.putBoolean(KEY_WIDGETS_PRESENT, widgetsPresent);
-        sps_editor.commit();
-
-        if (clientMessengers == null) return;
-
-        for (Messenger messenger : clientMessengers) {
-            sendClientMessage(messenger, RemoteConnection.CLIENT_SERVICE_UNCLOSEABLE);
-        }
-    }
-
-    public static void onWidgetDisabled(Context context) {
-        widgetsPresent = false;
-
-        if (sp_store == null) loadSettingsFiles(context);
-        sps_editor = sp_store.edit();
-        sps_editor.putBoolean(KEY_WIDGETS_PRESENT, widgetsPresent);
-        sps_editor.commit();
-
-        if (clientMessengers == null) return;
-
-        for (Messenger messenger : clientMessengers) {
-            sendClientMessage(messenger, RemoteConnection.CLIENT_SERVICE_CLOSEABLE);
         }
     }
 }
