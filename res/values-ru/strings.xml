@@ -9,12 +9,19 @@
   <string name="yes" formatted="false">Да</string>
   <string name="cancel" formatted="false">Отмена</string>
   <string name="confirm_close" formatted="false">Действительно закрыть?</string>
-  <string name="confirm_close_hint" formatted="false">Battery Indicator будет полностью закрыт и Вы не увидите индикатор в строке состояния.\n\nЕсли Вы хотите выйти из главного окна и оставить индикатор активным, нажмите \"Отмена\" и после этого просто нажмите кнопку \"Назад\" для выхода из главного окна.</string>
+  <string name="confirm_close_hint" formatted="false">BatteryBot будет полностью закрыт и Вы более не увидите индикатор в строке состояния. Виджеты рабочего стола работать не будут.\n\nЕсли Вы хотите только выйти из главного окна и оставить индикатор работающим, нажмите \"Отмена\" и после этого нажмите кнопку \"Назад\" вашего устройства.\n\nЕсли вы хотите скрыть уведомление, но оставить виджеты работающими, нажмите \"Отмена\" и затем \"Скрыть уведомление\".</string>
   <string name="okay" formatted="false">Да</string>
   <string name="tab_current_info" formatted="false">Текущая информация</string>
+  <string name="notification_until_charged" formatted="false">" до полного заряда"</string>
+  <string name="notification_until_drained" formatted="false">" осталось"</string>
+  <string name="activity_until_charged" formatted="false">до полного заряда</string>
+  <string name="activity_until_drained" formatted="false">до полного разряда</string>
   <string name="menu_settings" formatted="false">Настройки</string>
   <string name="menu_close" formatted="false">Закрыть</string>
   <string name="menu_help" formatted="false">Помощь</string>
+  <string name="menu_rate_and_review" formatted="false">Оценить и дать отзыв</string>
+  <string name="menu_show_notification" formatted="false">Показать уведомление</string>
+  <string name="menu_hide_notification" formatted="false">Скрыть уведомление</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">Фаренгейт</string>
@@ -22,36 +29,69 @@
   <string name="celsius" formatted="false">Цельсий</string>
   <string name="celsius_symbol" formatted="false">C</string>
   <string name="volt_symbol" formatted="false">v</string>
-  <string name="status_unplugged" formatted="false">Отключен</string>
+  <string name="status_unplugged" formatted="false">Работает от аккумулятора</string>
   <string name="status_unknown" formatted="false">Неизвестно</string>
   <string name="status_charging" formatted="false">Заряжается</string>
   <string name="status_discharging" formatted="false">Разряжается</string>
   <string name="status_not_charging" formatted="false">Не заряжается</string>
-  <string name="status_fully_charged" formatted="false">Полностью заряжен</string>
+  <string name="status_fully_charged" formatted="false">Полностью заряжено</string>
   <string name="health_unknown" formatted="false">Неизвестно</string>
   <string name="health_good" formatted="false">Хорошее состояние</string>
   <string name="health_overheat" formatted="false">Перегрев</string>
-  <string name="health_dead" formatted="false">Смерть</string>
+  <string name="health_dead" formatted="false">Аккумулятор вышел из строя</string>
   <string name="health_overvoltage" formatted="false">Превышено напряжение</string>
   <string name="health_failure" formatted="false">Сбой</string>
   <string name="health_cold" formatted="false">Cold</string>
-  <string name="plugged_unplugged" formatted="false">Отключено</string>
+  <string name="plugged_unplugged" formatted="false">Отключено от сети</string>
   <string name="plugged_ac" formatted="false">(AC)</string>
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
-  <string name="plugged_wireless" formatted="false">(WL)</string>
-  <string name="since" formatted="false">С</string>
-  <string name="currently_using" formatted="false">Текущее использование</string>
+  <string name="plugged_wireless" formatted="false">(Беспроводное ЗУ)</string>
+  <string name="since" formatted="false">После</string>
+  <string name="currently_using" formatted="false">Сейчас использует</string>
   <string name="currently_set_to" formatted="false">"Текущая настройка: "</string>
   <string name="currently_disabled" formatted="false">Сейчас отключено</string>
   <string name="help_cat_version" formatted="false">Версия</string>
   <string name="help_cat_changelog" formatted="false">Журнал изменений</string>
   <string name="help_changelog" formatted="false">Смотрите в <a href="http://batterybot.info/changelog">истории изменений программы</a>.</string>
+  <string name="help_cat_faq" formatted="false">Часто задаваемые вопросы</string>
+  <string name="help_faq" formatted="false">Смотрите <a href="http://www.batterybot.info/faq">online FAQ</a>.</string>
+  <string name="help_cat_website" formatted="false">Сайт</string>
+  <string name="help_website" formatted="false">Больше информации доступно на <a href="http://www.batterybot.info/">сайте BatteryBot</a>.</string>
+  <string name="help_cat_open_source" formatted="false">Открытый исходный код</string>
+  <string name="help_open_source" formatted="false">Это проект с открытым исходным кодом. Вы можете скачать <a href="http://www.batterybot.info/sourcecode">исходный код программы</a>.</string>
+  <string name="help_cat_donate" formatted="false">Пожертвовать</string>
+  <string name="help_donate" formatted="false">Вы можете внести свое пожертвование переходом на <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a>.</string>
   <string name="help_cat_no_warranty" formatted="false">Отказ от гарантий</string>
+  <string name="help_no_warranty" formatted="false">Это приложение распространяется в надежде, что оно принесет пользу, но БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ; даже без подразумеваемых гарантий ТОВАРНОЙ ПРИГОДНОСТИ или СООТВЕТСТВИЯ ДЛЯ КОНКРЕТНОГО НАМЕРЕНИЯ.\n\nХотя я прикладываю все свои усилия для того, чтобы приложение работало правильно и не вызывало проблем, тем не менее, я не несу ответственность за какие-либо повреждения или неудобства, которые могут возникнуть при некоторых обстоятельствах.</string>
+  <string name="help_cat_acknowledgments" formatted="false">Благодарности</string>
+  <string name="help_acknowledgments" formatted="false">Без благородной помощи со стороны добровольцев-переводчиков это приложение было бы доступно только на английском. Спасибо им всем!\n\nБольшое спасибо компании Google и всем программистам открытого исходного кода, которые сделали возможными платформу Android и само это приложение.\n\nЗначок приложения (вертикально ориентированная батарейка, которую вы видите в магазине приложений) основан на пиктограмме из <a href="http://www.oxygen-icons.org">темы Oxygen</a> и используется на условиях лицензии <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Common Attribution-ShareAlike 3.0 License</a>.</string>
+  <string name="help_cat_translations" formatted="false">Переводы/локализация</string>
+  <string name="help_translations" formatted="false">Мне необходима помощь в переводе этого приложения на новые языки, а также помощь в поддержке имеющихся переводов. Если у вас есть желание помочь, напишите мне <a href="mailto:support%2Btranslations@batterybot.info">письмо</a>. Если вы желаете, чтобы ваше имя было указано в этом разделе в знак признательности за ваше содействие, пожалуйста, сообщите мне желаемое написание вашего имени.</string>
   <string name="help_subcat_translators" formatted="false">Переводчики</string>
   <string name="help_cat_contact" formatted="false">Контакты</string>
-  <string name="pref_hint" formatted="false">Подсказка: Нажмите MENU для вызова помощи.</string>
+  <string name="help_contact" formatted="false">Если у вас есть вопросы, проблемы или комментарии, пожалуйста <a href="mailto:support@batterybot.info">напишите мне</a>.</string>
+  <string name="pref_hint" formatted="false">Подсказка: Для вызова помощи нажмите MENU.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Больше настроек в версии Pro</string>
-  <string name="pref_cat_notification_settings" formatted="false">Настройки оповещений</string>
+  <string name="pref_please_upgrade" formatted="false">В версии Pro имеется намного больше настроек и функций, включая информацию о токе аккумулятора (mA), полноцветные значки, предупреждения, журнал состояния аккумулятора, автоматическое/ручное отключение блокировки экрана и многое другое.</string>
+  <string name="pref_use_system_notification_layout" formatted="false">Использовать системную разметку</string>
+  <string name="pref_use_system_notification_layout_summary" formatted="false">Использовать системную разметку уведомлений вместо настраиваемой?</string>
+  <string name="pref_use_system_notification_layout_help" formatted="false">Если включено, будет использоваться системная разметка уведомлений вместо настраиваемой в BatteryBot. Системная разметка настраивается не столь гибко, однако некоторые устройства не передают правильно цвета по умолчанию, что приводит к тому, что пользовательская разметка выглядит некрасиво или получается трудночитаемой. В некоторых устройствах используется необычная разметка, что приводит к тому, что настраиваемая разметка уведомлений вообще не подходит. Выбор данной опции гарантирует, что уведомление программы будет выглядеть так же, как и любое другое.\n\nУчтите, что это приведет к отображению значка панели уведомлений в самом уведомлении.</string>
+  <string name="pref_notify_status_duration" formatted="false">Показывать продолжительность состояния</string>
+  <string name="pref_notify_status_duration_summary" formatted="false">Показывать время с момента изменения состояния или оценку оставшегося времени?</string>
+  <string name="pref_notify_status_duration_help" formatted="false">Включите эту опцию, если предпочитаете, чтобы в главном уведомлении было показано время, прошедшее с момента изменения состояния (например, \"Работает от аккумулятора в течение 5 часов\"), а не оценку оставшегося времени работы. Обе характеристики доступны в главном окне приложения.</string>
+  <string name="pref_convert_to_fahrenheit" formatted="false">Преобразовать к Фаренгейту</string>
+  <string name="pref_convert_to_fahrenheit_help" formatted="false">Система Android сообщает температуру аккумулятора в градусах Цельсия. Если для вас предпочтительнее градусы Фаренгейта, выберите эту опцию, и приложение осуществит преобразование для вас.</string>
+  <string name="pref_classic_color_mode" formatted="false">Применить классический цветовой режим</string>
+  <string name="pref_classic_color_mode_summary" formatted="false">Это обычно не работает; пожалуйста, прочтите справку</string>
+  <string name="pref_classic_color_mode_help" formatted="false">Начиная с Android 5.0 (Lollipop), цветные значки уведомлений официально больше не поддерживаются, при этом классический значок BatteryBot выглядит сплошным белым. Поэтому на подобных устройствах приложение использует простой белый контур с белыми цифрами.\n\nОднако, не все устройства строго следуют спецификациям, поэтому сказанное выше не является обязательным не везде работает корректно. Вы можете попробовать настроить стандартное отображение классического значка включением этой опции. Помните, что на большинстве устройств это только приведет к тому, что значок станет сплошным белым.</string>
+  <string name="pref_cat_notification_settings" formatted="false">Настройки уведомлений</string>
   <string name="silent" formatted="false">Беззвучно</string>
+  <string name="icon_set_classic" formatted="false">Классический</string>
+  <string name="icon_set_plain" formatted="false">Просто число</string>
+  <string name="icon_set_smaller" formatted="false">Мелкий шрифт</string>
+  <plurals name="n_log_items">
+    <item quantity="one">%d элемент журнала</item>
+    <item quantity="other">%d элементов журнала</item>
+  </plurals>
 </resources>
