@@ -4,7 +4,7 @@
   <string name="app_launcher_name" formatted="false">BatteryBot</string>
   <string name="settings_activity_subtitle" formatted="false">Настройки</string>
   <string name="app_full_name_free" formatted="false">BatteryBot</string>
-  <string name="battery_use_b" formatted="false">Посмотреть использование батареи</string>
+  <string name="battery_use_b" formatted="false">Посмотреть использование аккумулятора</string>
   <string name="upgrade_donate_b" formatted="false">Улучшить/Помочь проекту</string>
   <string name="yes" formatted="false">Да</string>
   <string name="cancel" formatted="false">Отмена</string>
@@ -19,7 +19,7 @@
   <string name="menu_settings" formatted="false">Настройки</string>
   <string name="menu_close" formatted="false">Закрыть</string>
   <string name="menu_help" formatted="false">Помощь</string>
-  <string name="menu_rate_and_review" formatted="false">Оценить и дать отзыв</string>
+  <string name="menu_rate_and_review" formatted="false">Оценить и написать отзыв</string>
   <string name="menu_show_notification" formatted="false">Показать уведомление</string>
   <string name="menu_hide_notification" formatted="false">Скрыть уведомление</string>
   <string name="percent_symbol" formatted="false">%</string>
@@ -34,7 +34,7 @@
   <string name="status_charging" formatted="false">Заряжается</string>
   <string name="status_discharging" formatted="false">Разряжается</string>
   <string name="status_not_charging" formatted="false">Не заряжается</string>
-  <string name="status_fully_charged" formatted="false">Полностью заряжено</string>
+  <string name="status_fully_charged" formatted="false">Полностью заряжен</string>
   <string name="health_unknown" formatted="false">Неизвестно</string>
   <string name="health_good" formatted="false">Хорошее состояние</string>
   <string name="health_overheat" formatted="false">Перегрев</string>
@@ -42,7 +42,7 @@
   <string name="health_overvoltage" formatted="false">Превышено напряжение</string>
   <string name="health_failure" formatted="false">Сбой</string>
   <string name="health_cold" formatted="false">Cold</string>
-  <string name="plugged_unplugged" formatted="false">Отключено от сети</string>
+  <string name="plugged_unplugged" formatted="false">Отключен от сети</string>
   <string name="plugged_ac" formatted="false">(AC)</string>
   <string name="plugged_usb" formatted="false">(USB)</string>
   <string name="plugged_unknown" formatted="false">(?)</string>
@@ -50,7 +50,7 @@
   <string name="since" formatted="false">После</string>
   <string name="currently_using" formatted="false">Сейчас использует</string>
   <string name="currently_set_to" formatted="false">"Текущая настройка: "</string>
-  <string name="currently_disabled" formatted="false">Сейчас отключено</string>
+  <string name="currently_disabled" formatted="false">Сейчас отключен</string>
   <string name="help_cat_version" formatted="false">Версия</string>
   <string name="help_cat_changelog" formatted="false">Журнал изменений</string>
   <string name="help_changelog" formatted="false">Смотрите в <a href="http://batterybot.info/changelog">истории изменений программы</a>.</string>
@@ -61,7 +61,7 @@
   <string name="help_cat_open_source" formatted="false">Открытый исходный код</string>
   <string name="help_open_source" formatted="false">Это проект с открытым исходным кодом. Вы можете скачать <a href="http://www.batterybot.info/sourcecode">исходный код программы</a>.</string>
   <string name="help_cat_donate" formatted="false">Пожертвовать</string>
-  <string name="help_donate" formatted="false">Вы можете внести свое пожертвование переходом на <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a>.</string>
+  <string name="help_donate" formatted="false">Вы можете внести свое пожертвование перейдя на <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a>.</string>
   <string name="help_cat_no_warranty" formatted="false">Отказ от гарантий</string>
   <string name="help_no_warranty" formatted="false">Это приложение распространяется в надежде, что оно принесет пользу, но БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ; даже без подразумеваемых гарантий ТОВАРНОЙ ПРИГОДНОСТИ или СООТВЕТСТВИЯ ДЛЯ КОНКРЕТНОГО НАМЕРЕНИЯ.\n\nХотя я прикладываю все свои усилия для того, чтобы приложение работало правильно и не вызывало проблем, тем не менее, я не несу ответственность за какие-либо повреждения или неудобства, которые могут возникнуть при некоторых обстоятельствах.</string>
   <string name="help_cat_acknowledgments" formatted="false">Благодарности</string>
@@ -73,10 +73,12 @@
   <string name="help_contact" formatted="false">Если у вас есть вопросы, проблемы или комментарии, пожалуйста <a href="mailto:support@batterybot.info">напишите мне</a>.</string>
   <string name="pref_hint" formatted="false">Подсказка: Для вызова помощи нажмите MENU.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Больше настроек в версии Pro</string>
-  <string name="pref_please_upgrade" formatted="false">В версии Pro имеется намного больше настроек и функций, включая информацию о токе аккумулятора (mA), полноцветные значки, предупреждения, журнал состояния аккумулятора, автоматическое/ручное отключение блокировки экрана и многое другое.</string>
+  <string name="pref_please_upgrade" formatted="false">В версии Pro значительно больше настроек и функций, включая информацию о токе аккумулятора (mA), полноцветные значки, предупреждения, журнал состояния аккумулятора, автоматическое/ручное отключение блокировки экрана и многое другое.</string>
   <string name="pref_use_system_notification_layout" formatted="false">Использовать системную разметку</string>
   <string name="pref_use_system_notification_layout_summary" formatted="false">Использовать системную разметку уведомлений вместо настраиваемой?</string>
-  <string name="pref_use_system_notification_layout_help" formatted="false">Если включено, будет использоваться системная разметка уведомлений вместо настраиваемой в BatteryBot. Системная разметка настраивается не столь гибко, однако некоторые устройства не передают правильно цвета по умолчанию, что приводит к тому, что пользовательская разметка выглядит некрасиво или получается трудночитаемой. В некоторых устройствах используется необычная разметка, что приводит к тому, что настраиваемая разметка уведомлений вообще не подходит. Выбор данной опции гарантирует, что уведомление программы будет выглядеть так же, как и любое другое.\n\nУчтите, что это приведет к отображению значка панели уведомлений в самом уведомлении.</string>
+  <string name="pref_use_system_notification_layout_help" formatted="false">Если включено, будет использоваться системная разметка уведомлений вместо настраиваемой в BatteryBot. Системная разметка настраивается не столь гибко, однако некоторые устройства не передают правильно цвета по умолчанию, что приводит к тому, что пользовательская разметка выглядит некрасиво или получается трудночитаемой. В некоторых устройствах используется особая разметка, что приводит к тому, что настраиваемая разметка уведомлений вообще не годится. Выбор данной опции гарантирует, что уведомление программы будет выглядеть так же, как и любое другое.\n\nУчтите, что это приведет к отображению значка панели уведомлений в самом уведомлении.</string>
+  <string name="pref_icon_set" formatted="false">Набор значков</string>
+  <string name="pref_icon_set_help" formatted="false">Существует много вариантов системы Android, поэтому не существует набора значков, который был бы идеален для любого устройства. Пользователи версии Pro могут использовать плагины, но и в текущей версии есть три набора значков, которые позволят получить хороший результат практически для любого устройства.\n\n\"Классический\" - оригинальный набор значков с 2009 года. До сих пор является самым подходящим для старых устройств, но в более новых версиях Android (начиная с Android 3.0, Honeycomb) значки сжимаются и тускнут, что затрудняет их восприятие.\n\n\"Просто число\" - набор значков по умолчанию для всех современных устройств. Это очень большие белые цифры, которые хорошо читаются даже будучи сжатыми и тусклыми. Во время зарядки под цифрами показывается молния.\n\n\"Мелкие цифры\" - то же, что и \"Просто число\", но мельче. Дело в том, что некоторые современные устройства не масштабируют значки и очень крупные цифры в наборе \"Просто число\" выглядят на таких устройствах комично.\n\nЕсли вы установили плагины значков для BatteryBot Pro (нажмите MENU, затем \"Получить плагины\" для доступа к бесплатным плагинам или просто нажмите \"Получить плагины\" на панели действий на новых устройствах), вы можете выбрать дополнительные значки.</string>
   <string name="pref_notify_status_duration" formatted="false">Показывать продолжительность состояния</string>
   <string name="pref_notify_status_duration_summary" formatted="false">Показывать время с момента изменения состояния или оценку оставшегося времени?</string>
   <string name="pref_notify_status_duration_help" formatted="false">Включите эту опцию, если предпочитаете, чтобы в главном уведомлении было показано время, прошедшее с момента изменения состояния (например, \"Работает от аккумулятора в течение 5 часов\"), а не оценку оставшегося времени работы. Обе характеристики доступны в главном окне приложения.</string>
@@ -84,14 +86,48 @@
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Система Android сообщает температуру аккумулятора в градусах Цельсия. Если для вас предпочтительнее градусы Фаренгейта, выберите эту опцию, и приложение осуществит преобразование для вас.</string>
   <string name="pref_classic_color_mode" formatted="false">Применить классический цветовой режим</string>
   <string name="pref_classic_color_mode_summary" formatted="false">Это обычно не работает; пожалуйста, прочтите справку</string>
-  <string name="pref_classic_color_mode_help" formatted="false">Начиная с Android 5.0 (Lollipop), цветные значки уведомлений официально больше не поддерживаются, при этом классический значок BatteryBot выглядит сплошным белым. Поэтому на подобных устройствах приложение использует простой белый контур с белыми цифрами.\n\nОднако, не все устройства строго следуют спецификациям, поэтому сказанное выше не является обязательным не везде работает корректно. Вы можете попробовать настроить стандартное отображение классического значка включением этой опции. Помните, что на большинстве устройств это только приведет к тому, что значок станет сплошным белым.</string>
+  <string name="pref_classic_color_mode_help" formatted="false">Начиная с Android 5.0 (Lollipop), цветные значки уведомлений официально больше не поддерживаются, при этом классический значок BatteryBot выглядит сплошным белым. Поэтому на подобных устройствах приложение использует простой белый контур с белыми цифрами.\n\nОднако, не все устройства строго следуют спецификациям, поэтому сказанное выше не является обязательным не везде работает корректно. Вы можете попробовать настроить стандартное отображение классического набора значков включением этой опции. Помните, что на большинстве устройств это только приведет к тому, что значок станет сплошным белым.</string>
   <string name="pref_cat_notification_settings" formatted="false">Настройки уведомлений</string>
   <string name="silent" formatted="false">Беззвучно</string>
   <string name="icon_set_classic" formatted="false">Классический</string>
   <string name="icon_set_plain" formatted="false">Просто число</string>
-  <string name="icon_set_smaller" formatted="false">Мелкий шрифт</string>
+  <string name="icon_set_smaller" formatted="false">Мелкие цифры</string>
   <plurals name="n_log_items">
     <item quantity="one">%d элемент журнала</item>
     <item quantity="other">%d элементов журнала</item>
+  </plurals>
+  <plurals name="n_hours_long">
+    <item quantity="one">"%d час, "</item>
+    <item quantity="other">"%d часов, "</item>
+  </plurals>
+  <plurals name="n_minutes_long">
+    <item quantity="one">%d минута</item>
+    <item quantity="other">%d минут</item>
+  </plurals>
+  <plurals name="n_hours_medium">
+    <item quantity="one">"%d ч., "</item>
+    <item quantity="other">"%d час., "</item>
+  </plurals>
+  <plurals name="n_minutes_medium">
+    <item quantity="one">%d мин.</item>
+    <item quantity="other">%d мин.</item>
+  </plurals>
+  <plurals name="n_hours_short">
+    <item quantity="other">"%dч "</item>
+  </plurals>
+  <plurals name="n_minutes_short">
+    <item quantity="other">%dм</item>
+  </plurals>
+  <plurals name="n_days">
+    <item quantity="one">"%d день, "</item>
+    <item quantity="other">"%d дней, "</item>
+  </plurals>
+  <plurals name="n_hours">
+    <item quantity="one">%d час</item>
+    <item quantity="other">%d часов</item>
+  </plurals>
+  <plurals name="for_n_hours">
+    <item quantity="one">В течение %d часа</item>
+    <item quantity="other">В течение %d часов</item>
   </plurals>
 </resources>
