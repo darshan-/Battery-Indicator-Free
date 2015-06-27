@@ -47,6 +47,11 @@
 
   <PreferenceCategory android:title="@string/pref_cat_more_settings_in_pro">
     <Preference
+        android:key="unlock_pro"
+        android:layout="@layout/unlock_pro"
+    />
+
+    <Preference
        android:summary="@string/pref_please_upgrade"
        android:layout="@layout/pro_pref"
        android:enabled="false"

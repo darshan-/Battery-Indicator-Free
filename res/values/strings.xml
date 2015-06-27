@@ -196,7 +196,7 @@
     The Pro version has many more settings and features, including
     current (mA) information,
     colorful icons, alarms,
-    battery state logging, auto/manual lock screen disable,
+    battery state logging,
     and more.
   </string>
   <string formatted="false" name="pref_use_system_notification_layout">Use System Layout</string>

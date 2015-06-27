@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/upgrade_donate_b"
+    android:layout_height="@dimen/tls_button_height"
+    android:layout_width="fill_parent"
+    android:layout_gravity="center_horizontal"
+    android:onClick="upgradeButtonClick"
+    android:textSize="@dimen/tls_button_fs"
+    android:text="@string/upgrade_donate_b"
+/>

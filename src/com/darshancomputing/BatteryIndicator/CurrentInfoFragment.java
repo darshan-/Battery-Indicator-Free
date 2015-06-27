@@ -62,9 +62,13 @@ public class CurrentInfoFragment extends Fragment {
     private static final IntentFilter batteryChangedFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
     private View view;
     private Button battery_use_b;
-    private Button upgrade_donate_b;
     private BatteryLevel bl;
     private ImageView blv;
+
+    private TextView tv_temp;
+    private TextView tv_health;
+    private TextView tv_voltage;
+
     private BatteryInfo info = new BatteryInfo();
 
     //private String oldLanguage = null;
@@ -115,8 +119,11 @@ public class CurrentInfoFragment extends Fragment {
         blv = (ImageView) view.findViewById(R.id.battery_level_view);
         blv.setImageBitmap(bl.getBitmap());
 
-        upgrade_donate_b = (Button) view.findViewById(R.id.upgrade_donate_b);
         battery_use_b = (Button) view.findViewById(R.id.battery_use_b);
+
+        tv_temp = (TextView) view.findViewById(R.id.temp);
+        tv_health = (TextView) view.findViewById(R.id.health);
+        tv_voltage = (TextView) view.findViewById(R.id.voltage);
 
         bindButtons();
 
@@ -356,6 +363,13 @@ public class CurrentInfoFragment extends Fragment {
             tv = (TextView) view.findViewById(R.id.status_duration);
             tv.setText(s);
         }
+
+        Boolean convertF = activity.settings.getBoolean(SettingsActivity.KEY_CONVERT_F, false);
+
+        tv_health.setText(activity.str.healths[info.health]);
+        tv_temp.setText(activity.str.formatTemp(info.temperature, convertF));
+        if (info.voltage > 500)
+            tv_voltage.setText(activity.str.formatVoltage(info.voltage));
     }
 
     /* Battery Use */
@@ -366,18 +380,6 @@ public class CurrentInfoFragment extends Fragment {
                 if (activity.settings.getBoolean(SettingsActivity.KEY_FINISH_AFTER_BATTERY_USE, false)) activity.finish();
             } catch (Exception e) {
                 battery_use_b.setEnabled(false);
-            }
-        }
-    };
-
-    // Upgrade/Donate
-    private OnClickListener udButtonListener = new OnClickListener() {
-        public void onClick(View v) {
-            try {
-                startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("market://details?id=com.darshancomputing.BatteryIndicatorPro")));
-            } catch (Exception e) {
-                Toast.makeText(activity.getApplicationContext(), "Sorry, can't launch Market!", Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -418,7 +420,5 @@ public class CurrentInfoFragment extends Fragment {
         } else {
             battery_use_b.setOnClickListener(buButtonListener);
         }
-
-        upgrade_donate_b.setOnClickListener(udButtonListener);
     }
 }

@@ -27,6 +27,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -42,6 +43,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Toast;
+
 import java.util.Locale;
 
 public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
@@ -504,5 +507,14 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         //if (! valuesList.contains(lpref.getValue())) lpref.setValueIndex(0);
         if (lpref.getEntry() == null) lpref.setValueIndex(0);
         */
+    }
+
+    public void upgradeButtonClick(android.view.View v) {
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                                     Uri.parse("market://details?id=com.darshancomputing.BatteryIndicatorPro")));
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Sorry, can't launch Market!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
