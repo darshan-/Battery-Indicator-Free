@@ -84,6 +84,9 @@
   <dimen name="tls_button_fs">16sp</dimen>
   <dimen name="tls_button_height">65dp</dimen>
 
+  <dimen name="vital_stats_icon">22dp</dimen>
+  <dimen name="vital_stats_text">14dp</dimen>
+
   <dimen name="bia_level">36sp</dimen>
   <dimen name="bia_time_remaining">24sp</dimen>
   <dimen name="bia_status">20sp</dimen>
