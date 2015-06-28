@@ -68,6 +68,7 @@ public class CurrentInfoFragment extends Fragment {
     private TextView tv_temp;
     private TextView tv_health;
     private TextView tv_voltage;
+    private ImageView plugged_icon;
 
     private BatteryInfo info = new BatteryInfo();
 
@@ -124,6 +125,7 @@ public class CurrentInfoFragment extends Fragment {
         tv_temp = (TextView) view.findViewById(R.id.temp);
         tv_health = (TextView) view.findViewById(R.id.health);
         tv_voltage = (TextView) view.findViewById(R.id.voltage);
+        plugged_icon = (ImageView) view.findViewById(R.id.plugged_icon);
 
         bindButtons();
 
@@ -370,6 +372,11 @@ public class CurrentInfoFragment extends Fragment {
         tv_temp.setText(activity.str.formatTemp(info.temperature, convertF));
         if (info.voltage > 500)
             tv_voltage.setText(activity.str.formatVoltage(info.voltage));
+
+        if (info.last_status == BatteryInfo.STATUS_UNPLUGGED)
+            plugged_icon.setImageResource(R.drawable.unplugged);
+        else
+            plugged_icon.setImageResource(R.drawable.not_unplugged);
     }
 
     /* Battery Use */
