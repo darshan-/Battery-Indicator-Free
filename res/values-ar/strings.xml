@@ -21,8 +21,6 @@
   <string name="menu_close" formatted="false">اغلاق</string>
   <string name="menu_help" formatted="false">مساعدة</string>
   <string name="menu_rate_and_review" formatted="false">تقييم ومراجعة التطبيق</string>
-  <string name="menu_show_notification" formatted="false">عرض الاشعارات</string>
-  <string name="menu_hide_notification" formatted="false">اخفاء الاشعارات</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">درجة</string>
   <string name="fahrenheit" formatted="false">فهرنهايت</string>
@@ -54,13 +52,13 @@
   <string name="currently_disabled" formatted="false">معطل حاليا</string>
   <string name="help_cat_version" formatted="false">الاصدار</string>
   <string name="help_cat_changelog" formatted="false">التغيير</string>
-  <string name="help_changelog" formatted="false">انظر الى<a href="http://batterybot.info/changelog">التغيير بالانترنيت</a></string>
+  <string name="help_changelog" formatted="false">انظر الى<a href="https://www.batterybot.info/changelog">التغيير بالانترنيت</a></string>
   <string name="help_cat_faq" formatted="false">اسئلة واجوبة</string>
-  <string name="help_faq" formatted="false"><a href="http://batterybot.info/faq">online FAQ</a> ارجوك اطلع على هذا</string>
+  <string name="help_faq" formatted="false"><a href="https://www.batterybot.info/faq">online FAQ</a> ارجوك اطلع على هذا</string>
   <string name="help_cat_website" formatted="false">الموقع</string>
-  <string name="help_website" formatted="false">المزيد من المعلومات متاحة على <a href="http://batterybot.info/">BatteryBot website</a></string>
+  <string name="help_website" formatted="false">المزيد من المعلومات متاحة على <a href="https://www.batterybot.info/">BatteryBot website</a></string>
   <string name="help_cat_open_source" formatted="false">مفتوح المصدر</string>
-  <string name="help_open_source" formatted="false">هذا مشروع مفتوح المصدر مما يعني انك قادر على تنزيل المصادر <a href="http://batterybot.info/sourcecode">تنزيل مصادر التطبيق</a>.</string>
+  <string name="help_open_source" formatted="false">هذا مشروع مفتوح المصدر مما يعني انك قادر على تنزيل المصادر <a href="https://www.batterybot.info/sourcecode">تنزيل مصادر التطبيق</a>.</string>
   <string name="help_cat_donate" formatted="false">تبرع</string>
   <string name="help_donate" formatted="false">ارجوك كن من المتبرعين بشرائك النسخة الكاملة <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">النسخة الكاملة</a>.</string>
   <string name="help_cat_no_warranty" formatted="false">لا ضمان</string>
@@ -75,9 +73,6 @@
   <string name="pref_hint" formatted="false">تلميح:اضغط على الخيارات للمساعدة</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">اعدادات اكثر في النسخة الكاملة</string>
   <string name="pref_please_upgrade" formatted="false">اصدار النسخة الكاملة يحتوي على اعدادات ومميزات اكثر ايقونات منبهات وسجلات حالة البطارية والتعطيل الاوتوماتيكي والعادي لقفل الشاشة والشحن المنقضي والمتبقي والمزيد</string>
-  <string name="pref_use_system_notification_layout" formatted="false">استخدام التصميم النظامي</string>
-  <string name="pref_use_system_notification_layout_summary" formatted="false">استخدام الاشعارات النظامية بالاحرى تخصيص اعدادات تصميم المؤشر؟</string>
-  <string name="pref_use_system_notification_layout_help" formatted="false">اذا تم التمكين الاشعارات النظاميةسوف تختلط مع الاشعارات الخاصة بلمؤشر الاحترافي الاشعارات النظامية اقل تخصيص لكن عدد لايذكر من الاجهزة لاتعمل هذا الخيار معها بشكل ملائم بحيث ان التصاميم ستصبح قبيحة وهناك هواتف اخرى لاتطابق الحجم الخاص بالتصاميم تمكين هذا الخير سيؤدي الاشعارات وسوف يقفل اقي الاشعارات\n\nلاحظ أن هذا سوف يؤدي إلى وجود رمز شريط المعلومات المستخدمة في الاشعارات.</string>
   <string name="pref_icon_set" formatted="false">ضبط الايقونة</string>
   <string name="pref_icon_set_help" formatted="false">الاندرويد يأتي بنسخ عديدة ولاتوجد ايقونة تعمل بشكل كامل على كل الاجهزة المستخدمين المحترفين يمكنهم جلب بعض الاضافات للحصول على خيارات اكثر لكن توجد ثلاث خيارات هي التي تعمل على كل الاجهزة\n\nالشكل الكلاسيكي هو الافتراضي والاصلي الذي يأتي منذ 2009 مع نسخة اندرويد3.0 القديمة والتي تسمى بقرص العسل و يجعل ايقونة الاشعارات سهلة القراءة\n\nشكل الارقام الكبيرة والتي تأتي لجميع الهواتف الجديدة لكن هناك هواتف ضغيرة وجديدة مما يؤدي الى عدم تركيب الارقام بشكل مناسب\n\nشكل الارقام الصغيرة وهوه مايفضله الذي يتركون شكل الارقام الكبيرة بسب عدم التركيب بشكل جيد لهواتفهم\n\nاذا كنت قد اشتريت النسخة الكاملة لهذا التطبيق فسوف تحصل على اضافات مجانية اضغط على خيارات واضغط على الحصول على اضافات مجانية او اضغط على الخيارات السريعة الموجودة في الشريط للهواتف الجديدة</string>
   <string name="pref_notify_status_duration" formatted="false">مدة عرض الحالة</string>

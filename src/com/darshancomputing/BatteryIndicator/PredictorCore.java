@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2012-2013 Darshan-Josiah Barber
+    Copyright (c) 2012-2016 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -97,6 +97,9 @@ public class PredictorCore {
     }
 
     public void update(BatteryInfo info, long when) {
+        if (info.status == BatteryInfo.STATUS_UNKNOWN)
+            return;
+
         cur_info = info;
         cur_charging_status = chargingStatusForCurInfo();
         now = when;

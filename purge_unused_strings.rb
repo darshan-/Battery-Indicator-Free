@@ -8,7 +8,7 @@ string_names = {}
 string_files = []
 
 data = [{:matches => `grep R.string src/com/darshancomputing/BatteryIndicator/*.java`,
-          :regex => /R.string.([a-z_]*)/},
+          :regex => /R.string.([a-z0-9_]*)/},
         {:matches => `grep -R --exclude-dir=.svn @string res AndroidManifest.xml`,
           :regex => /@string\/([a-z0-9_]*)/}]
 

@@ -46,6 +46,12 @@
   <style name="bi_help_theme" parent="@android:style/Theme.Light">
   </style>
 
+  <style name="bi_main_theme" parent="@android:style/Theme">
+  </style>
+
+  <style name="bi_settings_theme" parent="@android:style/Theme">
+  </style>
+
   <style name="alarm_list_left_column">
     <item name="android:layout_width">68dp</item>
     <item name="android:layout_height">68dp</item>
@@ -70,49 +76,16 @@
 
   <!--color name="heavy_usage">#DD901C</color-->
 
-  <!-- Left, Top, Right, Bottom, just like setPadding() -->
-  <array name="theme_default_main_layout_padding">
-    <item>0</item>
-    <item>0</item>
-    <item>0</item>
-    <item>143</item>
-  </array>
-
-  <dimen name="bu_button_fs">16sp</dimen>
-  <dimen name="bu_button_height">65dp</dimen>
-
   <dimen name="tls_button_fs">16sp</dimen>
   <dimen name="tls_button_height">65dp</dimen>
-
-  <dimen name="plugged_icon">44dp</dimen>
-  <dimen name="vital_stats_icon">22dp</dimen>
-  <dimen name="vital_stats_text">14dp</dimen>
 
   <integer name="current_info_top_left_weight">4</integer>
   <integer name="current_info_top_right_weight">6</integer>
 
-  <dimen name="bia_level">36sp</dimen>
-  <dimen name="bia_time_remaining">24sp</dimen>
-  <dimen name="bia_status">20sp</dimen>
-  <dimen name="bia_until_what">16sp</dimen>
   <integer name="bif_padding_weight">1</integer>
   <dimen name="bis_side_padding">15dp</dimen>
 
   <dimen name="battery_padding">10dp</dimen>
-
-  <style name="NotificationText">
-    <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
-  </style>
-  <style name="NotificationTitle">
-    <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
-    <item name="android:textStyle">bold</item>
-    <item name="android:textSize">17dp</item>
-  </style>
-
-  <style name="NotificationTextIcon" parent="NotificationTitle">
-  </style>
-
-  <dimen name="main_notification_text_padding_left">3dp</dimen>
 
   <dimen name="widget_margin">8dp</dimen>
 </resources>

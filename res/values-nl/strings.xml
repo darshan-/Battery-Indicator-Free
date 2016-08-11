@@ -51,7 +51,7 @@
   <string name="currently_disabled" formatted="false">Momenteel uitgeschakeld</string>
   <string name="help_cat_version" formatted="false">Versie</string>
   <string name="help_cat_changelog" formatted="false">Lijst van wijzigingen</string>
-  <string name="help_changelog" formatted="false">Bekijk de <a href="http://batterybot.info/changelog">lijst van wijzigingen</a>.</string>
+  <string name="help_changelog" formatted="false">Bekijk de <a href="https://www.batterybot.info/changelog">lijst van wijzigingen</a>.</string>
   <string name="help_cat_no_warranty" formatted="false">Geen garantie</string>
   <string name="help_no_warranty" formatted="false">Deze software wordt uitgegeven in de hoop dat het nuttig zal zijn, maar ZONDER ENIGE GARANTIE; zonder zelfs de impliciete garantie van verkoopbaarheid of geschiktheid voor een bepaald doel.\n\nTerwijl ik mijn best doe om ervoor te zorgen dat het goed werkt en geen problemen veroorzaken, ben ik niet verantwoordelijk voor eventuele schade of overlast dat wordt veroorzaakt onder alle omstandigheden.</string>
   <string name="help_cat_acknowledgments" formatted="false">Erkenningen</string>
@@ -63,9 +63,6 @@
   <string name="pref_hint" formatted="false">(Druk op MENU voor help)</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Meer instellingen in Battery Indicator Pro!</string>
   <string name="pref_please_upgrade" formatted="false">De Pro versie heeft veel meer instellingen en mogelijkheden, waaronder gekleurde icoontjes, alarmen, thema\'s, logboeken, schermvergrendeling voorkomen, geschatte tijd resterend en meer!</string>
-  <string name="pref_use_system_notification_layout" formatted="false">Gebruik standaardlayout</string>
-  <string name="pref_use_system_notification_layout_summary" formatted="false">Wilt u de standaardlayout van android gebruiken voor meldingen?</string>
-  <string name="pref_use_system_notification_layout_help" formatted="false">Wanneer ingeschakeld zal de standaardlayout van Android gebruikt worden voor meldingen in plaats van BatteryBot\'s aangepaste layout.</string>
   <string name="pref_icon_set" formatted="false">Iconen</string>
   <string name="pref_icon_set_help" formatted="false">Er zijn verschillende soorten Android, dus er is niet een perfecte set iconen die overal goed werken. Je kunt plugins gebruiken voor meer iconen, maar er zijn nu 3 standaard opties./n /n</string>
   <string name="pref_notify_status_duration" formatted="false">Laat tijd van status zien</string>

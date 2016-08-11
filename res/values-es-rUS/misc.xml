@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <dimen name="battery_padding">20dp</dimen>
+  <bool name="default_convert_to_fahrenheit">true</bool>
 </resources>

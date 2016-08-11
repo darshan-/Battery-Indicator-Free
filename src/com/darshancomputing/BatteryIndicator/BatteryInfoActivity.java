@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013-2015 Darshan-Josiah Barber
+    Copyright (c) 2013-2016 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,11 +16,12 @@ package com.darshancomputing.BatteryIndicator;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.ViewGroup;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -32,35 +33,18 @@ import android.support.v4.view.ViewPager;
 public class BatteryInfoActivity extends FragmentActivity {
     private BatteryInfoPagerAdapter pagerAdapter;
     private ViewPager viewPager;
-    public static CurrentInfoFragment currentInfoFragment;
-    private long startMillis;
-
-    public Context context;
-    public Resources res;
-    public Str str;
-    public SharedPreferences settings;
-    public SharedPreferences sp_store;
 
     private static final String LOG_TAG = "BatteryBot";
 
-    //static {
-        //android.os.Debug.startMethodTracing();
-    //}
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        startMillis = System.currentTimeMillis();
-
-        context = getApplicationContext();
-        res = getResources();
-        str = new Str(res);
-        loadSettingsFiles();
-
-        super.onCreate(savedInstanceState); // Recreates Fragments, so only call after doing necessary setup
+        super.onCreate(savedInstanceState);
+        PersistentFragment.getInstance(getSupportFragmentManager());
 
         setContentView(R.layout.battery_info);
 
         pagerAdapter = new BatteryInfoPagerAdapter(getSupportFragmentManager());
+        pagerAdapter.setContext(this);
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(pagerAdapter);
 
@@ -71,14 +55,17 @@ public class BatteryInfoActivity extends FragmentActivity {
     }
 
     @Override
-    public void onAttachFragment(Fragment fragment) {
-        if (fragment instanceof CurrentInfoFragment)
-            currentInfoFragment = (CurrentInfoFragment) fragment;
-    }
+    public void onStart() {
+        super.onStart();
 
-    public void loadSettingsFiles() {
-        settings = context.getSharedPreferences(SettingsActivity.SETTINGS_FILE, Context.MODE_MULTI_PROCESS);
-        sp_store = context.getSharedPreferences(SettingsActivity.SP_STORE_FILE, Context.MODE_MULTI_PROCESS);
+        pagerAdapter.setContext(this);
+    }
+ 
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        pagerAdapter.setContext(null);
     }
 
     @Override
@@ -91,27 +78,41 @@ public class BatteryInfoActivity extends FragmentActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    public class BatteryInfoPagerAdapter extends FragmentPagerAdapter {
+    private static class BatteryInfoPagerAdapter extends FragmentPagerAdapter {
+        private Context context;
+
         public BatteryInfoPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
-        @Override
-        public int getCount() {
-            return 1; // TODO
+        public void setContext(Context c) {
+            context = c;
         }
 
-        // TODO: Put Fragment types and page titles in Arrays or Map or something.
+        @Override
+        public int getCount() {
+            return 1;
+        }
+
         @Override
         public Fragment getItem(int position) {
-            if (currentInfoFragment == null)
-                currentInfoFragment = new CurrentInfoFragment();
-            return currentInfoFragment;
+            if (position == 0)
+                return new CurrentInfoFragment();
+            else
+                return null;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return res.getString(R.string.tab_current_info).toUpperCase();
+            if (context == null)
+                return null;
+
+            Resources res = context.getResources();
+
+            if (position == 0)
+                return res.getString(R.string.tab_current_info).toUpperCase();
+            else
+                return null;
         }
     }
 }

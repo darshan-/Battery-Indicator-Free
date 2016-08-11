@@ -21,8 +21,6 @@
   <string name="menu_close" formatted="false">閉じる</string>
   <string name="menu_help" formatted="false">ヘルプ</string>
   <string name="menu_rate_and_review" formatted="false">評価 と レビュー</string>
-  <string name="menu_show_notification" formatted="false">通知を表示する</string>
-  <string name="menu_hide_notification" formatted="false">通知を非表示にする</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">華氏</string>
@@ -54,13 +52,15 @@
   <string name="currently_disabled" formatted="false">現在無効</string>
   <string name="help_cat_version" formatted="false">バージョン</string>
   <string name="help_cat_changelog" formatted="false">変更履歴</string>
-  <string name="help_changelog" formatted="false"><a href="http://batterybot.info/changelog">オンライン変更履歴</a> をご覧ください.</string>
+  <string name="help_changelog" formatted="false"><a href="https://www.batterybot.info/changelog">オンライン変更履歴</a> をご覧ください.</string>
   <string name="help_cat_faq" formatted="false">よくある質問とその回答</string>
-  <string name="help_faq" formatted="false">Please see the <a href="http://batterybot.info/faq">オンライン FAQ</a>.</string>
+  <string name="help_faq" formatted="false"><a href="https://www.batterybot.info/faq">オンライン FAQ</a> をご覧ください.</string>
+  <string name="help_cat_google_plus" formatted="false">Google+ ページ</string>
+  <string name="help_google_plus" formatted="false">お知らせや最新情報の入手は <a href="https://www.google.com/+BatterybotInfoAndroid">Google+ ページ</a> をフォローしてください.</string>
   <string name="help_cat_website" formatted="false">Webサイト</string>
-  <string name="help_website" formatted="false">さらに詳細な情報は <a href="http://batterybot.info/">BatteryBot webサイト</a> でご利用できます。</string>
+  <string name="help_website" formatted="false">さらに詳細な情報は <a href="https://www.batterybot.info/">BatteryBot webサイト</a> でご利用できます。</string>
   <string name="help_cat_open_source" formatted="false">オープンソース</string>
-  <string name="help_open_source" formatted="false">これはオープンソースプロジェクトです。 <a href="http://batterybot.info/sourcecode">ソースコードをダウンロード</a> することができます。</string>
+  <string name="help_open_source" formatted="false">これはオープンソースプロジェクトです。 <a href="https://www.batterybot.info/sourcecode">ソースコードをダウンロード</a> することができます。</string>
   <string name="help_cat_donate" formatted="false">寄付</string>
   <string name="help_donate" formatted="false">寄付のために <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">プロ バージョン</a> へのアップグレードをご検討ください。</string>
   <string name="help_cat_no_warranty" formatted="false">無保証</string>
@@ -75,9 +75,6 @@
   <string name="pref_hint" formatted="false">ヒント: ヘルプはメニューを押してください。</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">プロバージョンの追加設定</string>
   <string name="pref_please_upgrade" formatted="false">プロバージョンには、 カラフルなアイコン、アラーム、 バッテリーステータスのロギング、自動/手動のロック画面無効化、 充電/放電残の見積など、多くの追加設定や機能があります。</string>
-  <string name="pref_use_system_notification_layout" formatted="false">システムのレイアウトを使用する</string>
-  <string name="pref_use_system_notification_layout_summary" formatted="false">BatteryBot のカスタムレイアウトではなく、システムの通知レイアウトを使用しますか?</string>
-  <string name="pref_use_system_notification_layout_help" formatted="false">有効にした場合、BatteryBot のカスタムレイアウトではなく、 システムの通知レイアウトを使用します。システムレイアウトはあまり カスタマイズできませんが、一部のデバイスではデフォルトの色を 正しく表示しないため、カスタムレイアウトが見づらくまたは読みづらく なります。他に一般的ではないレイアウトのデバイスは、カスタムレイアウトが フィットしないことがあります。このオプションを選択すると、 通知が、他の通知のように表示されることを保証します。\n\n通知で使用されるステータスバーアイコンが表示されるようになることとに ご注意ください。</string>
   <string name="pref_icon_set" formatted="false">アイコンセット</string>
   <string name="pref_icon_set_help" formatted="false">Android は多くの種類があるため、すべてのデバイス上でうまく動作する完全な アイコンセットはありません。プロ ユーザーは、より多くのオプションを含んだ プラグインを使用することができますが、ほぼすべてのデバイスに対して 少なくとも一つは良いオプションを提供しなければならないため、 3 つの組み込みアイコンセットがあります。\n\n\"クラシック\" は、2009年からのオリジナルアイコンセットです。 古いデバイスで使用する場合は最高の選択ですが、新しいバージョンの Android (Android 3.0, Honeycom 以降) では通知アイコンが小さく、 暗くなり、非常に見づらくなります。\n\n\"数字のみ\" は、すべての新しい Android デバイスのデフォルトです。 小さく、暗く表示された後に、非常に大きな白い数字で、 はっきり表示されます。 充電中は数字の下に稲妻が表示されます。\n\n\"小さい数字\" は \"数字のみ\" の小さいものです。 いくつかの新しいデバイスでは、これまでの Android のようにアイコンが 小さくならないため、\"数字のみ\" では非常に大きな数字が コミカルに表示されます。\n\nもしあなたが BatteryBot Pro のアイコン プラグインを インストールされると、これら中から選択することができます (メニューボタンを押して、プラグインを入手 から、無料のプラグインを 入手することができます。または新しいデバイスではアクションバーで プラグインを入手 ボタンを押してください)。</string>
   <string name="pref_notify_status_duration" formatted="false">ステータス時間を表示</string>
@@ -85,6 +82,9 @@
   <string name="pref_notify_status_duration_help" formatted="false">メイン通知で、見積残り時間ではなく、ステータスが変わってからの時間 (\"プラグを抜いてから 5 時間\" など) の表示をお好みの場合は、 この設定を有効にしてください。メインウインドウで両方の情報が入手できます。</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">華氏に変換する</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android はセ氏でバッテリ温度を報告します。バッテリー温度を華氏で 確認したい場合は、このオプションをチェックすると、アプリが変換します。</string>
+  <string name="pref_classic_color_mode" formatted="false">強制的にクラシックカラーモードにする</string>
+  <string name="pref_classic_color_mode_summary" formatted="false">これは通常動作しません。ヘルプをお読みください</string>
+  <string name="pref_classic_color_mode_help" formatted="false">Android 5.0 (Lollipop) から、着色された通知アイコンはもはや公式には Android 上で動作しません。クラシックアイコンは白い四角としてを表示されます。そのためデフォルトでは、これらのデバイス上で、アプリは白い番号と白いアウトラインを使用します。\n\nしかし、すべてのデバイスが仕様に従っているわけではないので、これは必要ではなく、すべてにおいて正常に動作するわけではありません。このオプションをオンにすることによって、クラシックな方法で、クラシックアイコンセットを動作させてみることができます。覚えておいてほしいのは、ほとんどのデバイスでこれはアイコンがただの白い四角になります、。</string>
   <string name="pref_cat_notification_settings" formatted="false">通知設定</string>
   <string name="silent" formatted="false">サイレント</string>
   <string name="icon_set_classic" formatted="false">クラシック</string>

@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013 Darshan-Josiah Barber
+    Copyright (c) 2013-2016 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -29,18 +29,29 @@ class BatteryLevel {
     private int width, top_h, body_h;
     private Canvas canvas;
     private Paint fill_paint, bitmap_paint;
-    private Bitmap battery_top, battery_body, battery;
+    private static Bitmap battery_top, battery_body, battery;
 
     public static final int SIZE_LARGE = 1;
     public static final int SIZE_NOTIFICATION = 4;
 
-    public BatteryLevel(Context context) {
-        this(context, SIZE_LARGE);
+    private static BatteryLevel[] instances = new BatteryLevel[]{null, null, null, null, null}; // So that [1], [2], and [4] exist
+
+    public static BatteryLevel getInstance(Context context, int inSampleSize) {
+        if (inSampleSize < 0 || inSampleSize >= instances.length)
+            return null;
+
+        if (instances[inSampleSize] == null)
+            instances[inSampleSize] = new BatteryLevel(context, inSampleSize);
+
+        return instances[inSampleSize];
     }
 
-    public BatteryLevel(Context context, int inSampleSize) {
+    public static BatteryLevel getInstance(Context context) {
+        return getInstance(context, SIZE_LARGE);
+    }
+
+    private BatteryLevel(Context context, int inSampleSize) {
         Resources res = context.getResources();
-        //?context = null;
 
         BitmapFactory bf = new BitmapFactory();
         BitmapFactory.Options bfo = new BitmapFactory.Options();
@@ -51,7 +62,6 @@ class BatteryLevel {
 
         battery_top    = bf.decodeResource(res, R.drawable.empty_battery_top   , bfo);
         battery_body   = bf.decodeResource(res, R.drawable.empty_battery_body  , bfo);
-        //?res = null;
 
            width = battery_top.getWidth();
            top_h = battery_top.getHeight();
@@ -74,8 +84,6 @@ class BatteryLevel {
         bitmap_paint = new Paint();
         bitmap_paint.setAntiAlias(true);
         bitmap_paint.setDither(true);
-
-        //setLevel(0); // TODO: Does it make sense to show an empty battery at first, in case it take a moment to get level?
     }
 
     public void setLevel(int level) {
@@ -96,11 +104,5 @@ class BatteryLevel {
 
     public Bitmap getBitmap() {
         return battery;
-    }
-
-    public void recycle() {
-        battery_top.recycle();
-        battery_body.recycle();
-        battery.recycle();
     }
 }

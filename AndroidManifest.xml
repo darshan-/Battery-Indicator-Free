@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.darshancomputing.BatteryIndicator"
-          android:versionCode="011200"
-          android:versionName="9.0.1"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:versionCode="013017"
+          android:versionName="10.0.0-dev"
 >
   <application
       android:label="@string/app_full_name_free"
       android:icon="@drawable/battery"
       android:hardwareAccelerated="true"
+      android:process="com.darshancomputing.BatteryBot"
+      android:allowBackup="false"
+      android:resizeableActivity="true"
   >
     <activity
         android:name=".BatteryInfoActivity"
         android:label="@string/app_full_name_free"
+        android:theme="@style/bi_main_theme"
         android:stateNotNeeded="true"
         android:launchMode="singleTask"
     >
@@ -24,6 +29,7 @@
 
 
     <activity android:name=".SettingsActivity"
+              android:theme="@style/bi_settings_theme"
 	      android:excludeFromRecents="true"
     />
 
@@ -49,7 +55,7 @@
         android:name=".BootCompletedReceiver"
         android:enabled="true"
         android:exported="true"
-        android:process="com.darshancomputing.BatteryBot.BCR"
+        android:process="com.darshancomputing.BatteryBot.BIS"
     >
       <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -77,11 +83,7 @@
     </receiver>
   </application>
 
-  <uses-sdk
-      android:minSdkVersion="7"
-      android:targetSdkVersion="22"
-  />
-
+  <!-- Permissions now considered "normal", automatically granted on API 23+ -->
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
   <uses-feature android:name="android.hardware.touchscreen" android:required="false" />

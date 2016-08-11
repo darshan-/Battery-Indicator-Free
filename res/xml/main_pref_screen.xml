@@ -13,7 +13,7 @@
     <CheckBoxPreference
        android:key="convert_to_fahrenheit"
        android:title="@string/pref_convert_to_fahrenheit"
-       android:defaultValue="false"
+       android:defaultValue="@bool/default_convert_to_fahrenheit"
     />
 
     <ListPreference
@@ -35,13 +35,6 @@
        android:title="@string/pref_notify_status_duration"
        android:summary="@string/pref_notify_status_duration_summary"
        android:defaultValue="false"
-    />
-
-    <CheckBoxPreference
-       android:key="use_system_notification_layout"
-       android:title="@string/pref_use_system_notification_layout"
-       android:summary="@string/pref_use_system_notification_layout_summary"
-       android:defaultValue="@bool/default_use_system_notification_layout"
     />
   </PreferenceCategory>
 

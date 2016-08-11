@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2013 Darshan-Josiah Barber
+    Copyright (c) 2009-2016 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -49,21 +49,14 @@ import java.util.Locale;
 
 public class SettingsActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
     public static final String SETTINGS_FILE = "com.darshancomputing.BatteryIndicator_preferences";
-    public static final String SP_STORE_FILE = "sp_store";
+    public static final String SP_SERVICE_FILE = "sp_store";   // Only write from Service process
+    public static final String SP_MAIN_FILE = "sp_store_main"; // Only write from main process
 
     public static final String KEY_THEME_SETTINGS = "theme_settings";
     public static final String KEY_ALARM_SETTINGS = "alarm_settings";
     public static final String KEY_ALARM_EDIT_SETTINGS = "alarm_edit_settings";
     public static final String KEY_OTHER_SETTINGS = "other_settings";
-    public static final String KEY_CONFIRM_DISABLE_LOCKING = "confirm_disable_lock_screen";
-    public static final String KEY_FINISH_AFTER_TOGGLE_LOCK = "finish_after_toggle_lock";
-    public static final String KEY_FINISH_AFTER_BATTERY_USE = "finish_after_battery_use";
-    public static final String KEY_NOTIFY_WHEN_KG_DISABLED = "notify_when_kg_disabled";
-    public static final String KEY_AUTO_DISABLE_LOCKING = "auto_disable_lock_screen";
-    public static final String KEY_DISALLOW_DISABLE_LOCK_SCREEN = "disallow_disable_lock_screen";
     public static final String KEY_MAIN_NOTIFICATION_PRIORITY = "main_notification_priority";
-    public static final String KEY_ENABLE_LOGGING = "enable_logging";
-    public static final String KEY_MAX_LOG_AGE = "max_log_age";
     public static final String KEY_ICON_PLUGIN = "icon_plugin";
     public static final String KEY_ICON_SET = "icon_set";
     public static final String KEY_CONVERT_F = "convert_to_fahrenheit";
@@ -86,27 +79,26 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_GREEN = "use_green";
     public static final String KEY_GREEN_THRESH = "green_threshold";
     public static final String KEY_COLOR_PREVIEW = "color_preview";
-    public static final String KEY_USE_SYSTEM_NOTIFICATION_LAYOUT = "use_system_notification_layout";
     public static final String KEY_FIRST_RUN = "first_run";
-    //public static final String KEY_LANGUAGE_OVERRIDE = "language_override";
+    public static final String KEY_NOTIFICATION_WIZARD_EVER_RUN = "key_notification_wizard_ever_run";
+    public static final String KEY_MIGRATED_SERVICE_DESIRED = "service_desired_migrated_to_sp_main";
 
-    private static final String[] PARENTS    = {KEY_ENABLE_LOGGING, KEY_RED,        KEY_AMBER,        KEY_GREEN};
-    private static final String[] DEPENDENTS = {KEY_MAX_LOG_AGE,    KEY_RED_THRESH, KEY_AMBER_THRESH, KEY_GREEN_THRESH};
+    private static final String[] PARENTS    = {KEY_RED,        KEY_AMBER,        KEY_GREEN};
+    private static final String[] DEPENDENTS = {KEY_RED_THRESH, KEY_AMBER_THRESH, KEY_GREEN_THRESH};
 
     private static final String[] LIST_PREFS = {KEY_AUTOSTART, KEY_STATUS_DUR_EST,
                                                 KEY_RED_THRESH, KEY_AMBER_THRESH, KEY_GREEN_THRESH,
                                                 KEY_MAIN_NOTIFICATION_PRIORITY, KEY_ICON_SET,
-                                                KEY_MAX_LOG_AGE/*, KEY_LANGUAGE_OVERRIDE*/};
+                                                };
 
     private static final String[] RESET_SERVICE = {KEY_CONVERT_F, KEY_NOTIFY_STATUS_DURATION,
-                                                   KEY_AUTO_DISABLE_LOCKING, KEY_RED, KEY_RED_THRESH,
+                                                   KEY_RED, KEY_RED_THRESH,
                                                    KEY_AMBER, KEY_AMBER_THRESH, KEY_GREEN, KEY_GREEN_THRESH,
-                                                   KEY_NOTIFY_WHEN_KG_DISABLED, KEY_ICON_SET,
+                                                   KEY_ICON_SET,
                                                    KEY_CLASSIC_COLOR_MODE,
                                                    KEY_INDICATE_CHARGING, KEY_TEN_PERCENT_MODE}; /* 10% mode changes color settings */
 
     private static final String[] RESET_SERVICE_WITH_CANCEL_NOTIFICATION = {KEY_MAIN_NOTIFICATION_PRIORITY,
-                                                                            KEY_USE_SYSTEM_NOTIFICATION_LAYOUT
     };
 
     public static final String EXTRA_SCREEN = "com.darshancomputing.BatteryIndicator.PrefScreen";
@@ -189,8 +181,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     private static final Object[] EMPTY_OBJECT_ARRAY = {};
     private static final  Class[]  EMPTY_CLASS_ARRAY = {};
 
-    //private String oldLanguage = null;
-
     public class MessageHandler extends Handler {
         @Override
         public void handleMessage(Message incoming) {
@@ -224,8 +214,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         pm.setSharedPreferencesName(SETTINGS_FILE);
         pm.setSharedPreferencesMode(Context.MODE_MULTI_PROCESS);
         mSharedPreferences = pm.getSharedPreferences();
-
-        //oldLanguage = mSharedPreferences.getString(KEY_LANGUAGE_OVERRIDE, "default");
 
         if (pref_screen == null) {
             setPrefScreen(R.xml.main_pref_screen);
@@ -284,21 +272,12 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         finish();
     }
 
-    /*private void restartIfLanguageChanged() {
-        String curLanguage = mSharedPreferences.getString(KEY_LANGUAGE_OVERRIDE, "default");
-        if (curLanguage.equals(oldLanguage))
-            return;
-
-        Str.overrideLanguage(res, getWindowManager(), curLanguage);
-        restartThisScreen();
-    }*/
-
     private void resetService() {
         resetService(false);
     }
 
     private void resetService(boolean cancelFirst) {
-        mSharedPreferences.edit().commit(); // Force file to be saved
+        mSharedPreferences.edit().commit(); // commit() synchronously before messaging Service
 
         Message outgoing = Message.obtain();
 
@@ -325,7 +304,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     protected void onResume() {
         super.onResume();
 
-        //restartIfLanguageChanged();
         mSharedPreferences.registerOnSharedPreferenceChangeListener(this);
     }
 
@@ -405,11 +383,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             updateConvertFSummary();
         }
 
-        /*if (key.equals(KEY_LANGUAGE_OVERRIDE)) {
-            Str.overrideLanguage(res, getWindowManager(), mSharedPreferences.getString(SettingsActivity.KEY_LANGUAGE_OVERRIDE, "default"));
-            restartThisScreen();
-        }*/
-
         for (int i=0; i < RESET_SERVICE.length; i++) {
             if (key.equals(RESET_SERVICE[i])) {
                 resetService();
@@ -432,7 +405,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         if (pref == null) return;
 
         pref.setSummary(res.getString(R.string.currently_using) + " " +
-                        (mSharedPreferences.getBoolean(KEY_CONVERT_F, false) ?
+                        (mSharedPreferences.getBoolean(KEY_CONVERT_F, res.getBoolean(R.bool.default_convert_to_fahrenheit)) ?
                          res.getString(R.string.fahrenheit) : res.getString(R.string.celsius)));
     }
 

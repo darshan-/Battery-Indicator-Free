@@ -258,6 +258,8 @@
   <string name="default_heavy_usage_time">480</string>
   <string name="default_constant_usage_time">240</string>
 
+  <string name ="default_main_notification_priority">-1</string>
+
   <string-array name="icon_set_values">
     <item>builtin.classic</item>
     <item>builtin.plain_number</item>
@@ -323,7 +325,5 @@
     <item>@string/icon_set_smaller</item>
   </string-array>
 
-  <bool name="long_notification_okay">false</bool>
-
-  <bool name="default_use_system_notification_layout">false</bool>
+  <bool name="default_convert_to_fahrenheit">false</bool>
 </resources>

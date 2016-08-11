@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2012-2013 Darshan-Josiah Barber
+    Copyright (c) 2012-2016 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,19 +25,19 @@ public class Predictor {
                                                   "key_ave_recharge_wl",
                                                   "key_ave_recharge_usb" };
 
-    private SharedPreferences sp_store;
+    private SharedPreferences sp_predictor;
     private SharedPreferences.Editor editor;
 
     private PredictorCore pc;
 
     public Predictor(Context context) {
-        sp_store = context.getSharedPreferences("predictor_sp_store", 0);
-        editor = sp_store.edit();
+        sp_predictor = context.getSharedPreferences("predictor_sp_store", 0);
+        editor = sp_predictor.edit();
 
-        pc = new PredictorCore(sp_store.getFloat(KEY_AVERAGE[PredictorCore.DISCHARGE],    -1),
-                               sp_store.getFloat(KEY_AVERAGE[PredictorCore.RECHARGE_AC],  -1),
-                               sp_store.getFloat(KEY_AVERAGE[PredictorCore.RECHARGE_WL],  -1),
-                               sp_store.getFloat(KEY_AVERAGE[PredictorCore.RECHARGE_USB], -1));
+        pc = new PredictorCore(sp_predictor.getFloat(KEY_AVERAGE[PredictorCore.DISCHARGE],    -1),
+                               sp_predictor.getFloat(KEY_AVERAGE[PredictorCore.RECHARGE_AC],  -1),
+                               sp_predictor.getFloat(KEY_AVERAGE[PredictorCore.RECHARGE_WL],  -1),
+                               sp_predictor.getFloat(KEY_AVERAGE[PredictorCore.RECHARGE_USB], -1));
     }
 
     public void setPredictionType(int type) {
@@ -46,8 +46,6 @@ public class Predictor {
 
     public void update(BatteryInfo info) {
         pc.update(info, SystemClock.elapsedRealtime());
-        editor.putFloat(KEY_AVERAGE[pc.cur_charging_status],
-                        (float) pc.getLongTermAverage());
-        editor.commit();
+        Str.apply(editor.putFloat(KEY_AVERAGE[pc.cur_charging_status], (float) pc.getLongTermAverage()));
     }
 }

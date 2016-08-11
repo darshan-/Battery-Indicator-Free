@@ -20,8 +20,6 @@
   <string name="menu_close" formatted="false">Закрыть</string>
   <string name="menu_help" formatted="false">Помощь</string>
   <string name="menu_rate_and_review" formatted="false">Оценить и написать отзыв</string>
-  <string name="menu_show_notification" formatted="false">Показать уведомление</string>
-  <string name="menu_hide_notification" formatted="false">Скрыть уведомление</string>
   <string name="percent_symbol" formatted="false">%</string>
   <string name="degree_symbol" formatted="false">°</string>
   <string name="fahrenheit" formatted="false">Фаренгейт</string>
@@ -53,13 +51,13 @@
   <string name="currently_disabled" formatted="false">Сейчас отключен</string>
   <string name="help_cat_version" formatted="false">Версия</string>
   <string name="help_cat_changelog" formatted="false">Журнал изменений</string>
-  <string name="help_changelog" formatted="false">Смотрите в <a href="http://batterybot.info/changelog">истории изменений программы</a>.</string>
+  <string name="help_changelog" formatted="false">Смотрите в <a href="https://www.batterybot.info/changelog">истории изменений программы</a>.</string>
   <string name="help_cat_faq" formatted="false">Часто задаваемые вопросы</string>
-  <string name="help_faq" formatted="false">Смотрите <a href="http://www.batterybot.info/faq">online FAQ</a>.</string>
+  <string name="help_faq" formatted="false">Смотрите <a href="https://www.batterybot.info/faq">online FAQ</a>.</string>
   <string name="help_cat_website" formatted="false">Сайт</string>
-  <string name="help_website" formatted="false">Больше информации доступно на <a href="http://www.batterybot.info/">сайте BatteryBot</a>.</string>
+  <string name="help_website" formatted="false">Больше информации доступно на <a href="https://www.batterybot.info/">сайте BatteryBot</a>.</string>
   <string name="help_cat_open_source" formatted="false">Открытый исходный код</string>
-  <string name="help_open_source" formatted="false">Это проект с открытым исходным кодом. Вы можете скачать <a href="http://www.batterybot.info/sourcecode">исходный код программы</a>.</string>
+  <string name="help_open_source" formatted="false">Это проект с открытым исходным кодом. Вы можете скачать <a href="https://www.batterybot.info/sourcecode">исходный код программы</a>.</string>
   <string name="help_cat_donate" formatted="false">Пожертвовать</string>
   <string name="help_donate" formatted="false">Вы можете внести свое пожертвование перейдя на <a href="market://details?id=com.darshancomputing.BatteryIndicatorPro">Pro Version</a>.</string>
   <string name="help_cat_no_warranty" formatted="false">Отказ от гарантий</string>
@@ -74,9 +72,6 @@
   <string name="pref_hint" formatted="false">Подсказка: Для вызова помощи нажмите MENU.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Больше настроек в версии Pro</string>
   <string name="pref_please_upgrade" formatted="false">В версии Pro значительно больше настроек и функций, включая информацию о токе аккумулятора (mA), полноцветные значки, предупреждения, журнал состояния аккумулятора, автоматическое/ручное отключение блокировки экрана и многое другое.</string>
-  <string name="pref_use_system_notification_layout" formatted="false">Использовать системную разметку</string>
-  <string name="pref_use_system_notification_layout_summary" formatted="false">Использовать системную разметку уведомлений вместо настраиваемой?</string>
-  <string name="pref_use_system_notification_layout_help" formatted="false">Если включено, будет использоваться системная разметка уведомлений вместо настраиваемой в BatteryBot. Системная разметка настраивается не столь гибко, однако некоторые устройства не передают правильно цвета по умолчанию, что приводит к тому, что пользовательская разметка выглядит некрасиво или получается трудночитаемой. В некоторых устройствах используется особая разметка, что приводит к тому, что настраиваемая разметка уведомлений вообще не годится. Выбор данной опции гарантирует, что уведомление программы будет выглядеть так же, как и любое другое.\n\nУчтите, что это приведет к отображению значка панели уведомлений в самом уведомлении.</string>
   <string name="pref_icon_set" formatted="false">Набор значков</string>
   <string name="pref_icon_set_help" formatted="false">Существует много вариантов системы Android, поэтому не существует набора значков, который был бы идеален для любого устройства. Пользователи версии Pro могут использовать плагины, но и в текущей версии есть три набора значков, которые позволят получить хороший результат практически для любого устройства.\n\n\"Классический\" - оригинальный набор значков с 2009 года. До сих пор является самым подходящим для старых устройств, но в более новых версиях Android (начиная с Android 3.0, Honeycomb) значки сжимаются и тускнут, что затрудняет их восприятие.\n\n\"Просто число\" - набор значков по умолчанию для всех современных устройств. Это очень большие белые цифры, которые хорошо читаются даже будучи сжатыми и тусклыми. Во время зарядки под цифрами показывается молния.\n\n\"Мелкие цифры\" - то же, что и \"Просто число\", но мельче. Дело в том, что некоторые современные устройства не масштабируют значки и очень крупные цифры в наборе \"Просто число\" выглядят на таких устройствах комично.\n\nЕсли вы установили плагины значков для BatteryBot Pro (нажмите MENU, затем \"Получить плагины\" для доступа к бесплатным плагинам или просто нажмите \"Получить плагины\" на панели действий на новых устройствах), вы можете выбрать дополнительные значки.</string>
   <string name="pref_notify_status_duration" formatted="false">Показывать продолжительность состояния</string>

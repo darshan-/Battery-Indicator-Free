@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013-2015 Darshan-Josiah Barber
+    Copyright (c) 2013-2016 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -141,9 +141,9 @@ class BatteryInfo {
         }
     }
 
-    public void load(Intent intent, SharedPreferences sp_store) {
+    public void load(Intent intent, SharedPreferences sp) {
         load(intent);
-        load(sp_store);
+        load(sp);
     }
 
     public void load(Intent intent) {
@@ -177,11 +177,11 @@ class BatteryInfo {
         }
     }
 
-    public void load(SharedPreferences sp_store) {
-        last_status = sp_store.getInt(KEY_LAST_STATUS, status);
-        last_plugged = sp_store.getInt(KEY_LAST_PLUGGED, plugged);
-        last_status_cTM = sp_store.getLong(KEY_LAST_STATUS_CTM, System.currentTimeMillis());
-        last_percent = sp_store.getInt(KEY_LAST_PERCENT, percent);
+    public void load(SharedPreferences sp) {
+        last_status = sp.getInt(KEY_LAST_STATUS, status);
+        last_plugged = sp.getInt(KEY_LAST_PLUGGED, plugged);
+        last_status_cTM = sp.getLong(KEY_LAST_STATUS_CTM, System.currentTimeMillis());
+        last_percent = sp.getInt(KEY_LAST_PERCENT, percent);
     }
 
     public Bundle toBundle() {
@@ -255,14 +255,14 @@ class BatteryInfo {
                     // Log.e(LOG_TAG, "charge_counter file exists but with value " + charge_counter + " which is inconsistent with percent: " + percent);
                 }
             } catch (java.io.FileNotFoundException e) {
-                Log.e(LOG_TAG, "charge_counter file doesn't exist");
-                e.printStackTrace();
+                // Log.e(LOG_TAG, "charge_counter file doesn't exist");
+                // e.printStackTrace();
             } catch (java.io.IOException e) {
-                Log.e(LOG_TAG, "Error reading charge_counter file");
-                e.printStackTrace();
+                // Log.e(LOG_TAG, "Error reading charge_counter file");
+                // e.printStackTrace();
             } catch (NumberFormatException e) {
-                Log.e(LOG_TAG, "Read charge_counter file but couldn't convert contents to int");
-                e.printStackTrace();
+                // Log.e(LOG_TAG, "Read charge_counter file but couldn't convert contents to int");
+                // e.printStackTrace();
             }
         }
 
