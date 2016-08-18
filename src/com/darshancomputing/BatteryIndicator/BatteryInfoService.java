@@ -415,16 +415,14 @@ public class BatteryInfoService extends Service {
 
         mainNotificationB.setSmallIcon(iconFor(info.percent))
             .setOngoing(true)
+            .setWhen(0)
+            .setShowWhen(false)
             .setContentTitle(mainNotificationTopLine)
             .setContentText(mainNotificationBottomLine)
-            .setContentIntent(currentInfoPendingIntent);
-
-        if (android.os.Build.VERSION.SDK_INT >= 16)
-            mainNotificationB.setPriority(Integer.valueOf(settings.getString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
-                                                                             str.default_main_notification_priority)));
-
-        if (android.os.Build.VERSION.SDK_INT >= 21)
-            mainNotificationB.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
+            .setContentIntent(currentInfoPendingIntent)
+            .setPriority(Integer.valueOf(settings.getString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
+                                                            str.default_main_notification_priority)))
+            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
     }
 
     private String predictionLine() {
