@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2016 Darshan-Josiah Barber
+    Copyright (c) 2009-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,6 +15,7 @@
 package com.darshancomputing.BatteryIndicator;
 
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
@@ -32,9 +33,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.os.PowerManager;
-import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
@@ -46,7 +44,7 @@ import java.util.HashSet;
 
 public class BatteryInfoService extends Service {
     private final IntentFilter batteryChanged = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-    private final IntentFilter userPresent    = new IntentFilter(Intent.ACTION_USER_PRESENT);
+    //private final IntentFilter userPresent    = new IntentFilter(Intent.ACTION_USER_PRESENT);
     private PendingIntent currentInfoPendingIntent, updatePredictorPendingIntent;
 
     private NotificationManagerCompat mNotificationManager;
@@ -56,7 +54,6 @@ public class BatteryInfoService extends Service {
     private SharedPreferences.Editor sps_editor;
 
     private Resources res;
-    private Str str;
     private BatteryLevel bl;
     private CircleWidgetBackground cwbg;
     private BatteryInfo info;
@@ -69,7 +66,7 @@ public class BatteryInfoService extends Service {
     private static AppWidgetManager widgetManager;
 
 
-    private static final String LOG_TAG = "com.darshancomputing.BatteryIndicator - BatteryInfoService";
+    //private static final String LOG_TAG = "com.darshancomputing.BatteryIndicator - BatteryInfoService";
 
     private static final int NOTIFICATION_PRIMARY      = 1;
     private static final int NOTIFICATION_KG_UNLOCKED  = 2;
@@ -88,8 +85,8 @@ public class BatteryInfoService extends Service {
     private static final String EXTRA_UPDATE_PREDICTOR = "com.darshancomputing.BatteryBot.EXTRA_UPDATE_PREDICTOR";
 
 
-    private static final Object[] EMPTY_OBJECT_ARRAY = {};
-    private static final  Class[]  EMPTY_CLASS_ARRAY = {};
+    //private static final Object[] EMPTY_OBJECT_ARRAY = {};
+    //private static final  Class[]  EMPTY_CLASS_ARRAY = {};
 
     private static final int plainIcon0 = R.drawable.plain000;
     private static final int small_plainIcon0 = R.drawable.small_plain000;

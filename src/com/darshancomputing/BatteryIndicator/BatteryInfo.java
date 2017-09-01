@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013-2016 Darshan-Josiah Barber
+    Copyright (c) 2013-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,37 +18,37 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
+//import android.util.Log;
 
 class BatteryInfo {
-    public static final int STATUS_UNPLUGGED     = 0;
-    public static final int STATUS_UNKNOWN       = 1;
-    public static final int STATUS_CHARGING      = 2;
-    public static final int STATUS_DISCHARGING   = 3;
-    public static final int STATUS_NOT_CHARGING  = 4;
-    public static final int STATUS_FULLY_CHARGED = 5;
-    public static final int STATUS_MAX = STATUS_FULLY_CHARGED;
+    static final int STATUS_UNPLUGGED     = 0;
+    static final int STATUS_UNKNOWN       = 1;
+    static final int STATUS_CHARGING      = 2;
+    static final int STATUS_DISCHARGING   = 3;
+    static final int STATUS_NOT_CHARGING  = 4;
+    static final int STATUS_FULLY_CHARGED = 5;
+    static final int STATUS_MAX = STATUS_FULLY_CHARGED;
 
-    public static final int PLUGGED_UNPLUGGED = 0;
-    public static final int PLUGGED_AC        = 1;
-    public static final int PLUGGED_USB       = 2;
-    public static final int PLUGGED_UNKNOWN   = 3;
-    public static final int PLUGGED_WIRELESS  = 4;
-    public static final int PLUGGED_MAX       = PLUGGED_WIRELESS;
+    static final int PLUGGED_UNPLUGGED = 0;
+    //static final int PLUGGED_AC        = 1;
+    static final int PLUGGED_USB       = 2;
+    static final int PLUGGED_UNKNOWN   = 3;
+    static final int PLUGGED_WIRELESS  = 4;
+    static final int PLUGGED_MAX       = PLUGGED_WIRELESS;
 
-    public static final int HEALTH_UNKNOWN     = 1;
-    public static final int HEALTH_GOOD        = 2;
-    public static final int HEALTH_OVERHEAT    = 3;
-    public static final int HEALTH_DEAD        = 4;
-    public static final int HEALTH_OVERVOLTAGE = 5;
-    public static final int HEALTH_FAILURE     = 6;
-    public static final int HEALTH_COLD        = 7;
-    public static final int HEALTH_MAX         = HEALTH_COLD;
+    static final int HEALTH_UNKNOWN     = 1;
+    static final int HEALTH_GOOD        = 2;
+    //static final int HEALTH_OVERHEAT    = 3;
+    //static final int HEALTH_DEAD        = 4;
+    //static final int HEALTH_OVERVOLTAGE = 5;
+    //static final int HEALTH_FAILURE     = 6;
+    static final int HEALTH_COLD        = 7;
+    static final int HEALTH_MAX         = HEALTH_COLD;
 
-    public static final String KEY_LAST_STATUS_CTM = "last_status_cTM";
-    public static final String KEY_LAST_STATUS = "last_status";
-    public static final String KEY_LAST_PERCENT = "last_percent";
-    public static final String KEY_LAST_PLUGGED = "last_plugged";
+    static final String KEY_LAST_STATUS_CTM = "last_status_cTM";
+    static final String KEY_LAST_STATUS = "last_status";
+    static final String KEY_LAST_PERCENT = "last_percent";
+    static final String KEY_LAST_PLUGGED = "last_plugged";
 
     private static final String EXTRA_LEVEL = "level";
     private static final String EXTRA_SCALE = "scale";
@@ -57,7 +57,7 @@ class BatteryInfo {
     private static final String EXTRA_PLUGGED = "plugged";
     private static final String EXTRA_TEMPERATURE = "temperature";
     private static final String EXTRA_VOLTAGE = "voltage";
-    private static final String EXTRA_TECHNOLOGY = "technology";
+    //private static final String EXTRA_TECHNOLOGY = "technology";
 
     private static final String FIELD_PERCENT = "percent";
     private static final String FIELD_STATUS = "status";
@@ -77,9 +77,9 @@ class BatteryInfo {
     private static final String FIELD_PREDICTION_WHAT = "prediction_what";
     private static final String FIELD_PREDICTION_WHEN = "prediction_when";
 
-    private static final String LOG_TAG = "com.darshancomputing.BatteryIndicator - BatteryInfo";
+    //private static final String LOG_TAG = "com.darshancomputing.BatteryIndicatorPro - BatteryInfo";
 
-    public int
+    int
         percent,
         status,
         health,
@@ -90,21 +90,21 @@ class BatteryInfo {
         last_plugged,
         last_percent;
 
-    public long last_status_cTM;
-    public Prediction prediction = new Prediction();
+    long last_status_cTM;
+    Prediction prediction = new Prediction();
 
-    public class Prediction {
-        public static final int NONE          = 0;
-        public static final int UNTIL_DRAINED = 1;
-        public static final int UNTIL_CHARGED = 2;
+    class Prediction {
+        static final int NONE          = 0;
+        static final int UNTIL_DRAINED = 1;
+        static final int UNTIL_CHARGED = 2;
 
-        public int what;
-        public long when;
-        public RelativeTime last_rtime = new RelativeTime();
+        int what;
+        long when;
+        RelativeTime last_rtime = new RelativeTime();
 
         private static final int MIN_PREDICTION = 60 * 1000;
 
-        public void update(long ts) {
+        void update(long ts) {
             when = ts;
 
             if (status == STATUS_FULLY_CHARGED) what = NONE;
@@ -112,7 +112,7 @@ class BatteryInfo {
             else                                what = UNTIL_DRAINED;
         }
 
-        public void updateRelativeTime() {
+        void updateRelativeTime() {
             long now = SystemClock.elapsedRealtime();
 
             if (when < now + MIN_PREDICTION)
@@ -122,11 +122,11 @@ class BatteryInfo {
         }
     }
 
-    public static class RelativeTime {
-        public int days, hours, minutes;
+    static class RelativeTime {
+        int days, hours, minutes;
 
         // If days > 0, then minutes is undefined and hours is rounded to the closest hour (rounding minutes up or down)
-        public void update(long to, long from) {
+        void update(long to, long from) {
             int seconds = (int) ((to - from) / 1000);
             days = 0;
             hours = seconds / (60 * 60);
@@ -141,12 +141,12 @@ class BatteryInfo {
         }
     }
 
-    public void load(Intent intent, SharedPreferences sp) {
+    void load(Intent intent, SharedPreferences sp) {
         load(intent);
         load(sp);
     }
 
-    public void load(Intent intent) {
+    void load(Intent intent) {
         int level = intent.getIntExtra(EXTRA_LEVEL, 50);
         int scale = intent.getIntExtra(EXTRA_SCALE, 100);
 
@@ -177,14 +177,14 @@ class BatteryInfo {
         }
     }
 
-    public void load(SharedPreferences sp) {
+    void load(SharedPreferences sp) {
         last_status = sp.getInt(KEY_LAST_STATUS, status);
         last_plugged = sp.getInt(KEY_LAST_PLUGGED, plugged);
         last_status_cTM = sp.getLong(KEY_LAST_STATUS_CTM, System.currentTimeMillis());
         last_percent = sp.getInt(KEY_LAST_PERCENT, percent);
     }
 
-    public Bundle toBundle() {
+    Bundle toBundle() {
         Bundle bundle = new Bundle();
 
         bundle.putInt(FIELD_PERCENT, percent);
@@ -209,7 +209,7 @@ class BatteryInfo {
         return bundle;
     }
 
-    public void loadBundle(Bundle bundle) {
+    void loadBundle(Bundle bundle) {
         percent = bundle.getInt(FIELD_PERCENT);
         status = bundle.getInt(FIELD_STATUS);
         health = bundle.getInt(FIELD_HEALTH);
@@ -255,14 +255,14 @@ class BatteryInfo {
                     // Log.e(LOG_TAG, "charge_counter file exists but with value " + charge_counter + " which is inconsistent with percent: " + percent);
                 }
             } catch (java.io.FileNotFoundException e) {
-                // Log.e(LOG_TAG, "charge_counter file doesn't exist");
-                // e.printStackTrace();
+                //Log.e(LOG_TAG, "charge_counter file doesn't exist");
+                //e.printStackTrace();
             } catch (java.io.IOException e) {
-                // Log.e(LOG_TAG, "Error reading charge_counter file");
-                // e.printStackTrace();
+                //Log.e(LOG_TAG, "Error reading charge_counter file");
+                //e.printStackTrace();
             } catch (NumberFormatException e) {
-                // Log.e(LOG_TAG, "Read charge_counter file but couldn't convert contents to int");
-                // e.printStackTrace();
+                //Log.e(LOG_TAG, "Read charge_counter file but couldn't convert contents to int");
+                //e.printStackTrace();
             }
         }
 

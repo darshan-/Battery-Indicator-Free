@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013-2015 Darshan-Josiah Barber
+    Copyright (c) 2013-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -12,10 +12,10 @@
     GNU General Public License for more details.
 */
 
-package com.darshancomputing.BatteryIndicator;
+package com.darshancomputing.BatteryIndicatorPro;
 
 import android.content.Context;
-import android.content.res.Resources;
+//import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -27,7 +27,7 @@ class CircleWidgetBackground {
     private final int DIMEN;
     private final float ARC_STROKE_WIDTH;
 
-    private static final int BLACK = 0xff000000;
+    //private static final int BLACK = 0xff000000;
     private static final int ICS_BLUE = 0xff33b5e5;
 
     private static final int BG_COLOR = 0xff222222;
@@ -37,8 +37,8 @@ class CircleWidgetBackground {
     private Canvas canvas;
     private Paint bg_paint, arc_paint;
 
-    public CircleWidgetBackground(Context context) {
-        Resources res = context.getResources();
+    CircleWidgetBackground(Context context) {
+        //Resources res = context.getResources();
 
         canvas = new Canvas();
 
@@ -69,7 +69,7 @@ class CircleWidgetBackground {
     public void setLevel(int level) {
         if (level < 0) level = 0; // I suspect we might get called with -1 in certain circumstances
 
-        int top_left = 0 + (int) (ARC_STROKE_WIDTH / 2);
+        int top_left = (int) (ARC_STROKE_WIDTH / 2);
         int bottom_right = DIMEN - (int) (ARC_STROKE_WIDTH / 2);
 
         RectF oval = new RectF(top_left, top_left, bottom_right, bottom_right);
@@ -84,7 +84,7 @@ class CircleWidgetBackground {
         //}
     }
 
-    public Bitmap getBitmap() {
+    Bitmap getBitmap() {
         return bitmap;
     }
 

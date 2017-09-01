@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013-2016 Darshan-Josiah Barber
+    Copyright (c) 2013-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,10 +16,8 @@ package com.darshancomputing.BatteryIndicator;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.ViewGroup;
 
@@ -34,7 +32,7 @@ public class BatteryInfoActivity extends FragmentActivity {
     private BatteryInfoPagerAdapter pagerAdapter;
     private ViewPager viewPager;
 
-    private static final String LOG_TAG = "BatteryBot";
+    //private static final String LOG_TAG = "BatteryBot";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,7 +79,7 @@ public class BatteryInfoActivity extends FragmentActivity {
     private static class BatteryInfoPagerAdapter extends FragmentPagerAdapter {
         private Context context;
 
-        public BatteryInfoPagerAdapter(FragmentManager fm) {
+        BatteryInfoPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 

@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013-2016 Darshan-Josiah Barber
+    Copyright (c) 2013-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,7 +22,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 
 class BatteryLevel {
@@ -31,8 +30,8 @@ class BatteryLevel {
     private Paint fill_paint, bitmap_paint;
     private static Bitmap battery_top, battery_body, battery;
 
-    public static final int SIZE_LARGE = 1;
-    public static final int SIZE_NOTIFICATION = 4;
+    static final int SIZE_LARGE = 1;
+    static final int SIZE_NOTIFICATION = 4;
 
     private static BatteryLevel[] instances = new BatteryLevel[]{null, null, null, null, null}; // So that [1], [2], and [4] exist
 
@@ -53,15 +52,15 @@ class BatteryLevel {
     private BatteryLevel(Context context, int inSampleSize) {
         Resources res = context.getResources();
 
-        BitmapFactory bf = new BitmapFactory();
+        //BitmapFactory bf = new BitmapFactory();
         BitmapFactory.Options bfo = new BitmapFactory.Options();
         bfo.inDensity = DisplayMetrics.DENSITY_DEFAULT;
         bfo.inScaled = false;
         bfo.inTargetDensity = DisplayMetrics.DENSITY_DEFAULT;
         bfo.inSampleSize = inSampleSize;
 
-        battery_top    = bf.decodeResource(res, R.drawable.empty_battery_top   , bfo);
-        battery_body   = bf.decodeResource(res, R.drawable.empty_battery_body  , bfo);
+        battery_top    = BitmapFactory.decodeResource(res, R.drawable.empty_battery_top   , bfo);
+        battery_body   = BitmapFactory.decodeResource(res, R.drawable.empty_battery_body  , bfo);
 
            width = battery_top.getWidth();
            top_h = battery_top.getHeight();
@@ -102,7 +101,7 @@ class BatteryLevel {
         canvas.drawBitmap(battery_body  , 0, top_h         , bitmap_paint);
     }
 
-    public Bitmap getBitmap() {
+    Bitmap getBitmap() {
         return battery;
     }
 }
