@@ -15,7 +15,7 @@
 package com.darshancomputing.BatteryIndicator;
 
 import android.app.AlarmManager;
-import android.app.Notification;
+//import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
@@ -27,13 +27,11 @@ import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.view.View;
 import android.widget.RemoteViews;
 
 import android.support.v4.app.NotificationCompat;
@@ -54,7 +52,7 @@ public class BatteryInfoService extends Service {
     private SharedPreferences.Editor sps_editor;
 
     private Resources res;
-    private BatteryLevel bl;
+    //private BatteryLevel bl;
     private CircleWidgetBackground cwbg;
     private BatteryInfo info;
     private long now;
@@ -69,10 +67,10 @@ public class BatteryInfoService extends Service {
     //private static final String LOG_TAG = "com.darshancomputing.BatteryIndicator - BatteryInfoService";
 
     private static final int NOTIFICATION_PRIMARY      = 1;
-    private static final int NOTIFICATION_KG_UNLOCKED  = 2;
-    private static final int NOTIFICATION_ALARM_CHARGE = 3;
-    private static final int NOTIFICATION_ALARM_HEALTH = 4;
-    private static final int NOTIFICATION_ALARM_TEMP   = 5;
+    //private static final int NOTIFICATION_KG_UNLOCKED  = 2;
+    //private static final int NOTIFICATION_ALARM_CHARGE = 3;
+    //private static final int NOTIFICATION_ALARM_HEALTH = 4;
+    //private static final int NOTIFICATION_ALARM_TEMP   = 5;
 
     public static final String KEY_PREVIOUS_CHARGE = "previous_charge";
     public static final String KEY_PREVIOUS_TEMP = "previous_temp";
@@ -96,7 +94,7 @@ public class BatteryInfoService extends Service {
     /* Global variables for these Notification Runnables */
     private NotificationCompat.Builder mainNotificationB;
     private String mainNotificationTopLine, mainNotificationBottomLine;
-    private RemoteViews notificationRV;
+    //private RemoteViews notificationRV;
 
     private Predictor predictor;
 
@@ -112,15 +110,14 @@ public class BatteryInfoService extends Service {
     @Override
     public void onCreate() {
         res = getResources();
-        str = new Str(res);
-
+        Str.setResources(res);
         info = new BatteryInfo();
 
-        messenger = new Messenger(new MessageHandler());
+        messenger = new Messenger(new MessageHandler(this));
         clientMessengers = new java.util.HashSet<Messenger>();
 
         predictor = new Predictor(this);
-        bl = BatteryLevel.getInstance(this, BatteryLevel.SIZE_NOTIFICATION);
+        //bl = BatteryLevel.getInstance(this, BatteryLevel.SIZE_NOTIFICATION);
         cwbg = new CircleWidgetBackground(this);
 
         mNotificationManager = NotificationManagerCompat.from(this);
@@ -140,7 +137,7 @@ public class BatteryInfoService extends Service {
 
         widgetManager = AppWidgetManager.getInstance(this);
 
-        Class[] appWidgetProviders = {BatteryInfoAppWidgetProvider.class /* Circle widget! */
+        Class<?>[] appWidgetProviders = {BatteryInfoAppWidgetProvider.class /* Circle widget! */
                                       };
 
         for (int i = 0; i < appWidgetProviders.length; i++) {
@@ -179,7 +176,13 @@ public class BatteryInfoService extends Service {
         return messenger.getBinder();
     }
 
-    public class MessageHandler extends Handler {
+    private static class MessageHandler extends Handler {
+        private BatteryInfoService bis;
+
+        MessageHandler(BatteryInfoService s) {
+            bis = s;
+        }
+
         @Override
         public void handleMessage(Message incoming) {
             switch (incoming.what) {
@@ -188,26 +191,26 @@ public class BatteryInfoService extends Service {
                 break;
             case RemoteConnection.SERVICE_REGISTER_CLIENT:
                 clientMessengers.add(incoming.replyTo);
-                sendClientMessage(incoming.replyTo, RemoteConnection.CLIENT_BATTERY_INFO_UPDATED, info.toBundle());
+                sendClientMessage(incoming.replyTo, RemoteConnection.CLIENT_BATTERY_INFO_UPDATED, bis.info.toBundle());
 
                 break;
             case RemoteConnection.SERVICE_UNREGISTER_CLIENT:
                 clientMessengers.remove(incoming.replyTo);
                 break;
             case RemoteConnection.SERVICE_RELOAD_SETTINGS:
-                reloadSettings(false);
+                bis.reloadSettings(false);
                 break;
             case RemoteConnection.SERVICE_CANCEL_NOTIFICATION_AND_RELOAD_SETTINGS:
-                reloadSettings(true);
+                bis.reloadSettings(true);
                 break;
             case RemoteConnection.SERVICE_WIZARD_VALUE_DEFAULT:
-                wizardValueChanged(NotificationWizard.VALUE_DEFAULT);
+                bis.wizardValueChanged(NotificationWizard.VALUE_DEFAULT);
                 break;
             case RemoteConnection.SERVICE_WIZARD_VALUE_MINIMAL:
-                wizardValueChanged(NotificationWizard.VALUE_MINIMAL);
+                bis.wizardValueChanged(NotificationWizard.VALUE_MINIMAL);
                 break;
             case RemoteConnection.SERVICE_WIZARD_VALUE_NONE:
-                wizardValueChanged(NotificationWizard.VALUE_NONE);
+                bis.wizardValueChanged(NotificationWizard.VALUE_NONE);
                 break;
             default:
                 super.handleMessage(incoming);
@@ -227,25 +230,25 @@ public class BatteryInfoService extends Service {
         try { clientMessenger.send(outgoing); } catch (android.os.RemoteException e) {}
     }
 
-    public static class RemoteConnection implements ServiceConnection {
+    static class RemoteConnection implements ServiceConnection {
         // Messages clients send to the service
-        public static final int SERVICE_CLIENT_CONNECTED = 0;
-        public static final int SERVICE_REGISTER_CLIENT = 1;
-        public static final int SERVICE_UNREGISTER_CLIENT = 2;
-        public static final int SERVICE_RELOAD_SETTINGS = 3;
-        public static final int SERVICE_CANCEL_NOTIFICATION_AND_RELOAD_SETTINGS = 4;
-        public static final int SERVICE_WIZARD_VALUE_DEFAULT = 5;
-        public static final int SERVICE_WIZARD_VALUE_MINIMAL = 6;
-        public static final int SERVICE_WIZARD_VALUE_NONE = 7;
+        static final int SERVICE_CLIENT_CONNECTED = 0;
+        static final int SERVICE_REGISTER_CLIENT = 1;
+        static final int SERVICE_UNREGISTER_CLIENT = 2;
+        static final int SERVICE_RELOAD_SETTINGS = 3;
+        static final int SERVICE_CANCEL_NOTIFICATION_AND_RELOAD_SETTINGS = 4;
+        static final int SERVICE_WIZARD_VALUE_DEFAULT = 5;
+        static final int SERVICE_WIZARD_VALUE_MINIMAL = 6;
+        static final int SERVICE_WIZARD_VALUE_NONE = 7;
 
         // Messages the service sends to clients
-        public static final int CLIENT_SERVICE_CONNECTED = 0;
-        public static final int CLIENT_BATTERY_INFO_UPDATED = 1;
+        static final int CLIENT_SERVICE_CONNECTED = 0;
+        static final int CLIENT_BATTERY_INFO_UPDATED = 1;
 
-        public Messenger serviceMessenger;
+        Messenger serviceMessenger;
         private Messenger clientMessenger;
 
-        public RemoteConnection(Messenger m) {
+        RemoteConnection(Messenger m) {
             clientMessenger = m;
         }
 
@@ -271,7 +274,7 @@ public class BatteryInfoService extends Service {
     private void reloadSettings(boolean cancelFirst) {
         loadSettingsFiles();
 
-        str = new Str(res); // Language override may have changed
+        Str.setResources(res); // Language override may have changed
 
         applyNewSettings(cancelFirst);
     }
@@ -303,14 +306,14 @@ public class BatteryInfoService extends Service {
         default:
             sps_editor.putBoolean(BatteryInfoService.KEY_SHOW_NOTIFICATION, true);
             int priority = Integer.valueOf(settings.getString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
-                                                              str.default_main_notification_priority));
+                                                              Str.default_main_notification_priority));
             if (priority == NotificationCompat.PRIORITY_MIN)
                 settings_editor.putString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
                                           "" + NotificationCompat.PRIORITY_LOW);
         }
 
-        Str.apply(sps_editor);
-        Str.apply(settings_editor);
+        sps_editor.apply();
+        settings_editor.apply();
 
         applyNewSettings(true);
     }
@@ -331,7 +334,7 @@ public class BatteryInfoService extends Service {
 
         sps_editor.putInt(LAST_SDK_API, android.os.Build.VERSION.SDK_INT);
 
-        Str.apply(sps_editor);
+        sps_editor.apply();
         //Str.apply(settings_editor);
     }
 
@@ -381,18 +384,20 @@ public class BatteryInfoService extends Service {
             RemoteViews rv = new RemoteViews(getPackageName(), R.layout.circle_app_widget);
 
             if (info == null)
-                rv.setTextViewText(R.id.level, "XX" + str.percent_symbol);
+                rv.setTextViewText(R.id.level, "XX" + Str.percent_symbol);
             else
-                rv.setTextViewText(R.id.level, "" + info.percent + str.percent_symbol);
+                rv.setTextViewText(R.id.level, "" + info.percent + Str.percent_symbol);
 
             rv.setImageViewBitmap(R.id.circle_widget_image_view, cwbg.getBitmap());
             rv.setOnClickPendingIntent(R.id.widget_layout, currentInfoPendingIntent);
-            widgetManager.updateAppWidget(widgetId, rv);
+            try {
+                widgetManager.updateAppWidget(widgetId, rv);
+            } catch(Exception e) {} // Based on crash reports, exception can be thrown that I think is best ignored
         }
     }
 
     private void syncSpsEditor() {
-        Str.apply(sps_editor);
+        sps_editor.apply();
 
         if (updated_lasts) {
             info.last_status_cTM = now;
@@ -418,7 +423,7 @@ public class BatteryInfoService extends Service {
             .setContentText(mainNotificationBottomLine)
             .setContentIntent(currentInfoPendingIntent)
             .setPriority(Integer.valueOf(settings.getString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
-                                                            str.default_main_notification_priority)))
+                                                            Str.default_main_notification_priority)))
             .setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
     }
 
@@ -427,14 +432,14 @@ public class BatteryInfoService extends Service {
         BatteryInfo.RelativeTime predicted = info.prediction.last_rtime;
 
         if (info.prediction.what == BatteryInfo.Prediction.NONE) {
-            line = str.statuses[info.status];
+            line = Str.statuses[info.status];
         } else {
             if (predicted.days > 0)
-                line = str.n_days_m_hours(predicted.days, predicted.hours);
+                line = Str.n_days_m_hours(predicted.days, predicted.hours);
             else if (predicted.hours > 0) {
-                line = str.n_hours_long_m_minutes_medium(predicted.hours, predicted.minutes);
+                line = Str.n_hours_long_m_minutes_medium(predicted.hours, predicted.minutes);
             } else
-                line = str.n_minutes_long(predicted.minutes);
+                line = Str.n_minutes_long(predicted.minutes);
 
             if (info.prediction.what == BatteryInfo.Prediction.UNTIL_CHARGED)
                 line += res.getString(R.string.notification_until_charged);
@@ -448,10 +453,10 @@ public class BatteryInfoService extends Service {
     private String vitalStatsLine() {
         Boolean convertF = settings.getBoolean(SettingsActivity.KEY_CONVERT_F,
                                                res.getBoolean(R.bool.default_convert_to_fahrenheit));
-        String line = str.healths[info.health] + " / " + str.formatTemp(info.temperature, convertF);
+        String line = Str.healths[info.health] + " / " + Str.formatTemp(info.temperature, convertF);
 
         if (info.voltage > 500)
-            line += " / " + str.formatVoltage(info.voltage);
+            line += " / " + Str.formatVoltage(info.voltage);
 
         return line;
     }
@@ -459,12 +464,12 @@ public class BatteryInfoService extends Service {
     private String statusDurationLine() {
         long statusDuration = now - info.last_status_cTM;
         int statusDurationHours = (int) ((statusDuration + (1000 * 60 * 30)) / (1000 * 60 * 60));
-        String line = str.statuses[info.status] + " ";
+        String line = Str.statuses[info.status] + " ";
 
         if (statusDuration < 1000 * 60 * 60)
-            line += str.since + " " + formatTime(new Date(info.last_status_cTM));
+            line += Str.since + " " + formatTime(new Date(info.last_status_cTM));
         else
-            line += str.for_n_hours(statusDurationHours);
+            line += Str.for_n_hours(statusDurationHours);
 
         return line;
     }
@@ -476,8 +481,6 @@ public class BatteryInfoService extends Service {
     // I take advantage of (count on) R.java having resources alphabetical and incrementing by one.
     private int iconFor(int percent) {
         String default_set = "builtin.classic";
-        if (android.os.Build.VERSION.SDK_INT >= 11)
-            default_set = "builtin.plain_number";
 
         String icon_set = settings.getString(SettingsActivity.KEY_ICON_SET, "null");
         if (! icon_set.startsWith("builtin.")) icon_set = "null";
@@ -485,7 +488,7 @@ public class BatteryInfoService extends Service {
         if (icon_set.equals("null")) {
             icon_set = default_set;
 
-            Str.apply(settings.edit().putString(SettingsActivity.KEY_ICON_SET, default_set));
+            settings.edit().putString(SettingsActivity.KEY_ICON_SET, default_set).apply();
         }
 
         Boolean indicate_charging = settings.getBoolean(SettingsActivity.KEY_INDICATE_CHARGING, true);

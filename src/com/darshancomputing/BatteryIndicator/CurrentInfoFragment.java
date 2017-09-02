@@ -14,25 +14,15 @@
 
 package com.darshancomputing.BatteryIndicator;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.Message;
-import android.os.Messenger;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -71,10 +61,11 @@ public class CurrentInfoFragment extends Fragment {
     public static boolean awaitingNotificationUnblock;
     public static boolean showingNotificationBlockDialog;
 
-    private static final String LOG_TAG = "BatteryBot";
+    //private static final String LOG_TAG = "BatteryBot";
 
     @Override
     public void onConfigurationChanged (Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
         setSizes(newConfig);
     }
 
@@ -259,18 +250,18 @@ public class CurrentInfoFragment extends Fragment {
         tv.setText("" + info.percent + pfrag.res.getString(R.string.percent_symbol));
 
         tv = (TextView) view.findViewById(R.id.time_remaining);
-        tv.setText(pfrag.str.timeRemainingMainScreen(info));
+        tv.setText(Str.timeRemainingMainScreen(info));
         tv = (TextView) view.findViewById(R.id.until_what);
-        tv.setText(pfrag.str.untilWhat(info));
+        tv.setText(Str.untilWhat(info));
 
         int secs = (int) ((System.currentTimeMillis() - info.last_status_cTM) / 1000);
         int hours = secs / (60 * 60);
         int mins = (secs / 60) % 60;
 
-        String s = pfrag.str.statuses[info.last_status];
+        String s = Str.statuses[info.last_status];
 
         if (info.last_status == BatteryInfo.STATUS_CHARGING)
-            s += " " + pfrag.str.pluggeds[info.last_plugged];
+            s += " " + Str.pluggeds[info.last_plugged];
 
         tv = (TextView) view.findViewById(R.id.status);
         tv.setText(s);
@@ -279,7 +270,7 @@ public class CurrentInfoFragment extends Fragment {
             s = "Since "; // TODO: Translatable
 
             if (info.last_status != BatteryInfo.STATUS_FULLY_CHARGED)
-                s += info.last_percent + pfrag.str.percent_symbol + ", ";
+                s += info.last_percent + Str.percent_symbol + ", ";
 
             s += hours + "h " + mins + "m ago"; // TODO: Translatable
 
@@ -290,10 +281,10 @@ public class CurrentInfoFragment extends Fragment {
         Boolean convertF = pfrag.settings.getBoolean(SettingsActivity.KEY_CONVERT_F,
                                                      pfrag.res.getBoolean(R.bool.default_convert_to_fahrenheit));
 
-        tv_health.setText(pfrag.str.healths[info.health]);
-        tv_temp.setText(pfrag.str.formatTemp(info.temperature, convertF));
+        tv_health.setText(Str.healths[info.health]);
+        tv_temp.setText(Str.formatTemp(info.temperature, convertF));
         if (info.voltage > 500)
-            tv_voltage.setText(pfrag.str.formatVoltage(info.voltage));
+            tv_voltage.setText(Str.formatVoltage(info.voltage));
 
         if (info.last_status == BatteryInfo.STATUS_UNPLUGGED)
             plugged_icon.setImageResource(R.drawable.unplugged);
@@ -312,7 +303,7 @@ public class CurrentInfoFragment extends Fragment {
         }
     };
 
-    private void mStartActivity(Class c) {
+    private void mStartActivity(Class<?> c) {
         ComponentName comp = new ComponentName(getActivity().getPackageName(), c.getName());
         startActivityForResult(new Intent().setComponent(comp), 1);
     }
@@ -330,21 +321,10 @@ public class CurrentInfoFragment extends Fragment {
     private void setSizes(Configuration config) {
         boolean portrait = config.orientation == Configuration.ORIENTATION_PORTRAIT;
 
-        int screenWidth, screenHeight;
+        int screenWidth = (int) (config.screenWidthDp * dpScale);
+        int screenHeight = (int) (config.screenHeightDp * dpScale);
 
-        if (android.os.Build.VERSION.SDK_INT < 13) {
-            DisplayMetrics metrics = new DisplayMetrics();
-            getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-            screenWidth = metrics.widthPixels;
-            screenHeight = (int) (metrics.heightPixels * 0.95);
-        } else {
-            screenWidth = (int) (config.screenWidthDp * dpScale);
-            screenHeight = (int) (config.screenHeightDp * dpScale);
-        }
-
-
-        int minDimen = Math.min(screenWidth, screenHeight);
+        //int minDimen = Math.min(screenWidth, screenHeight);
         float aspectRatio = (float) screenWidth / screenHeight;
 
         int plugged_icon_height;

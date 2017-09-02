@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2016 Darshan-Josiah Barber
+    Copyright (c) 2016-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,48 +16,17 @@ package com.darshancomputing.BatteryIndicator;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.CursorWrapper;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
-import android.os.Messenger;
-import android.util.Log;
-import android.text.method.LinkMovementMethod;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.ListFragment;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
 
 public class NotificationWizard extends DialogFragment {
     private static PersistentFragment pfrag;
@@ -124,9 +93,6 @@ public class NotificationWizard extends DialogFragment {
         summaries = new String[] {pfrag.res.getString(R.string.notification_wizard_summary_default),
                                   pfrag.res.getString(R.string.notification_wizard_summary_minimal),
                                   pfrag.res.getString(R.string.notification_wizard_summary_none)};
-
-        if (android.os.Build.VERSION.SDK_INT < 16)
-            summaries[1] += " " + pfrag.res.getString(R.string.requires_api_level_16);
     }
 
     private int getValue() {
@@ -134,7 +100,7 @@ public class NotificationWizard extends DialogFragment {
             return cached_value;
 
         int priority = Integer.valueOf(pfrag.settings.getString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
-                                                                pfrag.str.default_main_notification_priority));
+                                                                Str.default_main_notification_priority));
 
         boolean show_notification = pfrag.sp_service.getBoolean(BatteryInfoService.KEY_SHOW_NOTIFICATION, true);
 
@@ -182,9 +148,6 @@ public class NotificationWizard extends DialogFragment {
 
         @Override
         public boolean isEnabled(int position) {
-            if (position == 1 && android.os.Build.VERSION.SDK_INT < 16)
-                return false;
-
             return true;
         }
 
@@ -200,10 +163,7 @@ public class NotificationWizard extends DialogFragment {
             if (position == getValue())
                 ((ListView) container).setItemChecked(position, true);
 
-            if (position == 1 && android.os.Build.VERSION.SDK_INT < 16)
-                convertView.setEnabled(false);
-            else
-                convertView.setEnabled(true);
+            convertView.setEnabled(true);
 
             return convertView;
         }

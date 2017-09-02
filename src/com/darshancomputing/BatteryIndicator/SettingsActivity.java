@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2016 Darshan-Josiah Barber
+    Copyright (c) 2009-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -14,25 +14,19 @@
 
 package com.darshancomputing.BatteryIndicator;
 
-import android.app.AlertDialog;
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Messenger;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -42,7 +36,6 @@ import android.preference.PreferenceScreen;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -68,9 +61,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_CAT_CLASSIC_COLOR_MODE = "category_classic_color_mode";
     public static final String KEY_CAT_COLOR = "category_color";
     public static final String KEY_CAT_CHARGING_INDICATOR = "category_charging_indicator";
-    public static final String KEY_CAT_PLUGIN_SETTINGS = "category_plugin_settings";
     public static final String KEY_CAT_NOTIFICATION_SETTINGS = "category_notification_settings";
-    public static final String KEY_PLUGIN_SETTINGS = "plugin_settings";
     public static final String KEY_INDICATE_CHARGING = "indicate_charging";
     public static final String KEY_RED = "use_red";
     public static final String KEY_RED_THRESH = "red_threshold";
@@ -103,30 +94,8 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
     public static final String EXTRA_SCREEN = "com.darshancomputing.BatteryIndicator.PrefScreen";
 
-    public static final int   RED = 0;
-    public static final int AMBER = 1;
-    public static final int GREEN = 2;
-
-    /* Red must go down to 0 and green must go up to 100,
-       which is why they aren't listed here. */
-    public static final int   RED_ICON_MAX = 30;
-    public static final int AMBER_ICON_MIN =  0;
-    public static final int AMBER_ICON_MAX = 50;
-    public static final int GREEN_ICON_MIN = 20;
-
-    public static final int   RED_SETTING_MIN =  5;
-    public static final int   RED_SETTING_MAX = 30;
-    public static final int AMBER_SETTING_MIN = 10;
-    public static final int AMBER_SETTING_MAX = 50;
-    public static final int GREEN_SETTING_MIN = 20;
-    /* public static final int GREEN_SETTING_MAX = 100; /* TODO: use this, and possibly set it to 95. */
-
-    private static final int DIALOG_CONFIRM_TEN_PERCENT_ENABLE  = 0;
-    private static final int DIALOG_CONFIRM_TEN_PERCENT_DISABLE = 1;
-
-    private Intent biServiceIntent;
     private Messenger serviceMessenger;
-    private final Messenger messenger = new Messenger(new MessageHandler());
+    private final Messenger messenger = new Messenger(new MessageHandler(this));
     private final BatteryInfoService.RemoteConnection serviceConnection = new BatteryInfoService.RemoteConnection(messenger);
 
     private Resources res;
@@ -135,66 +104,26 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
     private String pref_screen;
 
-    private ListPreference   redThresh;
-    private ListPreference amberThresh;
-    private ListPreference greenThresh;
-
-    private Boolean   redEnabled;
-    private Boolean amberEnabled;
-    private Boolean greenEnabled;
-
-    private int   iRedThresh;
-    private int iAmberThresh;
-    private int iGreenThresh;
-
     private int menu_res = R.menu.settings;
 
-    private static final String[] fivePercents = {
-        "5", "10", "15", "20", "25", "30", "35", "40", "45", "50",
-        "55", "60", "65", "70", "75", "80", "85", "90", "95", "100"};
+    private static class MessageHandler extends Handler {
+        private SettingsActivity sa;
 
-    /* Also includes 5 and 15, as the orginal Droid (and presumably similarly crippled devices)
-       goes by 5% once you get below 20%. */
-    private static final String[] tenPercentEntries = {
-	"5", "10", "15", "20", "30", "40", "50",
-	"60", "70", "80", "90", "100"};
+        MessageHandler(SettingsActivity a) {
+            sa = a;
+        }
 
-    /* Setting Red and Amber values like this allows the Service to follow the same algorithm no matter what. */
-    private static final String[] tenPercentValues = {
-	"6", "11", "16", "21", "31", "41", "51",
-	"61", "71", "81", "91", "101"};
-
-    /* Returns a two-item array of the start and end indices into the above arrays. */
-    private int[] indices(int x, int y) {
-        int[] a = new int[2];
-        int i; /* How many values to remove from the front */
-        int j; /* How many values to remove from the end   */
-
-        i = (x / 5) - 1;
-        j = (100 - y) / 5;
-
-        a[0] = i;
-        a[1] = j;
-        return a;
-    }
-
-    private static final Object[] EMPTY_OBJECT_ARRAY = {};
-    private static final  Class[]  EMPTY_CLASS_ARRAY = {};
-
-    public class MessageHandler extends Handler {
         @Override
         public void handleMessage(Message incoming) {
             switch (incoming.what) {
             case BatteryInfoService.RemoteConnection.CLIENT_SERVICE_CONNECTED:
-                serviceMessenger = incoming.replyTo;
+                sa.serviceMessenger = incoming.replyTo;
                 break;
             default:
                 super.handleMessage(incoming);
             }
         }
     }
-
-    private final Handler mHandler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,10 +133,10 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         pref_screen = intent.getStringExtra(EXTRA_SCREEN);
         res = getResources();
 
-        // Stranglely disabled by default for API level 14+
-        if (android.os.Build.VERSION.SDK_INT >= 14) {
-            getActionBar().setHomeButtonEnabled(true);
-            getActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar ab = getActionBar();
+        if (ab != null) {
+            ab.setHomeButtonEnabled(true);
+            ab.setDisplayHomeAsUpEnabled(true);
         }
 
         PreferenceManager pm = getPreferenceManager();
@@ -238,7 +167,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
         updateConvertFSummary();
 
-        biServiceIntent = new Intent(this, BatteryInfoService.class);
+        Intent biServiceIntent = new Intent(this, BatteryInfoService.class);
         bindService(biServiceIntent, serviceConnection, 0);
     }
 
@@ -344,8 +273,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     @Override
     protected Dialog onCreateDialog(int id) {
         Dialog dialog;
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        Str str = new Str(getResources());
+        Str.setResources(getResources());
 
         switch (id) {
         default:
@@ -401,7 +329,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     }
 
     private void updateConvertFSummary() {
-        Preference pref = (CheckBoxPreference) mPreferenceScreen.findPreference(KEY_CONVERT_F);
+        Preference pref = mPreferenceScreen.findPreference(KEY_CONVERT_F);
         if (pref == null) return;
 
         pref.setSummary(res.getString(R.string.currently_using) + " " +
@@ -421,21 +349,21 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         updateListPrefSummary(DEPENDENTS[index]);
     }
 
-    private void setEnablednessOfMutuallyExclusive(String key1, String key2) {
-        Preference pref1 = mPreferenceScreen.findPreference(key1);
-        Preference pref2 = mPreferenceScreen.findPreference(key2);
+    // private void setEnablednessOfMutuallyExclusive(String key1, String key2) {
+    //     Preference pref1 = mPreferenceScreen.findPreference(key1);
+    //     Preference pref2 = mPreferenceScreen.findPreference(key2);
 
-        if (pref1 == null) return;
+    //     if (pref1 == null) return;
 
-        if (mSharedPreferences.getBoolean(key1, false))
-            pref2.setEnabled(false);
-        else if (mSharedPreferences.getBoolean(key2, false))
-            pref1.setEnabled(false);
-        else {
-            pref1.setEnabled(true);
-            pref2.setEnabled(true);
-        }
-    }
+    //     if (mSharedPreferences.getBoolean(key1, false))
+    //         pref2.setEnabled(false);
+    //     else if (mSharedPreferences.getBoolean(key2, false))
+    //         pref1.setEnabled(false);
+    //     else {
+    //         pref1.setEnabled(true);
+    //         pref2.setEnabled(true);
+    //     }
+    // }
 
     private void updateListPrefSummary(String key) {
         ListPreference pref;
@@ -454,33 +382,33 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         }
     }
 
-    private void setPluginPrefEntriesAndValues(ListPreference lpref) {
-        String prefix = "BI Plugin - ";
+    // private void setPluginPrefEntriesAndValues(ListPreference lpref) {
+    //     String prefix = "BI Plugin - ";
 
-        PackageManager pm = getPackageManager();
-        java.util.List<PackageInfo> packages = pm.getInstalledPackages(0);
+    //     PackageManager pm = getPackageManager();
+    //     java.util.List<PackageInfo> packages = pm.getInstalledPackages(0);
 
-        java.util.List<String> entriesList = new java.util.ArrayList<String>();
-        java.util.List<String>  valuesList = new java.util.ArrayList<String>();
+    //     java.util.List<String> entriesList = new java.util.ArrayList<String>();
+    //     java.util.List<String>  valuesList = new java.util.ArrayList<String>();
 
-        String[] icon_set_entries = res.getStringArray(R.array.icon_set_entries);
-        String[] icon_set_values  = res.getStringArray(R.array.icon_set_values);
+    //     String[] icon_set_entries = res.getStringArray(R.array.icon_set_entries);
+    //     String[] icon_set_values  = res.getStringArray(R.array.icon_set_values);
 
-        for (int i = 0; i < icon_set_entries.length; i++) {
-            entriesList.add(icon_set_entries[i]);
-             valuesList.add(icon_set_values[i]);
-        }
+    //     for (int i = 0; i < icon_set_entries.length; i++) {
+    //         entriesList.add(icon_set_entries[i]);
+    //          valuesList.add(icon_set_values[i]);
+    //     }
 
-        lpref.setEntries    ((String[]) entriesList.toArray(new String[entriesList.size()]));
-        lpref.setEntryValues((String[])  valuesList.toArray(new String[entriesList.size()]));
+    //     lpref.setEntries    ((String[]) entriesList.toArray(new String[entriesList.size()]));
+    //     lpref.setEntryValues((String[])  valuesList.toArray(new String[entriesList.size()]));
 
-        /* TODO: I think it's safe to skip this: if the previously selected plugin is uninstalled, null
-           should be picked up by the Service and converted to proper default, I think/hope.
-        // If the previously selected plugin was uninstalled, revert to "None"
-        //if (! valuesList.contains(lpref.getValue())) lpref.setValueIndex(0);
-        if (lpref.getEntry() == null) lpref.setValueIndex(0);
-        */
-    }
+    //     /* TODO: I think it's safe to skip this: if the previously selected plugin is uninstalled, null
+    //        should be picked up by the Service and converted to proper default, I think/hope.
+    //     // If the previously selected plugin was uninstalled, revert to "None"
+    //     //if (! valuesList.contains(lpref.getValue())) lpref.setValueIndex(0);
+    //     if (lpref.getEntry() == null) lpref.setValueIndex(0);
+    //     */
+    // }
 
     public void upgradeButtonClick(android.view.View v) {
         try {

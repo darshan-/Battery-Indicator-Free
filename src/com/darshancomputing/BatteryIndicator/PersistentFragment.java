@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2016 Darshan-Josiah Barber
+    Copyright (c) 2009-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -24,14 +24,13 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Messenger;
 
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
 public class PersistentFragment extends Fragment {
     private Intent biServiceIntent;
     private Messenger serviceMessenger;
-    private final MessageHandler messageHandler = new MessageHandler();
+    private final MessageHandler messageHandler = new MessageHandler(this);
     private final Messenger messenger = new Messenger(messageHandler);
     private BatteryInfoService.RemoteConnection serviceConnection;
     private boolean serviceConnected;
@@ -43,7 +42,6 @@ public class PersistentFragment extends Fragment {
     public SharedPreferences sp_service;
     public SharedPreferences sp_main;
     public Resources res;
-    public Str str;
 
     private void bindService() {
         if (! serviceConnected) {
@@ -52,22 +50,28 @@ public class PersistentFragment extends Fragment {
         }
     }
 
-    private class MessageHandler extends Handler {
+    private static class MessageHandler extends Handler {
+        PersistentFragment pf;
+
+        MessageHandler(PersistentFragment f) {
+            pf = f;
+        }
+
         @Override
         public void handleMessage(Message incoming) {
-            if (! serviceConnected) {
+            if (! pf.serviceConnected) {
                 //Log.i(LOG_TAG, "serviceConected is false; ignoring message: " + incoming);
                 return;
             }
 
             switch (incoming.what) {
             case BatteryInfoService.RemoteConnection.CLIENT_SERVICE_CONNECTED:
-                serviceMessenger = incoming.replyTo;
-                sendServiceMessage(BatteryInfoService.RemoteConnection.SERVICE_REGISTER_CLIENT);
+                pf.serviceMessenger = incoming.replyTo;
+                pf.sendServiceMessage(BatteryInfoService.RemoteConnection.SERVICE_REGISTER_CLIENT);
                 break;
             case BatteryInfoService.RemoteConnection.CLIENT_BATTERY_INFO_UPDATED:
-                if (cif != null)
-                    cif.batteryInfoUpdated(incoming.getData());
+                if (pf.cif != null)
+                    pf.cif.batteryInfoUpdated(incoming.getData());
                 break;
             default:
                 super.handleMessage(incoming);
@@ -113,13 +117,13 @@ public class PersistentFragment extends Fragment {
 
         sendServiceMessage(BatteryInfoService.RemoteConnection.SERVICE_REGISTER_CLIENT);
 
-        Str.apply(sp_main.edit().putBoolean(BatteryInfoService.KEY_SERVICE_DESIRED, true));
+        sp_main.edit().putBoolean(BatteryInfoService.KEY_SERVICE_DESIRED, true).apply();
 
         // From now on, BootCompletedReceiver should ignore value in sp_service and use our value.
         //   We're not removing the value from sp_service, because that would require a commit, and
         //   the whole point of this is avoiding cross-process writes.
         if (! sp_main.getBoolean(SettingsActivity.KEY_MIGRATED_SERVICE_DESIRED, false))
-            Str.apply(sp_main.edit().putBoolean(SettingsActivity.KEY_MIGRATED_SERVICE_DESIRED, true));
+            sp_main.edit().putBoolean(SettingsActivity.KEY_MIGRATED_SERVICE_DESIRED, true).apply();
     }
 
     @Override
@@ -129,11 +133,11 @@ public class PersistentFragment extends Fragment {
         if (sp_main.getBoolean(SettingsActivity.KEY_FIRST_RUN, true)) {
             // If you ever need a first-run dialog again, this is when you would show it
 
-            Str.apply(sp_main.edit().putBoolean(SettingsActivity.KEY_FIRST_RUN, false));
+            sp_main.edit().putBoolean(SettingsActivity.KEY_FIRST_RUN, false).apply();
         }
 
         if (! sp_main.getBoolean(SettingsActivity.KEY_NOTIFICATION_WIZARD_EVER_RUN, false)) {
-            Str.apply(sp_main.edit().putBoolean(SettingsActivity.KEY_NOTIFICATION_WIZARD_EVER_RUN, true));
+            sp_main.edit().putBoolean(SettingsActivity.KEY_NOTIFICATION_WIZARD_EVER_RUN, true).apply();
 
             new NotificationWizard().show(getFragmentManager(), "Blarg");
         }
@@ -148,12 +152,13 @@ public class PersistentFragment extends Fragment {
 
     @Override
     public void onConfigurationChanged (Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
         updateResources();
     }
 
     private void updateResources() {
         res = getActivity().getResources();
-        str = new Str(res);
+        Str.setResources(res);
     }
 
     // Public API starts here for use by BatteryInfoActivity and any of its Fragments
@@ -190,7 +195,7 @@ public class PersistentFragment extends Fragment {
     }
 
     public void closeApp() {
-        Str.apply(sp_main.edit().putBoolean(BatteryInfoService.KEY_SERVICE_DESIRED, false));
+        sp_main.edit().putBoolean(BatteryInfoService.KEY_SERVICE_DESIRED, false).apply();
 
         getActivity().finishActivity(1);
 

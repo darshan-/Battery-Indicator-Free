@@ -1,48 +1,47 @@
 /*
-    Copyright (c) 2010-2016 Darshan-Josiah Barber
+    Copyright (c) 2010-2017 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
+    it under the terms of the GNU General License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+    GNU General License for more details.
 */
 
 package com.darshancomputing.BatteryIndicator;
 
 import android.content.res.Resources;
-import android.content.SharedPreferences;
-import android.view.WindowManager;
 
-/* TODO?: have a public instance in the service and grab the server's instance from all other classes? */
-public class Str {
-    private Resources res;
+class Str {
+    private static Resources res;
 
-    public String degree_symbol;
-    public String fahrenheit_symbol;
-    public String celsius_symbol;
-    public String volt_symbol;
-    public String percent_symbol;
-    public String since;
-    public String default_main_notification_priority;
+    static String degree_symbol;
+    static String fahrenheit_symbol;
+    static String celsius_symbol;
+    static String volt_symbol;
+    static String percent_symbol;
+    static String since;
+    static String default_main_notification_priority;
 
-    public String yes;
-    public String cancel;
-    public String okay;
+    static String yes;
+    static String cancel;
+    static String okay;
 
-    public String currently_set_to;
+    static String currently_set_to;
 
-    public String silent;
+    static String silent;
 
-    public String[] statuses;
-    public String[] healths;
-    public String[] pluggeds;
+    static String status_boot_completed;
+    
+    static String[] statuses;
+    static String[] healths;
+    static String[] pluggeds;
 
-    public Str(Resources r) {
+    static void setResources(Resources r) {
         res = r;
 
         degree_symbol          = res.getString(R.string.degree_symbol);
@@ -66,45 +65,45 @@ public class Str {
         pluggeds            = res.getStringArray(R.array.pluggeds);
     }
 
-    public String for_n_hours(int n) {
+    static String for_n_hours(int n) {
         return String.format(res.getQuantityString(R.plurals.for_n_hours, n), n);
     }
 
-    public String n_hours_m_minutes_long(int n, int m) {
+    static String n_hours_m_minutes_long(int n, int m) {
         return (String.format(res.getQuantityString(R.plurals.n_hours_long, n), n) +
                 String.format(res.getQuantityString(R.plurals.n_minutes_long, m), m));
     }
 
-    public String n_minutes_long(int n) {
+    static String n_minutes_long(int n) {
         return String.format(res.getQuantityString(R.plurals.n_minutes_long, n), n);
     }
 
-    public String n_hours_m_minutes_medium(int n, int m) {
+    static String n_hours_m_minutes_medium(int n, int m) {
         return (String.format(res.getQuantityString(R.plurals.n_hours_medium, n), n) +
                 String.format(res.getQuantityString(R.plurals.n_minutes_medium, m), m));
     }
 
-    public String n_hours_long_m_minutes_medium(int n, int m) {
+    static String n_hours_long_m_minutes_medium(int n, int m) {
         return (String.format(res.getQuantityString(R.plurals.n_hours_long, n), n) +
                 String.format(res.getQuantityString(R.plurals.n_minutes_medium, m), m));
     }
 
-    public String n_hours_m_minutes_short(int n, int m) {
+    static String n_hours_m_minutes_short(int n, int m) {
         return (String.format(res.getQuantityString(R.plurals.n_hours_short, n), n) +
                 String.format(res.getQuantityString(R.plurals.n_minutes_short, m), m));
     }
 
-    public String n_days_m_hours(int n, int m) {
+    static String n_days_m_hours(int n, int m) {
         return (String.format(res.getQuantityString(R.plurals.n_days, n), n) +
                 String.format(res.getQuantityString(R.plurals.n_hours, m), m));
     }
 
-    public String n_log_items(int n) {
+    static String n_log_items(int n) {
         return String.format(res.getQuantityString(R.plurals.n_log_items, n), n);
     }
 
     /* temperature is the integer number of tenths of degrees Celcius, as returned by BatteryManager */
-    public String formatTemp(int temperature, boolean convertF, boolean includeTenths) {
+    static String formatTemp(int temperature, boolean convertF, boolean includeTenths) {
         double d;
         String s;
 
@@ -116,27 +115,25 @@ public class Str {
             s = degree_symbol + celsius_symbol;
         }
 
-        // Weird: the ternary operator seems to compile down to a "function" that has to return a single particular type
-        //return "" + (includeTenths ? d : java.lang.Math.round(d)) + s;
         return (includeTenths ? String.valueOf(d) : String.valueOf(java.lang.Math.round(d))) + s;
     }
 
-    public String formatTemp(int temperature, boolean convertF) {
+    static String formatTemp(int temperature, boolean convertF) {
         return formatTemp(temperature, convertF, true);
     }
 
-    public String formatVoltage(int voltage) {
+    static String formatVoltage(int voltage) {
         return String.valueOf(voltage / 1000.0) + volt_symbol;
     }
 
-    public static int indexOf(String[] a, String key) {
+    static int indexOf(String[] a, String key) {
         for (int i=0, size=a.length; i < size; i++)
             if (key.equals(a[i])) return i;
 
         return -1;
     }
 
-    public android.text.Spanned timeRemaining(BatteryInfo info) {
+    static android.text.Spanned timeRemaining(BatteryInfo info) {
         if (info.prediction.what == BatteryInfo.Prediction.NONE) {
             return android.text.Html.fromHtml("<font color=\"#6fc14b\">" + statuses[info.status] + "</font>");
         } else {
@@ -155,26 +152,19 @@ public class Str {
 
     // Shows mdash rather than "Fully Charged" when no prediction.
     //   The widget still wants the old behavior.
-    public android.text.Spanned timeRemainingMainScreen(BatteryInfo info) {
+    static android.text.Spanned timeRemainingMainScreen(BatteryInfo info) {
         if (info.prediction.what == BatteryInfo.Prediction.NONE)
             return android.text.Html.fromHtml("&nbsp;&nbsp;&nbsp;&mdash;&nbsp;&nbsp;&nbsp;");
         else
             return timeRemaining(info);
     }
 
-    public String untilWhat(BatteryInfo info) {
+    static String untilWhat(BatteryInfo info) {
         if (info.prediction.what == BatteryInfo.Prediction.NONE)
             return "";
         else if (info.prediction.what == BatteryInfo.Prediction.UNTIL_CHARGED)
             return res.getString(R.string.activity_until_charged);
         else
             return res.getString(R.string.activity_until_drained);
-    }
-
-    public static void apply(SharedPreferences.Editor e) {
-        if (android.os.Build.VERSION.SDK_INT >= 9)
-            e.apply();
-        else
-            e.commit();
     }
 }
