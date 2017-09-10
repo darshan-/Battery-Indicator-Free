@@ -480,7 +480,7 @@ public class BatteryInfoService extends Service {
 
     // I take advantage of (count on) R.java having resources alphabetical and incrementing by one.
     private int iconFor(int percent) {
-        String default_set = "builtin.classic";
+        String default_set = "builtin.plain_number";
 
         String icon_set = settings.getString(SettingsActivity.KEY_ICON_SET, "null");
         if (! icon_set.startsWith("builtin.")) icon_set = "null";
