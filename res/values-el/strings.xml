@@ -53,13 +53,10 @@
   <string name="help_cat_translations" formatted="false">Μεταφράσεις</string>
   <string name="help_subcat_translators" formatted="false">Μεταφραστές</string>
   <string name="help_cat_contact" formatted="false">Επικοινωνία</string>
-  <string name="pref_hint" formatted="false">Συμβουλή: Πατήστε MENU για βοήθεια</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Επιπλέον Ρυθμίσεις στο Pro</string>
   <string name="pref_please_upgrade" formatted="false">Η έκδοση Pro έχει πολύ περισσότερες ρυθμίσεις και δυνατότητες, συμπεριλαμβανομένων έγχρωμων εικόνων, λαμβανόμενα plugins, ειδοποιήσεις, θέματα παραθύρων, καταγραφή κατάστασης μπαταρίας, αυτόματη/χειροκίνητη απενεργοποίηση κλειδώματος οθόνης, υπολογισμό χρόνου για φόρτιση/αποφόρτιση, και άλλα ακόμη.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Μετατροπή σε Φάρεναϊτ</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Το Android αναφέρει τη θερμοκρασία της μπαταρίας σε βαθμούς Κελσίου. Αν προτιμάτε να τη βλέπετε σε Φάρεναϊτ, επιλέξετε αυτήν την επιλογή και η εφαρμογή θα σας τη μετατρέπει.</string>
-  <string name="pref_cat_notification_settings" formatted="false">Ρυθμίσεις Ειδοποίησης</string>
-  <string name="silent" formatted="false">Σιωπηλό</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Καταγραφή αντικειμένου στη Λίστα</item>
     <item quantity="other">%d Καταγραφή αντικειμένων στη Λίστα</item>

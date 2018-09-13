@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_launcher_name" formatted="false">בוט-סוללה</string>
+  <string name="settings_activity_subtitle" formatted="false">הגדרות</string>
+  <string name="app_full_name_free" formatted="false">בוט-סוללה</string>
+  <string name="battery_use_b" formatted="false">הצגת השימוש בסוללה</string>
+  <string name="upgrade_donate_b" formatted="false">שדרוג/תרומה</string>
+  <string name="circle_widget" formatted="false">עיגול בוט-סוללה</string>
+  <string name="yes" formatted="false">כן</string>
+  <string name="cancel" formatted="false">ביטול</string>
+  <string name="confirm_close" formatted="false">לסגור באמת?</string>
+  <string name="notifications_disabled" formatted="false">הודעות אינן מאופשרות!</string>
+  <string name="okay" formatted="false">אישור</string>
+  <string name="tab_current_info" formatted="false">המידע הנוכחי</string>
+  <string name="notification_until_charged" formatted="false">" עד לסיום הטעינה"</string>
+  <string name="notification_until_drained" formatted="false">" נותרו"</string>
+  <string name="activity_until_charged" formatted="false">עד לסיום הטעינה</string>
+  <string name="activity_until_drained" formatted="false">עד לריקון</string>
+  <string name="menu_settings" formatted="false">הגדרות</string>
+  <string name="menu_close" formatted="false">סגירה</string>
+  <string name="menu_help" formatted="false">עזרה</string>
+  <string name="percent_symbol" formatted="false">%</string>
+  <string name="fahrenheit" formatted="false">פארנהייט</string>
+  <string name="celsius" formatted="false">צלזיוס</string>
+  <string name="status_unplugged" formatted="false">לא מחובר</string>
+  <string name="status_unknown" formatted="false">לא ידוע</string>
+  <string name="status_charging" formatted="false">בטעינה</string>
+  <string name="status_discharging" formatted="false">בשימוש</string>
+  <string name="status_not_charging" formatted="false">לא בטעינה</string>
+  <string name="status_fully_charged" formatted="false">טעינה מלאה</string>
+  <string name="health_unknown" formatted="false">לא-ידוע</string>
+  <string name="health_good" formatted="false">בריאות טובה</string>
+  <string name="health_overheat" formatted="false">התחממות-יתר</string>
+  <string name="health_dead" formatted="false">"מתה"</string>
+  <string name="health_overvoltage" formatted="false">מתח-יתר</string>
+  <string name="health_failure" formatted="false">כשל</string>
+  <string name="health_cold" formatted="false">קר</string>
+  <string name="plugged_unplugged" formatted="false">לא-מחובר</string>
+  <string name="plugged_ac" formatted="false">(זרם חילופין)</string>
+  <string name="plugged_wireless" formatted="false">(אלחוטי)</string>
+  <string name="since" formatted="false">מ</string>
+  <string name="currently_using" formatted="false">כעת בשימוש</string>
+  <string name="currently_set_to" formatted="false">"כעת מכוון ל: "</string>
+  <string name="currently_disabled" formatted="false">אינו מאופשר כעת</string>
+  <string name="help_cat_version" formatted="false">גרסה</string>
+  <string name="help_cat_faq" formatted="false">שאלות נפוצות ותשובות</string>
+  <string name="help_cat_open_source" formatted="false">קוד פתוח</string>
+  <string name="help_cat_donate" formatted="false">תרומה</string>
+  <string name="help_cat_privacy" formatted="false">פרטיות</string>
+  <string name="pref_icon_set" formatted="false">ערכת סמלים</string>
+</resources>

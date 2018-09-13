@@ -53,11 +53,8 @@
   <string name="help_cat_translations" formatted="false">Preklady</string>
   <string name="help_subcat_translators" formatted="false">Prekladatelia</string>
   <string name="help_cat_contact" formatted="false">Kontakt</string>
-  <string name="pref_hint" formatted="false">Nápoveda: pre pomoc stlačte MENU.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Viac nastavení vo verzii Pro</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Premeniť na Fahrenheity</string>
-  <string name="pref_cat_notification_settings" formatted="false">Nastavenia oznámení</string>
-  <string name="silent" formatted="false">Tichý</string>
   <plurals name="n_log_items">
     <item quantity="zero">%d záznamov</item>
     <item quantity="one">%d záznam</item>

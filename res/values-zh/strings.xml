@@ -65,7 +65,6 @@
   <string name="help_subcat_translators" formatted="false">翻譯志願者名單</string>
   <string name="help_cat_contact" formatted="false">聯繫方式</string>
   <string name="help_contact" formatted="false">如果您有任何問題或建議，請寄<a href="mailto:support@batterybot.info">email給我</a>。</string>
-  <string name="pref_hint" formatted="false"><b>提示：</b>單擊「選單」獲取說明。</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Pro版的更多設定</string>
   <string name="pref_please_upgrade" formatted="false">Pro版包含了以紅色、黃色及綠色圖標提示剩餘電量等級、電池狀態記錄、自動/手動關閉鎖屏、充電/放電剩餘時間預估等多種高級功能。</string>
   <string name="pref_icon_set" formatted="false">圖示設定</string>

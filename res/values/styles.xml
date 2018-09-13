@@ -43,13 +43,13 @@
     <item name="android:lineSpacingMultiplier">1.1</item>
   </style>
 
-  <style name="bi_help_theme" parent="@android:style/Theme.Light">
+  <style name="bi_help_theme" parent="@android:style/Theme.Material.Light">
   </style>
 
-  <style name="bi_main_theme" parent="@android:style/Theme">
+  <style name="bi_main_theme" parent="@android:style/Theme.Material">
   </style>
 
-  <style name="bi_settings_theme" parent="@android:style/Theme">
+  <style name="bi_settings_theme" parent="@android:style/Theme.Material">
   </style>
 
   <style name="alarm_list_left_column">
@@ -87,5 +87,5 @@
 
   <dimen name="battery_padding">10dp</dimen>
 
-  <dimen name="widget_margin">8dp</dimen>
+  <dimen name="widget_margin">0dp</dimen>
 </resources>

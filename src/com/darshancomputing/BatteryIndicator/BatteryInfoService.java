@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2017 Darshan-Josiah Barber
+    Copyright (c) 2009-2018 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -15,7 +15,9 @@
 package com.darshancomputing.BatteryIndicator;
 
 import android.app.AlarmManager;
-//import android.app.Notification;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
@@ -34,9 +36,6 @@ import android.os.Message;
 import android.os.Messenger;
 import android.widget.RemoteViews;
 
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-
 import java.util.Date;
 import java.util.HashSet;
 
@@ -45,11 +44,13 @@ public class BatteryInfoService extends Service {
     //private final IntentFilter userPresent    = new IntentFilter(Intent.ACTION_USER_PRESENT);
     private PendingIntent currentInfoPendingIntent, updatePredictorPendingIntent;
 
-    private NotificationManagerCompat mNotificationManager;
+    private NotificationManager mNotificationManager;
     private AlarmManager alarmManager;
     private SharedPreferences settings;
     private SharedPreferences sp_service;
     private SharedPreferences.Editor sps_editor;
+
+    public static final String MAIN_CHAN_ID = "main";
 
     private Resources res;
     //private BatteryLevel bl;
@@ -92,7 +93,7 @@ public class BatteryInfoService extends Service {
     private static final int small_chargingIcon0 = R.drawable.small_charging000;
 
     /* Global variables for these Notification Runnables */
-    private NotificationCompat.Builder mainNotificationB;
+    private Notification.Builder mainNotificationB;
     private String mainNotificationTopLine, mainNotificationBottomLine;
     //private RemoteViews notificationRV;
 
@@ -120,8 +121,15 @@ public class BatteryInfoService extends Service {
         //bl = BatteryLevel.getInstance(this, BatteryLevel.SIZE_NOTIFICATION);
         cwbg = new CircleWidgetBackground(this);
 
-        mNotificationManager = NotificationManagerCompat.from(this);
-        mainNotificationB = new NotificationCompat.Builder(this);
+        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        CharSequence main_notif_chan_name = getString(R.string.main_notif_chan_name);
+        NotificationChannel mChannel = new NotificationChannel(MAIN_CHAN_ID, main_notif_chan_name, NotificationManager.IMPORTANCE_MIN);
+        mChannel.setSound(null, null);
+        mChannel.enableLights(false);
+        mChannel.enableVibration(false);
+        mChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+        mNotificationManager.createNotificationChannel(mChannel);
+        mainNotificationB = new Notification.Builder(this);
 
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
@@ -164,8 +172,7 @@ public class BatteryInfoService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        // TODO: Do I need a filter, or is it okay to just update(null) every time?
-        //if (intent != null && intent.getBooleanExtra(EXTRA_UPDATE_PREDICTOR, false))
+        // Always update
         update(null);
 
         return Service.START_STICKY;
@@ -203,15 +210,6 @@ public class BatteryInfoService extends Service {
             case RemoteConnection.SERVICE_CANCEL_NOTIFICATION_AND_RELOAD_SETTINGS:
                 bis.reloadSettings(true);
                 break;
-            case RemoteConnection.SERVICE_WIZARD_VALUE_DEFAULT:
-                bis.wizardValueChanged(NotificationWizard.VALUE_DEFAULT);
-                break;
-            case RemoteConnection.SERVICE_WIZARD_VALUE_MINIMAL:
-                bis.wizardValueChanged(NotificationWizard.VALUE_MINIMAL);
-                break;
-            case RemoteConnection.SERVICE_WIZARD_VALUE_NONE:
-                bis.wizardValueChanged(NotificationWizard.VALUE_NONE);
-                break;
             default:
                 super.handleMessage(incoming);
             }
@@ -237,9 +235,6 @@ public class BatteryInfoService extends Service {
         static final int SERVICE_UNREGISTER_CLIENT = 2;
         static final int SERVICE_RELOAD_SETTINGS = 3;
         static final int SERVICE_CANCEL_NOTIFICATION_AND_RELOAD_SETTINGS = 4;
-        static final int SERVICE_WIZARD_VALUE_DEFAULT = 5;
-        static final int SERVICE_WIZARD_VALUE_MINIMAL = 6;
-        static final int SERVICE_WIZARD_VALUE_NONE = 7;
 
         // Messages the service sends to clients
         static final int CLIENT_SERVICE_CONNECTED = 0;
@@ -282,40 +277,10 @@ public class BatteryInfoService extends Service {
     private void applyNewSettings(boolean cancelFirst) {
         if (cancelFirst) {
             stopForeground(true);
-            mainNotificationB = new NotificationCompat.Builder(this);
+            mainNotificationB = new Notification.Builder(this);
         }
 
         registerReceiver(mBatteryInfoReceiver, batteryChanged);
-    }
-
-    private void wizardValueChanged(int value) {
-        SharedPreferences.Editor sps_editor = sp_service.edit();
-        SharedPreferences.Editor settings_editor = settings.edit();
-
-        switch(value) {
-        case NotificationWizard.VALUE_NONE:
-            sps_editor.putBoolean(BatteryInfoService.KEY_SHOW_NOTIFICATION, false);
-
-            break;
-        case NotificationWizard.VALUE_MINIMAL:
-            sps_editor.putBoolean(BatteryInfoService.KEY_SHOW_NOTIFICATION, true);
-            settings_editor.putString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
-                                      "" + NotificationCompat.PRIORITY_MIN);
-
-            break;
-        default:
-            sps_editor.putBoolean(BatteryInfoService.KEY_SHOW_NOTIFICATION, true);
-            int priority = Integer.valueOf(settings.getString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
-                                                              Str.default_main_notification_priority));
-            if (priority == NotificationCompat.PRIORITY_MIN)
-                settings_editor.putString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
-                                          "" + NotificationCompat.PRIORITY_LOW);
-        }
-
-        sps_editor.apply();
-        settings_editor.apply();
-
-        applyNewSettings(true);
     }
 
     private final BroadcastReceiver mBatteryInfoReceiver = new BroadcastReceiver() {
@@ -419,12 +384,11 @@ public class BatteryInfoService extends Service {
             .setOngoing(true)
             .setWhen(0)
             .setShowWhen(false)
+            .setChannelId(MAIN_CHAN_ID)
             .setContentTitle(mainNotificationTopLine)
             .setContentText(mainNotificationBottomLine)
             .setContentIntent(currentInfoPendingIntent)
-            .setPriority(Integer.valueOf(settings.getString(SettingsActivity.KEY_MAIN_NOTIFICATION_PRIORITY,
-                                                            Str.default_main_notification_priority)))
-            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
+            .setVisibility(Notification.VISIBILITY_PUBLIC);
     }
 
     private String predictionLine() {
@@ -497,11 +461,8 @@ public class BatteryInfoService extends Service {
             return ((info.status == BatteryInfo.STATUS_CHARGING && indicate_charging) ? chargingIcon0 : plainIcon0) + info.percent;
         } else if (icon_set.equals("builtin.smaller_number")) {
             return ((info.status == BatteryInfo.STATUS_CHARGING && indicate_charging) ? small_chargingIcon0 : small_plainIcon0) + info.percent;
-        } else if (android.os.Build.VERSION.SDK_INT >= 21 &&
-                   !settings.getBoolean(SettingsActivity.KEY_CLASSIC_COLOR_MODE, false)) {
-            return R.drawable.w000 + info.percent;
         } else {
-            return R.drawable.b000 + info.percent;
+            return R.drawable.w000 + info.percent;
         }
     }
 

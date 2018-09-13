@@ -10,6 +10,7 @@
   <string name="cancel" formatted="false">Anuluj</string>
   <string name="confirm_close" formatted="false">Zamknąć?</string>
   <string name="confirm_close_hint" formatted="false">Battery Indicator zostanie zamknięty i nie będziesz widział statusu w powiadomieniach.\n\nJeżeli chcesz widzieć status, zostaw program uruchomiony naciskając Anuluj a następnie przycisk Wstecz.</string>
+  <string name="notifications_disabled" formatted="false">Powiadomienia są wyłączone!</string>
   <string name="okay" formatted="false">OK</string>
   <string name="tab_current_info" formatted="false">Aktualny stan</string>
   <string name="notification_until_charged" formatted="false">" do naładowania"</string>
@@ -61,7 +62,6 @@
   <string name="help_subcat_translators" formatted="false">Tłumacze</string>
   <string name="help_cat_contact" formatted="false">Kontakt</string>
   <string name="help_contact" formatted="false">Jeśli masz pytanie, problem lub uwagi, proszę <a href="mailto:support@batterybot.info">napisz do mnie</a>.</string>
-  <string name="pref_hint" formatted="false">Podpowiedź: Naciśnij MENU po pomoc.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Więcej ustawień w wersji Pro</string>
   <string name="pref_please_upgrade" formatted="false">Wersja Pro ma wiele innych ustawień, włączając w to kolorowe ikony, wtyczki z ikonami, alarmy, tematy, zapisywanie stanu baterii w logach, auto/ ręczne wyłączenie blokady ekranu, przybliżone czasy ładowania/rozładowania i wiele więcej.</string>
   <string name="pref_icon_set" formatted="false">Zestaw ikon</string>
@@ -71,11 +71,9 @@
   <string name="pref_notify_status_duration_help" formatted="false">Włącz to ustawienie, jeśli wolisz główne powiadomienie pokazujące czas od zmiany statusu (np. \"Odłączony przez 5 godzin\"), a nie szacunku czasu pozostałego. Obie informacje są dostępne z głównego okna.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Konwertuj na Fahrenheita</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android raportuje temperaturę baterii w stopniach Celcjusza. Jeżeli wolisz stopnie Fahrenheita, to zaznacz tą opcję a aplikacja wykona konwersję.</string>
-  <string name="pref_cat_notification_settings" formatted="false">Ustawienia powiadomień</string>
-  <string name="silent" formatted="false">Wyciszony</string>
   <string name="icon_set_classic" formatted="false">Klasyczny</string>
-  <string name="icon_set_plain" formatted="false">Zwykły numer</string>
-  <string name="icon_set_smaller" formatted="false">Mniejszy numer</string>
+  <string name="icon_set_plain" formatted="false">Zwykła liczba</string>
+  <string name="icon_set_smaller" formatted="false">Mniejsza liczba</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Log</item>
     <item quantity="other">%d Logów</item>

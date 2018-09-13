@@ -32,5 +32,4 @@
   <string name="help_cat_translations" formatted="false">Traduções</string>
   <string name="help_subcat_translators" formatted="false">Tradutores</string>
   <string name="help_cat_contact" formatted="false">Contacto</string>
-  <string name="pref_hint" formatted="false">Sugestão: Pressiona a tecla Menu para ajuda.</string>
 </resources>

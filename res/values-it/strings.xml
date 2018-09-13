@@ -60,13 +60,10 @@
   <string name="help_translations" formatted="false">Abbiamo bisogno di aiuto per tradurre questa applicazione in altre lingue. Se ci vuoi aiutare, inviaci una <a href="mailto:support%2Btranslations@batterybot.info">email</a>. A meno che non si voglia, il tuo nome verrà aggiunto in questa sezione come riconoscimento per il tuo aiuto.</string>
   <string name="help_subcat_translators" formatted="false">Traduttori</string>
   <string name="help_cat_contact" formatted="false">Contatti</string>
-  <string name="pref_hint" formatted="false">Suggerimento: Premi MENU per aiuto.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Altre impostazioni nella versione Pro</string>
   <string name="pref_please_upgrade" formatted="false">La versione Pro ha molte impostazioni e caratteristiche, tra cui icone verdi, ambra, e rosse, temi finestre, log stato batteria, disabilitazione automatica/manuale blocco schermo, stime tempo rimanente di carica/scarica, e altro.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Converti in Fahrenheit</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android riporta la temperatura della batteria in gradi Celsius. Se preferisci vedere la temperatura della batteria in gradi Fahrenheit, spunta questa opzione.</string>
-  <string name="pref_cat_notification_settings" formatted="false">Impostazioni notifica</string>
-  <string name="silent" formatted="false">Silenzioso</string>
   <plurals name="n_log_items">
     <item quantity="one">%d elemento log</item>
     <item quantity="other">%d elementi log</item>

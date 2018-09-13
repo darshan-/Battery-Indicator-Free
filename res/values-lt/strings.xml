@@ -53,12 +53,9 @@
   <string name="help_cat_translations" formatted="false">Vertimai</string>
   <string name="help_subcat_translators" formatted="false">Vertėjai</string>
   <string name="help_cat_contact" formatted="false">Kontaktai</string>
-  <string name="pref_hint" formatted="false">Patarimas: Spauskite MENU pagalbai.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Daugiau nustatytmų Pro versijoje</string>
   <string name="pref_please_upgrade" formatted="false">Pro versija turi daug daugiau nustatymų ir funkcijų: spalvotos ikonos, atsisiunčiami ikonų papildiniai, aliarmai, lango temos, baterijos statuso įrašų sudarymas, auto/rankinis ekrano užrakto išjungimas, įkrovimo/iškrovimo likęs laikas ir daugiau.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Pakeisti į Farengeitą</string>
-  <string name="pref_cat_notification_settings" formatted="false">Perspėjimų Nustatymai</string>
-  <string name="silent" formatted="false">Tyla</string>
   <plurals name="n_log_items">
     <item quantity="one">%d Įrašo Punktas</item>
     <item quantity="few">%d Įrašo Punktai</item>

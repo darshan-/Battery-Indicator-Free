@@ -72,7 +72,6 @@
   <string name="help_subcat_translators" formatted="false">翻訳者</string>
   <string name="help_cat_contact" formatted="false">問い合わせ</string>
   <string name="help_contact" formatted="false">もし、 質問、問題、またはコメントなどがあれば、 <a href="mailto:support@batterybot.info">私にメール</a> をお送りください。</string>
-  <string name="pref_hint" formatted="false">ヒント: ヘルプはメニューを押してください。</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">プロバージョンの追加設定</string>
   <string name="pref_please_upgrade" formatted="false">プロバージョンには、 カラフルなアイコン、アラーム、 バッテリーステータスのロギング、自動/手動のロック画面無効化、 充電/放電残の見積など、多くの追加設定や機能があります。</string>
   <string name="pref_icon_set" formatted="false">アイコンセット</string>
@@ -82,11 +81,6 @@
   <string name="pref_notify_status_duration_help" formatted="false">メイン通知で、見積残り時間ではなく、ステータスが変わってからの時間 (\"プラグを抜いてから 5 時間\" など) の表示をお好みの場合は、 この設定を有効にしてください。メインウインドウで両方の情報が入手できます。</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">華氏に変換する</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android はセ氏でバッテリ温度を報告します。バッテリー温度を華氏で 確認したい場合は、このオプションをチェックすると、アプリが変換します。</string>
-  <string name="pref_classic_color_mode" formatted="false">強制的にクラシックカラーモードにする</string>
-  <string name="pref_classic_color_mode_summary" formatted="false">これは通常動作しません。ヘルプをお読みください</string>
-  <string name="pref_classic_color_mode_help" formatted="false">Android 5.0 (Lollipop) から、着色された通知アイコンはもはや公式には Android 上で動作しません。クラシックアイコンは白い四角としてを表示されます。そのためデフォルトでは、これらのデバイス上で、アプリは白い番号と白いアウトラインを使用します。\n\nしかし、すべてのデバイスが仕様に従っているわけではないので、これは必要ではなく、すべてにおいて正常に動作するわけではありません。このオプションをオンにすることによって、クラシックな方法で、クラシックアイコンセットを動作させてみることができます。覚えておいてほしいのは、ほとんどのデバイスでこれはアイコンがただの白い四角になります、。</string>
-  <string name="pref_cat_notification_settings" formatted="false">通知設定</string>
-  <string name="silent" formatted="false">サイレント</string>
   <string name="icon_set_classic" formatted="false">クラシック</string>
   <string name="icon_set_plain" formatted="false">数字のみ</string>
   <string name="icon_set_smaller" formatted="false">小さい数字</string>

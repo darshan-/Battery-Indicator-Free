@@ -48,9 +48,6 @@
   <string name="help_translations" formatted="false">Potrebujem pomoč pri prevajanju aplikacije v druge jezike. Če bi radi pomagali, mi prosim pošljite <a href="mailto:support%2Btranslations@batterybot.info">e-pošto</a>. (Ta e-pošta je samo za prevajanje; poglej Kontakt sekcijo spodaj za vsa ostala povpraševanja.) Razen če želite drugače, bom dodal vaše ime v to sekcijo kot dokaz da ste sodelovali.</string>
   <string name="help_subcat_translators" formatted="false">Prevajalci</string>
   <string name="help_cat_contact" formatted="false">Kontakt</string>
-  <string name="pref_hint" formatted="false">Namig: Pritisnite MENU za pomoč.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Več nastavitev v Pro različici</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Pretvori v Fahrenheit</string>
-  <string name="pref_cat_notification_settings" formatted="false">Nastavitve obvestil</string>
-  <string name="silent" formatted="false">Tiho</string>
 </resources>

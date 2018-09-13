@@ -60,7 +60,6 @@
   <string name="help_translations" formatted="false">Necesito ayuda para traducir la aplicación a otros idiomas. Si quieres ayudar, por favor mándame un <a href="mailto:support%2Btranslations@batterybot.info">email</a>. Salvo que prefieras que no lo haga, añadiré tu nombre a esta sección como agradecimiento por tu ayuda.</string>
   <string name="help_subcat_translators" formatted="false">Traductores</string>
   <string name="help_cat_contact" formatted="false">Contacto</string>
-  <string name="pref_hint" formatted="false">Pulse MENU para ver la ayuda.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Más ajustes en la versión Pro</string>
   <string name="pref_please_upgrade" formatted="false">La versión Pro tiene muchos más ajustes y funcionalidades, incluyendo icono en verde, ámbar y rojo para el icono de la barra de estado, temas para la ventana, registro de cambios de estado de la batería, estimaciones de tiempos restantes de carga y descarga, y mucho más.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Convertir a Fahrenheit</string>

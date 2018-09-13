@@ -21,24 +21,7 @@
     button to leave the main window.\n
 
     \nIf you want to hide the notification but keep widgets running,
-    press Cancel and then run the Notification Wizard to hide the notification.
-  </string>
-
-  <string formatted="false" name="notification_wizard_title">
-    How would you like to see the main BatteryBot notification?
-  </string>
-  <string formatted="false" name="notification_wizard_title_default">Default</string>
-  <string formatted="false" name="notification_wizard_title_minimal">Minimal</string>
-  <string formatted="false" name="notification_wizard_title_none">None</string>
-  <string formatted="false" name="notification_wizard_summary_default">
-    Battery percentage in status bar in addition to tray notification
-  </string>
-  <string formatted="false" name="notification_wizard_summary_minimal">
-    Just notification in tray, nothing in status bar
-  </string>
-  <string formatted="false" name="requires_api_level_16">(Requires Android 4.1+)</string>
-  <string formatted="false" name="notification_wizard_summary_none">
-    For those who only use the desktop widgets and/or main screen
+    press Cancel and then change the settings to hide the notification.
   </string>
 
   <string formatted="false" name="notifications_disabled">Notifications are disabled!</string>
@@ -47,8 +30,8 @@
     prevent BatteryBot from showing any notifications: the main
     notification and any alarms you have set will all be blocked.\n
 
-    \nSince BatteryBot already allows you to turn the main
-    notification on or off as well as temporarily disable any alarms
+    \nSince BatteryBot allows you to turn the main notification on or off
+    separately, as well as temporarily disable any alarms
     you\'ve created, it is stongly recommended that you unblock the
     BatteryBot notifications.  While they are blocked, it will appear
     that BatteryBot is broken.\n
@@ -56,6 +39,8 @@
     \nPlease press OK to be taken to the system settings where you can
     unblock notifications for BatteryBot.
   </string>
+
+  <string formatted="false" name="main_notif_chan_name">Main Notification</string>
   <string formatted="false" name="okay">Okay</string>
   <string formatted="false" name="tab_current_info">Current Info</string>
   <string formatted="false" name="notification_until_charged">" until charged"</string>
@@ -67,7 +52,6 @@
   <string formatted="false" name="menu_close">Close</string>
   <string formatted="false" name="menu_help">Help</string>
   <string formatted="false" name="menu_rate_and_review">Rate &amp; Review</string>
-  <string formatted="false" name="menu_notification_wizard">Notification Wizard</string>
   <string formatted="false" name="percent_symbol">%</string>
   <string formatted="false" name="degree_symbol">°</string>
   <string formatted="false" name="fahrenheit">Fahrenheit</string>
@@ -231,13 +215,18 @@
     you have a question, a problem, or a comment, please
     <a href="mailto:support@batterybot.info">email me</a>.
   </string>
+  <string formatted="false" name="notifications_disabled_cat">Notifications Disabled</string>
+  <string formatted="false" name="app_notifs_disabled_b">Enable App Notifications</string>
+  <string formatted="false" name="app_notifs_disabled_summary">You have disabled all notifications for this app.  Please enable them to access these settings.</string>
+  <string formatted="false" name="main_notifs_disabled_b">Enable Main Notification</string>
+  <string formatted="false" name="main_notifs_disabled_summary">You have disabled the main notification for this app.  Please enable it to access these settings.</string>
+  <string formatted="false" name="pref_cat_notification_settings">Notification Settings</string>
 
-  <string formatted="false" name="pref_hint">Hint: Press MENU for help.</string>
   <string formatted="false" name="pref_cat_more_settings_in_pro">More Settings in Pro</string>
   <string formatted="false" name="pref_please_upgrade">
     The Pro version has many more settings and features, including
     current (mA) information,
-    colorful icons, alarms,
+    alarms,
     battery state logging,
     and more.
   </string>
@@ -283,29 +272,8 @@
     you prefer to see the battery temperature in degrees Fahrenheit,
     check this option, and the app will convert for you.
   </string>
-  <string formatted="false" name="pref_classic_color_mode">Force Classic Color Mode</string>
-  <string formatted="false" name="pref_classic_color_mode_summary">
-    This usually does not work; please read the help
-  </string>
-  <string formatted="false" name="pref_classic_color_mode_help">
-    Starting with Android 5.0 (Lollipop), colored notification icons
-    officially no longer work on Android, making the Classic icon show
-    up as solid white. So by default, on these devices the app uses a
-    plain white outline with white number.\n
-
-    \nHowever, not all devices follow the spec, so this is not
-    necessary and does not work correctly everywhere.  You can try to
-    make the Classic icon set work in the classic way by turning this
-    option on.  Remember, on most devices this will just make the icon
-    turn solid white.
-  </string>
   <!--string name="pref_cat_device_specific_help"></string-->
   <!--string name="pref_alarm_enabled_summary"></string-->
-  <string formatted="false" name="pref_cat_notification_settings">Notification Settings</string>
-  <!--string name="pref_alarm_ringtone_summary"></string-->
-  <string formatted="false" name="silent">Silent</string>
-  <!--string name="pref_alarm_vibrate_summary"></string-->
-  <!--string name="pref_alarm_lights_summary"></string-->
   <string formatted="false" name="icon_set_classic">Classic</string>
   <string formatted="false" name="icon_set_plain">Plain Number</string>
   <string formatted="false" name="icon_set_smaller">Smaller Number</string>

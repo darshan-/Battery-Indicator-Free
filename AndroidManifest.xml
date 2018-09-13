@@ -2,11 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.darshancomputing.BatteryIndicator"
           xmlns:tools="http://schemas.android.com/tools"
-          android:versionCode="013030"
-          android:versionName="10.0.4"
+          android:versionCode="026002"
+          android:versionName="11.0.0"
 >
   <!-- Permissions now considered "normal", automatically granted on API 23+ -->
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /><!-- Required on API 28+ -->
 
   <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
@@ -24,6 +25,7 @@
       android:process="com.darshancomputing.BatteryBot"
       android:allowBackup="false"
       android:resizeableActivity="true"
+      android:supportsRtl="true"
   >
     <activity
         android:name=".BatteryInfoActivity"
@@ -73,8 +75,7 @@
         <action android:name="android.intent.action.BOOT_COMPLETED" />
       </intent-filter>
       <intent-filter>
-        <action android:name="android.intent.action.PACKAGE_REPLACED" />
-        <data android:scheme="package" android:path="com.darshancomputing.BatteryIndicator" />
+        <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
       </intent-filter>
     </receiver>
 

@@ -258,8 +258,6 @@
   <string name="default_heavy_usage_time">480</string>
   <string name="default_constant_usage_time">240</string>
 
-  <string name ="default_main_notification_priority">-1</string>
-
   <string-array name="icon_set_values">
     <item>builtin.classic</item>
     <item>builtin.plain_number</item>
@@ -268,9 +266,6 @@
 
   <bool name="long_activity_names">true</bool>
   <bool name="show_main_title">false</bool>
-  <bool name="api_level_14_plus">false</bool>
-  <bool name="api_level_16_plus">false</bool>
-  <bool name="api_level_21_plus">false</bool>
 
   <string name="help_translators_list">
     Matthew McBaul(包明)

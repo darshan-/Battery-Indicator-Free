@@ -60,7 +60,6 @@
   <string name="help_translations" formatted="false">Ik heb hulp nodig het vertalen van deze app naar andere talen. Als u wilt helpen, stuur me een <a href="mailto:support%2Btranslations@batterybot.info">e-mail</a>. Tenzij u het liever niet wilt, zal ik uw naam toevoegen aan deze sectie ter bevestiging van uw hulp.</string>
   <string name="help_subcat_translators" formatted="false">Vertalers</string>
   <string name="help_cat_contact" formatted="false">Contact</string>
-  <string name="pref_hint" formatted="false">(Druk op MENU voor help)</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Meer instellingen in Battery Indicator Pro!</string>
   <string name="pref_please_upgrade" formatted="false">De Pro versie heeft veel meer instellingen en mogelijkheden, waaronder gekleurde icoontjes, alarmen, thema\'s, logboeken, schermvergrendeling voorkomen, geschatte tijd resterend en meer!</string>
   <string name="pref_icon_set" formatted="false">Iconen</string>
@@ -70,8 +69,6 @@
   <string name="pref_notify_status_duration_help" formatted="false">Stel dit in als je wilt zien hoe lang geleden de laatste statuswijziging was.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Converteren naar Fahrenheit</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android geeft de batterijtemperatuur in graden Celsius. Selecteer deze optie om Fahrenheit te gebruiken.</string>
-  <string name="pref_cat_notification_settings" formatted="false">Meldingsinstellingen</string>
-  <string name="silent" formatted="false">Stil</string>
   <string name="icon_set_classic" formatted="false">Klassiek</string>
   <string name="icon_set_plain" formatted="false">Cijfer</string>
   <string name="icon_set_smaller" formatted="false">Kleiner cijfer</string>

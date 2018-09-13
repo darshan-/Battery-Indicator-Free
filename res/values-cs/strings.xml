@@ -51,12 +51,9 @@
   <string name="help_cat_translations" formatted="false">Překlady</string>
   <string name="help_subcat_translators" formatted="false">Překladatelé</string>
   <string name="help_cat_contact" formatted="false">Kontakt</string>
-  <string name="pref_hint" formatted="false">Tip: Stiskněte MENU pro nápovědu.</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">Více nastavení pouze ve verzi Pro</string>
   <string name="pref_please_upgrade" formatted="false">Pro verze obsahuje mnohem více nastavení a funkcí, včetně zelené, oranžové a červené ikony stavu, témata pro okno, záznamy stavu baterie, nastavení zámku obrazovky, odhady časů zbývající energie atd.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Změnit na Fahrenheity</string>
-  <string name="pref_cat_notification_settings" formatted="false">Nastavení upozorňování</string>
-  <string name="silent" formatted="false">Ticho</string>
   <plurals name="n_log_items">
     <item quantity="one">%d položka záznamů</item>
     <item quantity="other">%d položek záznamů</item>

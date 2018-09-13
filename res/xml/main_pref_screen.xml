@@ -1,10 +1,19 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-  <Preference
-     android:title="@string/pref_hint"
-     android:layout="@layout/hint"
-     android:enabled="false"
-     android:selectable="false"
-  />
+  <PreferenceCategory
+      android:key="category_notifications_disabled"
+      android:title="@string/notifications_disabled_cat"
+  >
+    <Preference
+        android:key="enable_notifications_button"
+        android:layout="@layout/enable_notifications_button"
+    />
+
+    <Preference
+        android:key="enable_notifications_summary"
+        android:layout="@layout/enable_notifications_summary"
+        android:enabled="false"
+    />
+  </PreferenceCategory>
 
   <PreferenceCategory
       android:key="category_notification_settings"
@@ -21,13 +30,6 @@
        android:title="@string/pref_icon_set"
        android:entries="@array/icon_set_entries"
        android:entryValues="@array/icon_set_values"
-    />
-
-    <CheckBoxPreference
-       android:key="classic_color_mode"
-       android:title="@string/pref_classic_color_mode"
-       android:summary="@string/pref_classic_color_mode_summary"
-       android:defaultValue="false"
     />
 
     <CheckBoxPreference

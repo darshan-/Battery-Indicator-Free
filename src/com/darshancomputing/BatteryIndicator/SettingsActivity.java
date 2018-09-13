@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2017 Darshan-Josiah Barber
+    Copyright (c) 2009-2018 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,6 +16,8 @@ package com.darshancomputing.BatteryIndicator;
 
 import android.app.ActionBar;
 import android.app.Dialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -49,48 +51,33 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_ALARM_SETTINGS = "alarm_settings";
     public static final String KEY_ALARM_EDIT_SETTINGS = "alarm_edit_settings";
     public static final String KEY_OTHER_SETTINGS = "other_settings";
-    public static final String KEY_MAIN_NOTIFICATION_PRIORITY = "main_notification_priority";
     public static final String KEY_ICON_PLUGIN = "icon_plugin";
     public static final String KEY_ICON_SET = "icon_set";
     public static final String KEY_CONVERT_F = "convert_to_fahrenheit";
     public static final String KEY_NOTIFY_STATUS_DURATION = "notify_status_duration";
     public static final String KEY_AUTOSTART = "autostart";
-    public static final String KEY_TEN_PERCENT_MODE = "ten_percent_mode";
-    public static final String KEY_CLASSIC_COLOR_MODE = "classic_color_mode";
     public static final String KEY_STATUS_DUR_EST = "status_dur_est";
-    public static final String KEY_CAT_CLASSIC_COLOR_MODE = "category_classic_color_mode";
-    public static final String KEY_CAT_COLOR = "category_color";
     public static final String KEY_CAT_CHARGING_INDICATOR = "category_charging_indicator";
     public static final String KEY_CAT_NOTIFICATION_SETTINGS = "category_notification_settings";
+    public static final String KEY_CAT_NOTIFICATIONS_DISABLED = "category_notifications_disabled";
     public static final String KEY_INDICATE_CHARGING = "indicate_charging";
-    public static final String KEY_RED = "use_red";
-    public static final String KEY_RED_THRESH = "red_threshold";
-    public static final String KEY_AMBER = "use_amber";
-    public static final String KEY_AMBER_THRESH = "amber_threshold";
-    public static final String KEY_GREEN = "use_green";
-    public static final String KEY_GREEN_THRESH = "green_threshold";
-    public static final String KEY_COLOR_PREVIEW = "color_preview";
     public static final String KEY_FIRST_RUN = "first_run";
-    public static final String KEY_NOTIFICATION_WIZARD_EVER_RUN = "key_notification_wizard_ever_run";
     public static final String KEY_MIGRATED_SERVICE_DESIRED = "service_desired_migrated_to_sp_main";
+    public static final String KEY_APP_NOTIFS_DISABLED_B = "enable_notifications_button";
+    public static final String KEY_APP_NOTIFS_DISABLED_SUMMARY = "enable_notifications_summary";
 
-    private static final String[] PARENTS    = {KEY_RED,        KEY_AMBER,        KEY_GREEN};
-    private static final String[] DEPENDENTS = {KEY_RED_THRESH, KEY_AMBER_THRESH, KEY_GREEN_THRESH};
+    private static final String[] PARENTS    = {};
+    private static final String[] DEPENDENTS = {};
 
     private static final String[] LIST_PREFS = {KEY_AUTOSTART, KEY_STATUS_DUR_EST,
-                                                KEY_RED_THRESH, KEY_AMBER_THRESH, KEY_GREEN_THRESH,
-                                                KEY_MAIN_NOTIFICATION_PRIORITY, KEY_ICON_SET,
+                                                KEY_ICON_SET,
                                                 };
 
     private static final String[] RESET_SERVICE = {KEY_CONVERT_F, KEY_NOTIFY_STATUS_DURATION,
-                                                   KEY_RED, KEY_RED_THRESH,
-                                                   KEY_AMBER, KEY_AMBER_THRESH, KEY_GREEN, KEY_GREEN_THRESH,
                                                    KEY_ICON_SET,
-                                                   KEY_CLASSIC_COLOR_MODE,
-                                                   KEY_INDICATE_CHARGING, KEY_TEN_PERCENT_MODE}; /* 10% mode changes color settings */
+                                                   KEY_INDICATE_CHARGING};
 
-    private static final String[] RESET_SERVICE_WITH_CANCEL_NOTIFICATION = {KEY_MAIN_NOTIFICATION_PRIORITY,
-    };
+    private static final String[] RESET_SERVICE_WITH_CANCEL_NOTIFICATION = {};
 
     public static final String EXTRA_SCREEN = "com.darshancomputing.BatteryIndicator.PrefScreen";
 
@@ -101,6 +88,10 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     private Resources res;
     private PreferenceScreen mPreferenceScreen;
     private SharedPreferences mSharedPreferences;
+    private NotificationManager mNotificationManager;
+    private NotificationChannel mainChan;
+    private boolean appNotifsEnabled;
+    private boolean mainNotifsEnabled;
 
     private String pref_screen;
 
@@ -139,6 +130,12 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             ab.setDisplayHomeAsUpEnabled(true);
         }
 
+        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mainChan = mNotificationManager.getNotificationChannel(BatteryInfoService.MAIN_CHAN_ID);
+
+        appNotifsEnabled = mNotificationManager.areNotificationsEnabled();
+        mainNotifsEnabled = mainChan.getImportance() > 0;
+
         PreferenceManager pm = getPreferenceManager();
         pm.setSharedPreferencesName(SETTINGS_FILE);
         pm.setSharedPreferencesMode(Context.MODE_MULTI_PROCESS);
@@ -151,12 +148,24 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             setPrefScreen(R.xml.main_pref_screen);
         }
 
-        if (android.os.Build.VERSION.SDK_INT < 21 ||
-            !mSharedPreferences.getString(SettingsActivity.KEY_ICON_SET, "null").equals("builtin.classic")) {
+        if (appNotifsEnabled && mainNotifsEnabled) {
+            PreferenceCategory cat = (PreferenceCategory) mPreferenceScreen.findPreference(KEY_CAT_NOTIFICATIONS_DISABLED);
+            cat.removeAll();
+            cat.setLayoutResource(R.layout.none);
+        } else {
             PreferenceCategory cat = (PreferenceCategory) mPreferenceScreen.findPreference(KEY_CAT_NOTIFICATION_SETTINGS);
-            Preference pref = (Preference) mPreferenceScreen.findPreference(KEY_CLASSIC_COLOR_MODE);
-            cat.removePreference(pref);
-            pref.setLayoutResource(R.layout.none);
+            cat.removeAll();
+            cat.setLayoutResource(R.layout.none);
+
+            Preference prefb = mPreferenceScreen.findPreference(KEY_APP_NOTIFS_DISABLED_B);
+            Preference prefs = mPreferenceScreen.findPreference(KEY_APP_NOTIFS_DISABLED_SUMMARY);
+            if (!appNotifsEnabled) {
+                prefs.setSummary(R.string.app_notifs_disabled_summary);
+                prefb.setSummary(R.string.app_notifs_disabled_b);
+            } else {
+                prefs.setSummary(R.string.main_notifs_disabled_summary);
+                prefb.setSummary(R.string.main_notifs_disabled_b);
+            }
         }
 
         for (int i=0; i < PARENTS.length; i++)
@@ -233,7 +242,16 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     protected void onResume() {
         super.onResume();
 
-        mSharedPreferences.registerOnSharedPreferenceChangeListener(this);
+        // Turns out mainChan is unchangeable, so getImportance() just returns the importance at the time getNotificationChannel was called
+        mainChan = mNotificationManager.getNotificationChannel(BatteryInfoService.MAIN_CHAN_ID);
+
+        if (appNotifsEnabled != mNotificationManager.areNotificationsEnabled() ||
+            mainNotifsEnabled != mainChan.getImportance() > 0) {
+            resetService();
+            restartThisScreen();
+        } else {
+            mSharedPreferences.registerOnSharedPreferenceChangeListener(this);
+        }
     }
 
     @Override
@@ -268,19 +286,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         default:
             return super.onOptionsItemSelected(item);
         }
-    }
-
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        Dialog dialog;
-        Str.setResources(getResources());
-
-        switch (id) {
-        default:
-            dialog = null;
-        }
-
-        return dialog;
     }
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
@@ -349,22 +354,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         updateListPrefSummary(DEPENDENTS[index]);
     }
 
-    // private void setEnablednessOfMutuallyExclusive(String key1, String key2) {
-    //     Preference pref1 = mPreferenceScreen.findPreference(key1);
-    //     Preference pref2 = mPreferenceScreen.findPreference(key2);
-
-    //     if (pref1 == null) return;
-
-    //     if (mSharedPreferences.getBoolean(key1, false))
-    //         pref2.setEnabled(false);
-    //     else if (mSharedPreferences.getBoolean(key2, false))
-    //         pref1.setEnabled(false);
-    //     else {
-    //         pref1.setEnabled(true);
-    //         pref2.setEnabled(true);
-    //     }
-    // }
-
     private void updateListPrefSummary(String key) {
         ListPreference pref;
         try { /* Code is simplest elsewhere if we call this on all dependents, but some aren't ListPreferences. */
@@ -382,34 +371,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         }
     }
 
-    // private void setPluginPrefEntriesAndValues(ListPreference lpref) {
-    //     String prefix = "BI Plugin - ";
-
-    //     PackageManager pm = getPackageManager();
-    //     java.util.List<PackageInfo> packages = pm.getInstalledPackages(0);
-
-    //     java.util.List<String> entriesList = new java.util.ArrayList<String>();
-    //     java.util.List<String>  valuesList = new java.util.ArrayList<String>();
-
-    //     String[] icon_set_entries = res.getStringArray(R.array.icon_set_entries);
-    //     String[] icon_set_values  = res.getStringArray(R.array.icon_set_values);
-
-    //     for (int i = 0; i < icon_set_entries.length; i++) {
-    //         entriesList.add(icon_set_entries[i]);
-    //          valuesList.add(icon_set_values[i]);
-    //     }
-
-    //     lpref.setEntries    ((String[]) entriesList.toArray(new String[entriesList.size()]));
-    //     lpref.setEntryValues((String[])  valuesList.toArray(new String[entriesList.size()]));
-
-    //     /* TODO: I think it's safe to skip this: if the previously selected plugin is uninstalled, null
-    //        should be picked up by the Service and converted to proper default, I think/hope.
-    //     // If the previously selected plugin was uninstalled, revert to "None"
-    //     //if (! valuesList.contains(lpref.getValue())) lpref.setValueIndex(0);
-    //     if (lpref.getEntry() == null) lpref.setValueIndex(0);
-    //     */
-    // }
-
     public void upgradeButtonClick(android.view.View v) {
         try {
             startActivity(new Intent(Intent.ACTION_VIEW,
@@ -417,5 +378,21 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "Sorry, can't launch Market!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void enableNotifsButtonClick(android.view.View v) {
+        Intent intent;
+
+        if (!appNotifsEnabled) {
+            intent = new Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS);
+        } else {
+            intent = new Intent(android.provider.Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
+            intent.putExtra(android.provider.Settings.EXTRA_CHANNEL_ID, mainChan.getId());
+        }
+
+        intent.putExtra(android.provider.Settings.EXTRA_APP_PACKAGE, getPackageName());
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        startActivity(intent);
     }
 }

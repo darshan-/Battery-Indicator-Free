@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010-2017 Darshan-Josiah Barber
+    Copyright (c) 2010-2018 Darshan-Josiah Barber
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General License as published by
@@ -25,15 +25,12 @@ class Str {
     static String volt_symbol;
     static String percent_symbol;
     static String since;
-    static String default_main_notification_priority;
 
     static String yes;
     static String cancel;
     static String okay;
 
     static String currently_set_to;
-
-    static String silent;
 
     static String status_boot_completed;
     
@@ -50,15 +47,12 @@ class Str {
         volt_symbol            = res.getString(R.string.volt_symbol);
         percent_symbol         = res.getString(R.string.percent_symbol);
         since                  = res.getString(R.string.since);
-        default_main_notification_priority = res.getString(R.string.default_main_notification_priority);
 
         yes                = res.getString(R.string.yes);
         cancel             = res.getString(R.string.cancel);
         okay               = res.getString(R.string.okay);
 
         currently_set_to    = res.getString(R.string.currently_set_to);
-
-        silent = res.getString(R.string.silent);
 
         statuses            = res.getStringArray(R.array.statuses);
         healths             = res.getStringArray(R.array.healths);

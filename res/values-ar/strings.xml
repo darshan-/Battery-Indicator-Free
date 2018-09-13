@@ -70,7 +70,6 @@
   <string name="help_subcat_translators" formatted="false">المترجمين</string>
   <string name="help_cat_contact" formatted="false">للتواصل</string>
   <string name="help_contact" formatted="false">اذا كنت تملك اسئلة او مشاكل رجاء <a href="mailto:support@batterybot.info">راسلني على</a>.\n</string>
-  <string name="pref_hint" formatted="false">تلميح:اضغط على الخيارات للمساعدة</string>
   <string name="pref_cat_more_settings_in_pro" formatted="false">اعدادات اكثر في النسخة الكاملة</string>
   <string name="pref_please_upgrade" formatted="false">اصدار النسخة الكاملة يحتوي على اعدادات ومميزات اكثر ايقونات منبهات وسجلات حالة البطارية والتعطيل الاوتوماتيكي والعادي لقفل الشاشة والشحن المنقضي والمتبقي والمزيد</string>
   <string name="pref_icon_set" formatted="false">ضبط الايقونة</string>
@@ -80,8 +79,6 @@
   <string name="pref_notify_status_duration_help" formatted="false">تمكين هذا الإعداد إذا كنت تفضل الإخطار الرئيسي لعرض الوقت منذ تغيير حالة (على سبيل المثال، \"موصول لمدة 5 ساعات\") بدلا من تقدير الوقت المتبقي. كل قطعة من المعلومات المتاحة من النافذة الرئيسية.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">تحويل إلى فهرنهايت</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">الاندرويد وحدة قياس حرارته هي الدرجة السليزية اذا كنت تفضل رؤية درجة الحرارة بالفهرنهايت تحقق من هذا الخيار وسوف يحول لتطبيق درجة الحرارة لك</string>
-  <string name="pref_cat_notification_settings" formatted="false">اعدادات الاشعارات</string>
-  <string name="silent" formatted="false">صامت</string>
   <string name="icon_set_classic" formatted="false">كلاسيك</string>
   <string name="icon_set_plain" formatted="false">رقم كبير</string>
   <string name="icon_set_smaller" formatted="false">رقم صغير</string>
