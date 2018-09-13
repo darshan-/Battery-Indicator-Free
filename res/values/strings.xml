@@ -215,8 +215,10 @@
     you have a question, a problem, or a comment, please
     <a href="mailto:support@batterybot.info">email me</a>.
   </string>
-  <string formatted="false" name="notifications_disabled_cat">Notifications Disabled</string>
+  <string formatted="false" name="pref_cat_notifications_disabled">Notifications Disabled</string>
   <string formatted="false" name="app_notifs_disabled_b">Enable App Notifications</string>
+  <string formatted="false" name="pref_manage_main_channel">Manage Main Channel</string>
+
   <string formatted="false" name="app_notifs_disabled_summary">You have disabled all notifications for this app.  Please enable them to access these settings.</string>
   <string formatted="false" name="main_notifs_disabled_b">Enable Main Notification</string>
   <string formatted="false" name="main_notifs_disabled_summary">You have disabled the main notification for this app.  Please enable it to access these settings.</string>

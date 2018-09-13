@@ -1,7 +1,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
   <PreferenceCategory
       android:key="category_notifications_disabled"
-      android:title="@string/notifications_disabled_cat"
+      android:title="@string/pref_cat_notifications_disabled"
   >
     <Preference
         android:key="enable_notifications_button"
@@ -19,6 +19,11 @@
       android:key="category_notification_settings"
       android:title="@string/pref_cat_notification_settings"
   >
+    <Preference
+        android:key="main_chan_button"
+        android:layout="@layout/enable_notifications_button"
+    />
+
     <CheckBoxPreference
        android:key="convert_to_fahrenheit"
        android:title="@string/pref_convert_to_fahrenheit"

@@ -63,6 +63,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_INDICATE_CHARGING = "indicate_charging";
     public static final String KEY_FIRST_RUN = "first_run";
     public static final String KEY_MIGRATED_SERVICE_DESIRED = "service_desired_migrated_to_sp_main";
+    public static final String KEY_MAIN_CHAN_B = "main_chan_button";
     public static final String KEY_APP_NOTIFS_DISABLED_B = "enable_notifications_button";
     public static final String KEY_APP_NOTIFS_DISABLED_SUMMARY = "enable_notifications_summary";
 
@@ -152,6 +153,9 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             PreferenceCategory cat = (PreferenceCategory) mPreferenceScreen.findPreference(KEY_CAT_NOTIFICATIONS_DISABLED);
             cat.removeAll();
             cat.setLayoutResource(R.layout.none);
+
+            Preference prefb = mPreferenceScreen.findPreference(KEY_MAIN_CHAN_B);
+            prefb.setSummary(R.string.pref_manage_main_channel);
         } else {
             PreferenceCategory cat = (PreferenceCategory) mPreferenceScreen.findPreference(KEY_CAT_NOTIFICATION_SETTINGS);
             cat.removeAll();
