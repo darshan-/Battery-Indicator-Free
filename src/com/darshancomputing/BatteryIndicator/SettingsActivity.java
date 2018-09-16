@@ -57,6 +57,9 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     public static final String KEY_NOTIFY_STATUS_DURATION = "notify_status_duration";
     public static final String KEY_AUTOSTART = "autostart";
     public static final String KEY_STATUS_DUR_EST = "status_dur_est";
+    public static final String KEY_CAT_CLASSIC_COLOR_MODE = "category_classic_color_mode";
+    public static final String KEY_CAT_COLOR = "category_color";
+    public static final String KEY_CLASSIC_COLOR_MODE = "classic_color_mode";
     public static final String KEY_CAT_CHARGING_INDICATOR = "category_charging_indicator";
     public static final String KEY_CAT_NOTIFICATION_SETTINGS = "category_notification_settings";
     public static final String KEY_CAT_NOTIFICATIONS_DISABLED = "category_notifications_disabled";
@@ -76,6 +79,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
     private static final String[] RESET_SERVICE = {KEY_CONVERT_F, KEY_NOTIFY_STATUS_DURATION,
                                                    KEY_ICON_SET,
+                                                   KEY_CLASSIC_COLOR_MODE,
                                                    KEY_INDICATE_CHARGING};
 
     private static final String[] RESET_SERVICE_WITH_CANCEL_NOTIFICATION = {};
@@ -132,7 +136,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         }
 
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        mainChan = mNotificationManager.getNotificationChannel(BatteryInfoService.MAIN_CHAN_ID);
+        mainChan = mNotificationManager.getNotificationChannel(BatteryInfoService.CHAN_ID_MAIN);
 
         appNotifsEnabled = mNotificationManager.areNotificationsEnabled();
         mainNotifsEnabled = mainChan.getImportance() > 0;
@@ -156,6 +160,13 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
 
             Preference prefb = mPreferenceScreen.findPreference(KEY_MAIN_CHAN_B);
             prefb.setSummary(R.string.pref_manage_main_channel);
+
+            if (!mSharedPreferences.getString(SettingsActivity.KEY_ICON_SET, "null").equals("builtin.classic")) {
+                cat = (PreferenceCategory) mPreferenceScreen.findPreference(KEY_CAT_NOTIFICATION_SETTINGS);
+                Preference pref = (Preference) mPreferenceScreen.findPreference(KEY_CLASSIC_COLOR_MODE);
+                cat.removePreference(pref);
+                pref.setLayoutResource(R.layout.none);
+            }
         } else {
             PreferenceCategory cat = (PreferenceCategory) mPreferenceScreen.findPreference(KEY_CAT_NOTIFICATION_SETTINGS);
             cat.removeAll();
@@ -247,7 +258,7 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
         super.onResume();
 
         // Turns out mainChan is unchangeable, so getImportance() just returns the importance at the time getNotificationChannel was called
-        mainChan = mNotificationManager.getNotificationChannel(BatteryInfoService.MAIN_CHAN_ID);
+        mainChan = mNotificationManager.getNotificationChannel(BatteryInfoService.CHAN_ID_MAIN);
 
         if (appNotifsEnabled != mNotificationManager.areNotificationsEnabled() ||
             mainNotifsEnabled != mainChan.getImportance() > 0) {

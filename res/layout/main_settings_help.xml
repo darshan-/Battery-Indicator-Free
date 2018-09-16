@@ -17,6 +17,8 @@
     <TextView style="@style/help_text" android:text="@string/pref_convert_to_fahrenheit_help" />
     <TextView style="@style/help_pref" android:text="@string/pref_icon_set" />
     <TextView style="@style/help_text" android:text="@string/pref_icon_set_help" />
+    <TextView style="@style/help_pref" android:text="@string/pref_classic_color_mode" />
+    <TextView style="@style/help_text" android:text="@string/pref_classic_color_mode_help" />
     <TextView style="@style/help_pref" android:text="@string/pref_notify_status_duration" />
     <TextView style="@style/help_text" android:text="@string/pref_notify_status_duration_help" />
   </LinearLayout>

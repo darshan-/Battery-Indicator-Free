@@ -78,6 +78,10 @@
   <string formatted="false" name="plugged_usb">(USB)</string>
   <string formatted="false" name="plugged_unknown">(?)</string>
   <string formatted="false" name="plugged_wireless">(Wireless)</string>
+  <!--string formatted="false" name="alarm_audio_stream_notification">Notification</string>
+  <string formatted="false" name="alarm_audio_stream_alarm">Alarm</string>
+  <string formatted="false" name="pref_alarm_audio_stream">Audio Stream</string>
+  <string formatted="false" name="pref_alarm_audio_stream_summary">Use audio stream:</string-->
   <plurals name="n_log_items">
     <item quantity="one">%d Log Item</item>
     <item quantity="other">%d Log Items</item>
@@ -217,21 +221,19 @@
   </string>
   <string formatted="false" name="pref_cat_notifications_disabled">Notifications Disabled</string>
   <string formatted="false" name="app_notifs_disabled_b">Enable App Notifications</string>
-  <string formatted="false" name="pref_manage_main_channel">Manage Main Channel</string>
-
   <string formatted="false" name="app_notifs_disabled_summary">You have disabled all notifications for this app.  Please enable them to access these settings.</string>
   <string formatted="false" name="main_notifs_disabled_b">Enable Main Notification</string>
   <string formatted="false" name="main_notifs_disabled_summary">You have disabled the main notification for this app.  Please enable it to access these settings.</string>
   <string formatted="false" name="pref_cat_notification_settings">Notification Settings</string>
-
   <string formatted="false" name="pref_cat_more_settings_in_pro">More Settings in Pro</string>
   <string formatted="false" name="pref_please_upgrade">
     The Pro version has many more settings and features, including
     current (mA) information,
-    alarms,
+    colorful icons, alarms,
     battery state logging,
     and more.
   </string>
+  <string formatted="false" name="pref_manage_main_channel">Manage Main Channel</string>
   <string formatted="false" name="pref_icon_set">Icon Set</string>
   <string formatted="false" name="pref_icon_set_help">
     Android comes in many flavors, so there is no one perfect icon set
@@ -273,6 +275,22 @@
     Android reports the battery temperature in degrees Celsius.  If
     you prefer to see the battery temperature in degrees Fahrenheit,
     check this option, and the app will convert for you.
+  </string>
+  <string formatted="false" name="pref_classic_color_mode">Force Classic Color Mode</string>
+  <string formatted="false" name="pref_classic_color_mode_summary">
+    This usually does not work; please read the help
+  </string>
+  <string formatted="false" name="pref_classic_color_mode_help">
+    Starting with Android 5.0 (Lollipop), colored notification icons
+    officially no longer work on Android, making the Classic icon show
+    up as solid white. So by default, on these devices the app uses a
+    plain white outline with white number.\n
+
+    \nHowever, not all devices follow the spec, so this is not
+    necessary and does not work correctly everywhere.  You can try to
+    make the Classic icon set work in the classic way by turning this
+    option on.  Remember, on most devices this will just make the icon
+    turn solid white.
   </string>
   <!--string name="pref_cat_device_specific_help"></string-->
   <!--string name="pref_alarm_enabled_summary"></string-->

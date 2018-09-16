@@ -78,6 +78,8 @@
   <string name="pref_notify_status_duration_help" formatted="false">Включите эту опцию, если предпочитаете, чтобы в главном уведомлении было показано время, прошедшее с момента изменения состояния (например, \"Работает от аккумулятора в течение 5 часов\"), а не оценку оставшегося времени работы. Обе характеристики доступны в главном окне приложения.</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">Преобразовать к Фаренгейту</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Система Android сообщает температуру аккумулятора в градусах Цельсия. Если для вас предпочтительнее градусы Фаренгейта, выберите эту опцию, и приложение осуществит преобразование для вас.</string>
+  <string name="pref_classic_color_mode" formatted="false">Применить классический цветовой режим</string>
+  <string name="pref_classic_color_mode_summary" formatted="false">Это обычно не работает; пожалуйста, прочтите справку</string>
   <string name="icon_set_classic" formatted="false">Классический</string>
   <string name="icon_set_plain" formatted="false">Просто число</string>
   <string name="icon_set_smaller" formatted="false">Мелкие цифры</string>

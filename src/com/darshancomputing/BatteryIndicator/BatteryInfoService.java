@@ -50,7 +50,8 @@ public class BatteryInfoService extends Service {
     private SharedPreferences sp_service;
     private SharedPreferences.Editor sps_editor;
 
-    public static final String MAIN_CHAN_ID = "main";
+    public static final String CHAN_ID_OLD_MAIN = "main";
+    public static final String CHAN_ID_MAIN = "main_002";
 
     private Resources res;
     //private BatteryLevel bl;
@@ -122,8 +123,15 @@ public class BatteryInfoService extends Service {
         cwbg = new CircleWidgetBackground(this);
 
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        mNotificationManager.deleteNotificationChannel(CHAN_ID_OLD_MAIN);
+
+        int main_importance = NotificationManager.IMPORTANCE_MIN;
+        if (android.os.Build.VERSION.SDK_INT < 28) {
+            main_importance = NotificationManager.IMPORTANCE_LOW;
+        }
         CharSequence main_notif_chan_name = getString(R.string.main_notif_chan_name);
-        NotificationChannel mChannel = new NotificationChannel(MAIN_CHAN_ID, main_notif_chan_name, NotificationManager.IMPORTANCE_MIN);
+        NotificationChannel mChannel = new NotificationChannel(CHAN_ID_MAIN, main_notif_chan_name, main_importance);
         mChannel.setSound(null, null);
         mChannel.enableLights(false);
         mChannel.enableVibration(false);
@@ -384,7 +392,7 @@ public class BatteryInfoService extends Service {
             .setOngoing(true)
             .setWhen(0)
             .setShowWhen(false)
-            .setChannelId(MAIN_CHAN_ID)
+            .setChannelId(CHAN_ID_MAIN)
             .setContentTitle(mainNotificationTopLine)
             .setContentText(mainNotificationBottomLine)
             .setContentIntent(currentInfoPendingIntent)
@@ -461,6 +469,8 @@ public class BatteryInfoService extends Service {
             return ((info.status == BatteryInfo.STATUS_CHARGING && indicate_charging) ? chargingIcon0 : plainIcon0) + info.percent;
         } else if (icon_set.equals("builtin.smaller_number")) {
             return ((info.status == BatteryInfo.STATUS_CHARGING && indicate_charging) ? small_chargingIcon0 : small_plainIcon0) + info.percent;
+        } else if (settings.getBoolean(SettingsActivity.KEY_CLASSIC_COLOR_MODE, false)) {
+            return R.drawable.b000 + info.percent;
         } else {
             return R.drawable.w000 + info.percent;
         }

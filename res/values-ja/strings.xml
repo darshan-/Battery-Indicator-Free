@@ -81,6 +81,8 @@
   <string name="pref_notify_status_duration_help" formatted="false">メイン通知で、見積残り時間ではなく、ステータスが変わってからの時間 (\"プラグを抜いてから 5 時間\" など) の表示をお好みの場合は、 この設定を有効にしてください。メインウインドウで両方の情報が入手できます。</string>
   <string name="pref_convert_to_fahrenheit" formatted="false">華氏に変換する</string>
   <string name="pref_convert_to_fahrenheit_help" formatted="false">Android はセ氏でバッテリ温度を報告します。バッテリー温度を華氏で 確認したい場合は、このオプションをチェックすると、アプリが変換します。</string>
+  <string name="pref_classic_color_mode" formatted="false">強制的にクラシックカラーモードにする</string>
+  <string name="pref_classic_color_mode_summary" formatted="false">これは通常動作しません。ヘルプをお読みください</string>
   <string name="icon_set_classic" formatted="false">クラシック</string>
   <string name="icon_set_plain" formatted="false">数字のみ</string>
   <string name="icon_set_smaller" formatted="false">小さい数字</string>
