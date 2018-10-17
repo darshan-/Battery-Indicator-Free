@@ -125,6 +125,7 @@ public class BatteryInfoService extends Service {
         mChannel.setSound(null, null);
         mChannel.enableLights(false);
         mChannel.enableVibration(false);
+        mChannel.setShowBadge(false);
         mChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
         mNotificationManager.createNotificationChannel(mChannel);
         mainNotificationB = new Notification.Builder(this);
