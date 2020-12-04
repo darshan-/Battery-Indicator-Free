@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.darshancomputing.BatteryIndicator"
           xmlns:tools="http://schemas.android.com/tools"
-          android:versionCode="026013"
-          android:versionName="11.0.4-dev"
+          android:versionCode="026014"
+          android:versionName="11.0.4"
 >
   <!-- Permissions now considered "normal", automatically granted on API 23+ -->
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
