@@ -37,7 +37,7 @@
     />
   </PreferenceCategory>
 
-  <PreferenceCategory app:title="@string/pref_cat_more_settings_in_pro">
+  <PreferenceCategory android:title="@string/pref_cat_more_settings_in_pro">
     <Preference
         app:key="unlock_pro"
         app:layout="@layout/unlock_pro"
@@ -49,5 +49,4 @@
        app:enabled="false"
     />
   </PreferenceCategory>
-
 </PreferenceScreen>

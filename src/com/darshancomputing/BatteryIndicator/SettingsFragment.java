@@ -63,6 +63,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
     public static final String KEY_MIGRATED_SERVICE_DESIRED = "service_desired_migrated_to_sp_main";
     public static final String KEY_ENABLE_NOTIFS_B = "enable_notifications_button";
     public static final String KEY_ENABLE_NOTIFS_SUMMARY = "enable_notifications_summary";
+    public static final String KEY_UNLOCK_PRO_B = "unlock_pro";
     public static final String KEY_UI_COLOR = "ui_color";
 
     private static final String[] PARENTS    = {
@@ -231,7 +232,10 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
                 prefs.setSummary(R.string.main_notifs_disabled_summary);
                 prefb.setSummary(R.string.main_notifs_disabled_b);
             }
-        } 
+        } else {
+            Preference prefb = mPreferenceScreen.findPreference(KEY_UNLOCK_PRO_B);
+            prefb.setSummary(R.string.upgrade_donate_b);
+        }
 
         for (int i=0; i < PARENTS.length; i++)
             setEnablednessOfDeps(i);
