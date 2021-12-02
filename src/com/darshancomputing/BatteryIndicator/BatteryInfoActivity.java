@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013-2020 Darshan Computing, LLC
+    Copyright (c) 2013-2021 Darshan Computing, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,13 +20,13 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerTabStrip;
 import androidx.viewpager.widget.ViewPager;
 
-public class BatteryInfoActivity extends FragmentActivity {
+public class BatteryInfoActivity extends AppCompatActivity {
     private BatteryInfoPagerAdapter pagerAdapter;
     private ViewPager viewPager;
 
@@ -35,6 +35,9 @@ public class BatteryInfoActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setTheme(R.style.bi_main_theme);
+        getSupportActionBar().setElevation(0);
         PersistentFragment.getInstance(getSupportFragmentManager());
 
         setContentView(R.layout.battery_info);
@@ -44,10 +47,15 @@ public class BatteryInfoActivity extends FragmentActivity {
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(pagerAdapter);
 
-        PagerTabStrip tabStrip = (PagerTabStrip) findViewById(R.id.pager_tab_strip);
-        tabStrip.setTabIndicatorColor(0x33b5e5);
-
         viewPager.setCurrentItem(0);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        PagerTabStrip tabStrip = (PagerTabStrip) findViewById(R.id.pager_tab_strip);
+        tabStrip.setTabIndicatorColor(Str.accent_color);
     }
 
     @Override

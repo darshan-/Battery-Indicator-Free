@@ -3,6 +3,7 @@
   <string formatted="false" name="app_full_name">BatteryBot Pro</string>
   <string formatted="false" name="app_launcher_name">BatteryBot</string>
   <string formatted="false" name="settings_activity_subtitle">Settings</string>
+  <string formatted="false" name="help_activity_subtitle">BatteryBot Help</string>
   <string formatted="false" name="app_full_name_free">BatteryBot</string>
 
   <string formatted="false" name="battery_use_b">View Battery Use</string>
@@ -14,7 +15,7 @@
   <string formatted="false" name="confirm_close">Really Close?</string>
   <string formatted="false" name="confirm_close_hint">
     BatteryBot will be completely closed, and you won\'t see it
-    in your status bar any more.  Any desktop widgets will be useless.\n
+    in your status bar anymore.  Any desktop widgets will be useless.\n
 
     \nIf you just want to leave the main window and keep the service
     running, press Cancel and then just press your device\'s BACK
@@ -38,6 +39,20 @@
 
     \nPlease press OK to be taken to the system settings where you can
     unblock notifications for BatteryBot.
+  </string>
+
+  <string formatted="false" name="battery_optimized">BatteryBot restricted!</string>
+  <string formatted="false" name="battery_optimized_message">
+    BatteryBot is restricted from running correctly.  This \"battery optimization\"
+    is an Android feature designed to restrict poorly designed apps to prevent them
+    from using too much battery in the background.\n
+
+    \nBatteryBot, however, is a well-designed app that must run unrestricted in
+    the background in order to function properly.  It is extremely efficient and
+    will not reduce your battery life.\n
+
+    \nPlease press OK to be taken to the system settings where you can
+    disable battery optimization for BatteryBot.
   </string>
 
   <string formatted="false" name="main_notif_chan_name">Main Notification</string>
@@ -86,6 +101,8 @@
     <item quantity="one">%d Log Item</item>
     <item quantity="other">%d Log Items</item>
   </plurals>
+
+  <!-- Keeping these in for now to satisfy linter with default language of unused strings. -->
   <plurals name="n_hours_long">
     <item quantity="one">"%d hour, "</item>
     <item quantity="other">"%d hours, "</item>
@@ -135,13 +152,13 @@
   <string formatted="false" name="help_cat_version">Version</string>
 
   <string formatted="false" name="help_cat_changelog">Changelog</string>
-  <string formatted="false" name="help_changelog">
-    Please see the <a href="https://www.batterybot.info/changelog">online Changelog</a>.
+  <string formatted="false" name="help_changelog">Please
+    see the <a href="https://www.batterybot.info/changelog">online Changelog</a>.
   </string>
 
   <string formatted="false" name="help_cat_faq">Frequently Asked Questions</string>
-  <string formatted="false" name="help_faq">
-    Please see the <a href="https://www.batterybot.info/faq">online FAQ</a>.
+  <string formatted="false" name="help_faq">Please
+    see the <a href="https://www.batterybot.info/faq">online FAQ</a>.
   </string>
 
   <string formatted="false" name="help_cat_website">Website</string>
@@ -167,8 +184,7 @@
   </string>
 
   <string formatted="false" name="help_cat_other_apps">My Other Apps</string>
-  <string formatted="false" name="help_other_apps"><a
-    href="market://details?id=com.darshancomputing.tuner">Noteworthy Instrument Tuner</a>
+  <string formatted="false" name="help_other_apps"><a href="market://details?id=com.darshancomputing.tuner">Noteworthy Instrument Tuner</a>
   is an open-source, ad-free tuner for tuning guitars, ukuleles, and just about any other instrument.\n
 
   \n<a href="market://details?id=com.swapadoodle.android">Swap-a-Doodle!</a>
@@ -224,7 +240,7 @@
     you have a question, a problem, or a comment, please
     <a href="mailto:support@batterybot.info">email me</a>.
   </string>
-  <string formatted="false" name="pref_cat_notifications_disabled">Notifications Disabled</string>
+  <string formatted="false" name="notifications_disabled_cat">Notifications Disabled</string>
   <string formatted="false" name="app_notifs_disabled_b">Enable App Notifications</string>
   <string formatted="false" name="app_notifs_disabled_summary">You have disabled all notifications for this app.  Please enable them to access these settings.</string>
   <string formatted="false" name="main_notifs_disabled_b">Enable Main Notification</string>
@@ -238,13 +254,11 @@
     battery state logging,
     and more.
   </string>
-  <string formatted="false" name="pref_manage_main_channel">Manage Main Channel</string>
   <string formatted="false" name="pref_icon_set">Icon Set</string>
   <string formatted="false" name="pref_icon_set_help">
     Android comes in many flavors, so there is no one perfect icon set
-    that works well on every device.  Pro users can use plugins to get
-    more options, but there are now three built-in icon sets that
-    should provide at least one good option for virtually every
+    that works well on every device.  There are three built-in icon sets
+    that should provide at least one good option for virtually every
     device.\n
 
     \n\"Classic\" is the original icon set from 2009.  It is still the
@@ -260,12 +274,7 @@
     \n\"Smaller number\" is like \"Plain number\" but smaller, because
     some newer devices do not actually shrink the icon like stock
     Android does, and the very large number in \"Plain Number\" can
-    appear comically large on these devices.\n
-
-    \nIf you have any BatteryBot Pro icon plugins installed
-    (press MENU, then Get Plugins to get free plugins, or just press
-    the Get Plugins button on the Action Bar on newer devices), you
-    can choose among them here.
+    appear comically large on these devices.
   </string>
   <string formatted="false" name="pref_notify_status_duration">Show Status Duration</string>
   <string formatted="false" name="pref_notify_status_duration_summary">Show time since status changed rather than estimate of time remaining?</string>
@@ -281,6 +290,8 @@
     you prefer to see the battery temperature in degrees Fahrenheit,
     check this option, and the app will convert for you.
   </string>
+  x
+
   <string formatted="false" name="pref_classic_color_mode">Force Classic Color Mode</string>
   <string formatted="false" name="pref_classic_color_mode_summary">
     This usually does not work; please read the help

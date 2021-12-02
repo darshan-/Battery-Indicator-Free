@@ -2,6 +2,7 @@
 <resources>
   <string name="app_launcher_name" formatted="false">בוט-סוללה</string>
   <string name="settings_activity_subtitle" formatted="false">הגדרות</string>
+  <string name="help_activity_subtitle" formatted="false">עזרה</string>
   <string name="app_full_name_free" formatted="false">בוט-סוללה</string>
   <string name="battery_use_b" formatted="false">הצגת השימוש בסוללה</string>
   <string name="upgrade_donate_b" formatted="false">שדרוג/תרומה</string>

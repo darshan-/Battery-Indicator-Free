@@ -5,20 +5,27 @@
              android:padding="@dimen/widget_margin"
              android:id="@+id/widget_layout"
 >
+  <!-- Now have bottom layer be a circle drawable responsive to system light/dark mode. -->
+  <ImageView android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:scaleType="centerInside"
+             android:src="@drawable/circle"
+             android:padding="2.5dp"
+  />
+
+  <!-- And this is now just for drawing the arc on top of that. -->
   <ImageView android:id="@+id/circle_widget_image_view"
              android:layout_width="fill_parent"
              android:layout_height="fill_parent"
              android:scaleType="centerInside"
-             android:src="@drawable/circle"
   />
 
-    <TextView android:id="@+id/level"
-	      android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:gravity="center"
-              android:textColor="#fff"
-              android:textSize="20dp"
-              android:text="XX%"
-    />
-  <!--/LinearLayout-->
+  <TextView android:id="@+id/level"
+	    android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:textColor="@color/widgetTextColor"
+            android:textSize="20dp"
+            android:text="XX%"
+  />
 </FrameLayout>

@@ -3,6 +3,7 @@
   <string name="app_full_name" formatted="false">مؤشر البطارية الإحترافي</string>
   <string name="app_launcher_name" formatted="false">مؤشر البطارية الإحترافي</string>
   <string name="settings_activity_subtitle" formatted="false">الخيارات</string>
+  <string name="help_activity_subtitle" formatted="false">المساعدة</string>
   <string name="app_full_name_free" formatted="false">مؤشر البطارية</string>
   <string name="battery_use_b" formatted="false">عرض استخدام البطارية</string>
   <string name="upgrade_donate_b" formatted="false">ترقية/تبرع</string>

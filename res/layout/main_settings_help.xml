@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/named_so_scroll_position_is_preserved"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
 >
-  <LinearLayout android:orientation="vertical"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:paddingLeft="12dp"
-                android:paddingRight="12dp"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-  >
+  <LinearLayout style="@style/help_ll" android:orientation="vertical">
     <TextView style="@style/help_cat"  android:text="@string/pref_cat_notification_settings" />
     <View style="@style/help_cat_post_margin" />
-    <TextView style="@style/help_pref" android:text="@string/pref_convert_to_fahrenheit" />
+    <TextView style="@style/help_cat" android:text="@string/pref_convert_to_fahrenheit" />
     <TextView style="@style/help_text" android:text="@string/pref_convert_to_fahrenheit_help" />
-    <TextView style="@style/help_pref" android:text="@string/pref_icon_set" />
+    <TextView style="@style/help_cat" android:text="@string/pref_icon_set" />
     <TextView style="@style/help_text" android:text="@string/pref_icon_set_help" />
-    <TextView style="@style/help_pref" android:text="@string/pref_classic_color_mode" />
+    <TextView style="@style/help_cat" android:text="@string/pref_classic_color_mode" />
     <TextView style="@style/help_text" android:text="@string/pref_classic_color_mode_help" />
-    <TextView style="@style/help_pref" android:text="@string/pref_notify_status_duration" />
+    <TextView style="@style/help_cat" android:text="@string/pref_notify_status_duration" />
     <TextView style="@style/help_text" android:text="@string/pref_notify_status_duration_help" />
   </LinearLayout>
 </ScrollView>

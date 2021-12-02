@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2020 Darshan Computing, LLC
+    Copyright (c) 2009-2021 Darshan Computing, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -14,8 +14,6 @@
 
 package com.darshancomputing.BatteryIndicator;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.text.method.MovementMethod;
@@ -23,7 +21,10 @@ import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class HelpActivity extends Activity {
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class HelpActivity extends AppCompatActivity {
     private static final int[] HAS_LINKS = {R.id.changelog, R.id.faq, R.id.website,
                                             R.id.other_apps,
                                             R.id.open_source, R.id.donate, R.id.acknowledgments,
@@ -33,13 +34,16 @@ public class HelpActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ActionBar ab = getActionBar();
+        ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setHomeButtonEnabled(true);
             ab.setDisplayHomeAsUpEnabled(true);
+            ab.setElevation(0);
         }
 
         setContentView(R.layout.help);
+
+        setTitle(getResources().getString(R.string.help_activity_subtitle));
 
         TextView tv;
         MovementMethod linkMovement = LinkMovementMethod.getInstance();

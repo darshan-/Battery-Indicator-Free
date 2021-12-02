@@ -3,6 +3,7 @@
   <string name="app_full_name" formatted="false">电量指示器专业版</string>
   <string name="app_launcher_name" formatted="false">电量指示器</string>
   <string name="settings_activity_subtitle" formatted="false">设置</string>
+  <string name="help_activity_subtitle" formatted="false">帮助</string>
   <string name="app_full_name_free" formatted="false">电量指示器</string>
   <string name="battery_use_b" formatted="false">查看电量使用情况</string>
   <string name="upgrade_donate_b" formatted="false">升级/捐助...</string>

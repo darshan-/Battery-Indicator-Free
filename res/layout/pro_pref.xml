@@ -5,7 +5,7 @@
               android:orientation="vertical"
               android:paddingRight="?android:attr/scrollbarSize"
 >
-  <TextView android:id="@+android:id/summary"
+  <TextView android:id="@android:id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -13,7 +13,7 @@
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
             android:textSize="13sp"
-            android:textColor="#eee"
+            android:textColor="@color/primary_text"
             android:lineSpacingMultiplier="1.1"
   />
 </LinearLayout>

@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2018 Darshan Computing, LLC
+    Copyright (c) 2009-2021 Darshan Computing, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -54,7 +54,6 @@ public class BatteryInfoService extends Service {
     public static final String CHAN_ID_MAIN = "main_002";
 
     private Resources res;
-    //private BatteryLevel bl;
     private CircleWidgetBackground cwbg;
     private BatteryInfo info;
     private long now;
@@ -84,9 +83,6 @@ public class BatteryInfoService extends Service {
     private static final String EXTRA_UPDATE_PREDICTOR = "com.darshancomputing.BatteryBot.EXTRA_UPDATE_PREDICTOR";
 
 
-    //private static final Object[] EMPTY_OBJECT_ARRAY = {};
-    //private static final  Class[]  EMPTY_CLASS_ARRAY = {};
-
     private static final int plainIcon0 = R.drawable.plain000;
     private static final int small_plainIcon0 = R.drawable.small_plain000;
     private static final int chargingIcon0 = R.drawable.charging000;
@@ -95,7 +91,6 @@ public class BatteryInfoService extends Service {
     /* Global variables for these Notification Runnables */
     private Notification.Builder mainNotificationB;
     private String mainNotificationTopLine, mainNotificationBottomLine;
-    //private RemoteViews notificationRV;
 
     private Predictor predictor;
 
@@ -109,7 +104,6 @@ public class BatteryInfoService extends Service {
         clientMessengers = new java.util.HashSet<Messenger>();
 
         predictor = new Predictor(this);
-        //bl = BatteryLevel.getInstance(this, BatteryLevel.SIZE_NOTIFICATION);
         cwbg = new CircleWidgetBackground(this);
 
         mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -136,11 +130,11 @@ public class BatteryInfoService extends Service {
         sdkVersioning();
 
         Intent currentInfoIntent = new Intent(this, BatteryInfoActivity.class);
-        currentInfoPendingIntent = PendingIntent.getActivity(this, 0, currentInfoIntent, 0);
+        currentInfoPendingIntent = PendingIntent.getActivity(this, 0, currentInfoIntent, PendingIntent.FLAG_IMMUTABLE);
 
         Intent updatePredictorIntent = new Intent(this, BatteryInfoService.class);
         updatePredictorIntent.putExtra(EXTRA_UPDATE_PREDICTOR, true);
-        updatePredictorPendingIntent = PendingIntent.getService(this, 0, updatePredictorIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        updatePredictorPendingIntent = PendingIntent.getService(this, 0, updatePredictorIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         widgetManager = AppWidgetManager.getInstance(this);
 
@@ -260,8 +254,8 @@ public class BatteryInfoService extends Service {
     }
 
     private void loadSettingsFiles() {
-        settings = getSharedPreferences(SettingsActivity.SETTINGS_FILE, Context.MODE_MULTI_PROCESS);
-        sp_service = getSharedPreferences(SettingsActivity.SP_SERVICE_FILE, Context.MODE_MULTI_PROCESS);
+        settings = getSharedPreferences(SettingsFragment.SETTINGS_FILE, Context.MODE_MULTI_PROCESS);
+        sp_service = getSharedPreferences(SettingsFragment.SP_SERVICE_FILE, Context.MODE_MULTI_PROCESS);
     }
 
     private void reloadSettings(boolean cancelFirst) {
@@ -335,10 +329,12 @@ public class BatteryInfoService extends Service {
     }
 
     private void updateWidgets(BatteryInfo info) {
-        if (info == null)
+        if (info == null) {
             cwbg.setLevel(0);
-        else
+        } else {
+            cwbg.setColor(0xff79a3ff);
             cwbg.setLevel(info.percent);
+        }
 
         for (Integer widgetId : widgetIds) {
             android.appwidget.AppWidgetProviderInfo awpInfo = widgetManager.getAppWidgetInfo(widgetId);
@@ -346,12 +342,14 @@ public class BatteryInfoService extends Service {
 
             RemoteViews rv = new RemoteViews(getPackageName(), R.layout.circle_app_widget);
 
-            if (info == null)
+            if (info == null) {
+                rv.setImageViewResource(R.id.circle_widget_image_view, R.drawable.empty);
                 rv.setTextViewText(R.id.level, "XX" + Str.percent_symbol);
-            else
+            } else {
+                rv.setImageViewBitmap(R.id.circle_widget_image_view, cwbg.getBitmap());
                 rv.setTextViewText(R.id.level, "" + info.percent + Str.percent_symbol);
+            }
 
-            rv.setImageViewBitmap(R.id.circle_widget_image_view, cwbg.getBitmap());
             rv.setOnClickPendingIntent(R.id.widget_layout, currentInfoPendingIntent);
             try {
                 widgetManager.updateAppWidget(widgetId, rv);
@@ -371,7 +369,7 @@ public class BatteryInfoService extends Service {
     }
 
     private void prepareNotification() {
-        if (settings.getBoolean(SettingsActivity.KEY_NOTIFY_STATUS_DURATION, false))
+        if (settings.getBoolean(SettingsFragment.KEY_NOTIFY_STATUS_DURATION, false))
             mainNotificationTopLine = statusDurationLine();
         else
             mainNotificationTopLine = predictionLine();
@@ -413,7 +411,7 @@ public class BatteryInfoService extends Service {
     }
 
     private String vitalStatsLine() {
-        Boolean convertF = settings.getBoolean(SettingsActivity.KEY_CONVERT_F,
+        Boolean convertF = settings.getBoolean(SettingsFragment.KEY_CONVERT_F,
                                                res.getBoolean(R.bool.default_convert_to_fahrenheit));
         String line = Str.healths[info.health] + " / " + Str.formatTemp(info.temperature, convertF);
 
@@ -440,22 +438,22 @@ public class BatteryInfoService extends Service {
     private int iconFor(int percent) {
         String default_set = "builtin.plain_number";
 
-        String icon_set = settings.getString(SettingsActivity.KEY_ICON_SET, "null");
+        String icon_set = settings.getString(SettingsFragment.KEY_ICON_SET, "null");
         if (! icon_set.startsWith("builtin.")) icon_set = "null";
 
         if (icon_set.equals("null")) {
             icon_set = default_set;
 
-            settings.edit().putString(SettingsActivity.KEY_ICON_SET, default_set).apply();
+            settings.edit().putString(SettingsFragment.KEY_ICON_SET, default_set).apply();
         }
 
-        Boolean indicate_charging = settings.getBoolean(SettingsActivity.KEY_INDICATE_CHARGING, true);
+        Boolean indicate_charging = settings.getBoolean(SettingsFragment.KEY_INDICATE_CHARGING, true);
 
         if (icon_set.equals("builtin.plain_number")) {
             return ((info.status == BatteryInfo.STATUS_CHARGING && indicate_charging) ? chargingIcon0 : plainIcon0) + info.percent;
         } else if (icon_set.equals("builtin.smaller_number")) {
             return ((info.status == BatteryInfo.STATUS_CHARGING && indicate_charging) ? small_chargingIcon0 : small_plainIcon0) + info.percent;
-        } else if (settings.getBoolean(SettingsActivity.KEY_CLASSIC_COLOR_MODE, false)) {
+        } else if (settings.getBoolean(SettingsFragment.KEY_CLASSIC_COLOR_MODE, false)) {
             return R.drawable.b000 + info.percent;
         } else {
             return R.drawable.w000 + info.percent;

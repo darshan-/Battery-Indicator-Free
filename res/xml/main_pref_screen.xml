@@ -1,67 +1,52 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
   <PreferenceCategory
-      android:key="category_notifications_disabled"
-      android:title="@string/pref_cat_notifications_disabled"
+      app:key="category_notification_settings"
+      app:title="@string/pref_cat_notification_settings"
   >
     <Preference
-        android:key="enable_notifications_button"
-        android:layout="@layout/enable_notifications_button"
-    />
-
-    <Preference
-        android:key="enable_notifications_summary"
-        android:layout="@layout/enable_notifications_summary"
-        android:enabled="false"
-    />
-  </PreferenceCategory>
-
-  <PreferenceCategory
-      android:key="category_notification_settings"
-      android:title="@string/pref_cat_notification_settings"
-  >
-    <Preference
-        android:key="main_chan_button"
-        android:layout="@layout/enable_notifications_button"
+        app:key="main_chan_button"
+        app:layout="@layout/enable_notifications_button"
     />
 
     <CheckBoxPreference
-       android:key="convert_to_fahrenheit"
-       android:title="@string/pref_convert_to_fahrenheit"
-       android:defaultValue="@bool/default_convert_to_fahrenheit"
+       app:key="convert_to_fahrenheit"
+       app:title="@string/pref_convert_to_fahrenheit"
+       app:defaultValue="@bool/default_convert_to_fahrenheit"
     />
 
     <ListPreference
-       android:key="icon_set"
-       android:title="@string/pref_icon_set"
-       android:entries="@array/icon_set_entries"
-       android:entryValues="@array/icon_set_values"
+       app:key="icon_set"
+       app:title="@string/pref_icon_set"
+       app:entries="@array/icon_set_entries"
+       app:entryValues="@array/icon_set_values"
     />
 
     <CheckBoxPreference
-        android:key="classic_color_mode"
-        android:title="@string/pref_classic_color_mode"
-        android:summary="@string/pref_classic_color_mode_summary"
-        android:defaultValue="false"
+        app:key="classic_color_mode"
+        app:title="@string/pref_classic_color_mode"
+        app:summary="@string/pref_classic_color_mode_summary"
+        app:defaultValue="false"
     />
 
     <CheckBoxPreference
-       android:key="notify_status_duration"
-       android:title="@string/pref_notify_status_duration"
-       android:summary="@string/pref_notify_status_duration_summary"
-       android:defaultValue="false"
+       app:key="notify_status_duration"
+       app:title="@string/pref_notify_status_duration"
+       app:summary="@string/pref_notify_status_duration_summary"
+       app:defaultValue="false"
     />
   </PreferenceCategory>
 
-  <PreferenceCategory android:title="@string/pref_cat_more_settings_in_pro">
+  <PreferenceCategory app:title="@string/pref_cat_more_settings_in_pro">
     <Preference
-        android:key="unlock_pro"
-        android:layout="@layout/unlock_pro"
+        app:key="unlock_pro"
+        app:layout="@layout/unlock_pro"
     />
 
     <Preference
-       android:summary="@string/pref_please_upgrade"
-       android:layout="@layout/pro_pref"
-       android:enabled="false"
+       app:summary="@string/pref_please_upgrade"
+       app:layout="@layout/pro_pref"
+       app:enabled="false"
     />
   </PreferenceCategory>
 

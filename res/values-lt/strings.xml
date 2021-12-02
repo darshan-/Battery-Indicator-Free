@@ -3,6 +3,7 @@
   <string name="app_full_name" formatted="false">Baterijos Indikatorius Pro</string>
   <string name="app_launcher_name" formatted="false">Baterijos Indikatorius Pro</string>
   <string name="settings_activity_subtitle" formatted="false">Nustatymai</string>
+  <string name="help_activity_subtitle" formatted="false">Pagalba</string>
   <string name="app_full_name_free" formatted="false">Baterijos Indikatorius</string>
   <string name="battery_use_b" formatted="false">Baterijos naudojimas</string>
   <string name="upgrade_donate_b" formatted="false">Patobulinti/Paremti...</string>

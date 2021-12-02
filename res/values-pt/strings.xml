@@ -2,6 +2,7 @@
 <resources>
   <string name="app_full_name" formatted="false">Estado da Bateria Pro</string>
   <string name="app_launcher_name" formatted="false">Estado da Bateria Pro</string>
+  <string name="help_activity_subtitle" formatted="false">Ajuda</string>
   <string name="app_full_name_free" formatted="false">Estado da Bateria</string>
   <string name="battery_use_b" formatted="false">Ver Uso da Bateria</string>
   <string name="upgrade_donate_b" formatted="false">Fazer Upgrade/Doar...</string>

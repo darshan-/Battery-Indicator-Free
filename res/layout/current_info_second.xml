@@ -18,6 +18,7 @@
                android:padding="2dp"
                android:gravity="center"
                android:src="@drawable/not_unplugged"
+               android:tint="@color/icon_tint"
     />
 
     <LinearLayout android:orientation="vertical"
@@ -37,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal|top"
                 android:paddingTop="5dp"
-                android:textColor="#fff"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="0px"
       />
     </LinearLayout>
@@ -67,6 +68,7 @@
                  android:scaleType="fitCenter"
                  android:padding="2dp"
                  android:src="@drawable/temp"
+                 android:tint="@color/icon_tint"
       />
       <TextView android:id="@+id/temp"
                 android:layout_height="0px"
@@ -82,6 +84,7 @@
                  android:scaleType="fitCenter"
                  android:padding="2dp"
                  android:src="@drawable/health"
+                 android:tint="@color/icon_tint"
       />
       <TextView android:id="@+id/health"
                 android:layout_height="0px"
@@ -103,6 +106,7 @@
                  android:scaleType="fitCenter"
                  android:padding="2dp"
                  android:src="@drawable/voltage"
+                 android:tint="@color/icon_tint"
       />
 
       <TextView android:id="@+id/voltage"

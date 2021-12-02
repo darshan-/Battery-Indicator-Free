@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009-2020 Darshan Computing, LLC
+    Copyright (c) 2009-2021 Darshan Computing, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -17,12 +17,14 @@ package com.darshancomputing.BatteryIndicator;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -55,11 +57,15 @@ public class CurrentInfoFragment extends Fragment {
     private TextView tv_health;
     private TextView tv_voltage;
     private ImageView plugged_icon;
+    private BatteryInfoActivity bia;
 
     private BatteryInfo info = new BatteryInfo();
 
     public static boolean awaitingNotificationUnblock;
     public static boolean showingNotificationBlockDialog;
+
+    public static boolean awaitingUnoptimization;
+    public static boolean showingBatteryOptimizedDialog;
 
     //private static final String LOG_TAG = "BatteryBot";
 
@@ -73,7 +79,7 @@ public class CurrentInfoFragment extends Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.current_info, container, false);
 
-        bl = BatteryLevel.getInstance(getActivity(), pfrag.res.getInteger(R.integer.bl_inSampleSize));
+        bl = BatteryLevel.getLargeInstance(getActivity());
         blv = (ImageView) view.findViewById(R.id.battery_level_view);
         blv.setImageBitmap(bl.getBitmap());
 
@@ -97,7 +103,21 @@ public class CurrentInfoFragment extends Fragment {
             df.show(getFragmentManager(), "TODO: What is this string for?3");
         }
 
+        PowerManager pm = (PowerManager) getActivity().getSystemService(Context.POWER_SERVICE);
+        if (!pm.isIgnoringBatteryOptimizations("com.darshancomputing.BatteryIndicator") &&
+            !showingBatteryOptimizedDialog)
+        {
+            showingBatteryOptimizedDialog = true;
+            DialogFragment df = new BatteryOptimizedDialogFragment();
+            df.setTargetFragment(this, 0);
+            df.show(getFragmentManager(), "TODO: What is this string for?4");
+        }
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
     }
 
     @Override
@@ -205,6 +225,58 @@ public class CurrentInfoFragment extends Fragment {
         }
     }
 
+    public static class BatteryOptimizedDialogFragment extends DialogFragment {
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            return new AlertDialog.Builder(getActivity())
+                .setTitle(pfrag.res.getString(R.string.battery_optimized))
+                .setMessage(pfrag.res.getString(R.string.battery_optimized_message))
+                .setPositiveButton(pfrag.res.getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface di, int id) {
+                            final Intent i = new Intent(
+                                android.provider.Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS,
+                                Uri.parse("package:" + getActivity().getPackageName()));
+                            try {
+                                startActivity(i);
+                            } catch (android.content.ActivityNotFoundException e) {
+                                // Some devices don't support that request, and this is better than nothing
+                                final Intent i2 = new Intent();
+                                i2.setAction(android.provider.Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
+                                i2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                i2.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                                try {
+                                    startActivity(i2);
+                                } catch (android.content.ActivityNotFoundException e2) {
+                                    // And on truly broken devices, I guess just opening root of system settings is worth doing?
+                                    // Inspired by https://github.com/kontalk/androidclient/commit/be78119687940545d3613ae0d4280f4068125f6a
+                                    final Intent i3 = new Intent();
+                                    i3.setAction(android.provider.Settings.ACTION_SETTINGS);
+                                    i3.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    i3.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+                                    startActivity(i3);
+                                }
+                            }
+
+                            CurrentInfoFragment.awaitingUnoptimization = true;
+                            CurrentInfoFragment.showingBatteryOptimizedDialog = false;
+
+                            di.cancel();
+                        }
+                    })
+                .setNegativeButton(pfrag.res.getString(R.string.cancel),
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface di, int id) {
+                            CurrentInfoFragment.awaitingUnoptimization = false;
+                            CurrentInfoFragment.showingBatteryOptimizedDialog = false;
+
+                            di.cancel();
+                        }
+                    })
+                .create();
+        }
+    }
+
     public static class ConfirmCloseDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -235,6 +307,7 @@ public class CurrentInfoFragment extends Fragment {
 
     private void handleUpdatedBatteryInfo() {
         bl.setLevel(info.percent);
+        bl.setColor(Str.accent_color);
         blv.invalidate();
 
         TextView tv = (TextView) view.findViewById(R.id.level);
@@ -269,7 +342,7 @@ public class CurrentInfoFragment extends Fragment {
             tv.setText(s);
         }
 
-        Boolean convertF = pfrag.settings.getBoolean(SettingsActivity.KEY_CONVERT_F,
+        Boolean convertF = pfrag.settings.getBoolean(SettingsFragment.KEY_CONVERT_F,
                                                      pfrag.res.getBoolean(R.bool.default_convert_to_fahrenheit));
 
         tv_health.setText(Str.healths[info.health]);

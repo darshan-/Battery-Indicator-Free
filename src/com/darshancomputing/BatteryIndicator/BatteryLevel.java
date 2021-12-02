@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013-2017 Darshan Computing, LLC
+    Copyright (c) 2013-2021 Darshan Computing, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -17,7 +17,6 @@ package com.darshancomputing.BatteryIndicator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -25,80 +24,107 @@ import android.graphics.RectF;
 import android.util.DisplayMetrics;
 
 class BatteryLevel {
-    private int width, top_h, body_h;
     private Canvas canvas;
-    private Paint fill_paint, bitmap_paint;
-    private static Bitmap battery_top, battery_body, battery;
+    private Paint paint;
+    private static Bitmap battery;
+    private int mLevel, mColor;
 
     static final int SIZE_LARGE = 1;
     static final int SIZE_NOTIFICATION = 4;
 
-    private static BatteryLevel[] instances = new BatteryLevel[]{null, null, null, null, null}; // So that [1], [2], and [4] exist
 
-    public static BatteryLevel getInstance(Context context, int inSampleSize) {
-        if (inSampleSize < 0 || inSampleSize >= instances.length)
-            return null;
+    private static final float FACTOR_LARGE = 33.25f;
+    private static final float FACTOR_SMALL = 13.33f;
 
-        if (instances[inSampleSize] == null)
-            instances[inSampleSize] = new BatteryLevel(context, inSampleSize);
+    private final float factor_width = 12.0f;
+    private final float factor_bod_h = 21.0f;
+    private final float factor_top_w = 5.0f;
+    private final float factor_top_h = 1.5f;
+    private final float factor_stroke = 1.0f;
 
-        return instances[inSampleSize];
+    private final int width;
+    private final int bod_h;
+    private final int top_w;
+    private final int top_h;
+    private final int total_h;
+    private final int stroke_w;
+
+    private static BatteryLevel largeInstance; // For main activity
+    private static BatteryLevel smallInstance; // For widgets and notifications
+
+    public static BatteryLevel getLargeInstance(Context context) {
+        if (largeInstance != null)
+            return largeInstance;
+
+        largeInstance = new BatteryLevel(context, FACTOR_LARGE);
+
+        return largeInstance;
     }
 
-    public static BatteryLevel getInstance(Context context) {
-        return getInstance(context, SIZE_LARGE);
+    public static BatteryLevel getSmallInstance(Context context) {
+        if (smallInstance != null)
+            return smallInstance;
+
+        smallInstance = new BatteryLevel(context, FACTOR_SMALL);
+
+        return smallInstance;
     }
 
-    private BatteryLevel(Context context, int inSampleSize) {
+    private BatteryLevel(Context context, float size_factor) {
         Resources res = context.getResources();
 
-        //BitmapFactory bf = new BitmapFactory();
-        BitmapFactory.Options bfo = new BitmapFactory.Options();
-        bfo.inDensity = DisplayMetrics.DENSITY_DEFAULT;
-        bfo.inScaled = false;
-        bfo.inTargetDensity = DisplayMetrics.DENSITY_DEFAULT;
-        bfo.inSampleSize = inSampleSize;
-
-        battery_top    = BitmapFactory.decodeResource(res, R.drawable.empty_battery_top   , bfo);
-        battery_body   = BitmapFactory.decodeResource(res, R.drawable.empty_battery_body  , bfo);
-
-           width = battery_top.getWidth();
-           top_h = battery_top.getHeight();
-          body_h = battery_body.getHeight();
+        width = (int) (size_factor * factor_width);
+        bod_h = (int) (size_factor * factor_bod_h);
+        top_w = (int) (size_factor * factor_top_w);
+        top_h = (int) (size_factor * factor_top_h);
+        total_h = (int) (bod_h + top_h);
+        stroke_w = (int) (size_factor * factor_stroke);
 
         canvas = new Canvas();
 
-        battery = Bitmap.createBitmap(width, top_h + body_h, Bitmap.Config.ARGB_8888);
+        battery = Bitmap.createBitmap(width, total_h, Bitmap.Config.ARGB_8888);
         battery.setDensity(DisplayMetrics.DENSITY_DEFAULT);
         canvas.setBitmap(battery);
 
-        fill_paint = new Paint();
-        fill_paint.setColor(0xaa33b5e5);
-        fill_paint.setAntiAlias(true);
-        fill_paint.setStrokeCap(Paint.Cap.ROUND);
-        fill_paint.setStrokeJoin(Paint.Join.ROUND);
-        fill_paint.setStyle(Paint.Style.FILL);
-        fill_paint.setDither(true);
+        paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setDither(true);
+        paint.setStrokeWidth(stroke_w);
+    }
 
-        bitmap_paint = new Paint();
-        bitmap_paint.setAntiAlias(true);
-        bitmap_paint.setDither(true);
+    public void setColor(int color) {
+        mColor = color;
+        setLevel(mLevel);
     }
 
     public void setLevel(int level) {
         if (level < 0) level = 0; // I suspect we might get called with -1 in certain circumstances
 
-        int rect_top = top_h + (body_h * (100 - level) / 100);
-        int rect_bottom = top_h + body_h;
+        mLevel = level;
 
-        RectF body_rect = new RectF(0, rect_top, width, rect_bottom);
+        float hsw = stroke_w*0.5f;
+        int isw = (int) stroke_w;
+        float radius = hsw;
 
+        RectF outline_rect = new RectF(hsw, top_h+hsw, width-hsw, total_h-hsw);
         canvas.drawColor(Color.TRANSPARENT, android.graphics.PorterDuff.Mode.CLEAR);
 
-        canvas.drawRoundRect(body_rect, 7.5f, 7.5f, fill_paint);
+        paint.setColor(mColor);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(stroke_w);
+        canvas.drawRoundRect(outline_rect, radius, radius, paint);
 
-        canvas.drawBitmap(battery_top   , 0, 0             , bitmap_paint);
-        canvas.drawBitmap(battery_body  , 0, top_h         , bitmap_paint);
+        int top = top_h + isw + ((bod_h-2*isw) * (100-level) / 100);
+        RectF fill_rect = new RectF(stroke_w, top, width-stroke_w, total_h-stroke_w);
+
+        paint.setStyle(Paint.Style.FILL);
+        canvas.drawRoundRect(fill_rect, 0, 0, paint);
+
+        int top_left = (width - top_w) / 2;
+        RectF top_rect = new RectF(top_left, 0, top_left+top_w, top_h+stroke_w);
+        canvas.drawRoundRect(top_rect, radius, radius, paint);
     }
 
     Bitmap getBitmap() {

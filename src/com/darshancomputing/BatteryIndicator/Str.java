@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2010-2018 Darshan Computing, LLC
+    Copyright (c) 2010-2021 Darshan Computing, LLC
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General License as published by
@@ -18,6 +18,9 @@ import android.content.res.Resources;
 
 class Str {
     private static Resources res;
+
+    static int def_ui_color;
+    static int accent_color;
 
     static String degree_symbol;
     static String fahrenheit_symbol;
@@ -40,6 +43,9 @@ class Str {
 
     static void setResources(Resources r) {
         res = r;
+
+        def_ui_color = res.getColor(R.color.col2020);
+        accent_color = res.getColor(R.color.accent);
 
         degree_symbol          = res.getString(R.string.degree_symbol);
         fahrenheit_symbol      = res.getString(R.string.fahrenheit_symbol);

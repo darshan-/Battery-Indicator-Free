@@ -2,12 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.darshancomputing.BatteryIndicator"
           xmlns:tools="http://schemas.android.com/tools"
-          android:versionCode="026014"
-          android:versionName="11.0.4"
+          android:versionCode="026015"
+          android:versionName="12.0.0-dev"
 >
   <!-- Permissions now considered "normal", automatically granted on API 23+ -->
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /><!-- Required on API 28+ -->
+
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
   <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 
@@ -33,6 +35,7 @@
         android:theme="@style/bi_main_theme"
         android:stateNotNeeded="true"
         android:launchMode="singleTask"
+        android:exported="true"
     >
       <intent-filter android:label="@string/app_launcher_name">
         <action android:name="android.intent.action.MAIN" />
@@ -45,18 +48,21 @@
     <activity android:name=".SettingsActivity"
               android:theme="@style/bi_settings_theme"
 	      android:excludeFromRecents="true"
+              android:exported="false"
     />
 
     <activity android:name=".SettingsHelpActivity"
               android:theme="@style/bi_help_theme"
               android:stateNotNeeded="true"
 	      android:excludeFromRecents="true"
+              android:exported="false"
     />
 
     <activity android:name=".HelpActivity"
               android:theme="@style/bi_help_theme"
               android:stateNotNeeded="true"
 	      android:excludeFromRecents="true"
+              android:exported="false"
     />
 
     <service

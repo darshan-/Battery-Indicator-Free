@@ -3,6 +3,7 @@
   <string name="app_full_name" formatted="false">باتری پات پروپرو</string>
   <string name="app_launcher_name" formatted="false">باتری پات پرو</string>
   <string name="settings_activity_subtitle" formatted="false">تنظیمات</string>
+  <string name="help_activity_subtitle" formatted="false">کمک</string>
   <string name="app_full_name_free" formatted="false">باتری پات</string>
   <string name="battery_use_b" formatted="false">نمایش کاربرد باتری</string>
   <string name="upgrade_donate_b" formatted="false">بروزرسانی/اهدا ...</string>

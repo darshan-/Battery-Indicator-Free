@@ -3,6 +3,7 @@
   <string name="app_full_name" formatted="false">BatteryBot Pro版</string>
   <string name="app_launcher_name" formatted="false">BatteryBot</string>
   <string name="settings_activity_subtitle" formatted="false">設定</string>
+  <string name="help_activity_subtitle" formatted="false">幫助</string>
   <string name="app_full_name_free" formatted="false">BatteryBot</string>
   <string name="battery_use_b" formatted="false">查看電量使用情況</string>
   <string name="upgrade_donate_b" formatted="false">升級/贊助...</string>
